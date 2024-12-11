@@ -1,4 +1,4 @@
-    #include <bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
 #ifdef LOCAL
@@ -76,15 +76,29 @@ long long binaryExp(long long x, long long y, long long mod) {
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(NULL);
-
     precomputeFactorials(N - 1);
-    /
-    ll t;
-    cin >> t;
-    while (t--) {
 
-      
 
-    }
+        ll n,m ;
+        cin >> n >>m ;
+        vector<ll> dorms(n);
+        for (int i = 0 ; i < n; i ++) {
+            cin >>  dorms[i];
+        }          
+        int p = 0; 
+        ll currsum = 0;
+        for (int i = 0 ; i < m ; i ++) {
+            ll q;
+            cin >> q;            
+            // how do you see this 
+            while (p < n && currsum + dorms[p] < q) {                
+                currsum += dorms[p];
+                p ++; 
+            }
+
+            cout << p + 1 << " " <<  q - currsum << endl; 
+        }
+
+        //
     return 0;
 }

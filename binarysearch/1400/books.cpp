@@ -1,4 +1,4 @@
-    #include <bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
 #ifdef LOCAL
@@ -78,13 +78,57 @@ int main() {
     cin.tie(NULL);
 
     precomputeFactorials(N - 1);
-    /
-    ll t;
-    cin >> t;
-    while (t--) {
+    // how to see thsi
 
+        // how to see thsi 
+        ll n, t;
+        cin >> n >> t; 
+        
+        // fix left endpoin
+        vector<int> nums(n);
+        for (int i = 0 ; i < n; i ++) {
+            cin >> nums[i];
+        }
+
+        vector<int> prefix(n);
+        prefix[0] = nums[0];
+        for (int i = 1 ; i < n; i ++) {
+            prefix[i] =  prefix[i - 1] + nums[i];
+        }
+        int res = 0; 
+        // find the greatest index
+        for (int i = 0 ; i <  n; i ++) {
+            if (nums[i] > t) {
+                continue;
+            }
+            int pre = 0; 
+            if (i != 0) {
+                pre = prefix[i - 1]; 
+            } 
+            
+
+            int left = i , right = n - 1;
+            int curr = i;
+            while (left <= right) {
+                int  mid = left + (right - left)/2 ;
+                // less than werthresh
+                 if (prefix[mid] - pre <= t) {
+                    curr = mid;
+                    left = mid + 1; 
+                 } else {
+                    right = mid - 1;
+                 }
+            }
+
+            res = max(res, curr - i + 1 ); 
+            
+        }
+
+        cout << res << endl; 
+
+        // first endpoint  we
       
 
-    }
+
     return 0;
 }

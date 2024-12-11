@@ -1,4 +1,4 @@
-    #include <bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
 #ifdef LOCAL
@@ -78,13 +78,44 @@ int main() {
     cin.tie(NULL);
 
     precomputeFactorials(N - 1);
-    /
+
     ll t;
     cin >> t;
     while (t--) {
 
-      
+        int n; 
+        char c;
+        string s; 
+        cin >> n >> c >> s;
+        
+        if (c == 'g') {
+            cout << 0 << endl; 
+            continue;
+        }
 
+        string concat = s + s;
+        // why does this wmake 
+
+        
+        
+        int firstseen = -1;
+        
+        int res = 0; 
+        for (int i = 0 ; i < concat.size(); i ++) {
+            if (concat[i] == c) {
+                if (firstseen == -1) {
+                    firstseen = i;
+                }
+            } else if (concat[i] == 'g') {
+                // if gree nthe  what 
+                if (firstseen != -1) {
+                    res = max(i - firstseen, res); 
+                    firstseen = -1; 
+                }
+            }
+        }
+
+        cout << res << endl;
     }
     return 0;
 }

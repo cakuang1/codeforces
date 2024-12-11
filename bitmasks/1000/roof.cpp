@@ -78,12 +78,28 @@ int main() {
     cin.tie(NULL);
 
     precomputeFactorials(N - 1);
-    /
+
     ll t;
     cin >> t;
     while (t--) {
+        w
+        ll n ;
+        cin >> n;
+        
+        // find max bit 
+        int mb = log2(n - 1); 
 
-      
+        for (int i = (1 << mb) - 1 ; i >= 0 ; i -- ) {
+            cout <<  i  << " " ;
+        }
+        
+        for (int i = (1 << mb) ; i <= n - 1 ; i ++) {
+            cout <<  i << " ";        }
+        
+
+        cout << endl ;
+
+        
 
     }
     return 0;

@@ -78,11 +78,14 @@ int main() {
     cin.tie(NULL);
 
     precomputeFactorials(N - 1);
-    /
+
     ll t;
     cin >> t;
     while (t--) {
 
+
+        // digut wc u writrten in it 
+        // cost of the ith digit  
       
 
     }

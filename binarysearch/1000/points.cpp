@@ -1,4 +1,4 @@
-    #include <bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
 #ifdef LOCAL
@@ -71,6 +71,14 @@ long long binaryExp(long long x, long long y, long long mod) {
     return result;
 }
 
+// find the smallest k such that k 
+bool check(ll somek ,ll n ) {
+    if (((somek + 1) * (somek + 1)) >= n) {
+        return true; 
+    }
+
+    return false; 
+}
 
 // whow woudl you wsee thsi w w
 int main() {
@@ -78,12 +86,29 @@ int main() {
     cin.tie(NULL);
 
     precomputeFactorials(N - 1);
-    /
+
     ll t;
     cin >> t;
     while (t--) {
+        ll n;
+        cin >> n;
 
-      
+        ll left = -1;
+        ll right =  1e9; 
+
+        // how to see this 
+        while (right - left > 1) {
+            ll mid = (left + right)/2;
+            
+            if (mid * mid >= n) {
+                right= mid ; 
+            } else{
+                left = mid;
+            }
+        }
+
+        cout << right - 1 << endl; 
+
 
     }
     return 0;

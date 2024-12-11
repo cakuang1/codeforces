@@ -1,4 +1,4 @@
-    #include <bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
 #ifdef LOCAL
@@ -72,19 +72,84 @@ long long binaryExp(long long x, long long y, long long mod) {
 }
 
 
-// whow woudl you wsee thsi w w
+/// binary search templaceis what  hwo do ywouwds wsee this ew 
+
+
+
+
+
+ll n ,m;
+vector<vector<ll>> grid;
+ll a,b;
+// how many masks do you have? 
+bool check(ll mid) {
+    vector<int> masks(1 << m , -1 );
+
+    // how to see thsi 
+    for (int i = 0 ; i < n; i ++) {
+        int curr = 0;
+        for (int j = 0 ; j < m ; j ++ ) {
+            if (grid[i][j] >= mid) {
+                curr |= (1 << j);
+            }
+        }
+
+        masks[curr] = i;
+    } 
+
+    if (masks[(1 << m) - 1] != -1) {
+        a = b = masks[(1 << m) - 1]; 
+        return true;
+    }
+
+
+
+    
+
+    for (int i = 0 ; i < 1 << m ; i ++) {
+        for (int j = i + 1 ; j  < 1 << m ; j ++) {
+            if (masks[i] != -1 && masks[j] != -1 && (i | j) == ((1 << m )- 1)) {
+                a = masks[i];
+                b = masks[j];
+                return true;
+            }
+        }
+    }
+
+    return false ;
+}
+
+
+
+// how many possible masks are there
+
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(NULL);
 
     precomputeFactorials(N - 1);
-    /
-    ll t;
-    cin >> t;
-    while (t--) {
+    cin >> n >> m;
+    grid.resize(n, vector<ll> (m));
 
-      
-
+    for (int r = 0 ; r < n; r ++) {
+        for (int c = 0 ; c < m ; c ++) {
+            cin >> grid[r][c];
+        }
     }
+    ll left = 0 , right = 1e9;
+
+    while (left <= right) {
+        ll mid = left + (right - left)/2; 
+        if (check(mid)) {
+            left = mid + 1;
+        } else {
+            right = mid - 1;
+        }
+    }
+
+    
+
+    // not sure 
+    cout << a + 1 << " " << b + 1 << endl;
     return 0;
 }

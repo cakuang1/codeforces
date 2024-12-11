@@ -78,13 +78,41 @@ int main() {
     cin.tie(NULL);
 
     precomputeFactorials(N - 1);
-    /
-    ll t;
-    cin >> t;
-    while (t--) {
+    ll n ,k,q;
+    cin >> n >> k >> q;
+    
+    vector<int> A(n);
+    vector<int> dp(n, 1);
+    
+    for (int i = 0 ; i < n ; i++) {
+        cin >> A[i]; 
+    }
 
-      
+    for (int i = 0 ; i < k ; i ++) {
+        vector<int> copy = dp;
+        for (int j = 0 ; j < n; j ++) {
+            if (j > 0) {
+                dp[i] = (copy[i - 1 ] + dp[i]);
+            }
+            if (j < n - 1) {
+                dp[i] = copy[i + 1] + dp[i];
+            }
+        }
+    }
 
+    // how to see this 
+    
+
+    for (int i =  0 ; i < n; i ++) {
+        sum +=   
+    }
+
+    
+
+    
+    while(q --) {
+        int a,b;
+        cin >> a >> b; 
     }
     return 0;
 }

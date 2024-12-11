@@ -71,6 +71,9 @@ long long binaryExp(long long x, long long y, long long mod) {
     return result;
 }
 
+// if its one then what w
+// possible states 
+int dp[21][21][60]; 
 
 // whow woudl you wsee thsi w w
 int main() {
@@ -78,13 +81,12 @@ int main() {
     cin.tie(NULL);
 
     precomputeFactorials(N - 1);
-    /
-    ll t;
-    cin >> t;
-    while (t--) {
+    int n ,m ;
+    ll k ;
+    cin >> n >> m >> k; 
 
-      
+    // track states  ww
 
-    }
+    vector<vector<int>> 
     return 0;
 }

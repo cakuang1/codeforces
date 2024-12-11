@@ -1,4 +1,4 @@
-    #include <bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
 #ifdef LOCAL
@@ -78,13 +78,12 @@ int main() {
     cin.tie(NULL);
 
     precomputeFactorials(N - 1);
-    /
-    ll t;
-    cin >> t;
-    while (t--) {
-
+    ll n,m ;
+    cin >> n >> m; 
+        ll one = binaryExp(2,m,mod) - 1; 
+        cout << binaryExp(one, n, mod) << endl;
       
 
-    }
+
     return 0;
 }

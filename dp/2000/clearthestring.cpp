@@ -72,19 +72,45 @@ long long binaryExp(long long x, long long y, long long mod) {
 }
 
 
+
+
+int dp[506][506];
+
+string s; 
+
+int calc(int l , int r) {
+
+    if (dp[l][r] != -1) return dp[l][r];
+    
+
+	if(l > r) return  0;
+
+    if (l == r) return 1;
+
+    
+    int curr = 1 + calc(l + 1, r);
+    
+    for (int i = l + 1 ; i <= r; i ++) {
+        if (s[i] == s[l]) {
+            curr = min(curr,  calc(l + 1,i - 1) + calc(i,r));
+        }
+    }
+
+    
+    dp[l][r] = curr;
+    return curr;
+}
+
 // whow woudl you wsee thsi w w
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(NULL);
+    memset(dp , -1 ,sizeof(dp));
 
-    precomputeFactorials(N - 1);
-    /
-    ll t;
-    cin >> t;
-    while (t--) {
+    int c;
+    cin >> c >> s; 
+    
 
-      
-
-    }
+    cout << calc(0, c - 1) << endl;
     return 0;
 }

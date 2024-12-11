@@ -1,4 +1,4 @@
-    #include <bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
 #ifdef LOCAL
@@ -78,11 +78,16 @@ int main() {
     cin.tie(NULL);
 
     precomputeFactorials(N - 1);
-    /
+
     ll t;
     cin >> t;
     while (t--) {
+        // what tha fk
 
+    
+        
+
+        
       
 
     }

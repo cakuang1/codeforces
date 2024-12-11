@@ -1,4 +1,4 @@
-    #include <bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
 #ifdef LOCAL
@@ -73,18 +73,58 @@ long long binaryExp(long long x, long long y, long long mod) {
 
 
 // whow woudl you wsee thsi w w
+
+string s; 
+
+int neigh[20][20]; 
+void preprocess() {
+    for (int i = 0 ; i < s.length() ; i ++) {
+        if  (i > 0) {
+            int val1 = s[i] - 'a'; 
+            int val2 = s[i + 1]  - 'a';  
+            neigh[val1][val2] ++; 
+            neigh[val2][val1] ++; 
+        }
+
+        if (i <  s.lenth() - 1) {
+            int val3 = s[i] - 'a'; 
+            int val4 = s[i + 1]  - 'a';  
+            neigh[val1][val2] ++; 
+            neigh[val2][val1] ++;    
+        }
+    }
+}
+
+// will you be able to se e thsi w w we
+// pre process 
+// determine the next character  
+
+
+// how to seee thsi wr w
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(NULL);
+    //wdoes this ake wense wr 
+    int n ,k;
+    cin >> n >> k;
+    cin >> s;
+    vector<int> password (n); 
+    for (int i = 0 ;i < n ;i ++) {
+        cin >> password[i];
+    } 
 
-    precomputeFactorials(N - 1);
-    /
-    ll t;
-    cin >> t;
-    while (t--) {
+    // does this make sense 
+    for (int i = 0 ; i <  k;  i++) {
+        for (int j = 0 ; j <  k ; j ++) {             
+        
 
-      
 
+        }
     }
+
+
+    // bitmask dp 
+
+
     return 0;
 }

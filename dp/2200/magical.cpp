@@ -76,14 +76,13 @@ long long binaryExp(long long x, long long y, long long mod) {
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(NULL);
-
     precomputeFactorials(N - 1);
-    /
+    // up to n distinct values  ewr
     ll t;
     cin >> t;
     while (t--) {
 
-      
+      // digit dp ?
 
     }
     return 0;

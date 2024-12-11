@@ -71,19 +71,24 @@ long long binaryExp(long long x, long long y, long long mod) {
     return result;
 }
 
+// tree rerooting 
+
+// root the tree whats the max 
+
+int v1,v2,v3;
+
+vector<vector<int>> adj; 
 
 // whow woudl you wsee thsi w w
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(NULL);
-
     precomputeFactorials(N - 1);
-    /
     ll t;
     cin >> t;
     while (t--) {
 
-      
+    // how to se 
 
     }
     return 0;

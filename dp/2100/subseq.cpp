@@ -71,6 +71,10 @@ long long binaryExp(long long x, long long y, long long mod) {
     return result;
 }
 
+int MAXN = 205
+int dp[MAXN][MAXN][MAXN];
+int dp2[MAXN][MAXN]; 
+// how to see thtsi 
 
 // whow woudl you wsee thsi w w
 int main() {
@@ -78,13 +82,61 @@ int main() {
     cin.tie(NULL);
 
     precomputeFactorials(N - 1);
-    /
-    ll t;
-    cin >> t;
-    while (t--) {
 
-      
+    int n , k ;
+    cin >> n >> k;
+    
+    string s1;
+    string s2;
+    cin >> s1 >> s2;    
+    vector<int>  A(n);
+    for (int i = 0 ; i < n; i++) {
+        cin >> A[i];    
+    } 
+    memset(dp ,-1 ,  sizeof(dp)); 
+    
 
+    dp[0][0][0] = 0 ;
+    // how can you push 
+    for (int index  = 0 ; index < n; i ++) {
+        for (int changes  =  0 ; changes <=  k ; changes ++) {
+            for (int count  = 0 , count  <= index + 1 ; count  ++) {
+                // uncreachable
+                if (dp[index][changes][count] == -1 ) continue;
+
+                // define flags 
+                
+                int  e0 = s1[i] == s2[0];
+                int  e1 = s1[i] == s2[1]; 
+                int  e01 = s2[0] == s2[1]; 
+                
+                dp[index + 1][changes][count + e0] =  max(dp[index + 1][changes][count + e0], dp[index][changes][count] + (e1  ?  count : 0));
+                if (changes < k) {
+                    // change it to
+                    dp[index + 1][changes + 1][count + 1] = max(dp[index + 1][changes + 1][count + 1] , dp[index][changes][count] + (e01 ? count : 0)); 
+                    dp[index + 1][changes + 1][count + e01] = max(dp[index + 1][changes + 1][count + e01], dp[index][changes][count] + (count)); 
+                 }
+
+
+            }
+        }
     }
+
+    int res = -1;
+    for (int i = 0 ; i <= k ; i ++ ) {
+        for (int j = 0 ; j <= n ; j ++ ) {
+            res = max(dp[n][i][j], res);
+        }
+    }
+
+    cout << res << endl;
+
+    // transitions  
+    // this dosen ttwrealy eamke wsense wer
+    // then wwhat we 
+
+
+
+
     return 0;
 }

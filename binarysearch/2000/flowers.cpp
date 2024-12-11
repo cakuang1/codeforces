@@ -78,13 +78,37 @@ int main() {
     cin.tie(NULL);
 
     precomputeFactorials(N - 1);
-    /
+
     ll t;
     cin >> t;
     while (t--) {
+        // why does this work 
+        int n ;
+        cin >> n; 
+        vector<pair<int,int>> flowers(n);
 
-      
+        // lets eassume this is the flower that will contain the rest 
+        
+        for (int i = 0 ; i  <n; i ++) {
+            int a ,b ;
+            cin >> a  >> b;
 
+            flowers[i] = {a,b};
+        }
+
+
+
+        sort(flowers.begin(),flowers.end());
+        
+
+        vector<int> prefix(n); 
+        prefix[0] = flowers[0].first;
+        
+        for (int i = 1; i < n; i ++) {
+            
+        }
+
+        for (int i = 0 ; i < )
     }
     return 0;
 }

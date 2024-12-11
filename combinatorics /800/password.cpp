@@ -1,4 +1,4 @@
-    #include <bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
 #ifdef LOCAL
@@ -30,7 +30,6 @@ ll modExp(ll x, ll y, ll m = mod) {
     return res;
 }
 
-// Function to precompute factorials and their modular inverses
 void precomputeFactorials(int n) {
     fact[0] = 1;
     for (int i = 1; i <= n; i++) {
@@ -42,8 +41,6 @@ void precomputeFactorials(int n) {
     }
 }
 
-
-// w
 // Function to calculate nCr % mod
 ll nCr(int n, int r) {
     if (r > n || r < 0) return 0;
@@ -56,35 +53,35 @@ ll nPr(int n, int r) {
     return (fact[n] * invFact[n - r]) % mod;
 }
 
-// Function to compute x^y % mod using binary exponentiation
-long long binaryExp(long long x, long long y, long long mod) {
-    long long result = 1;
-    x = x % mod; // Handle large x
-
-    while (y > 0) {
-        if (y & 1) { // If y is odd, multiply x with the result
-            result = (result * x) % mod;
-        }
-        y = y >> 1; // Divide y by 2
-        x = (x * x) % mod; // Square x
-    }
-    return result;
-}
-
-
-// whow woudl you wsee thsi w w
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(NULL);
 
     precomputeFactorials(N - 1);
-    /
+  // precomputeFactorials 
     ll t;
     cin >> t;
     while (t--) {
+        ll n; 
+        cin >> n;
+        set<ll> s;
+        for (int i = 0 ; i < n; i++) {
+            ll k;
+            cin >> k;
+            s.insert(k);   
+        }   
+        ll  remainder = 10 - s.size();
 
-      
+        // how to win and why it works  
+
+        // choose your two digits and find the number ways of placing 
+        cout << nCr(remainder, 2) * nCr(4,2)<< endl;
+
+
+          
+
 
     }
+
     return 0;
 }

@@ -1,4 +1,4 @@
-    #include <bits/stdc++.h>
+     #include <bits/stdc++.h>
 using namespace std;
 
 #ifdef LOCAL
@@ -72,19 +72,67 @@ long long binaryExp(long long x, long long y, long long mod) {
 }
 
 
+// determine the number of connected compeonets   w w
+
+
+vector<int> p, rk;
+
+int get(int a ) {
+    if (p[a] == a) {
+        return a; 
+    }
+    return p[a] = get(p[a]); 
+}
+
+
+
+// does this make sense we
+void merge(int a , int b) {
+    
+    a = get(a);
+    b = get(b);
+    
+    if (a == b) return ;
+
+
+    if (rk[b] >   rk[a] ) {
+        swap(a,b); 
+    }    
+    rk[a] +=rk[b]; 
+    p[b] = a;
+}
+
 // whow woudl you wsee thsi w w
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(NULL);
 
-    precomputeFactorials(N - 1);
-    /
-    ll t;
-    cin >> t;
-    while (t--) {
-
-      
-
+    int n; 
+    cin >> n;
+    
+    if (n == 1) {
+        cout << 0 << endl;
+        return 0;
     }
+    p.resize(n + 1);            
+    rk.resize(n + 1); 
+
+    for (int i = 1;  i <= n; i ++) {
+        p[i] = i;
+        rk[i] = 1;
+    }           
+
+
+    for (int i = 0 ; i < n - 1; i ++) {
+        int a ,b;
+        cin >> a >> b; 
+        merge(a,b);
+    }
+    unordered_set<int> s;
+    for (int i = 1 ; i <= n; i++) {
+        s.insert(get(i));        
+    }    
+
+    cout << s.size() << endl; 
     return 0;
 }

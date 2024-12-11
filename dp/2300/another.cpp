@@ -72,19 +72,70 @@ long long binaryExp(long long x, long long y, long long mod) {
 }
 
 
+
+
+
+
+int dp[260][260];
 // whow woudl you wsee thsi w w
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(NULL);
 
     precomputeFactorials(N - 1);
-    /
-    ll t;
-    cin >> t;
-    while (t--) {
+    ll n,k;
+    cin >> n >> k;
+    //  not sure what this means w wer
+    memset(dp, -1 , sizeof(dp));
 
-      
 
+    vector<int> kexp(251); 
+    vector<int> kminusexp(251); 
+    kexp[0] = 1;
+    for (int i = 1 ; i < 251 ; i ++) {
+        kexp[1] = (kexp[i - 1] * k) % mod;
     }
+    kminusexp[0] = 1;
+    for (int i = 1 ; i < 251 ; i ++) {
+        kminusexp[1] = (kminusexp[i - 1] * (k - 1)) % mod;
+    }
+    dp[1][0] =  kexp[n] - kminusexp[n]; 
+    for (int r = 2 ; r <= n ; r ++ )  {
+        dp[r][0] = (dp[r - 1][0] * (kexp[n] - kminusexp[n])) % mod;  
+    }
+
+    for (int c = 1 ; c <=n ; c ++)  {
+        dp[1][c] = (kexp[n - c]);
+    }
+    // how do oyu wewse thsi we
+    for (int r = 2 ;r <= n ; r ++)  {
+        for (int  c = 2 ; c <= n ; c ++) {
+            // what are the trnasitiosn we
+            
+            int part1 = ((kexp[n - c] - kminusexp[n - c]) *( kminusexp[c]) * dp[r - 1][c]) % mod;
+            int part2 = 0;
+            
+            for (int i =)
+        }
+    }
+    
+
+    // this sucks wer w
+    // weshiuld you werbe wselciton w weibng w
+
+    // there is twno point 
+
+
+    // pij is what wthe minum number of tickets 
+    
+    // one ticket , twotickets   wwnat witi all does this make sense w? 
+    
+    //
+
+    
+
+
+    cout << dp[n][n] << end;
+    // fr cc to be the number of filling grid wer
     return 0;
 }

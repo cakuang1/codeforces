@@ -71,20 +71,24 @@ long long binaryExp(long long x, long long y, long long mod) {
     return result;
 }
 
+/
 
-// whow woudl you wsee thsi w w
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(NULL);
 
-    precomputeFactorials(N - 1);
-    /
-    ll t;
-    cin >> t;
-    while (t--) {
-
-      
-
+    int n; 
+    cin >> n; 
+    vector<vector<int>> adj(n);
+    for (int i = 0 ; i <n ;  i++) {
+        int a , b ;
+        cin >> a >> b;       
+        adj[]
     }
+
+    vector<int> order
+
+
     return 0;
 }
+

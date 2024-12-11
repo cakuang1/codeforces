@@ -1,4 +1,4 @@
-    #include <bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
 #ifdef LOCAL
@@ -42,9 +42,6 @@ void precomputeFactorials(int n) {
     }
 }
 
-
-// w
-// Function to calculate nCr % mod
 ll nCr(int n, int r) {
     if (r > n || r < 0) return 0;
     return (fact[n] * invFact[r] % mod) * invFact[n - r] % mod;
@@ -72,19 +69,35 @@ long long binaryExp(long long x, long long y, long long mod) {
 }
 
 
-// whow woudl you wsee thsi w w
+int dp1[100005];  
+int dp2[100005];
+
+
+// does this make sense ??? 
+
+
+//
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(NULL);
+    int n; 
+    cin >> n;
+    vector<vector<int> adj(n + 1 ,vector<int> );
+    for (int i = 0 ; i < n - 1; i ++) {
+        int a, b;
+        cin >> a >> b; 
+        adj[a].push_back(b);
+        adj[b].push_back(a);
+    } 
 
-    precomputeFactorials(N - 1);
-    /
-    ll t;
-    cin >> t;
-    while (t--) {
+    vector<int> dp1(n + 1);    
+    vector<int> dp2(n + 1);
+    
 
-      
-
-    }
+    // how do you see this  ??
+    
     return 0;
 }
+
+
+ 

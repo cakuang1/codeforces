@@ -1,4 +1,4 @@
-    #include <bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
 #ifdef LOCAL
@@ -78,13 +78,32 @@ int main() {
     cin.tie(NULL);
 
     precomputeFactorials(N - 1);
-    /
-    ll t;
-    cin >> t;
-    while (t--) {
 
-      
+    ll n; 
+    cin >>n;
+    vector<ll> nums(n);
 
+    for (int i = 0 ; i < n; i ++) {
+        cin >> nums[i];
     }
+
+
+
+    sort(nums.begin(), nums.end());
+    vector<ll> resvector(n); 
+    
+    // odd case 
+    if (n % 2) {
+        // then wwha
+    } else{
+        // even case ? 
+        // how does one see this w? w
+    }
+
+    
+
+
+    // id iy sleayd better w w   
+
     return 0;
 }

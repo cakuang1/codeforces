@@ -1,4 +1,4 @@
-    #include <bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
 #ifdef LOCAL
@@ -78,12 +78,29 @@ int main() {
     cin.tie(NULL);
 
     precomputeFactorials(N - 1);
-    /
+
     ll t;
     cin >> t;
     while (t--) {
+        
+        ll k ,n;
+        cin >> n >> k ;
+        vector<ll> nums(n);
+        for (int i = 0 ; i < n; i ++)  {
+            cin >> nums[i]; 
+        }
+        ll res = 0;
 
-      
+        // how mant possible subseuqences are there
+        // how many subsequneces 
+        // choose
+        cout << res << endl; 
+    
+        // subsseuqnces and 
+
+        // contribution  
+
+        
 
     }
     return 0;

@@ -1,4 +1,4 @@
-    #include <bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
 #ifdef LOCAL
@@ -78,12 +78,45 @@ int main() {
     cin.tie(NULL);
 
     precomputeFactorials(N - 1);
-    /
+
     ll t;
     cin >> t;
     while (t--) {
 
-      
+        ll n,k;
+        cin >> n >> k ;
+        
+
+        // maximummout nwof mice 
+        // simulate this  
+
+        vector<ll> mice(k); 
+        for (int i = 0 ; i < k ; i ++) {
+            cin >> mice[i];
+        }
+
+        sort(mice.begin(), mice.end() , greater<>());
+
+        ll catposition = 0;
+        ll res = 0; 
+        for (int i = 0 ; i  < k  ; i ++) {
+            ll rat = mice[i];
+            
+            // how to see this  
+            if (rat <=  catposition) {
+                break;
+            }
+
+            ll distance = n - rat; 
+            catposition += distance;
+            res ++; 
+            
+        }        
+
+
+        cout << res << endl; 
+        
+        
 
     }
     return 0;

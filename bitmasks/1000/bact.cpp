@@ -78,13 +78,18 @@ int main() {
     cin.tie(NULL);
 
     precomputeFactorials(N - 1);
-    /
+
     ll t;
     cin >> t;
-    while (t--) {
-
-      
-
+    int count = 0 ;
+    while (t) {
+        if (t & 1) {
+            count ++ ;
+        }
+        t >>= 1; 
     }
+    // w
+    cout << count << endl;
+    /// represetnbit mmask w
     return 0;
 }

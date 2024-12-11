@@ -78,12 +78,19 @@ int main() {
     cin.tie(NULL);
 
     precomputeFactorials(N - 1);
-    /
+
     ll t;
     cin >> t;
     while (t--) {
 
-      
+        // prefix 
+        // given some coints whats the maximuwem number of wdamge you wgcan yd
+
+        // cant perform w
+        ll x,y,z,k;
+        cin >> x >> y >> z >> k; 
+        
+        //
 
     }
     return 0;

@@ -1,4 +1,4 @@
-    #include <bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
 #ifdef LOCAL
@@ -56,35 +56,43 @@ ll nPr(int n, int r) {
     return (fact[n] * invFact[n - r]) % mod;
 }
 
-// Function to compute x^y % mod using binary exponentiation
-long long binaryExp(long long x, long long y, long long mod) {
-    long long result = 1;
-    x = x % mod; // Handle large x
-
-    while (y > 0) {
-        if (y & 1) { // If y is odd, multiply x with the result
-            result = (result * x) % mod;
-        }
-        y = y >> 1; // Divide y by 2
-        x = (x * x) % mod; // Square x
-    }
-    return result;
-}
-
-
-// whow woudl you wsee thsi w w
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(NULL);
 
     precomputeFactorials(N - 1);
-    /
+  // precomputeFactorials 
     ll t;
     cin >> t;
     while (t--) {
 
-      
+        string s;
+        cin >> s; 
+        int n = s.length();
+        
+        if (s[0] == '0') {
+            cout << 0 << endl;
+            continue;
+        }
+        int curr = 1; 
+        for (int i = 0 ; i < n ; i++) {
+            if (s[i] == '?') {
+                if (i == 0) {
+                    curr *= 9;
+                } else {
+                    curr *= 10; 
+                }
+            }
+        }
 
+        if (curr == 1) {
+            cout << 1 << endl;
+        } else{ 
+            cout << curr << endl;
+        }
+
+        
     }
+
     return 0;
 }

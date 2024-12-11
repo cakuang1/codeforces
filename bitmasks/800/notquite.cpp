@@ -78,11 +78,38 @@ int main() {
     cin.tie(NULL);
 
     precomputeFactorials(N - 1);
-    /
+
     ll t;
     cin >> t;
     while (t--) {
+        
+        // dpoes snt werrleat wly make sense w
+         
+        int a = 0 , b = 0 , c = 0; 
+        
+        for (int i = 0 ; i < 9 ; i ++) {
+            char d; 
+            cin >> d;
+            if (d == 'A') {
+                a ^= 1;
+            } else if (d == 'B') {
+                b ^= 1; 
+            } else if (d == 'C') {
+                c ^= 1; 
+            }
+        }
 
+        
+
+         
+        
+        if (a == 0) {
+            cout << "A" << endl;
+        } else if (b == 0) {
+            cout << "B" << endl; 
+        }  else {
+            cout << "C" << endl;
+        }
       
 
     }

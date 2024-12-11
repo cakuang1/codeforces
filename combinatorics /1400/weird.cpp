@@ -1,4 +1,4 @@
-    #include <bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
 #ifdef LOCAL
@@ -78,13 +78,43 @@ int main() {
     cin.tie(NULL);
 
     precomputeFactorials(N - 1);
-    /
-    ll t;
-    cin >> t;
-    while (t--) {
 
-      
+    int a ,b;
+    cin >> a >> b; 
+    unordered_map<int ,vector<int>> rows; 
+    unordered_map<int ,vector<int>> cols;
 
+    for (int r = 0; r < a; r ++) {
+        for (int c = 0 ; c  < b ;c ++) {
+            int k; 
+            cin >> k;
+            rows[k].push_back(r);
+            cols[k].push_back(c);
+        }
     }
+
+    ll res = 0;
+
+    for (auto& [val, counts] : rows) {
+        sort(counts.begin(), counts.end()); 
+        int n = counts.size();
+        for (int i = 0; i < n; i++) {
+            // Cast counts[i] or (i - (n - i - 1)) to long long before multiplication
+            res += (1LL * counts[i] * (i - (n - i - 1)));
+        }
+    }
+
+    for (auto& [val, counts] : cols) {
+        sort(counts.begin(), counts.end());
+        int n = counts.size();
+        for (int i = 0; i < n; i++) {
+            // Cast counts[i] or (i - (n - i - 1)) to long long before multiplication
+            res += (1LL * counts[i] * (i - (n - i - 1)));
+        }
+    }
+
+
+    cout << res << endl ;
+    
     return 0;
 }

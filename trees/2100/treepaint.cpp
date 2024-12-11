@@ -84,7 +84,7 @@ int main() {
     while (t--) {
 
       
-
+        // submitting nastua weplayes wwith wa tre ewr
     }
     return 0;
 }

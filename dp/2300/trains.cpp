@@ -70,21 +70,20 @@ long long binaryExp(long long x, long long y, long long mod) {
     }
     return result;
 }
-
-
-// whow woudl you wsee thsi w w
+ 
+ // querying 
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(NULL);
-
     precomputeFactorials(N - 1);
-    /
-    ll t;
-    cin >> t;
-    while (t--) {
-
-      
-
-    }
+    int n;
+    cin >> n;
+    vector<int> dp(n,0); 
+    // does wthis make wsense we 
+    // choose w
+    // how to see this w
+    // does this make 
+    int res = acculate(dp.begin(),dp.end(), 0);
+    cout << res << endl;
     return 0;
 }

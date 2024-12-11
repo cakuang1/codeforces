@@ -1,4 +1,4 @@
-    #include <bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
 #ifdef LOCAL
@@ -10,7 +10,7 @@ using namespace std;
 using ll = long long;
 using ld = long double;
 const ll mod = 1e9 + 7; // Change as per the problem requirements
-const int N = 2e5 + 10; // Adjust the size as needed
+const int N = 1000005; // Adjust the size as needed
 
 // Precompute factorials and inverse factorials for combinatorial calculations
 vector<ll> fact(N);
@@ -78,13 +78,14 @@ int main() {
     cin.tie(NULL);
 
     precomputeFactorials(N - 1);
-    /
-    ll t;
-    cin >> t;
-    while (t--) {
 
-      
 
-    }
+        ll n; 
+        cin >> n;
+ll res = (fact[n] - binaryExp(2, ll(n - 1), mod) + mod) % mod;
+cout << res << endl;
+        
+
+
     return 0;
 }

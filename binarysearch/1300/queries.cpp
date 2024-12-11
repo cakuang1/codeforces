@@ -1,4 +1,4 @@
-    #include <bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
 #ifdef LOCAL
@@ -78,13 +78,43 @@ int main() {
     cin.tie(NULL);
 
     precomputeFactorials(N - 1);
-    /
-    ll t;
-    cin >> t;
-    while (t--) {
 
-      
+    ll n,m ;
+    cin >> n >> m;
 
+    vector<ll> a(n);
+    
+    for (int i = 0 ; i < n; i ++) {
+        cin >> a[i];
+    }
+
+
+    sort(a.begin(),a.end());
+    
+    //
+    for (int i = 0  ; i < m ; i ++ ) {
+        ll q;
+        cin >> q; 
+        
+        int res = -1;
+        int left = 0 , right = n - 1; 
+
+        while (left <= right) {
+            int mid = left + (right - left)/2;
+            
+            if (a[mid] <= q) {
+                res = mid;
+                left = mid + 1;
+            } else{
+                right = mid - 1;
+            }
+        }
+
+        if (res == -1) {
+            cout << 0 << endl;
+        } else{
+            cout << res + 1 << endl; 
+        }
     }
     return 0;
 }

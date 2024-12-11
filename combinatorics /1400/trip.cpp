@@ -1,4 +1,4 @@
-    #include <bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
 #ifdef LOCAL
@@ -71,20 +71,33 @@ long long binaryExp(long long x, long long y, long long mod) {
     return result;
 }
 
+// 
 
-// whow woudl you wsee thsi w w
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(NULL);
 
     precomputeFactorials(N - 1);
-    /
+
     ll t;
     cin >> t;
+    map<tuple<int,int,int>, int>m; 
     while (t--) {
+        cin >> n; 
+        vector<int> nums(n); 
+        for (int i = 0 ; i < n; i ++) {
+            cin >> nums[i]; 
+        }
+        ll res = 0;
+        for (int i =  2 ; i < n; i ++) {
+            int a = nums[i - 2] ,b = nums[i - 1] , c = nums[i];
+            
+            tuple<int,int,int> = {a,b,c}; 
+            
+            
+        }
 
-      
-
+        cout << res << endl;  
     }
     return 0;
 }

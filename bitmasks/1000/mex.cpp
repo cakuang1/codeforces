@@ -72,16 +72,46 @@ long long binaryExp(long long x, long long y, long long mod) {
 }
 
 
+
 // whow woudl you wsee thsi w w
-int main() {
+int main() {    
     ios::sync_with_stdio(false);
     cin.tie(NULL);
-
     precomputeFactorials(N - 1);
-    /
     ll t;
     cin >> t;
+
+
+    vector<int> pref(300006, 0 ); 
+    for (int i = 1 ;i < 300006; i ++) {
+        pref[i] =  pref[i - 1] ^ i; 
+    }
     while (t--) {
+        int a,b;
+        cin >> a>> b;   
+
+        int curr = pref[a - 1] ;
+
+
+         
+        // the mex is what we
+        int needed =  b ^ curr;
+        
+        if (curr == b) {
+            cout << a << endl;
+        } else if (needed  == a) {
+            cout << a + 2 << endl ;
+        } else {
+            cout << a + 1 << endl;
+        }
+
+        // not sr
+        // edoes this mereally make wsense
+        
+
+        
+
+        // determie 
 
       
 

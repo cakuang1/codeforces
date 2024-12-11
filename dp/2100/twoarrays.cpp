@@ -71,20 +71,35 @@ long long binaryExp(long long x, long long y, long long mod) {
     return result;
 }
 
-
+ll MOD2 = 998244353; 
 // whow woudl you wsee thsi w w
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(NULL);
 
     precomputeFactorials(N - 1);
-    /
-    ll t;
-    cin >> t;
-    while (t--) {
 
-      
+    ll n , m;
+    cin >> n >> m; 
+    vector<ll> a(n); 
+    vector<ll> b(m);
 
+    for (int i = 0 ; i < n; i ++) {
+        cin >> a[i]; 
+    } 
+
+    for( int i = 0 ; i < m ; i ++) {
+        cin >> b[i]; 
     }
+    // wposbible wsplts we we 
+    // when can we split the arary 
+    vector<ll> maxfromright(n);
+    vector<ll> minfromright(n);
+    // dosent make wsense  wr 
+        // b is strictly increasing what does this mean 
+
+
+
+    // increasing order  
     return 0;
 }

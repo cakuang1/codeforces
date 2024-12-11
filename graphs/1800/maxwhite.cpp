@@ -71,20 +71,86 @@ long long binaryExp(long long x, long long y, long long mod) {
     return result;
 }
 
+int n ;
+vector<int> color;
 
-// whow woudl you wsee thsi w w
+vector<vector<int>> adj;
+
+
+// subtree must contain wethe w w 
+
+vector<int> dp1;
+vector<int> dp2;
+
+
+void dfs(int curr , int p) {
+    
+    // some dp aspects 
+    int val = color[curr] == 1 ? 1 : -1;  
+    for (int n : adj[curr] ) {
+        if (n == p) continue;
+        dfs(n,curr); 
+        val += dp1[n]; 
+    }
+    //  max isfi yo uwedo take it hten wwhat d oyuo do w wmight as well not take wit w
+    dp1[curr] = max(0, val); 
+}
+
+
+// max including this but
+
+void dfs2(int curr , int parent )  { 
+    
+    for (int n : adj[curr]) {
+        if (n == parent) continue;
+            
+    }
+}
+// grab the val and how do you dealwith wsuc w w
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(NULL);
 
-    precomputeFactorials(N - 1);
-    /
-    ll t;
-    cin >> t;
-    while (t--) {
-
-      
-
+    cin >> n;
+    
+    // whats the maximum subtree of this size    w how do  w w
+    colors.resize(n + 1 );
+    for (int i = 1; i <= n; i ++) {
+        cin >> colors[i];
     }
+
+
+    
+    for (int i = 0 ; i < n; i ++) {
+        int a , b;
+        cin >> a >> b; 
+        adj[a].push_back(b); 
+        adj[b].push_back(a); 
+    }    
+
+    // whats wthe difrene herwer 
+    dp1.resize(n + 1, 0); 
+    dp2.resize(n + 1, 0); 
+    // must include 
+    for (int i =  1 ; i <= n; i ++) {
+        dp2[i] = colors[i] == 1 ? 1 : -1; 
+    }
+    // o(n);   
+    dfs1(1,-1); 
+    dfs2(1, -1);
+    
+    for (int i = 1 ; i <= n ; i ++ ) [
+        cout << dp2[i] << endl; 
+    ]
+
+
+
+
+
+    // wdefine wd wp  
+    
+
+
+    
     return 0;
 }

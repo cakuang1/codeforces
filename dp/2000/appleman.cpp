@@ -78,13 +78,11 @@ int main() {
     cin.tie(NULL);
 
     precomputeFactorials(N - 1);
-    /
-    ll t;
-    cin >> t;
-    while (t--) {
 
-      
+    int n;
+    cin >> n;
+    
 
-    }
+    // l
     return 0;
 }

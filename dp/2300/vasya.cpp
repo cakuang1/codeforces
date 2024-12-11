@@ -78,13 +78,21 @@ int main() {
     cin.tie(NULL);
 
     precomputeFactorials(N - 1);
-    /
-    ll t;
-    cin >> t;
-    while (t--) {
-
-      
-
-    }
+    int n,m;
+    cin >> n >> m;
+    int min = 2e9;
+    int mincount = 0; 
+    vector<vector<int>> matrix(n, vector<int> (m));
+    for (int i = 0 ;i < n;  i ++) {
+        for (int j = 0 ; j < m ; j ++) {
+            cin >> matrix[i][j];
+        }
+    }    
+    int r,c;
+    cin >> r >> c; 
+    int curr = matrix[r][c];
+    
+    // werr
+    // whats the expected
     return 0;
 }

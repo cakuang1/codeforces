@@ -1,4 +1,4 @@
-    #include <bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
 #ifdef LOCAL
@@ -78,13 +78,32 @@ int main() {
     cin.tie(NULL);
 
     precomputeFactorials(N - 1);
-    /
-    ll t;
+    
+
+    ll t; 
     cin >> t;
-    while (t--) {
 
-      
+    while (t --) {
+        string s; 
+        cin >> s;
+        int n = s.size();
 
+        vector<int> rs= {0};
+        for (int i = 1 ; i <=n ; i ++) {
+            if (s[i - 1] == 'R') {
+                rs.push_back(i);
+            }
+        }
+
+        rs.push_back(n + 1);
+        
+
+        int maxgap = 0;
+        for (int i  = 1; i < rs.size() ; i ++) {
+            maxgap = max(maxgap, rs[i] - rs[i - 1]);
+        }
+        //w 
+        cout << maxgap << endl;
     }
     return 0;
 }

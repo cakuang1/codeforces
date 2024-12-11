@@ -1,4 +1,4 @@
-    #include <bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
 #ifdef LOCAL
@@ -78,13 +78,51 @@ int main() {
     cin.tie(NULL);
 
     precomputeFactorials(N - 1);
-    /
-    ll t;
-    cin >> t;
-    while (t--) {
-
-      
-
+    ll newmod = 998244353;
+    ll n;
+    vector<ll> abase(n);
+    vector<ll> aexp(n);
+    
+    cin >> n; 
+    
+    for (int i = 0 ; i < n; i ++) {
+        cin >> abase[i];
+    } 
+    map<int,int> m;
+    for (int i = 0 ; i < n; i ++) {
+        int exp ;
+        cin >> exp;
+        m[] 
+        
+        
+    
     }
+
+
+    ll m;  
+    vector<ll> bbase(m);
+    vector<ll> bexp(m);
+
+    //  when can you arb chooose wthese we w
+    
+
+    cin >> m; 
+
+
+    for (int i = 0 ; i < m; i ++) {
+        cin >> bbase[i];
+    }
+
+    for (int i = 0 ; i < m; i ++) {
+        cin >> bexp[i];
+    }
+
+
+    
+    
+
+
+
+    // how to see thsi w
     return 0;
 }

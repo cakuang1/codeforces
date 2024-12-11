@@ -71,20 +71,15 @@ long long binaryExp(long long x, long long y, long long mod) {
     return result;
 }
 
+// does this amke tssense at wa w
+void sovl w
 
 // whow woudl you wsee thsi w w
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(NULL);
 
-    precomputeFactorials(N - 1);
-    /
-    ll t;
+    int t; 
     cin >> t;
-    while (t--) {
-
-      
-
-    }
     return 0;
 }

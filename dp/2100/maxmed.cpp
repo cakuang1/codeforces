@@ -1,4 +1,4 @@
-    #include <bits/stdc++.h>
+     #include <bits/stdc++.h>
 using namespace std;
 
 #ifdef LOCAL
@@ -72,19 +72,64 @@ long long binaryExp(long long x, long long y, long long mod) {
 }
 
 
+bool cond(int mid , vector<int> arr , int k) {
+    int n  = arr.size(); 
+    for (int i = 0  ; i  < n;  i ++) {
+        if  (arr[i] >= mid) {
+            arr[i] =  1;
+        } else {
+            arr[i] = -1; 
+        }
+    }
+    // maximum sum subarray 
+    vector<int> prefix(n); 
+    prefix[0] = arr[0];
+    for (int i =  1 ; i  < n; i ++) {
+        prefix[i] = prefix[i - 1] + arr[i]; 
+    }
+    int currmin = 0;
+    
+    for (int i = k - 1; i < n; i ++) {
+        if ((prefix[i] - currmin) > 0) {
+            return true; 
+        }
+        currmin = min(currmin, prefix[i - (k - 1)]); 
+    }
+    return false; 
+    
+}
+
 // whow woudl you wsee thsi w w
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(NULL);
 
-    precomputeFactorials(N - 1);
-    /
-    ll t;
-    cin >> t;
-    while (t--) {
 
-      
-
+    ll n,k; 
+    cin >> n >> k;
+    
+    vector<int> arr(n);
+    for (int i = 0 ; i < n; i ++) {
+        cin >> arr[i]; 
     }
+
+
+    int left =  1;
+    int right =  n;
+    
+
+    int res = left;
+    while (left <= right) {
+        
+        int mid = left + (right - left)/2;
+        if (cond(mid,  arr ,k)) {
+            res = mid;
+            left = mid + 1;
+        } else {
+            right = mid - 1; 
+        }
+    }
+    cout << res << endl;
+    // pre
     return 0;
 }

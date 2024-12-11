@@ -78,13 +78,17 @@ int main() {
     cin.tie(NULL);
 
     precomputeFactorials(N - 1);
-    /
+
     ll t;
     cin >> t;
     while (t--) {
 
-      
-
+        // how to see thsi  w
+        int a , b , c ;
+         
+        cin >> a >> b >> c;
+        // xor  all of the m
+        cout <<(( a ^ b) ^ c) << endl;
     }
     return 0;
 }

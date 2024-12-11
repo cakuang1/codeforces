@@ -71,7 +71,6 @@ long long binaryExp(long long x, long long y, long long mod) {
     return result;
 }
 
-
 // whow woudl you wsee thsi w w
 int main() {
     ios::sync_with_stdio(false);
