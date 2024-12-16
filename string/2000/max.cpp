@@ -88,7 +88,10 @@ int main() {
     ll t;
     cin >> t;
     while (t--) {
-        // focus weon specific topics w
+        string s; 
+        cin >> s;
+        
+        // always benefcial wt d0p what w
     }
 
     return 0;

@@ -80,16 +80,67 @@ ll nPr(int n, int r, ll m = mod) {
     return (fact[n] * invFact[n - r]) % m;
 }
 
+vector<int> computeZFunction(const string &s) {
+    int n = s.size();
+    vector<int> z(n);
+    int l = 0, r = 0;
+    for (int i = 1; i < n; ++i) {
+        if (i <= r) {
+            z[i] = min(r - i + 1, z[i - l]);
+        }
+        while (i + z[i] < n && s[z[i]] == s[i + z[i]]) {
+            ++z[i];
+        }
+        if (i + z[i] - 1 > r) {
+            l = i;
+            r = i + z[i] - 1;
+        }
+    }
+    return z;
+}
+
+// Prefix Function (KMP Failure Table)
+vector<int> computePrefixFunction(const string &pattern) {
+    int n = pattern.size();
+    vector<int> pi(n);
+    for (int i = 1; i < n; ++i) {
+        int j = pi[i - 1];
+        while (j > 0 && pattern[i] != pattern[j]) {
+            j = pi[j - 1];
+        }
+        if (pattern[i] == pattern[j]) {
+            ++j;
+        }
+        pi[i] = j;
+    }
+    return pi;
+}
+
+
+
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(NULL);
 
     // Number of test cases
-    ll t;
-    cin >> t;
-    while (t--) {
-        // focus weon specific topics w
+    string s ;
+    cin >> s;
+    int n = s.size();  
+    vecotr<int> pref = computePrefixFunction(s); 
+    vector<int> z = computeZFunction(s); 
+
+    int longest = pref[n - 1]; 
+    vector<int> counter(n - 1, 0);
+    for (int i = 0 ; i <  n; i ++) {
+        counter[min(longest, z[i])] ++; 
+    }
+    int count = 0;
+    for (int i = n - 1; i >= 0 ; i --) {
+        
+        if ()
     }
 
+    // 
+    
     return 0;
 }
