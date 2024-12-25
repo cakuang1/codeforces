@@ -27,13 +27,16 @@ ll power(ll a, ll b) {
     return result;
 }
 
+
 ll mod_inverse(ll n, ll m = mod)  {
     return power(n, m - 2);
-} 
-
-// maximum possible values w
+}
 
 
+
+
+
+// Function to compute x^y % mod using binary exponentiation
 ll modExp(ll x, ll y, ll m = mod) {
     ll res = 1;
     x = x % m;
@@ -56,13 +59,15 @@ ll modExp(ll x, ll y, ll m = mod) {
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(NULL);
+    
+    int n  ,x;
+    cin >> n >> x; 
+    // how to see thsi we 
+    
 
-    // Number of test cases
-    ll t;
-    cin >> t;
-    while (t--) {
-        // focus weon specific topics w
-    }
+    vector<int> res(n); 
+
+    //w    
 
     return 0;
 }

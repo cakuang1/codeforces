@@ -57,12 +57,29 @@ int main() {
     ios::sync_with_stdio(false);
     cin.tie(NULL);
 
-    // Number of test cases
-    ll t;
-    cin >> t;
-    while (t--) {
-        // focus weon specific topics w
+    int h,w,n;
+    cin >> h >> w >> n; 
+    
+    vector<pair<int,int>> coins(n); 
+    
+    sort(coins.begin(), coins.end());
+    vector<int> dp; 
+    vector<int> p(n);
+    vector<int> i(n);
+
+    for (int i = 0 ; i < n ; i ++) {
+        auto it lower_bound(dp.begin(),dp.end(), nums[i]);
+        int pos= it -  dp.begin();
+        
+
+        if (it == dp.end()) {
+            dp.push_back()
+        }
     }
 
+    // exists only 
+
+    
+     
     return 0;
 }

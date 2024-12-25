@@ -1,114 +1,16 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-using ll = long long;
-const ll mod = 1e9 + 7; // Default modulo
-const int N = 2e5 + 10; // Adjust size as needed
-const ll p = 31;        // Base for hashing
-
-// Precompute factorials and inverse factorials for combinatorial calculations
-vector<ll> fact(N), invFact(N);
-
-// Function to compute x^y % mod using binary exponentiation
-ll modExp(ll x, ll y, ll m = mod) {
-    ll res = 1;
-    x = x % m;
-    while (y > 0) {
-        if (y & 1) {
-            res = (res * x) % m;
-        }
-        y = y >> 1;
-        x = (x * x) % m;
-    }
-    return res;
-}
-
-
-
-struct StringHash {
-    vector<ll> hash, power;
-    ll n;
-
-    StringHash(const string &s) {
-        n = s.size();
-        hash.resize(n + 1, 0);
-        power.resize(n + 1, 1);
-
-        // Precompute hash values and powers of p
-        for (int i = 0; i < n; i++) {
-            hash[i + 1] = (hash[i] + (s[i] - 'a' + 1) * power[i]) % mod;
-            if (i < n - 1)
-                power[i + 1] = (power[i] * p) % mod;
-        }
-    }
-
-    // Compute hash of substring s[l..r] (0-based indexing)
-    ll getHash(int l, int r) {
-        ll result = (hash[r + 1] - hash[l] * power[r - l + 1] % mod + mod) % mod;
-        return result;
-    }
-};
-
-
-
-// Function to compute modular inverse of a under modulo mod
-ll modInverse(ll a, ll m = mod) {
-    return modExp(a, m - 2, m); // Fermat's Little Theorem for prime mod
-}
-
-// Function to precompute factorials and their modular inverses
-void precomputeFactorials(int n, ll m = mod) {
-    fact[0] = 1;
-    for (int i = 1; i <= n; i++) {
-        fact[i] = (fact[i - 1] * i) % m;
-    }
-    invFact[n] = modExp(fact[n], m - 2, m); // Fermat's Little Theorem for modular inverse
-    for (int i = n - 1; i >= 0; i--) {
-        invFact[i] = (invFact[i + 1] * (i + 1)) % m;
-    }
-}
-
-// Function to calculate nCr % mod
-ll nCr(int n, int r, ll m = mod) {
-    if (r > n || r < 0) return 0;
-    return (((fact[n] * invFact[r]) % m) * invFact[n - r]) % m;
-}
-
-// Function to calculate nPr % mod
-ll nPr(int n, int r, ll m = mod) {
-    if (r > n || r < 0) return 0;
-    return (fact[n] * invFact[n - r]) % m;
-}
-
-vector<int> computeZFunction(const string &s) {
+// Function to compute the prefix function
+vector<int> computePrefixFunction(const string &s) {
     int n = s.size();
-    vector<int> z(n);
-    int l = 0, r = 0;
-    for (int i = 1; i < n; ++i) {
-        if (i <= r) {
-            z[i] = min(r - i + 1, z[i - l]);
-        }
-        while (i + z[i] < n && s[z[i]] == s[i + z[i]]) {
-            ++z[i];
-        }
-        if (i + z[i] - 1 > r) {
-            l = i;
-            r = i + z[i] - 1;
-        }
-    }
-    return z;
-}
-
-// Prefix Function (KMP Failure Table)
-vector<int> computePrefixFunction(const string &pattern) {
-    int n = pattern.size();
     vector<int> pi(n);
     for (int i = 1; i < n; ++i) {
         int j = pi[i - 1];
-        while (j > 0 && pattern[i] != pattern[j]) {
+        while (j > 0 && s[i] != s[j]) {
             j = pi[j - 1];
         }
-        if (pattern[i] == pattern[j]) {
+        if (s[i] == s[j]) {
             ++j;
         }
         pi[i] = j;
@@ -116,31 +18,47 @@ vector<int> computePrefixFunction(const string &pattern) {
     return pi;
 }
 
-
-
 int main() {
-    ios::sync_with_stdio(false);
-    cin.tie(NULL);
-
-    // Number of test cases
-    string s ;
+    string s;
     cin >> s;
-    int n = s.size();  
-    vecotr<int> pref = computePrefixFunction(s); 
-    vector<int> z = computeZFunction(s); 
+    int n = s.size();
 
-    int longest = pref[n - 1]; 
-    vector<int> counter(n - 1, 0);
-    for (int i = 0 ; i <  n; i ++) {
-        counter[min(longest, z[i])] ++; 
+    // Step 1: Compute the prefix function
+    vector<int> pi = computePrefixFunction(s);
+
+    // Step 2: Determine all prefix lengths that are also suffixes
+    vector<int> matchingLengths;
+    int k = pi[n - 1];
+    while (k > 0) {
+        matchingLengths.push_back(k);
+        k = pi[k - 1];
     }
-    int count = 0;
-    for (int i = n - 1; i >= 0 ; i --) {
-        
-        if ()
+    reverse(matchingLengths.begin(), matchingLengths.end());
+
+    // Include the full string itself as a prefix-suffix match
+    matchingLengths.push_back(n);
+
+    // Step 3: Count occurrences of each prefix length in the string
+    vector<int> count(n + 1, 0);
+    for (int i = 0; i < n; ++i) {
+        count[pi[i]]++;
     }
 
-    // 
-    
+    // Accumulate counts
+    for (int i = n - 1; i > 0; --i) {
+        count[pi[i - 1]] += count[i];
+    }
+
+    // Each prefix itself also appears once
+    for (int i = 0; i <= n; ++i) {
+        count[i]++;
+    }
+
+    // Step 4: Output results
+    cout << matchingLengths.size() << endl;
+    for (int length : matchingLengths) {
+        cout << length << " " << count[length] << endl;
+    }
+
     return 0;
 }

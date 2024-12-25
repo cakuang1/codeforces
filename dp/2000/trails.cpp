@@ -1,9 +1,10 @@
 #include <bits/stdc++.h>
 using namespace std;
-using ll = long long;
 
-const int MOD = 1e9 + 7; // Modulo for operations
-const int N = 2;         // Dimension of the square matrix
+using ll = long long;
+const ll mod = 1e9 + 7; // Default modulo
+const int N = 2e5 + 10; // Adjust size as needed
+const ll p = 31;        // Base for hashing
 
 // Matrix Structure
 struct Matrix {
@@ -29,7 +30,7 @@ struct Matrix {
             for (int j = 0; j < n; j++) {
                 res.mat[i][j] = 0;
                 for (int k = 0; k < n; k++) {
-                    res.mat[i][j] = (res.mat[i][j] + mat[i][k] * other.mat[k][j]) % MOD;
+                    res.mat[i][j] = (res.mat[i][j] + mat[i][k] * other.mat[k][j]) % mod;
                 }
             }
         }
@@ -41,7 +42,7 @@ struct Matrix {
         vector<ll> res(n, 0);
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
-                res[i] = (res[i] + mat[i][j] * vec[j]) % MOD;
+                res[i] = (res[i] + mat[i][j] * vec[j]) % mod;
             }
         }
         return res;
@@ -60,28 +61,40 @@ Matrix matPow(Matrix base, ll exp) {
     return res;
 }
 
-
-// Example: Solve DP using Matrix Multiplication
 int main() {
-    ll n;
-    cin >> n; // Number of steps or transitions
+    ios::sync_with_stdio(false);
+    cin.tie(NULL);
 
-    // Define Transition Matrix
-    Matrix T(N);
-    T.mat = {{1, 1},
-             {1, 0}};
+    int m, n;
+    cin >> m >> n; // m = matrix size, n = exponent (e.g., steps or transitions)
 
-    // Define the starting vector (e.g., base case for Fibonacci)
-    vector<ll> start = {1, 0}; // F(1) = 1, F(0) = 0
+    vector<int> s(m), l(m);
+    for (int i = 0; i < m; i++) cin >> s[i];
+    for (int i = 0; i < m; i++) cin >> l[i];
 
-    // Solve for T^n (n-th transition)
-    Matrix result = matPow(T, n);
+    // Initialize the transition matrix
+    Matrix T(m);
+    for (int i = 0; i < m; i++) {
+        for (int j = 0; j < m; j++) {
+            T.mat[i][j] = (1LL * s[i] * s[j] + 1LL * s[i] * l[j] + 1LL * l[i] * s[j]) % mod;
+        }
+    }
 
-    // Multiply the resulting matrix with the starting vector
-    vector<ll> finalVector = result * start;
+    // Starting vector
+    vector<ll> start(m, 0);
+    start[0] = 1; // First element initialized to 1
 
-    // Output the first element as the answer (e.g., Fibonacci number F(n))
-    cout << finalVector[0] << endl;
+    // Exponentiate the matrix and apply it to the starting vector
+    Matrix resMatrix = matPow(T, n);
+    vector<ll> finalVector = resMatrix * start;
+
+    // Calculate the final result
+    ll finalResult = 0;
+    for (ll k : finalVector) {
+        finalResult = (finalResult + k) % mod;
+    }
+
+    cout << finalResult << endl;
 
     return 0;
 }

@@ -76,15 +76,32 @@ long long binaryExp(long long x, long long y, long long mod) {
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(NULL);
-
-    precomputeFactorials(N - 1);
-
-    ll t;
-    cin >> t;
-    while (t--) {
-
-      
-
+    int n;
+    cin >> n; 
+    vector<int> doms(n);
+    for (int i = 0 ; i  < n; i++) {
+        cin >> doms[i];  
+    }    
+    
+    ll white = 0; 
+    ll black = 0;    
+    bool start = true;
+    for (int i = 0 ; i < n; i++) {
+            int a = doms[i];
+            white += a/2;
+            black += a/2;
+            if ((a % 2) == 1) {
+                if (start) {
+                    white ++ ;
+                } else {
+                    black ++; 
+                }
+            } 
+            start =  !start; 
     }
+    
+
+
+    cout << min(white ,black) << endl;
     return 0;
 }

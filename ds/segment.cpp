@@ -20,7 +20,7 @@ private:
             build(arr, 2 * node, start, mid);       // Left child
             build(arr, 2 * node + 1, mid + 1, end); // Right child
             tree[node] = tree[2 * node] + tree[2 * node + 1]; // Combine
-        }
+        }   
     }
 
     // Update a range with lazy propagation
@@ -49,7 +49,7 @@ private:
             }
             return;
         }
-
+         
         // Partial overlap
         int mid = (start + end) / 2;
         updateRange(2 * node, start, mid, l, r, val);       // Update left child
@@ -86,16 +86,13 @@ private:
         return left + right; // Combine
     }
 
-public:
-    // Constructor
+public:    
     SegmentTree(const std::vector<int>& arr) {
         n = arr.size();
         tree.resize(4 * n, 0);
         lazy.resize(4 * n, 0);
         build(arr, 1, 0, n - 1);
-    }
-
-    // Update a range
+    } 
     void update(int l, int r, int val) {
         updateRange(1, 0, n - 1, l, r, val);
     }
@@ -104,4 +101,7 @@ public:
     long long query(int l, int r) {
         return queryRange(1, 0, n - 1, l, r);
     }
+
 };
+
+

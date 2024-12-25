@@ -13,7 +13,6 @@ vector<ll> fact(N), invFact(N);
 
 
 
-// take the modular inverse 
 
 ll power(ll a, ll b) {
     ll result = 1;
@@ -56,13 +55,36 @@ ll modExp(ll x, ll y, ll m = mod) {
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(NULL);
+    int n ,k; cin >> n >> k ;
+    vector<int> a(n),b(n); 
+    for (int i = 0 ;  i < n; i ++) {
+        cin >> a[i] >> b[i]; 
+    }
+    vector<int> ord(n);
+    for (int i = 0 ; i < n ; i ++) {
+        ord[i] = i;
+    }
+    
+    sort(ord.begin(), ord.end(), [&](int i  , int j) {return b[i]  * (a[j] - 1) > b[j] * (a[i] - 1 );});  
+    vector<ll> dp(k + 1,-1e9); 
+    // choose not to use 
+    dp[0] = 1;
+    for (auto i  : ord ) {
+        vector<ll> ndp = dp;
 
-    // Number of test cases
-    ll t;
-    cin >> t;
-    while (t--) {
-        // focus weon specific topics w
+        for (int j = 0  ; j < k ; j ++) {
+            if (dp[j] == 1e9 ) {
+                continue;  
+            }
+            // find the maximum subseuqenceo flength w
+            ndp[j + 1] = max(ndp[j + 1] ,dp[j] * a[i] + b[i]);
+        }
+        dp = move(ndp); 
     }
 
+    cout << dp[k] << endl;
+
     return 0;
+
+    // whats the max    
 }
