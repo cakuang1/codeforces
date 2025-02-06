@@ -1,4 +1,20 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
+#include <string>
+#include <cmath>
+#include <algorithm>
+#include <map>
+#include <set>
+#include <queue>
+#include <stack>
+#include <utility>
+#include <unordered_map>
+#include <unordered_set>
+#include <numeric>
+#include <climits> 
+
+
+
 using namespace std;
 
 using ll = long long;
@@ -11,7 +27,6 @@ const ll p = 31;        // Base for hashing
 // Precompute factorials and inverse factorials for combinatorial calculations
 vector<ll> fact(N), invFact(N);
 
-    /
 ll power(ll a, ll b) {
     ll result = 1;
     while (b > 0) {
@@ -49,10 +64,33 @@ int main() {
     ios::sync_with_stdio(false);
     cin.tie(NULL);
 
+    int n; cin >> n;
+    vector<int> dams(n); 
+    int sum = 0; 
+    for (int i = 0 ; i < n; i ++) {
+        cin >> dams[i];
+        sum +=  dams[i]; 
+    }
 
+    
+    int x1 = sum;
+    for (int i = 1 ; i < n; i += 2) {
+        x1 -= (2 * dams[i]); 
+    }
 
+    
+    vector<int> res(n);
+    res[0] = x1;
+    
+    for (int i = 1 ;i < n ; i ++) {
+        res[i] = (2 * dams[i - 1])   - res[i - 1];
+    }
 
-     return 0;
+    for (int i = 0 ; i < n ; i ++) {
+        cout << res[i] <<  " ";
+    }
+    return 0;
+
 }
 
 

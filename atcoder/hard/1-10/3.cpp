@@ -1,4 +1,20 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
+#include <string>
+#include <cmath>
+#include <algorithm>
+#include <map>
+#include <set>
+#include <queue>
+#include <stack>
+#include <utility>
+#include <unordered_map>
+#include <unordered_set>
+#include <numeric>
+
+
+
+
 using namespace std;
 
 using ll = long long;
@@ -11,7 +27,6 @@ const ll p = 31;        // Base for hashing
 // Precompute factorials and inverse factorials for combinatorial calculations
 vector<ll> fact(N), invFact(N);
 
-    /
 ll power(ll a, ll b) {
     ll result = 1;
     while (b > 0) {
@@ -48,11 +63,27 @@ ll modExp(ll x, ll y, ll m = mod) {
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(NULL);
-
-
-
-
-     return 0;
+    int h,w;
+    cin >> h >> w; 
+    vector<vector<char>> grid(h, vector<char> (w)); 
+    for (int i = 0 ; i < h; i ++) {
+        for (int j = 0 ; j < w ; j ++) {
+            cin >> grid[i][j]; 
+        }
+    }
+    vector<vector<int>> dp(h, vector<int> (w,INT_MAX));
+    dp[0][0] = 0;  
+    for (int r = 0 ; r < h; r ++) {
+        for (int c = 0 ; r < w ; c ++) {
+            if (r) {
+                dp[r][c] = min(dp[r - 1][c] +  w, dp[r][c]);                   
+            }
+            if (c) {
+                
+            } 
+        }
+    }
+    return 0;
 }
 
 

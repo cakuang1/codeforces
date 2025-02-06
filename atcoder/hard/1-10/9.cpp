@@ -1,4 +1,20 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
+#include <string>
+#include <cmath>
+#include <algorithm>
+#include <map>
+#include <set>
+#include <queue>
+#include <stack>
+#include <utility>
+#include <unordered_map>
+#include <unordered_set>
+#include <numeric>
+
+
+
+
 using namespace std;
 
 using ll = long long;
@@ -11,7 +27,6 @@ const ll p = 31;        // Base for hashing
 // Precompute factorials and inverse factorials for combinatorial calculations
 vector<ll> fact(N), invFact(N);
 
-    /
 ll power(ll a, ll b) {
     ll result = 1;
     while (b > 0) {
@@ -49,9 +64,7 @@ int main() {
     ios::sync_with_stdio(false);
     cin.tie(NULL);
 
-
-
-
+    // choose pairwise 
      return 0;
 }
 

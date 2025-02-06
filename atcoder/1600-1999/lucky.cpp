@@ -1,4 +1,4 @@
-#include <bits/stdc++.h>
+ #include <bits/stdc++.h>
 using namespace std;
 
 using ll = long long;
@@ -11,7 +11,10 @@ const ll p = 31;        // Base for hashing
 // Precompute factorials and inverse factorials for combinatorial calculations
 vector<ll> fact(N), invFact(N);
 
-    /
+
+
+// take the modular inverse 
+
 ll power(ll a, ll b) {
     ll result = 1;
     while (b > 0) {
@@ -28,7 +31,6 @@ ll mod_inverse(ll n, ll m = mod)  {
     return power(n, m - 2);
 } 
 
-// maximum possible values w
 
 
 ll modExp(ll x, ll y, ll m = mod) {
@@ -44,15 +46,23 @@ ll modExp(ll x, ll y, ll m = mod) {
     return res;
 }
 
+// sum of (differences of the mean) squared w
 
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(NULL);
-
-
-
-
-     return 0;
+    
+    ll n,d;
+    cin >> n >> d;
+    vector<ll> arr(n); 
+    for (int i = 0 ; i < n ;i ++) {
+        cin >> arr[i];
+    }
+    vector<vector<ll>> dp(1 << n , vector<ll> d + 1); 
+    
+    //
+    for (int i = )
+    return 0; 
 }
 
 

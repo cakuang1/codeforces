@@ -45,12 +45,39 @@ ll modExp(ll x, ll y, ll m = mod) {
 }
 
 
+
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(NULL);
+    int N,K
+    vector<int> arr(2* N);
+    for (int i = 0 ; i < N ;i ++) {
+        int c; cin >> c ;
+        arr[i] = c; 
+        arr[i + N] = c; 
+    }    
+    vector<int> pre(2 * N + 1 , 0);
+    for (int i = 0 ;i < 2 * N ; i ++) {
+        pre[i + 1] = arr[i] + pre[i]; 
+    }     
+    vector<int> f(2 * N + 1);
+    vector<vector<int>> adj(2 * N + 1);
+    auto check = [&](int s) {
+        adj.assign(2 * N + 1,  {}); 
+
+        for (int i = 0 , j = 0 ; i <  ; i ++) {
+            
+
+            while ( )
+        }
+     }
+
+    
+
+    
 
 
-
+    
 
      return 0;
 }

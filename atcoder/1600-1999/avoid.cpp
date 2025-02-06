@@ -48,11 +48,18 @@ ll modExp(ll x, ll y, ll m = mod) {
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(NULL);
+    ll n; cin >> n;
+    vector<vector<int>> adj;
 
-
-
-
-     return 0;
+    for (int i = 0 ; i< n - 1 ; i ++) {
+        int a , b ;
+        cin >> a >> b;
+        a --; b --; 
+        adj[a].push_back(b);
+        adj[b].push_back(a);
+    }
+    ll ans = 0;
+    return 0;
 }
 
 

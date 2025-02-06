@@ -11,7 +11,10 @@ const ll p = 31;        // Base for hashing
 // Precompute factorials and inverse factorials for combinatorial calculations
 vector<ll> fact(N), invFact(N);
 
-    /
+
+
+// take the modular inverse 
+
 ll power(ll a, ll b) {
     ll result = 1;
     while (b > 0) {
@@ -48,11 +51,51 @@ ll modExp(ll x, ll y, ll m = mod) {
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(NULL);
+    ll n;
+     cin >> n;    
+    
+    ll h1,h2 ,f1,f2 ;
+    
+    if (n == 1) {
+        cout << "0" << " "<<"0" << endl;
+        return 0; 
+    }
+
+    
+    h1 = 1;
+    h2 = 0;
+    f1 = 0;
+    f2 = 0;
+
+    for (int i = 1 ; i < n; i ++) {
+
+        // solving for h 
+        ll p = (i * mod_inverse(n, mod2));
+        ll firstfirst = mod_inverse(1 + p , mod2); 
+        ll firstsecond =  (mod2 + 1 - firstfirst) % mod; 
+
+
+        ll newh1 = (((h1 * firstfirst) % mod) + ((h2 * firstsecond) % mod)) % mod; 
+        ll newh2 = (((h1 * firstsecond) % mod) + ((h2 * firstfirst) % mod)) % mod; 
+
+
+        h1 = newh1;
+        h2 = newh2;
+
+        ll first =  (p *  mod_inverse(1 - (p * p))) % mod;
+        // p2 + p4 + p6 .... 
+        ll second = ((p * p) * mod_inverse(1 - (p * p))) % mod;
+
+        
+
+    }   
 
 
 
+    cout << f1 << " " << f2  << endl; 
 
-     return 0;
+     
+    return 0;
 }
 
 

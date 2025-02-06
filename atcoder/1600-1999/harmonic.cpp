@@ -48,11 +48,17 @@ ll modExp(ll x, ll y, ll m = mod) {
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(NULL);
+    int n,m; cin >> n >> m;
+    vector<string> grid(n);
+    for (int i = 0 ;  i < n ; i ++) {
+        cin >> grid[i];
+    } 
 
+    /
 
-
-
-     return 0;
+    
+    // given the ith diagonal w
+    return 0;
 }
 
 

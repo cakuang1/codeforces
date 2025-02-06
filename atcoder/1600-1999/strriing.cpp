@@ -11,7 +11,10 @@ const ll p = 31;        // Base for hashing
 // Precompute factorials and inverse factorials for combinatorial calculations
 vector<ll> fact(N), invFact(N);
 
-    /
+
+
+// take the modular inverse 
+
 ll power(ll a, ll b) {
     ll result = 1;
     while (b > 0) {
@@ -45,14 +48,19 @@ ll modExp(ll x, ll y, ll m = mod) {
 }
 
 
+
+// good string is when the paritiesmathc 
+
+
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(NULL);
+    ll n;
+    cin >> n; 
+    
+    // prrboelm wsolving w
 
-
-
-
-     return 0;
+    return 0;
 }
 
 

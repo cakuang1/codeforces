@@ -1,4 +1,20 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
+#include <string>
+#include <cmath>
+#include <algorithm>
+#include <map>
+#include <set>
+#include <queue>
+#include <stack>
+#include <utility>
+#include <unordered_map>
+#include <unordered_set>
+#include <numeric>
+#include <climits> 
+
+
+
 using namespace std;
 
 using ll = long long;
@@ -11,7 +27,6 @@ const ll p = 31;        // Base for hashing
 // Precompute factorials and inverse factorials for combinatorial calculations
 vector<ll> fact(N), invFact(N);
 
-    /
 ll power(ll a, ll b) {
     ll result = 1;
     while (b > 0) {
@@ -48,9 +63,33 @@ ll modExp(ll x, ll y, ll m = mod) {
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(NULL);
+    
+    int n,k ; cin >> n >> k;
+        
+    vector<int> arr(n);
+    for (int i = 0 ; i < n; i++) {
+        cin >> arr[i];
+    }
+    int g ,m;
+    g = arr[0];
+    m = arr[0];
+    for (int i = 1; i < n; i  ++) {
+        g = gcd(g,arr[i]);
+        m = max(m,arr[i]);
+    }
+
+
+    if ((k % g) == 0 && k <= m) {
+        cout << "POSSIBLE" << endl;
+    } else {
+        cout << "IMPOSSIBLE" << endl; 
+    }
 
 
 
+    
+    
+    
 
      return 0;
 }

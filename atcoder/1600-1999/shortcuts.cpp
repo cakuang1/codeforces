@@ -45,13 +45,15 @@ ll modExp(ll x, ll y, ll m = mod) {
 }
 
 
+const int k = 100;
+
+int N;
+vector<int> x,y; 
+double dist(int u ,int v)
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(NULL);
-
-
-
-
+    
      return 0;
 }
 

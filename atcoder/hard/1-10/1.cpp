@@ -1,4 +1,17 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
+#include <string>
+#include <cmath>
+#include <algorithm>
+#include <map>
+#include <set>
+#include <queue>
+#include <stack>
+#include <utility>
+#include <unordered_map>
+#include <unordered_set>
+#include <numeric>
+
 using namespace std;
 
 using ll = long long;
@@ -10,9 +23,6 @@ const ll p = 31;        // Base for hashing
 
 // Precompute factorials and inverse factorials for combinatorial calculations
 vector<ll> fact(N), invFact(N);
-
-
-
 
 ll power(ll a, ll b) {
     ll result = 1;
@@ -46,46 +56,45 @@ ll modExp(ll x, ll y, ll m = mod) {
     return res;
 }
 
-
-
-
-
-
-
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(NULL);
-    int n ,k; cin >> n >> k ;
-    vector<int> a(n),b(n); 
-    for (int i = 0 ;  i < n; i ++) {
-        cin >> a[i] >> b[i]; 
+    string s; 
+    cin >> s; 
+    int n = s.length();
+    vector<int> a(n,0); 
+    vector<int> ind;
+    int rcount = 1;
+    int prevr = -1;
+    int prevl = -1;
+    // what about the swap wfrom l to r  w     
+    for (int i = 1 ; i < n ; i ++) {
+        // RL then what? How would you distribute the Rs?
+        if (s[i] == 'L' && s[i - 1] == 'R') {
+            prevr = i - 1;
+            prevl =  i;
+            a[prevr] += rcount - (rcount/2);
+            a[prevl] += rcount/2;
+            rcount = 0;   
+        }
+
+    
+    
+        if (s[i] == 'R') {
+            rcount ++;
+        } else {
+            if ((i - prevl) % 2) {
+                a[prevr] ++; 
+            } else {
+                a[prevl] ++;
+            }
+        }
     }
-    vector<int> ord(n);
     for (int i = 0 ; i < n ; i ++) {
-        ord[i] = i;
+        cout << a[i] << " "; 
     }
     
-    sort(ord.begin(), ord.end(), [&](int i  , int j) {return b[i]  * (a[j] - 1) > b[j] * (a[i] - 1 );});  
-    vector<ll> dp(k + 1,-1e9); 
-    // choose not to use 
-    dp[0] = 1;
-    for (auto i  : ord ) {
-        vector<ll> ndp = dp;
-
-        for (int j = 0  ; j < k ; j ++) {
-            if (dp[j] == 1e9 ) {
-                continue;  
-            }  
-            // given two wpermuation ws
-            // find the maximum subseuqenceo flength w
-            ndp[j + 1] = max(ndp[j + 1] ,dp[j] * a[i] + b[i]);
-        }
-        dp = move(ndp); 
-    }
-
-    cout << dp[k] << endl;
-
     return 0;
-
-    // whats the max    
 }
+
+

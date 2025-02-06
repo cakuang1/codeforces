@@ -11,7 +11,10 @@ const ll p = 31;        // Base for hashing
 // Precompute factorials and inverse factorials for combinatorial calculations
 vector<ll> fact(N), invFact(N);
 
-    /
+
+
+// take the modular inverse 
+
 ll power(ll a, ll b) {
     ll result = 1;
     while (b > 0) {
@@ -48,11 +51,29 @@ ll modExp(ll x, ll y, ll m = mod) {
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(NULL);
+    int n , m; cin >> n >> m;
+    vector<int> deg(n + 1, 0);
+    vector<vector<int>> adj(n + 1);
+    for (int i = 0 ; i <  m ; i ++) {
+        int a,b;
+        cin >> a >> b;        
+        adj[a].push_back(b);
+        adj[b].push_back(a);
+        deg[a] ++;
+        deg[b] ++;
+    }
+    
+    vector<int> w(n + 1);
+    vector<int> a(n + 1);
+    for (int i = 0 ; i < n ; i++) {
+        cin >> w[i]; 
+    }
 
-
-
-
-     return 0;
+    for (int i = 0 ; i <  n ; i ++) {
+        cin >> a[i]; 
+    }
+    // does thiw make wany wsesen w
+    return 0;
 }
 
 
