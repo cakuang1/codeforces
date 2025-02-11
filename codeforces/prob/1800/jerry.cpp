@@ -1,5 +1,4 @@
-
-
+z
 #include <bits/stdc++.h>
  
 using namespace std;
@@ -71,7 +70,39 @@ void initFacs() {
 
 int main() {
 	ios_base::sync_with_stdio(0); cin.tie(0);    
+    int n ; cin >> n; 
+    // whats the probaiblity? 
 
+    vector<int> arr(n); for (int i = 0 ; i < n; i ++) cin >> arr[i]; 
+
+    sort(arr.begin(), arr.end());
+
+
+    vector<double> probdiff(5001,0.0);
+
+    
+    // how many pairs
+    // very similar 
+    // (n(n - 1))/2 
+    for (int i = 1; i < n  ; i ++) {
+        for (int j = 0 ; j < i ; j ++) {
+            int diff = arr[i] - arr[j];
+            probdiff[diff] += double(1/((n * (n - 1))/2))
+        }
+    }
+    
+    vector<double> suffixprob()
+    double res = 0; 
+
+    for (int i = 1; i < n  ; i ++) {
+        for (int j = 0 ; j < i ; j ++) {
+            int diff = arr[i] - arr[j];
+            probdiff[diff] += double(1/((n * (n - 1))/2))
+        }
+    }   
+
+
+    cout << res << endl 
   	return 0;
 }
  

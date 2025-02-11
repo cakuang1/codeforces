@@ -65,7 +65,7 @@ void initFacs() {
 	}
 }
 
-
+// 
 
 int main() {
 	ios_base::sync_with_stdio(0); cin.tie(0);    
@@ -75,13 +75,23 @@ int main() {
     for (int i = 0 ; i < n; i ++) {
         cin >> mono[i]; 
     }
-
-    map<int,int> first; 
     map<int,int> last; 
-     
     for (int i = 0 ; i < n; i ++) {
-        int val =          
+        int val = mono[i]; 
+        last[val] = i; 
     }
+    ll  res = 1; 
+    
+    // new segment 
+    int latest = 0;
+    for (int i = 0 ; i < n; i ++) {
+        if (i ==  latest + 1) { 
+            res = mul(res,2); 
+        }
+        latest = max(latest, last[mono[i]]); 
+    }
+
+    cout << res << endl;
 
     // break wpojnts w
   	return 0;

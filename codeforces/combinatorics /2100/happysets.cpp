@@ -71,6 +71,18 @@ void initFacs() {
 
 int main() {
 	ios_base::sync_with_stdio(0); cin.tie(0);    
+    int n,k ; cin >> n >> k; 
+
+    
+    // define f(e) as the number of sets with e zero sets
+
+    // the answer is simply the sum of all f(e);
+
+
+    // n = 6 
+x    // find the number of 
+    // calculate ge 
+
 
   	return 0;
 }

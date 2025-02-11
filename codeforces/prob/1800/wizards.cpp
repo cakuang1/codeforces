@@ -66,11 +66,29 @@ void initFacs() {
 		facInvs[i] = inv(facs[i]);
 	}
 }
+// capacity of the bag 
+// L <= j <= m + k; 
 
 
+    // deos thse shtis werelayk wrw
+double dp[201][201][ ] ; 
 
 int main() {
 	ios_base::sync_with_stdio(0); cin.tie(0);    
+
+    int n,l ,k; cin >> n >> l >>k ;
+    
+    vector<int> probs(n); 
+    vector<int> prize(n); 
+    for (int i = 0 ; i < n; i ++) {
+        cin >> probs[i];
+    }
+    for (int i = 0 ; i < n; i ++) {
+        cin >> prize[i];
+    }
+
+
+ 
 
   	return 0;
 }

@@ -67,12 +67,34 @@ void initFacs() {
 	}
 }
 
+int  MAXN = 1e5 + 5; 
+bool sieve[MAXN]; 
 
+
+// bad perm we
+
+void preprocess() {
+    
+    fill(sieve +  )
+}
+
+// coprime subsequnce w 
+
+// as you are building the sequence,
+// determine the number of subsequence ending at this ending
 
 int main() {
 	ios_base::sync_with_stdio(0); cin.tie(0);    
+    int n; cin >> n; 
+    vector<int>  arr(n); 
+    for (int i = 0 ; i < n; i ++) {
+        cin >> arr[i]; 
+    }
 
-  	return 0;
+        
+
+    // dp? 
+    return 0;
 }
  
 
