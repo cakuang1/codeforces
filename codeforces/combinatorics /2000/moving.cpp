@@ -69,12 +69,28 @@ void initFacs() {
 
 
 
-
-
-
 int main() {
 	ios_base::sync_with_stdio(0); cin.tie(0);    
+    int n ; cin >> n; 
+    vector<int> dots(n);
+    for (int i  = 0 ; i < n; i ++) {
+        cin >> dots[i];
+    }
+    ll res = 0;  
+    for (int i = 0  ; i < n ; i ++) {
+        for (int j = i + 1 ; j < n; j ++) {
+            int d= dots[j] - dots[i];
+            auto rb = lower_bound(dots.begin(),dots.end() ,dots[j] + d);
+            ll rcount = distance(rb,  dots.end()); 
+            auto lb = lower_bound(dots.begin(),dots.end(), dots[i] - d); 
+            ll  lcount =  distance(dots.begin() , lb); 
+            res = add(res,  modExp(2, rcount + lcount)); 
+        }
+    }
 
+
+    // 
+    cout << res << endl; 
   	return 0;
 }
  

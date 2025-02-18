@@ -5,7 +5,6 @@
 using namespace std;
 
 using ll = long long;
-const int MOD2 =  998244353; 
 const int MOD = 1000000007;
 const ll INF = 1e18;
 const int MX = 1000001; //check the limits, dummy
@@ -61,7 +60,7 @@ ll choose(ll a, ll b) {
 void initFacs() {
 	facs[0] = 1;
 	facInvs[0] = 1;
-	for (int i = 1 ; i < MOD ; i ++ ) {
+	for (int i = 1 ; i < 1001 ; i ++ ) {
 		facs[i] = (facs[i-1] * i) % MOD;
 		facInvs[i] = inv(facs[i]);
 	}
@@ -69,11 +68,32 @@ void initFacs() {
 
 
 
-
-
-
 int main() {
 	ios_base::sync_with_stdio(0); cin.tie(0);    
+    int n,m; cin >> n >> m;
+    initFacs(); 
+    vector<int> lights(m); 
+    for (int i = 0 ; i < m ; i ++) {
+        cin >> lights[i];
+    }
+    sort(lights.begin(), lights.end());
+
+    int offlights = n - m; 
+    int edge1 =  lights[0] - 1; 
+    int edge2 =  n - lights[m - 1];
+
+    ll perm = facs[offlights]; 
+    perm = mul(perm , facInvs[edge1]);    
+    perm = mul(perm , facInvs[edge2]);    
+    for (int i  = 1 ; i < m ; i ++) {
+        ll gap = lights[i] - lights[i - 1] - 1; 
+        if (gap > 0) {
+            perm = mul(perm,facInvs[gap]); 
+            perm = mul(perm, modExp(2,gap - 1));
+        }
+
+    }
+    cout << perm << endl;
 
   	return 0;
 }

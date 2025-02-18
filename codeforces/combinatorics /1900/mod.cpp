@@ -71,8 +71,36 @@ void initFacs() {
 
 int main() {
 	ios_base::sync_with_stdio(0); cin.tie(0);    
-    / 
+    int n ,m ; cin >> n >>m;
+    if (n > m) {
+        cout << "YES" << endl;
+        return 0; 
+    }
+    vector<vector<bool>> dp(n ,  vector<bool> (m ,false)); 
+    vector<int> arr(n); 
+    for (int i = 0 ; i < n; i++) {
+        cin >> arr[i];
+    }
+    dp[0][arr[0] % m] = true;
+    for (int i = 1 ; i < n ; i ++) {  
+        dp[i][arr[i] % m] = true;      
+        for (int  j = 0 ; j < m ; j ++) {
+            if (dp[i - 1][j]) {
+                dp[i][j] = true;
+            }
+            if (dp[i - 1][(j - (arr[i] % m) + m) % m]) {
+                dp[i][j] = true;
+            }
+        }
+    }
+    if (dp[n - 1][0])  {
+        cout << "YES" << endl;
+    } else {
+        cout << "NO" << endl;
+    }
   	return 0;
+
+    
 }
  
 

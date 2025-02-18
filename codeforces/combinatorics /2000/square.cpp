@@ -68,13 +68,61 @@ void initFacs() {
 }
 
 
+bool sieve[71]; 
 
+
+vector<int> primes;
+
+void preprocess() { 
+    fill(sieve, sieve + 71 ,true);
+    sieve[0] = sieve[1] = false; 
+    for (int i =  2 ; i * i < 71  ; i ++) {
+        if (sieve[i]) {
+            primes.push_back(i);
+            for (int j =  i * i ; j < 71 ; j ++ )  {
+                sieve[j] = true; 
+            }  
+        }        
+    }
+
+}
+
+
+
+
+
+int decomp(int n) { 
+    
+    int res = 0;  
+    for (int i = 0 ; i <  primes.size() ; i ++ )  {
+        int count = 0 ;
+        int prime =  primes[i];     
+        
+             
+    }
+    for () 
+}
 
 
 
 int main() {
 	ios_base::sync_with_stdio(0); cin.tie(0);    
+    int n ; cin >> n; 
+    vector<int> arr(n);
+    for (int i =  0 ; i < n; i++) {
+        cin >> arr[i]; 
+    }
+    
+    vector<int> paritydecomp(n); 
+    for (int i =  0 ;i  < n; i ++) {
+        
 
+        
+    }
+    vector<vector<ll>> dp; 
+
+
+    // w    
   	return 0;
 }
  
