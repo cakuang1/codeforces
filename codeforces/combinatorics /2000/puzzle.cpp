@@ -50,6 +50,7 @@ void solve() {
         cout << "0\n";
         return;
     }
+
     ll res = 0;
     if (n1 <= n2) {
         res += calc(n1 + 1, n2, n3, n4);

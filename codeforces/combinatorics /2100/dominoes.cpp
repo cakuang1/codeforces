@@ -1,4 +1,5 @@
 
+
 #include <bits/stdc++.h>
  
 using namespace std;
@@ -68,17 +69,26 @@ void initFacs() {
 
 
 
-
-
+// w
 
 int main() {
-	ios_base::sync_with_stdio(0); cin.tie(0);    
-    int n ; cin >> n; 
-    vector<int> arr(n + 1); 
-    for (int i  = 0 ; i < n + 1; i ++) {
-        cin >> arr[i] >> endl; 
-    }   
+	ios_base::sync_with_stdio(0); cin.tie(0);   
+    int n,m; cin >> n >> m;  
+    vector<vector<char>> grid(n ,vector<char> (m));
+
+    for (int i = 0 ; i < n  ; i ++) {
+        for (int j = 0 ; j < m ; j ++) {
+            cin >> grid[i][j];
+        }
+    }      
+
+    int whitecells = 0;
+
+    // for some w
     
+    for (int i = 0 ; i < n ; i ++) {
+        
+    } 
   	return 0;
 }
  

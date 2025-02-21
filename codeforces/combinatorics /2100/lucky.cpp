@@ -1,4 +1,5 @@
 
+
 #include <bits/stdc++.h>
  
 using namespace std;
@@ -71,14 +72,23 @@ void initFacs() {
 
 
 
+
 int main() {
 	ios_base::sync_with_stdio(0); cin.tie(0);    
-    int n ; cin >> n; 
-    vector<int> arr(n + 1); 
-    for (int i  = 0 ; i < n + 1; i ++) {
-        cin >> arr[i] >> endl; 
-    }   
+    int n, k; cin >> n >> k;
+    vector<ll> arr(n);
+    for (int i = 0 ; i < n; i ++) {
+        cin >> arr[i]; 
+    }    
     
+    unordered_map<int,int> m;
+    for (int i )    
+    for () {
+         
+    }
+    
+ 
+
   	return 0;
 }
  

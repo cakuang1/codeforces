@@ -1,10 +1,10 @@
+w
 
 #include <bits/stdc++.h>
  
 using namespace std;
 
 using ll = long long;
-const int MOD2 =  998244353; 
 const int MOD = 1000000007;
 const ll INF = 1e18;
 const int MX = 1000001; //check the limits, dummy
@@ -70,15 +70,38 @@ void initFacs() {
 
 
 
+int dp[1001][1001];
 
+
+
+
+// dp[i][j] = sum of all possible rectangles within n,m 
+
+
+
+
+
+// think of the rectangle starting from the topleft 
+
+
+// potential  (n - 2 ) * (m - 2) starting points 
+
+// if you start at tw  what does thsi wemean we
+
+
+// potential endpoints and how to solve this wer
 int main() {
 	ios_base::sync_with_stdio(0); cin.tie(0);    
-    int n ; cin >> n; 
-    vector<int> arr(n + 1); 
-    for (int i  = 0 ; i < n + 1; i ++) {
-        cin >> arr[i] >> endl; 
-    }   
-    
+    int n , m , k ; cin >> n >> k ;
+    for (int i = 0 ; i < 1001; i ++) {
+        for ( int  j = 0 ; j < 1001 ; j ++) {
+            dp[i][j] = 0 ; 
+         } 
+    }        
+
+    // why does this work 
+
+
   	return 0;
 }
  

@@ -1,4 +1,5 @@
 
+
 #include <bits/stdc++.h>
  
 using namespace std;
@@ -69,15 +70,30 @@ void initFacs() {
 
 
 
+int primeDecomp(int curr)  {
+    
+    int res = 0;
+
+
+
+
+
+    return res; 
+}
+
+
 
 
 int main() {
 	ios_base::sync_with_stdio(0); cin.tie(0);    
-    int n ; cin >> n; 
-    vector<int> arr(n + 1); 
-    for (int i  = 0 ; i < n + 1; i ++) {
-        cin >> arr[i] >> endl; 
-    }   
+    int n ;cin >> n; 
+    vector<int> arr(n); 
+    for (int i = 0 ; i <n; i ++) {
+        cin >> arr[i]; 
+    }
+
+
+
     
   	return 0;
 }
