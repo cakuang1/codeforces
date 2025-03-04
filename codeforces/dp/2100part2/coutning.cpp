@@ -56,8 +56,6 @@
         return cur;
     }
 
-
-
     void initFacs() {
         facs[0] = 1;
         facInvs[0] = 1;
@@ -66,12 +64,36 @@
             facInvs[i] = inv(facs[i]);
         }
     }
+    
 
+    void solve(){
+        int n ; cin >> n; 
+        vector<int> arr(n);
+        for (int i = 0 ; i < n; i ++) cin >> arr[i];
 
-
+        vector<int> counter(1000001); 
+        for (int i = 0 ; i < n; i ++) {
+            int val = arr[i];
+            counter[val] ++:
+        }        
+        vector<int> thisdivides(n); 
+    }
 
     int main() {
         ios_base::sync_with_stdio(0); cin.tie(0);    
+        int t; cin >> t; 
+        while (t --) {
+            solve(); 
+        }
+        
+        // if d|a and d|b, then what can you say ?
+        
+
+        // d|gcd(a,b)  
+        // does this wwor kwe
+
+
+        // explain why this works w    
 
         return 0;
     }

@@ -61,18 +61,21 @@
     void initFacs() {
         facs[0] = 1;
         facInvs[0] = 1;
-        for (int i = 1 ; i < MOD ; i ++ ) {
+        for (int i = 1 ; i < MOD ; i ++ ) {     w
             facs[i] = (facs[i-1] * i) % MOD;
             facInvs[i] = inv(facs[i]);
         }
     }
 
-
-
-
     int main() {
         ios_base::sync_with_stdio(0); cin.tie(0);    
+        int n; cin >> n;  
+        vector<int> arr(n) ; 
+        for (int i = 0 ; i < n; i ++) {
+            cin >> arr[i]; 
+        }      
 
+        vector<int> dp(); 
         return 0;
     }
     

@@ -57,23 +57,58 @@
     }
 
 
-
     void initFacs() {
         facs[0] = 1;
         facInvs[0] = 1;
-        for (int i = 1 ; i < MOD ; i ++ ) {
+        for (int i = 1 ; i < 1000 ; i ++ ) {
             facs[i] = (facs[i-1] * i) % MOD;
             facInvs[i] = inv(facs[i]);
         }
     }
 
+    
+
 
 
 
     int main() {
-        ios_base::sync_with_stdio(0); cin.tie(0);    
-
+        ios_base::sync_with_stdio(0); cin.tie(0);  
+        initFacs();   
+        int n,k ; cin >> n >> k; 
+        vector<int> arr(n);
+        for (int i = 0 ; i < n; i ++) {
+            cin >> arr[i]; 
+        }
+        int maxblocks = n/k; 
+        vector<vector<ll>> dp(n + 1, vector<ll> (maxblocks + 1));
+        dp[0][0] = 1;   
+        for (int i = 0 ;i < n ;i ++) {
+            for (int block = 0 ; block <= maxblocks ; block ++) {
+                if (block > 0) {                    
+                    int size = 1; 
+                    for (int k = i - 1 ; k >= 0 ; k -- ) {
+                        if (arr[k] == arr[i]) {
+                            size ++; 
+                            if (size >= k) {
+                                dp[i + 1][block] = add(dp[i][block] , dp[i - 1][block - 1] * choose(size - 2, k - 2)); 
+                            }
+                        }
+                    } 
+                    
+                }        
+                dp[i + 1][block] = add(dp[i + 1][block], dp[i][block]); 
+            }            
+        }
+        for (int i = maxblocks ; i >= 0 ; i --) {
+            if (dp[n][i] > 0) {
+                cout << dp[n][i] << endl;
+                return 0; 
+            }
+        }
         return 0;
     }
-    
+
+
+
+
 
