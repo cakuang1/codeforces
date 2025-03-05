@@ -1,101 +1,65 @@
+#include <bits/stdc++.h>
+using namespace std;
+typedef long long ll;
 
-
-    #include <bits/stdc++.h>
+int main(){
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
     
-    using namespace std;
-
-    using ll = long long;
-    const int MOD2 =  998244353; 
-    const int MOD = 1000000007;
-    const ll INF = 1e18;
-    const int MX = 1000001; //check the limits, dummy
-
-
-    ll modExp(ll base, ll power) {
-        if (power == 0) {
-            return 1;
-        } else {
-            ll cur = modExp(base, power / 2); cur = cur * cur; cur = cur % MOD;
-            if (power % 2 == 1) cur = cur * base;
-            cur = cur % MOD;
-            return cur;
+    int n;
+    cin >> n;
+    vector<int> arr(n);
+    int maxA = 0;
+    for (int i = 0; i < n; i++){
+        cin >> arr[i];
+        maxA = max(maxA, arr[i]);
+    }
+    
+    // Build frequency array: cnt[x] = number of occurrences of x.
+    vector<ll> cnt(maxA+1, 0);
+    for (int i = 0; i < n; i++){
+        cnt[arr[i]]++;
+    }
+    
+    // dp[g] will hold the number of pairs whose gcd is exactly g.
+    vector<ll> dp(maxA+1, 0);
+    
+    // Process candidate g values from maxA down to 1.
+    for (int g = maxA; g >= 1; g--){
+        ll s = 0;
+        // Sum the frequency of numbers divisible by g.
+        for (int multiple = g; multiple <= maxA; multiple += g) {
+            s += cnt[multiple];
         }
-    }
-
-    ll inv(ll base) {
-        return modExp(base, MOD-2);
-    }
-
-
-    ll mul(ll A, ll B) {
-        return (A*B)%MOD;
-    }
-
-    ll add(ll A, ll B) {
-        return (A+B)%MOD;
-    }
-
-    ll dvd(ll A, ll B) {
-        return mul(A, inv(B));
-    }
-
-    ll sub(ll A, ll B) {
-        return (A-B+MOD)%MOD;
-    }
-
-    ll* facs = new ll[MX];
-    ll* facInvs = new ll[MX];
-
-    ll choose(ll a, ll b) {
-        if (b > a) return 0;
-        if (a < 0) return 0;
-        if (b < 0) return 0;
-        ll cur = facs[a];
-        cur = mul(cur, facInvs[b]);
-        cur = mul(cur, facInvs[a-b]);
-        return cur;
-    }
-
-    void initFacs() {
-        facs[0] = 1;
-        facInvs[0] = 1;
-        for (int i = 1 ; i < MOD ; i ++ ) {
-            facs[i] = (facs[i-1] * i) % MOD;
-            facInvs[i] = inv(facs[i]);
+        // All pairs among these numbers.
+        dp[g] = s * (s - 1) / 2;
+        // Subtract the pairs already counted for multiples of g.
+        for (int multiple = 2 * g; multiple <= maxA; multiple += g) {
+            dp[g] -= dp[multiple];
         }
     }
     
-
-    void solve(){
-        int n ; cin >> n; 
-        vector<int> arr(n);
-        for (int i = 0 ; i < n; i ++) cin >> arr[i];
-
-        vector<int> counter(1000001); 
-        for (int i = 0 ; i < n; i ++) {
-            int val = arr[i];
-            counter[val] ++:
-        }        
-        vector<int> thisdivides(n); 
-    }
-
-    int main() {
-        ios_base::sync_with_stdio(0); cin.tie(0);    
-        int t; cin >> t; 
-        while (t --) {
-            solve(); 
+    // Mark g values that are "not suitable". For every number x that appears in the array,
+    // mark all multiples of x as unsuitable.
+    vector<bool> suitable(maxA+1, true);
+    for (int x = 1; x <= maxA; x++){
+        if (cnt[x] > 0){
+            for (int g = x; g <= maxA; g += x){
+                suitable[g] = false;
+            }
         }
-        
-        // if d|a and d|b, then what can you say ?
-        
-
-        // d|gcd(a,b)  
-        // does this wwor kwe
-
-
-        // explain why this works w    
-
-        return 0;
     }
     
+    // Sum the dp[g] for all g that are suitable.
+    ll ans = 0;
+    for (int g = 1; g <= maxA; g++){
+        if (suitable[g]){
+            ans += dp[g];
+        }
+    }
+    //minimu m wamount of w
+    cout << ans << "\n";
+    return 0;
+}
+
 
