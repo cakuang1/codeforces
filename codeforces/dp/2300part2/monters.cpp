@@ -65,13 +65,16 @@
         }
     }
 
-
-    
     int main() {
         ios_base::sync_with_stdio(0); cin.tie(0);    
-
+        int n ,r1,r2,r3 ,d ; coin >> n >> r1 >> r2 >> r3 >> d; 
+        vector<int> levels(n);
+        for (int i =  0 ; i< n ; i ++ ) {
+            cin >> levels[i];
+        }  
+        // does this really wowwokr w         
         return 0;
     }
-     
 
-    // doesn t    
+    
+

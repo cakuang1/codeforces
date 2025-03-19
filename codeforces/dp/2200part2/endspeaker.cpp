@@ -1,10 +1,12 @@
 
+
     #include <bits/stdc++.h>
     
     using namespace std;
 
     using ll = long long;
-    const int MOD =  998244353; 
+    const int MOD2 =  998244353; 
+    const int MOD = 1000000007;
     const ll INF = 1e18;
     const int MX = 1000001; //check the limits, dummy
 
@@ -46,7 +48,7 @@
 
     ll choose(ll a, ll b) {
         if (b > a) return 0;
-        if (a < 0)45 return 0;
+        if (a < 0) return 0;
         if (b < 0) return 0;
         ll cur = facs[a];
         cur = mul(cur, facInvs[b]);
@@ -64,14 +66,41 @@
             facInvs[i] = inv(facs[i]);
         }
     }
+    int findNext() {
+        // wwre w                
+    }
+    void solve() {
+        int n,m ; cin >> n >> m; 
+        vector<ll > arr1(n);    
+        vector<ll> arr2(m); 
+        for (int i = 0 ; i <  n ; i ++) {
+            cin >> arr1[i]; 
+        }   
+
+        vector<ll> pref(n + 1,0);
+        for (int i = 0 ; i < n; i ++) {
+            pref[i + 1] = pref[i] + arr1[i];
+        }
+        for (int i = 0; i < m ; i ++) {
+            cin >> arr2[i]; 
+        }
+
+        // you can increase or not increase  we
+        // find the maximum to left 
+        vector<vector<int>> dp[][]; 
+        
+        
+    }
 
 
-    
     int main() {
         ios_base::sync_with_stdio(0); cin.tie(0);    
-
+        int  t;
+        cin >> t; 
+        while (t --) {
+            solve();
+        }
         return 0;
     }
-     
+    
 
-    // doesn t    

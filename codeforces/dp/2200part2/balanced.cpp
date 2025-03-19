@@ -1,10 +1,12 @@
 
+
     #include <bits/stdc++.h>
     
     using namespace std;
 
     using ll = long long;
-    const int MOD =  998244353; 
+    const int MOD2 =  998244353; 
+    const int MOD = 1000000007;
     const ll INF = 1e18;
     const int MX = 1000001; //check the limits, dummy
 
@@ -46,7 +48,7 @@
 
     ll choose(ll a, ll b) {
         if (b > a) return 0;
-        if (a < 0)45 return 0;
+        if (a < 0) return 0;
         if (b < 0) return 0;
         ll cur = facs[a];
         cur = mul(cur, facInvs[b]);
@@ -65,13 +67,38 @@
         }
     }
 
+    void solve(int n , int p) {
+        int n ; cin >> n;
+        vector<vector<int>> tree(n + 1);
+        for (int i = 0 ; i < n- 1 ; i ++) {
+            int a, b ; cin >>a >> b;
+            tree[a].push_back(b);
+            tree[b].push_back(a);
+        }
 
-    
+        
+        vector<pair<int,int>> bounds(n + 1);
+        
+
+        for (int i = 1 ; i <= n;  i ++) {
+            cin >>pair.first >> pair.second;
+        }
+
+        // choose two arbitray nodes in the tree 
+
+        // u  and v ;
+
+
+        // if v is an acestor of u? werre
+
+    }
     int main() {
         ios_base::sync_with_stdio(0); cin.tie(0);    
-
+        int t ; cin >> t; 
+        while (t --) {
+            solve();
+        }
         return 0;
     }
-     
+    
 
-    // doesn t    

@@ -1,119 +1,63 @@
+#include <bits/stdc++.h>
 
+using namespace std;
 
-    #include <bits/stdc++.h>
-    
-    using namespace std;
+#define x first
+#define y second
+#define mp make_pair
+#define pb push_back
+#define sz(a) int((a).size())
+#define all(a) (a).begin(), (a).end()
+#define forn(i, n) for (int i = 0; i < int(n); ++i)
 
-    using ll = long long;
-    const int MOD2 =  998244353; 
-    const int MOD = 1000000007;
-    const ll INF = 1e18;
-    const int MX = 1000001; //check the limits, dummy
+const int N = 500 * 1000 + 13;
 
+int n, k;
+vector<pair<int, int>> g[N];
+long long dp[N][2];
 
-    ll modExp(ll base, ll power) {
-        if (power == 0) {
-            return 1;
-        } else {
-            ll cur = modExp(base, power / 2); cur = cur * cur; cur = cur % MOD;
-            if (power % 2 == 1) cur = cur * base;
-            cur = cur % MOD;
-            return cur;
-        }
-    }
+void calc(int v, int p = -1) {
+	long long cur = 0;
+	vector<long long> adds;
+	
+	for (auto it : g[v]) {
+		int to = it.x;
+		int w = it.y;
+		if (to == p)
+			continue;
+		calc(to, v);
+		
+		cur += dp[to][0];
+		adds.pb(dp[to][1] + w - dp[to][0]);
+	}
+	
+	sort(all(adds), greater<long long>());
+	forn(i, min(sz(adds), k)) if (adds[i] > 0)
+		cur += adds[i];
+	
+	dp[v][0] = dp[v][1] = cur;
+	if (k <= sz(adds) && adds[k - 1] > 0)
+		dp[v][1] -= adds[k - 1];
+}
 
-    ll inv(ll base) {
-        return modExp(base, MOD-2);
-    }
+long long solve() {
+    scanf("%d%d", &n, &k);
+    forn(i, n) g[i].clear();
+	forn(i, n - 1) {
+		int x, y, w;
+		scanf("%d%d%d", &x, &y, &w);
+		--x; --y;
+		g[x].pb(mp(y, w));
+		g[y].pb(mp(x, w));
+	}
+	
+	calc(0);
+	
+	return dp[0][0];
+}
 
-
-    ll mul(ll A, ll B) {
-        return (A*B)%MOD;
-    }
-
-    ll add(ll A, ll B) {
-        return (A+B)%MOD;
-    }
-
-    ll dvd(ll A, ll B) {
-        return mul(A, inv(B));
-    }
-
-    ll sub(ll A, ll B) {
-        return (A-B+MOD)%MOD;
-    }
-
-    ll* facs = new ll[MX];
-    ll* facInvs = new ll[MX];
-
-    ll choose(ll a, ll b) {
-        if (b > a) return 0;
-        if (a < 0) return 0;
-        if (b < 0) return 0;
-        ll cur = facs[a];
-        cur = mul(cur, facInvs[b]);
-        cur = mul(cur, facInvs[a-b]);
-        return cur;
-    }
-
-
-
-    void initFacs() {
-        facs[0] = 1;
-        facInvs[0] = 1;
-        for (int i = 1 ; i < MOD ; i ++ ) {
-            facs[i] = (facs[i-1] * i) % MOD;
-            facInvs[i] = inv(facs[i]);
-        }
-    }
-    
-    // flag is zero? we are choosing k children
-    
-    // flag is one?, we are choosing  k - 1 children, and the rest   
-    void solve2(int node, ,int parent , vector<vector<pair<int,int>>> &adj,vector<vector<int>> &dp )  {
-        vector<int> dp1;
-        vector<int> dp2;
-        for (auto c : adj[node]) {
-            if (c.first == parent) {
-                continue;
-            }           
-            solve(c.first, node, adj ,dp);  
-            dp0.push_back(dp[c][0]);
-            dp1.push_back(dp[c][1]);
-        }
-
-        
-
-        for (int )
-    }
-    void solve()  {
-       int n,k; cin >> n >>k ;
-        vector<vector<pair<int,int>> adj(n + 1);
-        for (int i = 0 ; i < n - 1;  i ++) {
-            int a,b,c ; cin >> a >> b >>c;
-            adj[a].push_back({b,c});
-            adj[b].push_back({a,c});
-        } 
-        vector<vector<int>> dp(n + 1 , vector<int> )
-        solve(1, 0, -1 ,adj , dp); 
-
-
-            
-    }
-
-
-
-
-    int main() {
-        ios_base::sync_with_stdio(0); cin.tie(0);    
-        int q; cin >> q;
-
-        while (q --) {
-            solve(); 
-        }
-        
-
-        return 0;
-    }
-    
-
+int main() {
+	int q;
+	scanf("%d", &q);
+	forn(i, q) printf("%lld\n", solve());
+}

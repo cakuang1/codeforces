@@ -65,13 +65,51 @@
         }
     }
 
+    
+    void solve() { 
+        ll n ,c ,k; cin >> n >> c >> k;
+        string s  ; cin >> s; 
+        vector<false> bad(1 << c, false); 
+        vector<int> counts(c ,0); 
+        int mask = 0; 
+        for (int i = 0 ;  i < k -1 ; i ++)  {
+            int val = s[i] - 'A'; 
+            if (counts[val] == 0 ) {
+                mask += (1 << val); 
+            }
+            counts[val] ++: 
+        } 
+        // bad 
+        for (int i = k - 1 ;  i < n; i  ++) {
+            int ch = s[i] - 'A'; 
+            if (  )  { 
+                
+            }
+        }
+        int res = c;
 
+
+
+
+        cout << res << endl; 
+    } 
+
+
+    
+    // bad of mask is true ; 
+    
+    // 
     
     int main() {
         ios_base::sync_with_stdio(0); cin.tie(0);    
+        int t; cin >> t; 
+        while (t --) {
+            solve(); 
+        }
+
 
         return 0;
     }
-     
 
-    // doesn t    
+    
+

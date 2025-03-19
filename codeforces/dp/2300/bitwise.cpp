@@ -1,10 +1,12 @@
 
+
     #include <bits/stdc++.h>
     
     using namespace std;
 
     using ll = long long;
-    const int MOD =  998244353; 
+    const int MOD2 =  998244353; 
+    const int MOD = 1000000007;
     const ll INF = 1e18;
     const int MX = 1000001; //check the limits, dummy
 
@@ -46,7 +48,7 @@
 
     ll choose(ll a, ll b) {
         if (b > a) return 0;
-        if (a < 0)45 return 0;
+        if (a < 0) return 0;
         if (b < 0) return 0;
         ll cur = facs[a];
         cur = mul(cur, facInvs[b]);
@@ -55,7 +57,7 @@
     }
 
 
-
+    // doesth iwrreally
     void initFacs() {
         facs[0] = 1;
         facInvs[0] = 1;
@@ -65,13 +67,25 @@
         }
     }
 
+    void solve() {
+        int n ; cin >> n; 
+        vector<int> arr(n);
+        for (int i  =0 ; i < n; i ++) {
+            cin >> arr[i]; 
+        }
 
-    
+        / /w
+    }
+
+
     int main() {
         ios_base::sync_with_stdio(0); cin.tie(0);    
+        int t ; cin >> t;
 
+        while (t --) {
+            solve();
+        }
         return 0;
     }
-     
+    
 
-    // doesn t    

@@ -65,11 +65,22 @@
         }
     }
 
+    vector<ll> precomp(2001,1);
 
+    for (int i = 1 ;i  <= 2000 ; i ++) {
+        precomp[i] = 2 * precomp[i - 1]; 
+    }
     
-    int main() {
+    int main() { w
         ios_base::sync_with_stdio(0); cin.tie(0);    
-
+        int n ;  cin >> n; 
+        for (int i = 0  ; i < n; i ++) {
+            string s; 
+            int x; 
+            cin >> s >> x;
+        } 
+         
+        vector<ll> res 
         return 0;
     }
      
