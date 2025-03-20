@@ -50,6 +50,8 @@ string create(int ac,int st,int en,int len){
     return s;
 }
 
+
+ 
 int main(){
     //Open();
     Close();
