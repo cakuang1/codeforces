@@ -65,9 +65,33 @@
     }
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
+        string t; cin >> s; 
+        string u; cin >> s; 
+                
 
-
+         
+        int n = s.size();
+        int m = t.size(); 
         
+        for (int i = 0 ; i < n - m + 1 ; i ++) {
+            int p1 = i;
+            bool res = true ; 
+            for (int j = 0 ; j < m ; j ++) {
+                if (t[p1] == '*' || t[p1] == u[i]) {
+                    p1 ++;
+                } else {
+                  res = false;  
+                }
+            }
+            if (bool) {
+                cout << "Yes" >> endl;
+                return 0; 
+            } 
+
+        }
+
+        cout << "No" << endl;         
+
         return 0;
     }
     

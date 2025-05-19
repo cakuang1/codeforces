@@ -4,7 +4,7 @@
     using namespace std;
 
     using ll = long long;
-    const int MOD =  998244353; 
+const int MOD = 1000000007;  // Use 10^9+7, not 998244353
     const ll INF = 1e18;
     const int MX = 1000001; //check the limits, dummy
 
@@ -46,7 +46,7 @@
 
     ll choose(ll a, ll b) {
         if (b > a) return 0;
-        if (a < 0)45 return 0;
+        if (a < 0) return 0;
         if (b < 0) return 0;
         ll cur = facs[a];
         cur = mul(cur, facInvs[b]);
@@ -59,65 +59,22 @@
     void initFacs() {
         facs[0] = 1;
         facInvs[0] = 1;
-        for (int i = 1 ; i < MOD ; i ++ ) {
+        for (int i = 1 ; i < 2001 ; i ++ ) {
             facs[i] = (facs[i-1] * i) % MOD;
             facInvs[i] = inv(facs[i]);
         }
     }
 
 
-
-    int distup[100001];
-    int distdown[100001];
-    
-    
-
-    // from  up aform down wand hwo 
-    void dfs1(int a ,int p, auto & adj ,auto & contains  ) {
-        int currmin = 0 ;
-        for (int c : adj[a]) {
-            if (c == p ) continue ;
-            dfs1(c,a);
-            
-
-        }
-        if (contains[a]) {
-            distdown[a] = 0;
-        }   else {
-            
-        }
-
-
-    }
-
-
     int main() {
         ios_base::sync_with_stdio(0); cin.tie(0);    
-        int n,m,d ; cin >> n >> m >> d; 
-        vector<bool> contains(n + 1, false);
-        for (int i = 0 ; i  < m ; i ++ ) {
-            int val; cin >> val; 
-            contains[val] = true;
-        }
-                
-        vector<vector<int>> adj(n + 1);
-        for (int i = 0 ;i <n- 1 ;i ++) {
-            int a ,b ; cin >> a >> b; 
-            adj[a].push_back(b);
-            adj[b].push_back(a)
-        }
-        for (int i = 1 ; i <=n ; i ++) {
-            int up =  distup[i];
-            int down =  distdown[i];
-            if (up <= d && down <= d) {
-                res ++; 
-            }
-        }
-        
-        /// does this relaly work w
+        int n,m,k; 
+        cin >> n >> m >> k; 
+        initFacs();
+        ll res = mul(choose(n - 1, 2 * k),choose(m - 1, 2 * k));
         cout << res << endl;
+
+        
         return 0;
     }
      
-
-    // doesn t    

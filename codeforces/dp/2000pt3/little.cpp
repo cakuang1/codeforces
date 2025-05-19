@@ -46,7 +46,7 @@
 
     ll choose(ll a, ll b) {
         if (b > a) return 0;
-        if (a < 0)45 return 0;
+        if (a < 0) return 0;
         if (b < 0) return 0;
         ll cur = facs[a];
         cur = mul(cur, facInvs[b]);
@@ -65,59 +65,37 @@
         }
     }
 
-
-
-    int distup[100001];
-    int distdown[100001];
-    
-    
-
-    // from  up aform down wand hwo 
-    void dfs1(int a ,int p, auto & adj ,auto & contains  ) {
-        int currmin = 0 ;
-        for (int c : adj[a]) {
-            if (c == p ) continue ;
-            dfs1(c,a);
-            
-
-        }
-        if (contains[a]) {
-            distdown[a] = 0;
-        }   else {
-            
-        }
-
-
-    }
-
-
-    int main() {
-        ios_base::sync_with_stdio(0); cin.tie(0);    
-        int n,m,d ; cin >> n >> m >> d; 
-        vector<bool> contains(n + 1, false);
-        for (int i = 0 ; i  < m ; i ++ ) {
-            int val; cin >> val; 
-            contains[val] = true;
-        }
-                
-        vector<vector<int>> adj(n + 1);
-        for (int i = 0 ;i <n- 1 ;i ++) {
-            int a ,b ; cin >> a >> b; 
-            adj[a].push_back(b);
-            adj[b].push_back(a)
-        }
-        for (int i = 1 ; i <=n ; i ++) {
-            int up =  distup[i];
-            int down =  distdown[i];
-            if (up <= d && down <= d) {
-                res ++; 
+    vector<int> findDivisors(int m) {
+        vector<int> div; 
+        for (int i = 1 ; i * i <= m ; i ++) {
+            if (i * i == m) {
+                div.push_back(i);
+            } else if (m % i == 0 ) {
+                div.push_back(i);
+                div.push_back(m/i);
             }
         }
-        
-        /// does this relaly work w
-        cout << res << endl;
+        sort(div.begin(),div.end());         
+        return div; 
+    }
+    
+    int main() {
+        ios_base::sync_with_stdio(0); cin.tie(0);    
+        int n ; cin >> n;
+        vector<int> arr(n); 
+        for (int i = 0 ;i < n ; i ++) {
+            cin >> arr[i]; 
+        }
+        int m = *max_element(arr.begin() ,arr.end());
+        ll res = 0;
+        for (int i = 1 ;i <= m; i ++) {
+            vector<int> divisors = findDivisors(i); 
+            for (int d : divisors) {
+                // fi                
+            }
+        }
         return 0;
     }
      
-
-    // doesn t    
+    
+    // iterate , find diviors 

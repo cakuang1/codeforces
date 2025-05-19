@@ -64,58 +64,48 @@
             facInvs[i] = inv(facs[i]);
         }
     }
+    ll  dp[100001][2]; 
 
-
-
-    int distup[100001];
-    int distdown[100001];
+    // the number 
     
+    // all paths need to be even
+    // place casino or dont place 
     
+    void dfs(int v, int p , auto & adj ) {
+        ll evendontpaint = 1;
+        ll odddontpaint = 1;
+        for (int a : adj[v]) {
+            if (a == p) continue; 
+            dfs(a,v ,adj); 
+            evendontpoint *= dp[a][0];
+            odddontpaint *= dp
 
-    // from  up aform down wand hwo 
-    void dfs1(int a ,int p, auto & adj ,auto & contains  ) {
-        int currmin = 0 ;
-        for (int c : adj[a]) {
-            if (c == p ) continue ;
-            dfs1(c,a);
-            
-
-        }
-        if (contains[a]) {
-            distdown[a] = 0;
-        }   else {
-            
         }
 
 
+        // withthe last w
+
+
+
+        dp[v][0] = even;
+        dp[v][1] = odd; 
+
+        
+        
+        
     }
-
-
+    
     int main() {
         ios_base::sync_with_stdio(0); cin.tie(0);    
-        int n,m,d ; cin >> n >> m >> d; 
-        vector<bool> contains(n + 1, false);
-        for (int i = 0 ; i  < m ; i ++ ) {
-            int val; cin >> val; 
-            contains[val] = true;
-        }
-                
-        vector<vector<int>> adj(n + 1);
-        for (int i = 0 ;i <n- 1 ;i ++) {
-            int a ,b ; cin >> a >> b; 
+        int n ; cin >> n;
+        vector<vector<int>> dp(n + 1);
+        for (int i = 0 ; i < n- 1; i ++) {
+            int a , b ; cin >> a >> b;
             adj[a].push_back(b);
-            adj[b].push_back(a)
-        }
-        for (int i = 1 ; i <=n ; i ++) {
-            int up =  distup[i];
-            int down =  distdown[i];
-            if (up <= d && down <= d) {
-                res ++; 
-            }
-        }
+            adj[b].push_back(a);
+        } 
+
         
-        /// does this relaly work w
-        cout << res << endl;
         return 0;
     }
      

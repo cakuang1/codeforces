@@ -65,9 +65,17 @@
     }
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
-
-
         
+        int n ; cin >> n; 
+        
+        int res = 0;
+        for (int i = 1 ;i <= n; i ++) {
+            int a ; cin >> a;
+            if (i % 2)  {
+                res += a;
+            }
+        }        
+        cout << res << endl;
         return 0;
     }
     

@@ -66,56 +66,24 @@
     }
 
 
-
-    int distup[100001];
-    int distdown[100001];
     
+    // groups of 4
+
+    // 5 6 7 8 9 10 11 12 13 14 15  w
+    
+    // 1 1 1 2 2 2  2  3  3   3 
+        
+
+    // earliest finish time is what w
+
     
 
-    // from  up aform down wand hwo 
-    void dfs1(int a ,int p, auto & adj ,auto & contains  ) {
-        int currmin = 0 ;
-        for (int c : adj[a]) {
-            if (c == p ) continue ;
-            dfs1(c,a);
-            
-
-        }
-        if (contains[a]) {
-            distdown[a] = 0;
-        }   else {
-            
-        }
-
-
-    }
-
+    // natural sum 
 
     int main() {
         ios_base::sync_with_stdio(0); cin.tie(0);    
-        int n,m,d ; cin >> n >> m >> d; 
-        vector<bool> contains(n + 1, false);
-        for (int i = 0 ; i  < m ; i ++ ) {
-            int val; cin >> val; 
-            contains[val] = true;
-        }
+        ll n,l,k ; cin >> n >> l >> k;
                 
-        vector<vector<int>> adj(n + 1);
-        for (int i = 0 ;i <n- 1 ;i ++) {
-            int a ,b ; cin >> a >> b; 
-            adj[a].push_back(b);
-            adj[b].push_back(a)
-        }
-        for (int i = 1 ; i <=n ; i ++) {
-            int up =  distup[i];
-            int down =  distdown[i];
-            if (up <= d && down <= d) {
-                res ++; 
-            }
-        }
-        
-        /// does this relaly work w
-        cout << res << endl;
         return 0;
     }
      

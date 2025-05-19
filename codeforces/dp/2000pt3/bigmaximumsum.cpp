@@ -66,58 +66,20 @@
     }
 
 
-
-    int distup[100001];
-    int distdown[100001];
     
-    
-
-    // from  up aform down wand hwo 
-    void dfs1(int a ,int p, auto & adj ,auto & contains  ) {
-        int currmin = 0 ;
-        for (int c : adj[a]) {
-            if (c == p ) continue ;
-            dfs1(c,a);
-            
-
-        }
-        if (contains[a]) {
-            distdown[a] = 0;
-        }   else {
-            
-        }
-
-
-    }
-
-
     int main() {
         ios_base::sync_with_stdio(0); cin.tie(0);    
-        int n,m,d ; cin >> n >> m >> d; 
-        vector<bool> contains(n + 1, false);
-        for (int i = 0 ; i  < m ; i ++ ) {
-            int val; cin >> val; 
-            contains[val] = true;
+        int n; cin >> n; 
+        int m ; cin >> m;
+
+        vector<vector<int>> smalls(n); 
+        for (int i = 0 ; i < n; i ++) {
+            // w 
         }
-                
-        vector<vector<int>> adj(n + 1);
-        for (int i = 0 ;i <n- 1 ;i ++) {
-            int a ,b ; cin >> a >> b; 
-            adj[a].push_back(b);
-            adj[b].push_back(a)
-        }
-        for (int i = 1 ; i <=n ; i ++) {
-            int up =  distup[i];
-            int down =  distdown[i];
-            if (up <= d && down <= d) {
-                res ++; 
-            }
-        }
-        
-        /// does this relaly work w
-        cout << res << endl;
+
+        vector<int> big(m); 
+
+        for (int i = 0)
         return 0;
     }
      
-
-    // doesn t    

@@ -65,7 +65,19 @@
     }
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
+        string s; cin >> s; 
+        vector<bool> seen(26,false);
 
+        for (char c : s) {
+            seen[(c - 'a')] = true; 
+        }
+
+        for (int i = 0; i  < 26; i ++) {
+            if (!seen[i]) {
+                cout << char ('a' + i)  << endl; 
+                return 0;
+            }
+        }
 
         
         return 0;

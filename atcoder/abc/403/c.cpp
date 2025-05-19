@@ -65,9 +65,27 @@
     }
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
-
-
-        
+        int n , m , q ; cin >> n >> m >> q; 
+        set<pair<int,int>> p; 
+        vector<bool> seeall(n + 1, false); 
+        while (q --) {
+            int type ; cin >> type;
+            int a , b;
+            if (type == 1) {
+                cin >> a >> b;
+                p.insert({a,b})
+            } else if (type == 2) {
+                cin >> a;
+                seeall[a] = true;
+            } else {
+                int a , b; cin >> a >> b;  
+                if (seeall[a] || p.count({a,b})) {
+                    cout << "Yes" << endl;
+                } else {
+                    cout << "No" << endl;
+                }
+            }
+        }
         return 0;
     }
     

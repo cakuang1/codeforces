@@ -63,11 +63,19 @@
             facInvs[i] = inv(facs[i]);
         }
     }
+    
+    
+    // whats the pobbilaibe
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
-
-
+        int n, t , m , k ; cin >> n >> t >> m >> k; 
+        // define dp
+        vector<vector<double>> dp(t + 1 , vector<double> (k + 1,0));  
+        dp[0][0] = 1.0;
         
+        for (int i = 1; i <= k ; i ++) {
+        }
+        cout << fixed << setprecision(6) << dp[k] << endl; 
         return 0;
     }
     
