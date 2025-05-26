@@ -39,7 +39,7 @@ public:
             }
         }
     }
-
+    
     int query(int L, int R) {
         // Find the largest power of 2 that fits in the length of the range
         int length = R - L + 1;
