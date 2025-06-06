@@ -41,6 +41,7 @@ ll query(Node *node, int a, int b, int l = 1, int r = n) {
 }
 
 
+
 int main() {
 	ios_base::sync_with_stdio(0);
 	cin.tie(0);
