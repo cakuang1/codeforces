@@ -57,10 +57,6 @@
         cur = mul(cur, facInvs[a-b]);
         return cur;
     }
-
-
-        
-    
     void initFacs() {
         facs[0] = 1; 
         facInvs[0] = 1;
@@ -69,11 +65,19 @@
             facInvs[i] = inv(facs[i]);
         }
     }
-
-    // wri wwil wlerqual to 
-    int main()  {
+    int n ; 
+    const int maxn = 100005;
+    vector<int> adj
+    
+        int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
-         w
+        cin >> n; 
+        for (int i = 0 ; i < n - 1 ;i ++) {
+            int a ,b ; cin >> a >> b; 
+            adj[a].push_back(b);
+            adj[b].push_back(a);
+        }
+             
         return 0;
     }
     

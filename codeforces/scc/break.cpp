@@ -59,8 +59,6 @@
     }
 
 
-        
-    
     void initFacs() {
         facs[0] = 1; 
         facInvs[0] = 1;
@@ -69,11 +67,27 @@
             facInvs[i] = inv(facs[i]);
         }
     }
-
-    // wri wwil wlerqual to 
+        
+         
+    int n ; 
+    int m ; 
+    const int maxn = 1001; 
+    vector<pair<int,int>> adj[maxn]; 
+    bool seen[maxn]; 
+    
+    // how wt o se th
+         
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
-         w
+        cin >> n >> m;
+                
+        for (int i = 0 ; i <  m ; i ++) {
+            int a, b, c ; 
+            cin >> a >> b >> c;
+        }
+        
+        
+        // orient
         return 0;
     }
     

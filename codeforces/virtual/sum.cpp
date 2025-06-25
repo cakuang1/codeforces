@@ -56,7 +56,9 @@
         cur = mul(cur, facInvs[b]);
         cur = mul(cur, facInvs[a-b]);
         return cur;
-    }
+    } 
+
+    // centrodi wer
 
 
         
@@ -68,12 +70,19 @@
             facs[i] = (facs[i-1] * i) % MOD;
             facInvs[i] = inv(facs[i]);
         }
-    }
+    }  
+    
+    
 
-    // wri wwil wlerqual to 
+    static const int MAXN = 2000000; 
+
+    
+
+
+
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
-         w
+         wqwe w        
         return 0;
     }
     

@@ -41,9 +41,6 @@
     ll sub(ll A, ll B) {
         return (A-B+MOD)%MOD;
     }
-    ll cielDiv(ll A , ll B) {
-        return (A + B - 1)/B;
-    } 
 
     ll* facs = new ll[MX];
     ll* facInvs = new ll[MX];
@@ -56,11 +53,9 @@
         cur = mul(cur, facInvs[b]);
         cur = mul(cur, facInvs[a-b]);
         return cur;
-    }
-
-
-        
+    } 
     
+    // we
     void initFacs() {
         facs[0] = 1; 
         facInvs[0] = 1;
@@ -69,11 +64,11 @@
             facInvs[i] = inv(facs[i]);
         }
     }
-
-    // wri wwil wlerqual to 
+    
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
-         w
+        ll n; cin >> n; 
+                
         return 0;
     }
     

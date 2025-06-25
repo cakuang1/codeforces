@@ -41,9 +41,6 @@
     ll sub(ll A, ll B) {
         return (A-B+MOD)%MOD;
     }
-    ll cielDiv(ll A , ll B) {
-        return (A + B - 1)/B;
-    } 
 
     ll* facs = new ll[MX];
     ll* facInvs = new ll[MX];
@@ -58,9 +55,6 @@
         return cur;
     }
 
-
-        
-    
     void initFacs() {
         facs[0] = 1; 
         facInvs[0] = 1;
@@ -69,11 +63,34 @@
             facInvs[i] = inv(facs[i]);
         }
     }
-
-    // wri wwil wlerqual to 
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
-         w
+        int t ; cin >> t; 
+        while (t --) {
+            int n ; cin >> n; 
+            int k ; cin >> k; 
+            vector<ll> arr(n);
+            ll s = 0;
+            int m = 0 
+            for (int  i = 0 ; i < n ; i ++) {
+                cin >> arr[i];
+                s += arr[i]; 
+                m = max(arr[i],m);
+            }
+            int res = -1; 
+            
+            // s is fixed? 
+            for (int i ) {
+                
+                
+                
+                
+                
+            }
+            cout << res << endl;
+        }
+         
+        // why does this work w
         return 0;
     }
     

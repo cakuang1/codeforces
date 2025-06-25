@@ -67,13 +67,65 @@
         for (int i = 1 ; i < MX ; i ++ ) {
             facs[i] = (facs[i-1] * i) % MOD;
             facInvs[i] = inv(facs[i]);
-        }
+        } 
     }
 
-    // wri wwil wlerqual to 
+    
+
+    bool comp(auto &p1 , auto &p2) {
+        return p1.first < p2.first; 
+    }
+    
+            
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
-         w
+        int n; cin >> n; 
+        int m ; cin >> m;
+        vector<ll> a(n);
+        vector<ll> b(n);
+        vector<ll> c(m);
+        vector<ll> d(n);
+        
+        
+        vector<pair<ll,ll>> p(n); 
+        ll m = 0; 
+
+        
+        for (int i = 0 ; i < n; i ++) {
+            cin >> a[i]; 
+            m = max(m , a[i]);
+            p[i].first = a[i]; 
+        }
+        for (int i = 0 ; i < n; i ++) {
+            cin >> b[i]; 
+        }
+        for (int i = 0 ; i < m ; i++) {
+            cin >> c[i]; 
+        }
+        vector<ll> dp(m + 1, 0); 
+        for (int i = 0 ; i < n; i ++) {
+            d[i] =  a[i] - b[i];
+            p[i].second = d;      
+        }
+        vector<ll> best(m + 1 , INF);
+        for (int i = 0 ; i < n; i ++) {
+            best[a[i]] = min(d ,best[a[i]]); 
+        }
+
+        for (int i = 1 ; i <= m ; i ++) {
+            best[i] = min(best[i] ,best[i - 1]);
+        }
+        for (int i = 2  ;i < n; i ++) {
+            int bjump = best[i];
+            if (i - bjump >= 0) {
+                dp[i] = dp[i - bjump] + 2; 
+            }
+        }
+    
+        ll res = 0; 
+        for () 
+        
+        
         return 0;
     }
     

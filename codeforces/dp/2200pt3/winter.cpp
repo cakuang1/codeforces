@@ -1,4 +1,4 @@
- 
+    
     #include <bits/stdc++.h>
     
     using namespace std;
@@ -41,9 +41,6 @@
     ll sub(ll A, ll B) {
         return (A-B+MOD)%MOD;
     }
-    ll cielDiv(ll A , ll B) {
-        return (A + B - 1)/B;
-    } 
 
     ll* facs = new ll[MX];
     ll* facInvs = new ll[MX];
@@ -58,9 +55,6 @@
         return cur;
     }
 
-
-        
-    
     void initFacs() {
         facs[0] = 1; 
         facInvs[0] = 1;
@@ -69,11 +63,15 @@
             facInvs[i] = inv(facs[i]);
         }
     }
-
-    // wri wwil wlerqual to 
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
-         w
+        ll n; cin >> n; 
+        vector<ll> arr(n);
+        for (int i = 0 ; i < n; i ++) {
+            cin >> arr[i]; 
+        } 
+        
+                
         return 0;
     }
     

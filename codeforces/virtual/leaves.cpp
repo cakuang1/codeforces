@@ -8,8 +8,6 @@
     const int MOD2 =  998244353; 
     const ll INF = 1e18;
     const int MX = 1000001; //check the limits, dummy
-
-
     ll modExp(ll base, ll power) {
         if (power == 0) {
             return 1;
@@ -59,7 +57,7 @@
     }
 
 
-        
+    // root the tree     
     
     void initFacs() {
         facs[0] = 1; 
@@ -68,12 +66,47 @@
             facs[i] = (facs[i-1] * i) % MOD;
             facInvs[i] = inv(facs[i]);
         }
-    }
-
-    // wri wwil wlerqual to 
+    } 
+    ll n; 
+    const ll maxn = 200005; 
+    ll  c[maxn];
+    ll  ind[maxn];
+    vector<ll> adj[maxn];
+    
+    int res = 0 ;    
+    void dfs_col(int a, int p, int color) {
+        dp[a] = 1;
+        for (int v : adj[a]) {
+            if (v == p) continue;
+            dp[a] = mul(dp[a], dp[v] + 1);
+        }
+        if (c[a] != color) { 
+            dp[a] --;
+            for (int v : adj[a]) {
+                if (v == p) continue;
+                res = sub(res, dp[v]);
+            }
+        }
+        res = add(res, dp[a]);  
+    }  
+    
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
-         w
+        cin >> n;
+        for (int i = 1; i <= n; i ++) {
+            cin >> c[i];
+        } 
+        for (int i = 0 ; i < n- 1; i ++) {
+            int a, b; cin >> a >> b; 
+            adj[a].push_back     
+        }
+        for (int curr = 1; curr <= n ; curr ++ ) {
+            dfs_col(1,0,curr);             
+        }
+                 
+        cout << res << endl; 
         return 0;
     }
+    
+
     

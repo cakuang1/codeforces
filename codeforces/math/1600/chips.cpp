@@ -41,9 +41,6 @@
     ll sub(ll A, ll B) {
         return (A-B+MOD)%MOD;
     }
-    ll cielDiv(ll A , ll B) {
-        return (A + B - 1)/B;
-    } 
 
     ll* facs = new ll[MX];
     ll* facInvs = new ll[MX];
@@ -58,9 +55,6 @@
         return cur;
     }
 
-
-        
-    
     void initFacs() {
         facs[0] = 1; 
         facInvs[0] = 1;
@@ -70,10 +64,34 @@
         }
     }
 
-    // wri wwil wlerqual to 
+    string solve() {
+        ll h,w,ax,ay,bx,by; 
+        cin >> h >> w >> ax >> ay >> bx >> by; 
+        
+        ll d = bx - ax; 
+        if (d < 0) {
+            return "Draw"; 
+        }  
+        // bob wins alice must escape  
+        if (d % 2 == 1) {
+            if ()
+
+        // alice wins 
+        } else {
+        
+        }     
+
+
+        return "Draw";
+        
+    }
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
-         w
+        int t; cin >> t;
+        while (t --) {
+
+
+        }        
         return 0;
     }
     

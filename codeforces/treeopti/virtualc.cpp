@@ -69,11 +69,12 @@
             facInvs[i] = inv(facs[i]);
         }
     }
+    
 
-    // wri wwil wlerqual to 
+    // construct ing wr
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
-         w
+        // wdeis thiw ewd
         return 0;
     }
     

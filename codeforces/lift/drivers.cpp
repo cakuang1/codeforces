@@ -60,7 +60,6 @@
 
 
         
-    
     void initFacs() {
         facs[0] = 1; 
         facInvs[0] = 1;
@@ -69,11 +68,21 @@
             facInvs[i] = inv(facs[i]);
         }
     }
+    const int maxn = 200005;
+    
+    // 
+    ll n,m ; cin >> n >> m;
+    vector<ll> adj[maxn];
+    ll disa[maxn]; 
+    ll cost[maxn];
 
-    // wri wwil wlerqual to 
+    // fix the edge we want wto remov w
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
-         w
+        cin >> n >> m;
+        for (int i = 1 ; i <= m ; i ++) {
+            di    
+        }
         return 0;
     }
     

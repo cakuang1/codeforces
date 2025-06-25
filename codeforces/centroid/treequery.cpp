@@ -57,10 +57,10 @@
         cur = mul(cur, facInvs[a-b]);
         return cur;
     }
+    // for each centroid 
+    // go through log 
 
-
-        
-    
+    // fidn thw w
     void initFacs() {
         facs[0] = 1; 
         facInvs[0] = 1;
@@ -69,11 +69,19 @@
             facInvs[i] = inv(facs[i]);
         }
     }
+    
+    
+    
+    int n ,q;
+    const int maxn = 10001;
 
-    // wri wwil wlerqual to 
+    // find distnace querise w
+    
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
-         w
-        return 0;
-    }
-    
+        
+        cin >> n >> q; 
+        
+
+        return 0; 
+    }  

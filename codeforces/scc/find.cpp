@@ -1,4 +1,4 @@
- 
+  
     #include <bits/stdc++.h>
     
     using namespace std;
@@ -60,7 +60,6 @@
 
 
         
-    
     void initFacs() {
         facs[0] = 1; 
         facInvs[0] = 1;
@@ -69,11 +68,28 @@
             facInvs[i] = inv(facs[i]);
         }
     }
+    
+    
 
-    // wri wwil wlerqual to 
+    int n; 
+    vector<vector<ll>> adj;  
+    
     int main()  {
-        ios_base::sync_with_stdio(0); cin.tie(0);  
-         w
+        ios_base::sync_with_stdio(0); cin.tie(0); 
+        cin >> n;
+        adj.resize(n,vector<ll> (n));
+        for (int i = 0 ;i <  n; i ++) {
+            for (int j = 0 ; j < n;  j ++) {
+                // simply cycle w
+                if () {
+                    
+                }
+            }
+        }  
+    
+        
+         
+        
         return 0;
     }
     

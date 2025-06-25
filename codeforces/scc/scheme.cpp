@@ -1,5 +1,5 @@
  
-    #include <bits/stdc++.h>
+   #include <bits/stdc++.h>
     
     using namespace std;
 
@@ -59,8 +59,6 @@
     }
 
 
-        
-    
     void initFacs() {
         facs[0] = 1; 
         facInvs[0] = 1;
@@ -70,10 +68,21 @@
         }
     }
 
-    // wri wwil wlerqual to 
+
+    //     
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
-         w
+        
+        
+        int n; cin >> n; 
+        
+        vector<ll> arr(n + 1);
+        for (int i = 1; i <= n; i ++) {
+            cin >> arr[i];
+        }
+            
+        
+         
         return 0;
     }
     

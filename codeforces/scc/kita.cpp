@@ -60,7 +60,6 @@
 
 
         
-    
     void initFacs() {
         facs[0] = 1; 
         facInvs[0] = 1;
@@ -69,11 +68,9 @@
             facInvs[i] = inv(facs[i]);
         }
     }
-
-    // wri wwil wlerqual to 
-    int main()  {
+     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
-         w
+         
         return 0;
     }
     

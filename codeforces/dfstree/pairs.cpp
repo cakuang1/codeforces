@@ -41,9 +41,6 @@
     ll sub(ll A, ll B) {
         return (A-B+MOD)%MOD;
     }
-    ll cielDiv(ll A , ll B) {
-        return (A + B - 1)/B;
-    } 
 
     ll* facs = new ll[MX];
     ll* facInvs = new ll[MX];
@@ -58,9 +55,6 @@
         return cur;
     }
 
-
-        
-    
     void initFacs() {
         facs[0] = 1; 
         facInvs[0] = 1;
@@ -69,11 +63,50 @@
             facInvs[i] = inv(facs[i]);
         }
     }
+    ll n,m ;
+    // atleast w
+    ll maxd  = 1; 
+    vector<vector<ll>> adj;
+    vector<ll> depth;
+    vector<ll> parent;
+    
+    
+    void dfs(ll a, ll p,ll currd){
+        parent[a] = p;
+        depth[a] = currd;
+        maxd = max(maxd,currd);
+        for (int c : adj[a]) { 
+            if (p == c) continue; 
+            dfs(c,a,currd + 1);
+        }
+    }
+    
 
-    // wri wwil wlerqual to 
+
+    
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
-         w
+        int t ; cin >> t;
+        while (t -- ) {
+            cin >> n >> m;
+            maxd = 1;
+            adj.resize(n + 1);
+            depth.resize(n + 1);
+            parent.resize(n + 1);
+            for (int i = 0 ; i < m; i ++) {
+                ll a,b ; cin >> a >> b;
+                adj[a].push_back(b); 
+                adj[b].push_back(a);
+            }
+            dfs(1,0, 1); 
+            
+
+            if (maxdepth >= ) {
+                
+            }
+
+                 
+            }
         return 0;
     }
     

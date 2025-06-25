@@ -1,4 +1,4 @@
- 
+    
     #include <bits/stdc++.h>
     
     using namespace std;
@@ -41,9 +41,6 @@
     ll sub(ll A, ll B) {
         return (A-B+MOD)%MOD;
     }
-    ll cielDiv(ll A , ll B) {
-        return (A + B - 1)/B;
-    } 
 
     ll* facs = new ll[MX];
     ll* facInvs = new ll[MX];
@@ -58,9 +55,6 @@
         return cur;
     }
 
-
-        
-    
     void initFacs() {
         facs[0] = 1; 
         facInvs[0] = 1;
@@ -69,11 +63,39 @@
             facInvs[i] = inv(facs[i]);
         }
     }
-
-    // wri wwil wlerqual to 
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
-         w
+        int t; cin >> t;
+        while (t -- ) {
+            ll n,a,b; cin >> n >> a >> b;
+            vector<ll> arr(n);
+            for (int i = 0 ; i< n; i++) {
+                cin >> arr[i]; 
+            }
+            if (a == b) {
+                
+                // g - the maximum gap of the arc ww
+                vector<int> resi(n);
+                
+                for (int i = 0; i < n ; i ++) {
+                    int r = arr[i] % a;
+                    resi[i] = r;
+                }
+                
+                sort(resi.begin( ), resi.end());
+                int m = 0; 
+                for (int i = 1; i< n; i ++) {
+                    int diff = (resi[i]) - resi[i - 1];
+                     m = max(m, diff); 
+                } 
+                cout << a - m<< endl ;
+            } else {
+            }
+            /  
+        } 
+
+    // division walgorith wmew
+    
         return 0;
     }
     

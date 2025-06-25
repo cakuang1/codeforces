@@ -1,76 +1,63 @@
- 
-    #include <bits/stdc++.h>
-    
-    using namespace std;
+#include <bits/stdc++.h>
+using namespace std;
 
-    using ll = long long;
-    const int MOD = 1000000007; 
-    const int MOD2 =  998244353; 
-    const ll INF = 1e18;
-    const int MX = 1000001; //check the limits, dummy
+// check if integer a has digit '7' in its decimal form
+bool has7(long long a) {
+    while (a > 0) {
+        if ((a % 10) == 7) return true;
+        a /= 10;
+    }
+    return false;
+}
 
+int solve_one(long long n) {
+    // List of all-9 numbers up to 10 digits
+    static long long all9[10] = {
+        9LL,
+        99LL,
+        999LL,
+        9999LL,
+        99999LL,
+        999999LL,
+        9999999LL,
+        99999999LL,
+        999999999LL,
+        9999999999LL
+    };
 
-    ll modExp(ll base, ll power) {
-        if (power == 0) {
-            return 1;
+    int best = INT_MAX;
+    for (int i = 0; i < 10; i++) {
+        long long x = all9[i];
+        long long cur = n;
+        int steps = 0;
+        // keep adding x until we see a '7'
+        while (!has7(cur)) {
+            cur += x;
+            steps++;
+            // (In practice, steps will be ≤ 10–12 here, because each digit
+            //  cycles mod 10.)
+        }
+        best = min(best, steps);
+    }
+    return best;
+}
+
+// how to see this and hwy does thiwe
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+
+    int T;
+    cin >> T;
+    while (T--) {
+        long long n;
+        cin >> n;
+        // If n already has a '7', 0 moves are needed
+        if (has7(n)) {
+            cout << 0 << "\n";
         } else {
-            ll cur = modExp(base, power / 2); cur = cur * cur; cur = cur % MOD;
-            if (power % 2 == 1) cur = cur * base;
-            cur = cur % MOD;
-            return cur;
+            cout << solve_one(n) << "\n";
         }
     }
-
-    ll inv(ll base) {
-        return modExp(base, MOD-2);
-    }
-
-
-    ll mul(ll A, ll B) {
-        return (A*B)%MOD;
-    }
-
-    ll add(ll A, ll B) {
-        return (A+B)%MOD;
-    }
-    
-    ll dvd(ll A, ll B) {
-        return mul(A, inv(B));
-    }
-
-    ll sub(ll A, ll B) {
-        return (A-B+MOD)%MOD;
-    }
-
-    ll* facs = new ll[MX];
-    ll* facInvs = new ll[MX];
-
-    ll choose(ll a, ll b) {
-        if (b > a) return 0;
-        if (a < 0) return 0;
-        if (b < 0) return 0;
-        ll cur = facs[a];
-        cur = mul(cur, facInvs[b]);
-        cur = mul(cur, facInvs[a-b]);
-        return cur;
-    }
-
-    void initFacs() {
-        facs[0] = 1; 
-        facInvs[0] = 1;
-        for (int i = 1 ; i < MX ; i ++ ) {
-            facs[i] = (facs[i-1] * i) % MOD;
-            facInvs[i] = inv(facs[i]);
-        }
-    }
-    int main()  {
-        ios_base::sync_with_stdio(0); cin.tie(0);  
-        ll t ; cin >>t ;
-        while (t --) {
-            ll n; cin >> n; 
-             
-        }
-
-        return 0;
-    }
-    
+    return 0;
+}

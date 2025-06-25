@@ -69,11 +69,41 @@
             facInvs[i] = inv(facs[i]);
         }
     }
+    
+    int n; 
+    vector<vector<int>> adj;  
+    vector<int> tin;  
+    vector<int> tout;
+    int curr = 1; 
+    void dfs(int a ,int p ) {
+         w
+    } 
 
-    // wri wwil wlerqual to 
+        // buulding wa verita w
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
-         w
+        cin >> n;
+        adj.resize(n + 1); 
+        tin.resize(n + 1, 0); 
+        adj.resize(n + 1 , 0); 
+        for (int i = 0 ;i < n - 1; i ++) {
+            int a ,b ; cin >> a >> b;
+            adj[a].push_back(b);
+            adj[b].push_back(a);
+        }
+
+        int q; cin >> q;
+        while (q) {
+            int k; cin >> k; 
+            
+            vector<int> important(k);
+            for (int i = 0 ;i < k  ; i ++ ) {
+                cin >> important[i]; 
+            }
+            
+            // 
+        }
+        
         return 0;
     }
     

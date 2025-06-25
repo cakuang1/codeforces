@@ -41,9 +41,6 @@
     ll sub(ll A, ll B) {
         return (A-B+MOD)%MOD;
     }
-    ll cielDiv(ll A , ll B) {
-        return (A + B - 1)/B;
-    } 
 
     ll* facs = new ll[MX];
     ll* facInvs = new ll[MX];
@@ -58,8 +55,6 @@
         return cur;
     }
 
-
-        
     
     void initFacs() {
         facs[0] = 1; 
@@ -69,11 +64,42 @@
             facInvs[i] = inv(facs[i]);
         }
     }
+    long long computeLucky(long long n, long long k) {
+        // We'll accumulate twice the true answer into ans2,
+        // so we can avoid worrying about (n+1)/2 being fractional when n is even.
+        long long ans2 = 0;
+        
+        // segments = 2^i, length = L_i
+        long long segments = 1;
+        long long length   = n;
+        
+        // Walk down levels until segments would be shorter than k:
+        while (length >= k) {
+            if (length % 2 == 1) {
+                // This level is odd-length → add segments * (n+1)
+                ans2 += segments * (n + 1);
+            }
+            // split every segment in half for next level
+            length   /= 2;
+            segments *= 2;
+        }
+        
+        // Divide by 2 to get the real sum of midpoints
+        return ans2 / 2;
+    }
 
-    // wri wwil wlerqual to 
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
-         w
+        int T;
+        cin >> T;
+        while (T--) {
+            long long n, k;
+            cin >> n >> k;
+            cout << computeLucky(n, k) << "\n";
+        }
+
+
+        
         return 0;
     }
     
