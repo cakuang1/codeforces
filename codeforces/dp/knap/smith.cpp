@@ -1,131 +1,64 @@
- 
-    #include <bits/stdc++.h>
-    
-    using namespace std;
+#include <bits/stdc++.h>
+using namespace std;
+using ll = long long;
 
-    using ll = long long;
-    const int MOD = 1000000007; 
-    const int MOD2 =  998244353; 
-    const ll INF = 1e18;
-    const int MX = 1000001; //check the limits, dummy
+int main(){
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
 
+    int n, m;
+    cin >> n >> m;
+    vector<ll> a(n), b(n), c(m);
+    ll A = 0;
+    for(int i = 0; i < n; i++){
+        cin >> a[i];
+        A = max(A, a[i]);        // track max a_i
+    }
+    for(int i = 0; i < n; i++){
+        cin >> b[i];
+    }
+    for(int j = 0; j < m; j++){
+        cin >> c[j];
+    }
 
-    ll modExp(ll base, ll power) {
-        if (power == 0) {
-            return 1;
+    // 1) Build best[x] = min(a_i - b_i) over all i with a_i <= x
+    const ll INF = (ll)1e18;
+    vector<ll> best(A+1, INF);
+    for(int i = 0; i < n; i++){
+        ll delta = a[i] - b[i];
+        best[a[i]] = min(best[a[i]], delta);
+    }
+    // prefix‐min so that best[x] = min over all a_i <= x
+    for(int x = 1; x <= A; x++){
+        best[x] = min(best[x], best[x-1]);
+    }
+
+    // 2) Precompute ans[x] for x = 0..A by dp
+    //    ans[0] = 0;  ans[x] = 2 + ans[x - best[x]]
+    vector<ll> ans(A+1, 0);
+    for(int x = 1; x <= A; x++){
+        // if best[x] is INF, you cannot do even one cycle; but problem guarantees a_i>=1
+        ans[x] = 2 + ans[x - best[x]];
+    }
+
+    // 3) For each pile c[j], if c[j] <= A just add ans[c[j]].
+    //    Otherwise, first do k full cycles of size best[A]:
+    //      k = ceil((c[j]-A) / best[A])
+    //    then rem = c[j] - k*best[A] ≤ A, so add ans[rem].
+    ll res = 0;
+    ll dA = best[A];
+    for(ll x : c){
+        if(x <= A){
+            res += ans[x];
         } else {
-            ll cur = modExp(base, power / 2); cur = cur * cur; cur = cur % MOD;
-            if (power % 2 == 1) cur = cur * base;
-            cur = cur % MOD;
-            return cur;
+            // how many cycles to bring x down to ≤ A:
+            ll need = x - A;
+            ll k = (need + dA - 1) / dA;
+            ll rem = x - k * dA;  // now rem ≤ A
+            res += 2*k + ans[rem];
         }
     }
 
-    ll inv(ll base) {
-        return modExp(base, MOD-2);
-    }
-
-
-    ll mul(ll A, ll B) {
-        return (A*B)%MOD;
-    }
-
-    ll add(ll A, ll B) {
-        return (A+B)%MOD;
-    }
-    
-    ll dvd(ll A, ll B) {
-        return mul(A, inv(B));
-    }
-
-    ll sub(ll A, ll B) {
-        return (A-B+MOD)%MOD;
-    }
-    ll cielDiv(ll A , ll B) {
-        return (A + B - 1)/B;
-    } 
-
-    ll* facs = new ll[MX];
-    ll* facInvs = new ll[MX];
-
-    ll choose(ll a, ll b) {
-        if (b > a) return 0;
-        if (a < 0) return 0;
-        if (b < 0) return 0;
-        ll cur = facs[a];
-        cur = mul(cur, facInvs[b]);
-        cur = mul(cur, facInvs[a-b]);
-        return cur;
-    }
-
-
-        
-    
-    void initFacs() {
-        facs[0] = 1; 
-        facInvs[0] = 1;
-        for (int i = 1 ; i < MX ; i ++ ) {
-            facs[i] = (facs[i-1] * i) % MOD;
-            facInvs[i] = inv(facs[i]);
-        } 
-    }
-
-    
-
-    bool comp(auto &p1 , auto &p2) {
-        return p1.first < p2.first; 
-    }
-    
-            
-    int main()  {
-        ios_base::sync_with_stdio(0); cin.tie(0);  
-        int n; cin >> n; 
-        int m ; cin >> m;
-        vector<ll> a(n);
-        vector<ll> b(n);
-        vector<ll> c(m);
-        vector<ll> d(n);
-        
-        
-        vector<pair<ll,ll>> p(n); 
-        ll m = 0; 
-
-        
-        for (int i = 0 ; i < n; i ++) {
-            cin >> a[i]; 
-            m = max(m , a[i]);
-            p[i].first = a[i]; 
-        }
-        for (int i = 0 ; i < n; i ++) {
-            cin >> b[i]; 
-        }
-        for (int i = 0 ; i < m ; i++) {
-            cin >> c[i]; 
-        }
-        vector<ll> dp(m + 1, 0); 
-        for (int i = 0 ; i < n; i ++) {
-            d[i] =  a[i] - b[i];
-            p[i].second = d;      
-        }
-        vector<ll> best(m + 1 , INF);
-        for (int i = 0 ; i < n; i ++) {
-            best[a[i]] = min(d ,best[a[i]]); 
-        }
-
-        for (int i = 1 ; i <= m ; i ++) {
-            best[i] = min(best[i] ,best[i - 1]);
-        }
-        for (int i = 2  ;i < n; i ++) {
-            int bjump = best[i];
-            if (i - bjump >= 0) {
-                dp[i] = dp[i - bjump] + 2; 
-            }
-        }
-    
-        ll res = 0; 
-        for () 
-        
-        
-        return 0;
-    }
-    
+    cout << res << "\n";
+    return 0;
+}

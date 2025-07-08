@@ -58,9 +58,8 @@
         return cur;
     }
 
-
         
-    
+    // enusrearmte ral lcucleswei nthe path w
     void initFacs() {
         facs[0] = 1; 
         facInvs[0] = 1;
@@ -73,6 +72,12 @@
     // wri wwil wlerqual to 
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
+        int t;
+        for (int i = 1 ; i <=t ; i ++) {
+            ll n,m ; cin >> n >>m ;
+            
+            vector<q    
+        }
         return 0;
     }
     

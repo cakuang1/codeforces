@@ -57,9 +57,6 @@
         cur = mul(cur, facInvs[a-b]);
         return cur;
     }
-
-
-        
     
     void initFacs() {
         facs[0] = 1; 
@@ -69,10 +66,55 @@
             facInvs[i] = inv(facs[i]);
         }
     }
+    
 
-    // wri wwil wlerqual to 
-    int main()  {
-        ios_base::sync_with_stdio(0); cin.tie(0);  
-        return 0;
+    vector<int> p;  
+    vector<int> res;  
+
+
+    void solve(int l , int r , int d) {
+         
+        if (l > r) {
+            return; 
+        }
+        if (l == r) {
+            res[l] = d; 
+            return; 
+        }
+        
+        
+        int mid = -1;
+        int m = -1;
+        for (int i = l ; i <= r ; i ++) {
+            if (p[i] > m) {
+                m = p[i];
+                mid = i; 
+            }
+        } 
+        res[mid] = d; 
+        solve(l , mid - 1, d + 1 ); 
+        solve(mid + 1, r, d + 1); 
     }
     
+    int main()  {
+        ios_base::sync_with_stdio(0); cin.tie(0);  
+        int t;
+        cin >> t; 
+        while (t --) {
+            int n;
+            cin >> n; 
+            p.resize(n); 
+            res.resize(n); 
+            for (int i = 0 ; i < n; i ++) {
+                cin >> p[i]; 
+            }
+            solve(0, n - 1, 0); 
+            for (int i = 0 ; i < n; i ++) {
+                cout << res[i] << ' '; 
+            }
+            cout << endl;
+        }
+        return 0;
+    }
+        
+

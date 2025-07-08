@@ -68,11 +68,19 @@
             facs[i] = (facs[i-1] * i) % MOD;
             facInvs[i] = inv(facs[i]);
         }
-    }
-
-    // wri wwil wlerqual to 
+    } 
+    // yes waad nca we
+        
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
+        ll  n ,m, s,t; 
+        vector<vector<pair<ll,ll>>> adj;
+        for (int i = 0 ; i < m ; i ++) {
+            ll a,b,c; cin >> a >> b >> c;
+            adj[a].push_back({b,c});
+        }
+        
+        // detmerin we
         return 0;
     }
     

@@ -1,4 +1,4 @@
- 
+    
     #include <bits/stdc++.h>
     
     using namespace std;
@@ -70,9 +70,19 @@
         }
     }
 
-    // wri wwil wlerqual to 
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
+        
+        int n ; cin >> n; 
+        int m ; cin >> m ;
+        
+        vector<vector<pair<int,int>>> adj(n + 1); 
+        for (int i = 0; i < n; i ++) {
+            int a, b, c; cin >> a >> b >> c;
+
+            adj[a].push_back({b,c});
+            adj[b].push_back({a,c});
+        }
         return 0;
     }
     

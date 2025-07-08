@@ -60,6 +60,7 @@
 
 
         
+
     
     void initFacs() {
         facs[0] = 1; 
@@ -69,10 +70,61 @@
             facInvs[i] = inv(facs[i]);
         }
     }
+    const int maxn =  200005;    
+    int n; 
+    
+    vector<int> adj[maxn]; 
+    int c[maxn];     
+    int dp[maxn];
+    
 
-    // wri wwil wlerqual to 
+    void dfs(int a,int p ) {
+        int v = c[a]; 
+        for (int c : adj[a]) {
+            if (c == p) continue;
+            
+            dfs(c, a); 
+            dp[a] += max(dp[c], 0);             
+        }
+        dp[a] += v;
+    }
+    
+    void dfs2(int a,int p ) {
+        for (int c : adj[a]) {
+            if (c == p) continue;
+            int  toparentcost = dp[a] - max(dp[c] , 0); 
+            dp[c] = dp[c] +  toparentcost;          
+            dfs2(c, a);  
+        }
+    }
+    
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
+        int n ; cin >> n;
+        for (int i = 1 ; i <= n; i ++) {
+            int x;
+             cin >> x; 
+             if (x == 1) {
+                c[i] = 1;
+             } else {
+                c[i] = -1; 
+             }
+        } 
+        
+        
+        for (int i = 0 ; i < n- 1; i ++) {
+            int a , b ; cin >> a >> b; 
+            adj[a].push_back(b);
+            adj[b].push_back(a);
+        } 
+
+        dfs(1,0);
+        dfs2(1,0);
+        for (int i = 1 ; i <= n; i ++) {
+            cout << dp[i] << ' '; 
+        }
+            
+         
         return 0;
     }
     

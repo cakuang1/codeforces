@@ -69,10 +69,49 @@
             facInvs[i] = inv(facs[i]);
         }
     }
-
-    // wri wwil wlerqual to 
+     
+    bool isPalin[501][501];
+    int dp [501][501];
+    
+    int  solve(int l , int r) {
+        if (isPalin[l][r]) {
+            return 1;
+        }  
+        if (dp[i][j] != -1) {
+            return dp[i][j];
+        }
+        int res = 1e9;
+        for (int i = l ; i < r ; i ++) {
+            res =  min(res, dp[l][i] + dp[i + 1][r]); 
+        }
+        return dp[i][j] = res;
+    }
+    
+    
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
+        int  n; cin >> n; 
+        vector<int> arr(n);
+        for (int i = 0 ;i < n; i ++) {
+            cin >> arr[i]; 
+        }
+        for (int i = n - 1 ; i >= 0 ; i -- ) {
+            for (int j = i ; j < n  ; j ++  ) { 
+                if (i == j) {
+                    isPalin[i][j] = true;
+                } else if (j - i == 1) {
+                    if (arr[i] == [arr[j]]) { 
+                        isPalin[i][j] = true;
+                    }
+                } else {
+                    if (arr[i] == arr[j] && (isPalin[i + 1][j - 1])) {
+                        isPalin[i][j] = true; 
+                    }
+                }
+            }
+        } 
+        memset(dp,-1, sizeof(dp)); 
+        cout << solve(0,n - 1) << endl;
         return 0;
     }
     

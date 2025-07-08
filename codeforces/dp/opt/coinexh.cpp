@@ -1,4 +1,4 @@
- 
+    
     #include <bits/stdc++.h>
     
     using namespace std;
@@ -69,10 +69,22 @@
             facInvs[i] = inv(facs[i]);
         }
     }
+    // dp[i][prev0][prev1]; 
 
-    // wri wwil wlerqual to 
+    
+    // prevw
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
+        ll k,n,m; 
+        cin >> k >> n >> m;
+        
+        
+        // 
+        
+        
+        
         return 0;
     }
+    
+
     

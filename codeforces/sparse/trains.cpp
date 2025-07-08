@@ -69,10 +69,24 @@
             facInvs[i] = inv(facs[i]);
         }
     }
-
-    // wri wwil wlerqual to 
+    
+    // its r
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
+        int n; cin >> n; 
+        vector<int> arr(n - 1);
+        for (int i = 0 ; i < n - 1; i ++) {
+            cin >> arr[i]; 
+        }
+        
+        vector<ll> dp(n,0); 
+        
+        // clearly can get to i + 1 - ai in one
+        // so the usu mwis         
+        for (int i = n - 2  ; i >= 0 ; i ++) {
+            
+        }
+        
         return 0;
     }
     

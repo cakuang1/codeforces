@@ -1,4 +1,4 @@
- 
+      
     #include <bits/stdc++.h>
     
     using namespace std;
@@ -57,9 +57,6 @@
         cur = mul(cur, facInvs[a-b]);
         return cur;
     }
-
-
-        
     
     void initFacs() {
         facs[0] = 1; 
@@ -69,10 +66,26 @@
             facInvs[i] = inv(facs[i]);
         }
     }
+    
 
-    // wri wwil wlerqual to 
-    int main()  {
-        ios_base::sync_with_stdio(0); cin.tie(0);  
-        return 0;
+    struct Point {
+        int x,y ;
+        } 
+        
+    
+    const int w
+
+    ll dot(const  Point &a, const Point &b) { 
+        return  1LL* a.x * b.x + 1LL * a.y * b.y; 
+    }
+
+    ll cross(const  Point &a, const Point &b) {
+        return  1LL* a.x * b.y  -  1LL * a.y * b.x; 
     }
     
+    int main()  { 
+        ios_base::sync_with_stdio(0); cin.tie(0);  
+        return 0; 
+    } 
+    
+    // w

@@ -72,7 +72,24 @@
 
     // wri wwil wlerqual to 
     int main()  {
-        ios_base::sync_with_stdio(0); cin.tie(0);  
+        ios_base::sync_with_stdio(0); cin.tie(0); 
+        vector<int> a = {9,999,999,999999,999,9999,99,99999}; 
+        vector<int> d = a;
+        sort(d.begin() , d.end());
+        
+        // returns iterator to end
+        auto it = unique(d.begin() ,d.end());
+        d.resize(it - d.begin());
+            
+        // dont need to use maps 
+        // a[i] is now the index of the sorted array
+        for (int i = 0 ; i < n ; i ++) {
+            int index = lower_bound(d.begin(),d.end() , a[i]) - d.begin(); 
+            a[i] = index; 
+        }
+        int size = d.size(); 
         return 0;
     }
+
+    /
     

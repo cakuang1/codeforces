@@ -1,79 +1,81 @@
- 
-    #include <bits/stdc++.h>
-    
-    using namespace std;
+#include <bits/stdc++.h>
+using namespace std;
 
-    using ll = long long;
-    const int MOD = 1000000007; 
-    const int MOD2 =  998244353; 
-    const ll INF = 1e18;
-    const int MX = 1000001; //check the limits, dummy
+int main(){
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
 
-
-    ll modExp(ll base, ll power) {
-        if (power == 0) {
-            return 1;
-        } else {
-            ll cur = modExp(base, power / 2); cur = cur * cur; cur = cur % MOD;
-            if (power % 2 == 1) cur = cur * base;
-            cur = cur % MOD;
-            return cur;
+    int n;
+    cin >> n;
+    vector<int> a(n);
+    for(int &x : a) 
+        cin >> x;
+    {
+        bool seen1 = false, seen2 = false, seen3 = false;
+        int v1=0, v2=0;
+        for(int x:a){
+            if(!seen1){
+                v1 = x;
+                seen1 = true;
+            } else if(x!=v1 && !seen2){
+                v2 = x;
+                seen2 = true;
+            } else if(x!=v1 && x!=v2){
+                seen3 = true;
+                break;
+            }
+        }
+        if(!seen3){
+            cout << n << "\n";
+            return 0;
         }
     }
 
-    ll inv(ll base) {
-        return modExp(base, MOD-2);
+
+    // buod; wring r
+    vector<int> cnt(101,0);
+    int S=0;
+    for(int x:a){
+        cnt[x]++;
+        S+=x;
     }
 
+    // dp[j][s] = 0/1/2 ways to pick j items summing to s
+    vector<vector<uint8_t>> dp(n+1, vector<uint8_t>(S+1,0)),
+                            dp2(n+1, vector<uint8_t>(S+1,0));
+    dp[0][0]=1;
 
-    ll mul(ll A, ll B) {
-        return (A*B)%MOD;
+    for(int v=1;v<=100;v++){
+        int c=cnt[v];
+        if(c==0) continue;
+        // reset dp2
+        for(int j=0;j<=n;j++)
+            fill(dp2[j].begin(), dp2[j].end(), 0);
+        // transition
+        for(int j=0;j<=n;j++){
+            for(int s=0;s<=S;s++){
+                if(dp[j][s]==0) continue;
+                uint8_t ways=dp[j][s];
+                for(int f=0;f<=c && j+f<=n;f++){
+                    int j2=j+f, s2=s+f*v;
+                    if(s2>S) break;
+                    dp2[j2][s2]=min<uint8_t>(2, dp2[j2][s2]+ways);
+                }
+            }
+        }
+        swap(dp,dp2);
     }
 
-    ll add(ll A, ll B) {
-        return (A+B)%MOD;
-    }
-    
-    ll dvd(ll A, ll B) {
-        return mul(A, inv(B));
-    }
-
-    ll sub(ll A, ll B) {
-        return (A-B+MOD)%MOD;
-    }
-    ll cielDiv(ll A , ll B) {
-        return (A + B - 1)/B;
-    } 
-
-    ll* facs = new ll[MX];
-    ll* facInvs = new ll[MX];
-
-    ll choose(ll a, ll b) {
-        if (b > a) return 0;
-        if (a < 0) return 0;
-        if (b < 0) return 0;
-        ll cur = facs[a];
-        cur = mul(cur, facInvs[b]);
-        cur = mul(cur, facInvs[a-b]);
-        return cur;
-    }
-
-
-        
-    
-    void initFacs() {
-        facs[0] = 1; 
-        facInvs[0] = 1;
-        for (int i = 1 ; i < MX ; i ++ ) {
-            facs[i] = (facs[i-1] * i) % MOD;
-            facInvs[i] = inv(facs[i]);
+    // wwhat 
+    int answer=0;
+    for(int b=1;b<=100;b++){
+        if(cnt[b]==0) continue;
+        for(int k=1;k<=cnt[b];k++){
+            int sum=k*b;
+            if(sum<=S && dp[k][sum]==1)
+                answer=max(answer,k);
         }
     }
-        
-    int main()  {
-        ios_base::sync_with_stdio(0); cin.tie(0);  
-        int n; cin >> n;
-        
-        return 0;
-    }
-    
+    cout<<answer<<"\n";
+    return 0;
+}

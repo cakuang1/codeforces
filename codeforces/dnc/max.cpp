@@ -57,10 +57,8 @@
         cur = mul(cur, facInvs[a-b]);
         return cur;
     }
-
-
-        
     
+    // detemrin ew t
     void initFacs() {
         facs[0] = 1; 
         facInvs[0] = 1;
@@ -69,10 +67,25 @@
             facInvs[i] = inv(facs[i]);
         }
     }
-
-    // wri wwil wlerqual to 
+     
+    / /w    
+    void solve() { 
+        int n ;
+        vector<int> arr(n);
+        for (int i = 0 ; i < n; i ++) {
+            cin >> arr[i]; 
+        }
+        
+        
+        
+    }
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
+        int t ; cin >> t;
+        
+        while (t --) {
+            solve();
+        }        
         return 0;
     }
     

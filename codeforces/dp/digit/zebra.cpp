@@ -21,6 +21,8 @@
         }
     }
 
+
+    
     ll inv(ll base) {
         return modExp(base, MOD-2);
     }
@@ -59,8 +61,44 @@
     }
 
 
+    ll l,r, k;
+    ll dp[61][11][2][2];     
+
+    ll solve(ll val) {
+        vector<int> b;
+        while (val) {
+            if (val & 1) {
+                b.push_back(1);
+            } else {
+                b.push_back(0); 
+            } 
+            val >>= 1; 
+        }
+        int n = b.size(); 
+        reverse(b.begin(),b.end());
+        // tight or not tight 
+        dp[1][1][1][1] = 1; // started
+        dp[1][0][0][0] = 1; // not started
+        for (int pos = 1; pos < n; pos ++) {
+            for (int used = 0 ; used <= k; used ++) {
+                for (int tight = 0 ; tight <= 1 ; tight ++) {
+                    for (int prev = 0 ; prev <= 1 ;prev ++) {
+                            
+                        if (dp[pos][used][tight][prev]) {
+                            int v = dp[pos][used][tight][prev]; 
+                            // add one 
+                            
+                            // add zero
+                        }
+                    }
+                }
+            }
+        }
+        ll res = 0;
+
+        return res; 
         
-    
+    }
     void initFacs() {
         facs[0] = 1; 
         facInvs[0] = 1;
@@ -69,10 +107,15 @@
             facInvs[i] = inv(facs[i]);
         }
     }
-
-    // wri wwil wlerqual to 
+    
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
+        int t; cin >> t; 
+        while (t --) {
+            cin >> l >> r >> k; 
+            
+            
+        }
         return 0;
     }
     

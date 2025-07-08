@@ -1,83 +1,116 @@
+// #pragma GCC optimize("Ofast,unroll-loops")
+// #pragma GCC target("avx,avx2,fma")
+
 #include <bits/stdc++.h>
 using namespace std;
-using ll = long long;
 
-// ——— KACTL‐style LineContainer for max‐hull ———
+#define ll long long
+#define ull unsigned long long
+#define dd double
+#define ld long double
+#define sl(n) scanf("%lld", &n)
+#define si(n) scanf("%d", &n)
+#define sd(n) scanf("%lf", &n)
+#define pll pair <ll, ll>
+#define pii pair <int, int>
+#define mp make_pair
+#define pb push_back
+#define all(v) v.begin(), v.end()
+#define inf (1LL << 62)
+#define loop(i, start, stop, inc) for(ll i = start; i <= stop; i += inc)
+#define for1(i, stop) for(ll i = 1; i <= stop; ++i)
+#define for0(i, stop) for(ll i = 0; i < stop; ++i)
+#define rep1(i, start) for(ll i = start; i >= 1; --i)
+#define rep0(i, start) for(ll i = (start-1); i >= 0; --i)
+#define ms(n, i) memset(n, i, sizeof(n))
+#define casep(n) printf("Case %lld:", ++n)
+#define pn printf("\n")
+#define pf printf
+#define EL '\n'
+#define fastio std::ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL);
+
+const ll sz = 1e6 + 10;
+
+struct rec {
+    int x, y; ll a;
+} ara[sz];
+
+const bool operator <(const rec &a, const rec &b) {
+    return a.x < b.x;
+}
+
+ll pnt[sz];
+
 struct Line {
-	mutable ll k, m, p;
-	bool operator<(const Line& o) const { return k < o.k; }
-	bool operator<(ll x)        const { return p < x; }
-};
+    int m; ll c;
+} tree[4*sz];
+bool exist[4*sz];
 
-struct LineContainer : multiset<Line, less<>> {
-	static const ll inf = LLONG_MAX;
-	// floored division
-	ll div(ll a, ll b) {
-		return a/b - ((a^b)<0 && a%b);
-	}
-	// intersects x with next line y; returns true if y is made obsolete
-	bool isect(iterator x, iterator y) {
-		if (y == end()) { 
-			x->p = inf; 
-			return false; 
-		}
-		if (x->k == y->k) 
-			x->p = x->m > y->m ? inf : -inf;
-		else 
-			x->p = div(y->m - x->m, x->k - y->k);
-		return x->p >= y->p;
-	}
-	void add(ll k, ll m) {
-		auto z = insert({k,m,0}), y = z++, x = y;
-		while (isect(y,z))          z = erase(z);
-		if (x!=begin() && isect(--x,y))
-			isect(x, y = erase(y));
-		while ((y = x)!=begin() && (--x)->p >= y->p)
-			isect(x, erase(y));
-	}
-	// returns max(k*x + m)
-	ll query(ll x) {
-		assert(!empty());
-		auto l = *lower_bound(x);
-		return l.k*x + l.m;
-	}
-};
+inline ll f(Line &line, ll &x) {
+    return (ll)line.m*x + line.c;
+}
 
-// ——— Problem setup ———
-struct Rect {
-	ll x, y, a;
-};
+// some ewn wlgo wn wer
+void add(ll lo, ll hi, Line &line, ll node)
+{
+    exist[node] = 1;
 
-int main(){
-	ios::sync_with_stdio(false);
-	cin.tie(nullptr);
+    if(lo == hi) {
+        if(f(line, pnt[lo]) > f(tree[node], pnt[lo]))
+            tree[node] = line;
+        return;
+    }
 
-	int n;
-	cin >> n;
-	vector<Rect> R(n);
-	for(int i = 0; i < n; i++){
-		cin >> R[i].x >> R[i].y >> R[i].a;
-	}
-	// sort by x ascending
-	sort(R.begin(), R.end(), [&](auto &A, auto &B){
-		return A.x < B.x;
-	});
+    ll mid = lo+hi >> 1;
 
-	vector<ll> dp(n);
-	LineContainer cht;
+    bool left = f(line, pnt[lo]) > f(tree[node], pnt[lo]);
+    bool m = f(line, pnt[mid]) > f(tree[node], pnt[mid]);
+
+    if(m) swap(line, tree[node]);
+
+    if(left != m) add(lo, mid, line, node<<1);
+    else add(mid+1, hi, line, node<<1|1);
+}
+
+ll query(ll lo, ll hi, ll &idx, ll node)
+{
+    if(lo == hi)
+        return f(tree[node], pnt[idx]);
+
+    ll mid = (lo+hi) >> 1, ret = f(tree[node], pnt[idx]);
+
+    if(idx <= mid && exist[node<<1]) ret = max(ret, query(lo, mid, idx, node<<1));
+    else if(idx > mid && exist[(node<<1|1)]) ret = max(ret, query(mid+1, hi, idx, node<<1 | 1));
+
+    return ret;
+}
+
+int main()
+{
+    Line line;
+
+    ll n;
+    cin >> n;
+
+    for1(i, n) {
+        scanf("%d %d %lld", &ara[i].x, &ara[i].y, &ara[i].a);
+    }
+
+    sort(ara+1, ara+n+1);
+    for1(i, n) pnt[i] = -ara[i].y;
+
     ll ans = 0;
-    cht.add(0,0); 
-	for(int i = 0; i < n; i++){
-		// best = max_j ( dp[j] - x_j * y_i )
-		ll best = cht.query(R[i].y);
+    for1(i, n) {
 
-		dp[i] = R[i].x * R[i].y - R[i].a + best;
-		ans   = max(ans, dp[i]);
+        ll got = (ll)ara[i].x * ara[i].y - ara[i].a + query(1, n, i, 1);
 
-		// insert fᵢ(y) = dp[i] - x_i*y  =>  k = -x_i, m = dp[i]
-		cht.add(-R[i].x, dp[i]);
-	}
+        line.m = ara[i].x, line.c = got;
+        add(1, n, line, 1);
 
-	cout << ans << "\n";
-	return 0;
+        ans = max(ans, got);
+    }
+
+    cout << ans << EL;
+
+    return 0;
 }

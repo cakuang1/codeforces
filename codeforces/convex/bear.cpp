@@ -1,4 +1,3 @@
- 
     #include <bits/stdc++.h>
     
     using namespace std;
@@ -58,9 +57,6 @@
         return cur;
     }
 
-
-        
-    
     void initFacs() {
         facs[0] = 1; 
         facInvs[0] = 1;
@@ -68,11 +64,19 @@
             facs[i] = (facs[i-1] * i) % MOD;
             facInvs[i] = inv(facs[i]);
         }
-    }
-
-    // wri wwil wlerqual to 
+    } 
+    
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
+        int n; 
+        cin >> n; 
+        vector<ll> arr(n);
+        for (int i = 0 ; i < n; i ++) {
+            cin >> arr[i]; 
+        }
+        ll res = 0;
+        
+            
+         
+        
         return 0;
-    }
-    

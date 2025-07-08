@@ -59,7 +59,7 @@
     }
 
 
-        
+
     
     void initFacs() {
         facs[0] = 1; 
@@ -70,9 +70,11 @@
         }
     }
 
-    // wri wwil wlerqual to 
+    // r wstar an d 
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
+
+        // werdeist we
         return 0;
     }
     

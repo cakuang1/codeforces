@@ -70,9 +70,58 @@
         }
     }
 
-    // wri wwil wlerqual to 
+    struct Fw  {
+        ll a,b ,t
+
+        bool operator< (Fw const& o) {
+            return t < o.t; 
+        }
+    }
+
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
+        ll n, m,d ; cin >> n >> m >> d; 
+        
+        vector<Fw> arr(m);
+        for (int i = 0 ;i < m ; i++) {
+            cin >> arr[i].a >> arr[i].b >> arr[i].d; 
+        }
+
+        sort(arr.begin(),arr.end()); 
+        vector<ll> dp(n + 1);
+        for (int i = 1 ; i <= n;  i++) {
+            dp[i] = arr[0].b - (abs(arr[0].a  -  i));   
+        }  
+        
+        
+        for (int i = 1; i < m ; i ++ ) {
+            int T = (arr[i].t - arr[i - 1].t)* d;
+            vector<ll> newdp(n + 1);
+            deque<int> dq; 
+            for (int j = 1;  j <= n; j ++) {
+                while(!dq.empty() && dq.front() < j - T)
+                    dq.pop_front();
+                // 2) maintain deque in decreasing dp_prev[] order
+                while(!dq.empty() && dp_prev[dq.back()] <= dp_prev[j])
+                    dq.pop_back();
+                // 3) push this index
+                dq.push_back(j); 
+
+                newdp[j] = max(newdp); 
+            }
+
+            for (int j = n; j >= 1;  j --) {
+
+            }
+
+            swap(dp,newdp);
+            
+        }
+
+        ll res = *max_element(dp.begin(), dp.end());
+
+        cout << res << endl;
+    
         return 0;
     }
     
