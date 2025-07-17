@@ -65,6 +65,7 @@
         return cur;
     }
     
+    // alll itw
     
     void initFacs() {
         facs[0] = 1; 
@@ -77,5 +78,13 @@
     // fdin the oconjecteinrue and thd oth eht
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
+        int q; cin >> q;
+        for (int i = 0 ; i < q ; i++) {
+            ll n,f; cin >> n >> f; 
+        
+            // each number needs to be coprime ww
+        } 
         return 0;
     }
+
+     

@@ -1,4 +1,4 @@
- 
+        
     #include <bits/stdc++.h>
     
     using namespace std;
@@ -74,8 +74,32 @@
             facInvs[i] = inv(facs[i]);
         }
     }
-    // fdin the oconjecteinrue and thd oth eht
+    
+    // mobuis inversion weto conenctweed
+    const int VALMAX = 1e7;
+
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
-        return 0;
+        int n; cin >> n; 
+		int test_num;
+	cin >> test_num;
+
+	mobius[1] = -1;
+	for (int i = 1; i < VALMAX; i++) {
+		if (mobius[i]) {
+			mobius[i] = -mobius[i];
+			for (int j = 2 * i; j < VALMAX; j += i) { mobius[j] += mobius[i]; }
+		}
+	} 
+    int res = 0; 
+    for (int i = 1; i * i <= n; i ++ ) {
+        res += mu[i] * (n/(d * d)); 
+    }   
+    
+        
+    cout <<  n + res  << endl; 
+    return 0;
     }
+
+    
+    

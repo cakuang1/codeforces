@@ -74,8 +74,30 @@
             facInvs[i] = inv(facs[i]);
         }
     }
-    // fdin the oconjecteinrue and thd oth eht
+
+    // w
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
+        ll n,m ; cin >> n >> m;
+        
+        // check if a mask is good ? 
+        
+        // check all edges have wrsme oe edn[opint w w]
+
+        vector<ll> col(n);
+        for (int i = 0 ; i < n ; i ++) {
+            cin >> col[i]; 
+        }
+        vector<ll> cost(m); 
+        for (int i = 0 ;i < m ; i ++) {
+            cin >> cost[];
+        } 
+        
+
+        // scan all edges  the number w w
+        set<pair<int,int>> e;
+        
+        // now we
+        for (int i = 0 ; i <  )
         return 0;
     }

@@ -77,5 +77,17 @@
     // fdin the oconjecteinrue and thd oth eht
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
+        int lo = -1; 
+        int hi =n;
+
+        while (hi - lo > 1) {
+            int mid = (hi + lo) >> 1; 
+            if (f(mid) > f(mid + 1)) {
+                hi = mid; 
+            } else  {
+                lo= mid; 
+            }
+        }
+        cout << lo + 1; 
         return 0;
     }

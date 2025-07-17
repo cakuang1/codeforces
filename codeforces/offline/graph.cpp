@@ -1,4 +1,4 @@
- 
+    
     #include <bits/stdc++.h>
     
     using namespace std;
@@ -9,15 +9,7 @@
     const ll INF = 1e18;
     const int MX = 1000001; //check the limits, dummy
 
-    mobius[1] = -1;
-    for (int i = 1; i < VALMAX; i++) {
-        if (mobius[i]) {
-            mobius[i] = -mobius[i];
-            for (int j = 2 * i; j < VALMAX; j += i) { mobius[j] += mobius[i]; }
-        }
-    }
 
-    // sqaur
     ll modExp(ll base, ll power) {
         if (power == 0) {
             return 1;
@@ -28,13 +20,12 @@
             return cur;
         }
     }
-    // detmeirn weai we
-    // divisors wfo we
+
     ll inv(ll base) {
         return modExp(base, MOD-2);
     }
 
-    // does thi eweralmreally ermake any wesnsee wer
+
     ll mul(ll A, ll B) {
         return (A*B)%MOD;
     }
@@ -42,6 +33,7 @@
     ll add(ll A, ll B) {
         return (A+B)%MOD;
     }
+    
     ll dvd(ll A, ll B) {
         return mul(A, inv(B));
     }
@@ -55,6 +47,7 @@
 
     ll* facs = new ll[MX];
     ll* facInvs = new ll[MX];
+
     ll choose(ll a, ll b) {
         if (b > a) return 0;
         if (a < 0) return 0;
@@ -65,7 +58,6 @@
         return cur;
     }
     
-    
     void initFacs() {
         facs[0] = 1; 
         facInvs[0] = 1;
@@ -74,8 +66,29 @@
             facInvs[i] = inv(facs[i]);
         }
     }
-    // fdin the oconjecteinrue and thd oth eht
+    
+    vector<vector<int>> adj;
+    
+
+    //add edge twat wew time wadadd w
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
+        int n ; cin >> n; 
+        int m ; cin >> m;
+        vector<int> arr(n); 
+        for (int i = 0 ;i < n; i ++) {
+            cin >> arr[i]; 
+        }
+
+        adj.resize(n + 1); 
+        for (int i = 0  ; i < m ; i ++) {
+            int a,b; 
+            cin >> a >> b; 
+        }
+
+        
+
         return 0;
     }
+    
+    // 

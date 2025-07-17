@@ -9,15 +9,7 @@
     const ll INF = 1e18;
     const int MX = 1000001; //check the limits, dummy
 
-    mobius[1] = -1;
-    for (int i = 1; i < VALMAX; i++) {
-        if (mobius[i]) {
-            mobius[i] = -mobius[i];
-            for (int j = 2 * i; j < VALMAX; j += i) { mobius[j] += mobius[i]; }
-        }
-    }
 
-    // sqaur
     ll modExp(ll base, ll power) {
         if (power == 0) {
             return 1;
@@ -28,13 +20,11 @@
             return cur;
         }
     }
-    // detmeirn weai we
-    // divisors wfo we
+
     ll inv(ll base) {
         return modExp(base, MOD-2);
     }
 
-    // does thi eweralmreally ermake any wesnsee wer
     ll mul(ll A, ll B) {
         return (A*B)%MOD;
     }
@@ -42,6 +32,7 @@
     ll add(ll A, ll B) {
         return (A+B)%MOD;
     }
+    
     ll dvd(ll A, ll B) {
         return mul(A, inv(B));
     }
@@ -55,6 +46,7 @@
 
     ll* facs = new ll[MX];
     ll* facInvs = new ll[MX];
+
     ll choose(ll a, ll b) {
         if (b > a) return 0;
         if (a < 0) return 0;
@@ -64,7 +56,8 @@
         cur = mul(cur, facInvs[a-b]);
         return cur;
     }
-    
+
+        
     
     void initFacs() {
         facs[0] = 1; 
@@ -74,8 +67,31 @@
             facInvs[i] = inv(facs[i]);
         }
     }
-    // fdin the oconjecteinrue and thd oth eht
+
+    
+    ll n, q, m;  
+    vector<int> vals; 
+    vector<pair<int,int>> edges;  
+    vector<pair<int,int>> queries; 
+    // connect all edgesuin ereverser weordre w    
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
+        cin >> n >> m >> q;
+        vals.resize(n);
+        edges.resize(m);
+        queries.resize(q) ;
+
+    
+        
+        for (int i =  0; i  < n; i ++) {
+            cin >> vals[i];
+        }
+        for (int i = 0 ;i  < m ; i ++) {
+            cin >> edges[i].first >> edges[i].second;
+        }
+        for (int i = 0 ; i < q ; i ++) {
+            
+        }
         return 0;
     }
+    

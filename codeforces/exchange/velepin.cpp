@@ -74,8 +74,19 @@
             facInvs[i] = inv(facs[i]);
         }
     }
-    // fdin the oconjecteinrue and thd oth eht
+    
+    //  go diagaina lwa d the wshfit e
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
+        int n ; cin >> n; 
+        vector<ll> arr(n);
+        for (int i = 0  ; i  < n ; i++) {
+            cin >> arr[i]; 
+        }
+        // chebycehehevs stara awhatand erwhow doyu w w
+        int q; cin >> q; 
+        vector<int> z(q);
+        for () w
         return 0;
     }
+    

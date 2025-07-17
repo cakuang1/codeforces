@@ -74,8 +74,67 @@
             facInvs[i] = inv(facs[i]);
         }
     }
-    // fdin the oconjecteinrue and thd oth eht
+    // a + a` =
+    
+         
+    // a + a` = b + b` 
+
+    // =>  a - b = b` - a`; 
+
+    // b + b` =  c + c`; 
+    // => b - c  = b` - c`; 
+    struct It {
+        int a,b,c; 
+    }
+    
+
+     
+
+
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
+        int n; 
+        cin >> n; 
+        vector<It> arr(n); 
+        for (int i = 0 ; i < n; i ++) {
+            cin >> arr[i].a >> arr[i].b >> arr[i].c;
+        }
+        
+        int h = n/2;
+        int bm = (1 << h);
+        map<pair<int,int>, int> seenbm;
+        for (int i = 1 ; i < bm; i ++) {
+            int a = b = c = 0;
+            for (int j =  0 ; j < h; j ++ ) {
+                if ((1 << j) &  i ) {
+                    a += arr[j].a;
+                    b += arr[j].b;
+                    c += arr[j].c;
+                }
+            }
+                        
+            mapinsert({a - b,  b - c}); 
+        }
+                
+        int left = (n - h);
+                
+        int bm2 = (1 << left); 
+        
+        for (int i = 1 ; i < bm2; i ++) {
+            int a = b = c = 0;
+            for (int j =  h ; j < n; j ++ ) {
+                if ((1 << j) &  i ) {
+                    a += arr[j].a;
+                    b += arr[j].b;
+                    c += arr[j].c;
+                } 
+            }
+            
+            // m 
+            int need = ;
+            if (seen.find())
+            seen.insert({a - b,  b - c}); 
+        }
+        
         return 0;
     }
