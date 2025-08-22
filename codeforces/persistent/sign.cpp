@@ -1,141 +1,102 @@
+#include<bits/stdc++.h>
+#define LL long long
+#define LD long double
+#define ull unsigned long long
+#define fi first
+#define se second
+#define mk make_pair
+#define PLL pair<LL, LL>
+#define PLI pair<LL, int>
+#define PII pair<int, int>
+#define SZ(x) ((int)x.size())
+#define ALL(x) (x).begin(), (x).end()
+#define fio ios::sync_with_stdio(false); cin.tie(0);
 
-
-    #include <bits/stdc++.h>
 using namespace std;
-using ll = long long;
 
-struct Node {
-    ll sum;       // sum over this segment
-    ll lazy;      // pending increment to propagate
-    Node *l, *r;
-    Node(ll _sum=0, ll _lazy=0, Node* _l=nullptr, Node* _r=nullptr)
-      : sum(_sum), lazy(_lazy), l(_l), r(_r) {}
-};
+const int N = 2e5 + 7;
+const int inf = 0x3f3f3f3f;
+const LL INF = 0x3f3f3f3f3f3f3f3f;
+const int mod = 1e9 + 7;
+const double eps = 1e-8;
+const double PI = acos(-1);
 
-int N;             // size of the array, [1..N]
-vector<Node*> root;  // root[i] = version after i updates
+template<class T, class S> inline void add(T& a, S b) {a += b; if(a >= mod) a -= mod;}
+template<class T, class S> inline void sub(T& a, S b) {a -= b; if(a < 0) a += mod;}
+template<class T, class S> inline bool chkmax(T& a, S b) {return a < b ? a = b, true : false;}
+template<class T, class S> inline bool chkmin(T& a, S b) {return a > b ? a = b, true : false;}
 
-// Build an all-zero tree over [tl..tr]
-Node* build(int tl, int tr) {
-    Node* n = new Node();
-    if (tl == tr) return n;
-    int tm = (tl+tr)>>1;
-    n->l = build(tl, tm);
-    n->r = build(tm+1, tr);
-    return n;
+const int UP = 200000;
+
+int Rt[N];
+int treecnt;
+
+struct info {
+    LL a, b;
+    int ls, rs;
+    // a -> add val
+    // b -> cnt of add i
+} Tree[N * 60];
+
+void update(int p, int va, int vb, int l, int r, int &x, int y) {
+    x = ++treecnt; Tree[x] = Tree[y];
+    Tree[x].a += va; Tree[x].b += vb;
+    if(l == r) return;
+    int mid = l + r >> 1;
+    if(p <= mid) update(p, va, vb, l, mid, Tree[x].ls, Tree[y].ls);
+    else update(p, va, vb, mid + 1, r, Tree[x].rs, Tree[y].rs);
 }
 
-// Apply an increment v to node n covering [tl..tr]
-inline void apply(Node* n, int tl, int tr, ll v) {
-    n->sum  += v * (tr - tl + 1);
-    n->lazy += v;
+PLL query(int L, int R, int l, int r, int x) {
+    if(R < l || r < L || R < L) return mk(0, 0);
+    if(L <= l && r <= R) return mk(Tree[x].a, Tree[x].b);
+    int mid = l + r >> 1;
+    PLL ans = query(L, R, l, mid, Tree[x].ls);
+    PLL tmp = query(L, R, mid + 1, r, Tree[x].rs);
+    ans.fi += tmp.fi;
+    ans.se += tmp.se;
+    return ans;
 }
 
-// Clone node p and return the new copy
-inline Node* clone(Node* p) {
-    return new Node(p->sum, p->lazy, p->l, p->r);
-}
+int n, m;
+LL prefix[N];
 
-// Range-add v on [l..r], starting from old version cur, returns new root
-Node* update(Node* cur, int tl, int tr, int l, int r, ll v) {
-    if (r < tl || tr < l) 
-        return cur;  // no change, share node
-    Node* n = clone(cur);
-    if (l <= tl && tr <= r) {
-        apply(n, tl, tr, v);
-        return n;
-    }
-    int tm = (tl+tr)>>1;
-    // push lazy to children
-    if (n->lazy) {
-        n->l = clone(n->l);
-        n->r = clone(n->r);
-        apply(n->l, tl, tm, n->lazy);
-        apply(n->r, tm+1, tr, n->lazy);
-        n->lazy = 0;
-    }
-    n->l = update(n->l, tl, tm, l, r, v);
-    n->r = update(n->r, tm+1, tr, l, r, v);
-    n->sum = n->l->sum + n->r->sum;
-    return n;
-}
+int main() {
+    scanf("%d", &n);
+    for(int i = 1; i <= n; i++) {
+        int X1, X2, Y1, A, B, Y2, low, high;
+        scanf("%d%d%d%d%d%d", &X1, &X2, &Y1, &A, &B, &Y2);
+        prefix[i] = prefix[i - 1] + Y2;
 
-// Range-sum query over [l..r] on version cur
-ll query(Node* cur, int tl, int tr, int l, int r) {
-    if (!cur || r < tl || tr < l) return 0;
-    if (l <= tl && tr <= r) return cur->sum;
-    int tm = (tl+tr)>>1;
-    // we don't clone or modify on query; children sums already include lazy
-    return query(cur->l, tl, tm, l, r)
-         + query(cur->r, tm+1, tr, l, r);
-}
+        low = 0; high = min(UP, X1);
+        update(low, Y1, 0, 0, UP, Rt[i], Rt[i - 1]);
+        if(high + 1 <= UP) update(high + 1, -Y1, 0, 0, UP, Rt[i], Rt[i]);
 
-
-
-
-//
-    struct  F  {
-        ll x1,x2,y1,a,b,y2; 
-    }
-    int main()  {
-        ios_base::sync_with_stdio(0); cin.tie(0);  
-        int n ; cin >> n;
-        vector<F> arr(n);
-        for (int i = 0 ; i < n; i ++) {
-            cin >> arr[i].x1 >> arr[i].x2 >> arr[i].y1 >> arr[i].a >> arr[i].b >> arr[i].y2;
-        }        
-        
-        // in this segment  weewdoesth is really wwor kww e
-        
-        // wewewdetmeirnw erquetsi weand hwo to see this w wfor wt wer
-    
-        // detemrine from l - r the sum of allws 
-        // wtwo major wupdates w
-
-
-        vector<Node*> ksum; 
-        vector<Node*> c;  
-        int querymax  = 200005; 
-        ksum .resize(querymax); 
-        c.resize(querymax);
-        ksum[0] = build(0 ,querymax); 
-        c[0] = build(0,querymax);
-        
-        for (int i = 1 ; i <= n; i ++) {
-            int x1  = arr[i].x1;
-            int x2  = arr[i].x2;
-            int y1  = arr[i].y1;
-            int a  = arr[i].a;
-            int b = arr[i].b;
-            int y2   = arr[i].y2;
-            auto tmp = c.back(); 
-            // [0,x1] y1
-            tmp = update(tmp , 0, querymax - 1,0, x1 ,y1 ); 
-            //  [x2 + 1, end] y2; 
-            tmp = update(tmp , 0, querymax - 1,x2, querymax - 1  ,y2 ); 
-            // [x1 + 1 , x2 ]  b;
-            tmp = update(tmp , 0, querymax - 1,x1 + 1 , x2  ,b ); 
-            c[i] = tmp; 
-            
-            auto tmp2 = ksum.back(); 
-            tmp2 = update(tmp2 , 0, querymax - 1,x1 + 1 , x2  ,a); 
-            ksum[i] = tmp2; 
-        } 
-
-
-
-        int m; cin >> m; 
-        ll last = 0; 
-        for (int i = 0 ; i < m ; i ++) {
-            ll  l,r,x ;
-            cin >> l >> r >> x;
-            x = (last + x) % mod;
-            ll kpart = query(ksum [r],0,querymax  - 1, x,x)  -  query(ksum[l - 1],0,querymax  - 1, x,x); 
-            ll cpart = query(c[r],0,querymax  - 1, x,x)  -  query(c[l - 1],0,querymax  - 1, x,x); 
-            ll res = (kpart * x) + cpart; 
-            cout << res << endl; 
+        if(X1 + 1 <= UP) {
+            low = X1 + 1; high = min(UP, X2);
+            update(low, B, A, 0, UP, Rt[i], Rt[i]);
+            if(high + 1 <= UP) update(high + 1, -B, -A, 0, UP, Rt[i], Rt[i]);
         }
-            
 
-        return 0;
+        if(X2 + 1 <= UP) {
+            low = X2 + 1; high = UP;
+            update(low, Y2, 0, 0, UP, Rt[i], Rt[i]);
+        }
     }
+
+    LL last = 0;
+    scanf("%d", &m);
+    for(int cas = 1; cas <= m; cas++) {
+        int L, R, x;
+        scanf("%d%d%d", &L, &R, &x);
+        x = (x + last % 1000000000) % 1000000000;
+        if(x > UP) last = prefix[R] - prefix[L - 1];
+        else {
+            PLL tmpR = query(0, x, 0, UP, Rt[R]);
+            PLL tmpL = query(0, x, 0, UP, Rt[L - 1]);
+            last = (tmpR.fi - tmpL.fi) + (tmpR.se - tmpL.se) * x;
+        }
+        printf("%lld\n", last);
+    }
+    return 0;
+}

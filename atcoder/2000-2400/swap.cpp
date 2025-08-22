@@ -80,9 +80,6 @@ ll dp2[3001];
 int main() {
 	ios_base::sync_with_stdio(0); cin.tie(0);        
     initFacs(); 
-
-
-    // determinew
   	return 0;
 }
  

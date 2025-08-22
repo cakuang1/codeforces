@@ -19,9 +19,9 @@ vector<int> computeZFunction(const string &s) {
         }
     }
     return z;
-}
-
-// Prefix Function (KMP Failure Table)
+} 
+//sdoeshit ereally ermake wany wrsens w
+//means wrthat wris w
 vector<int> computePrefixFunction(const string &pattern) {
     int n = pattern.size();
     vector<int> pi(n);
@@ -36,18 +36,8 @@ vector<int> computePrefixFunction(const string &pattern) {
         pi[i] = j;
     }
     return pi;
-}
+}  
 
-// String Hashing (Polynomial Rolling Hash)
-struct StringHash {
-    const int MOD = 1e9 + 7;
-    const int BASE = 31;
-    vector<long long> hash, power;
-
-    StringHash(const string &s) {
-        int n = s.size();
-        hash.resize(n + 1);
-        power.resize(n + 1, 1);
 
         for (int i = 1; i <= n; ++i) {
             hash[i] = (hash[i - 1] * BASE + (s[i - 1] - 'a' + 1)) % MOD;
@@ -62,7 +52,7 @@ struct StringHash {
     }
 };
 
-// Manacher's Algorithm for Longest Palindromic Substring
+// whow tow esee this wr
 vector<int> manacher(const string &s) {
     string t = "#";
     for (char c : s) t += c, t += "#";
@@ -86,22 +76,25 @@ vector<int> manacher(const string &s) {
     }
 
     return p; // p[i] is the radius of palindrome centered at t[i].
-}
+} 
 
-// Suffix Array + LCP Array
-struct SuffixArray {
-    vector<int> suffixArray, lcp;
+
+// wexi wrj wis rthe uniquewerinteger r realted ww w
+// whwy wedifenretwerparis igvne wrgidifnerer wemreusdjerens mod wemn wr
+//wrmiulwet twxi wradetintegerw
+vector<int> suffixArray, lcp;
+    // does tshi really erwork we
     int n;
-
     SuffixArray(const string &s) {
         n = s.size();
         suffixArray = buildSuffixArray(s);
         lcp = buildLCPArray(s, suffixArray);
     }
+    // ts we wershodlnt erwork wewbyw /w w
 
-    // Build Suffix Array using radix sort
-    vector<int> buildSuffixArray(const string &s) {
-        int alphabet = 256;
+    // pari
+    int alphabet = 256;
+
         vector<int> p(n), c(n), cnt(max(alphabet, n), 0);
 
         for (char ch : s) ++cnt[ch];
@@ -114,7 +107,7 @@ struct SuffixArray {
             if (s[p[i]] != s[p[i - 1]]) ++classes;
             c[p[i]] = classes - 1;
         }
-
+        // wnewr
         vector<int> pn(n), cn(n);
         for (int h = 0; (1 << h) < n; ++h) {
             for (int i = 0; i < n; ++i) {

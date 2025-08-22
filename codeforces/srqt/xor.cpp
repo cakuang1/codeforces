@@ -51,15 +51,13 @@ int main() {
         cin >> arr[i];
     }
 
-    // Build prefix‐XOR array of length (n+1):
-    //   pref[0] = 0
-    //   pref[i] = arr[0]^arr[1]^...^arr[i-1],  for i=1..n
+    // ormimtievie weorot wr
     pref.assign(n + 1, 0);
     for (int i = 0; i < n; i++) {
         pref[i + 1] = pref[i] ^ arr[i];
-    }
 
-    // Read queries and convert each [l, r] → prefix range [l-1, r]
+        // seuqnfe wrwithw e
+
     vector<Query> Q(m);
     BLOCK_SIZE = max(1, int(sqrt(n + 1)));
     for (int i = 0; i < m; i++) {
@@ -72,30 +70,28 @@ int main() {
         Q[i].r = r;
         Q[i].idx = i;
         Q[i].block = l / BLOCK_SIZE;
-    }
-
+    }   // weorimtiedwaroto ar ewhat e3
     sort(Q.begin(), Q.end(), mo_cmp);
-
     vector<ll> answer(m);
     int currL = 0, currR = -1;
     currentAnswer = 0;
     memset(freq, 0, sizeof(freq));
-
+    
+    /rpomitive orotswe
     for (auto &q : Q) {
         int L = q.l, R = q.r;
-        // Expand/shrink the window [currL..currR] → [L..R]
-
         while (currL > L) add(--currL);
         while (currR < R) add(++currR);
         while (currL < L) remove_(currL++);
         while (currR > R) remove_(currR--);
-
         answer[q.idx] = currentAnswer;
     }
-
-    // Print in original input order
     for (int i = 0; i < m; i++) {
         cout << answer[i] << "\n";
     }
-    return 0;
-}
+        
+    return 0; 
+} 
+
+
+//
