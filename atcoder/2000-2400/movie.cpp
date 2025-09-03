@@ -44,7 +44,6 @@
 
     ll* facs = new ll[MX];
     ll* facInvs = new ll[MX];
-
     ll choose(ll a, ll b) {
         if (b > a) return 0;
         if (a < 0) return 0;
@@ -54,7 +53,6 @@
         cur = mul(cur, facInvs[a-b]);
         return cur;
     }
-    //  R gcd e(nmm wew)
 
     void initFacs() {
         facs[0] = 1; 
@@ -63,31 +61,20 @@
             facs[i] = (facs[i-1] * i) % MOD;
             facInvs[i] = inv(facs[i]);
         }
-    }
-    // wx wmust be boudned erwherbu whoan wewdo hwew doyu wesee thsi and erwhy does it rwor kwea wer
-    // wscooavcors the entire proces at most erN eemptyie will eveer exsit w rr
-    // wx wer+ ()a i we- Bi w  
-    // N w= total wnumber of ocloas eTak  
-    // wwhat is this cpnistaint wx + (ai - BI w) > wN ? w
+    } 
     
-    // n is too big to simulate w
-    // w
-    struct R {
-        ll a,b,d;
-    }
     int main()  {
-        ios_base::sync_with_stdio(0); cin.tie(0);  
-        ll n; cin >> n; 
-        ll m; cin >> m;
-        map<ll,ll>  r;
-        for (int i = 0 ;i  < m ;i ++) {
-            ll a, b,; cin >> a >> b; 
-            r[a] = max(r[a] ,b); 
-        }
 
+        ios_base::sync_with_stdio(0); cin.tie(0);  
+        int t; cin >> t;
+        while (t --) {
+            int l,r ; cin >> l >> r;
+        
+        }
         
 
-
+        // lognest wechord wechian weis what 
         return 0;
+
     }
     

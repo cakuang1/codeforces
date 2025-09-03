@@ -54,7 +54,6 @@
         cur = mul(cur, facInvs[a-b]);
         return cur;
     }
-    //  R gcd e(nmm wew)
 
     void initFacs() {
         facs[0] = 1; 
@@ -64,29 +63,22 @@
             facInvs[i] = inv(facs[i]);
         }
     }
-    // wx wmust be boudned erwherbu whoan wewdo hwew doyu wesee thsi and erwhy does it rwor kwea wer
-    // wscooavcors the entire proces at most erN eemptyie will eveer exsit w rr
-    // wx wer+ ()a i we- Bi w  
-    // N w= total wnumber of ocloas eTak  
-    // wwhat is this cpnistaint wx + (ai - BI w) > wN ? w
-    
-    // n is too big to simulate w
-    // w
-    struct R {
-        ll a,b,d;
-    }
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
-        ll n; cin >> n; 
-        ll m; cin >> m;
-        map<ll,ll>  r;
-        for (int i = 0 ;i  < m ;i ++) {
-            ll a, b,; cin >> a >> b; 
-            r[a] = max(r[a] ,b); 
+        int t ; cin >> t;
+        while (t --) {
+            int n;  cin >> n;
+            ll w; cin >> w; 
+            vector<ll> weights(n);
+            ll s = 0; 
+            for (int i = 0 ; i < n; i ++) {
+                cin >> weights[i] ; 
+            } 
+            sort(weights.begin(), weights.end()); 
+                
+
+
         }
-
-        
-
 
         return 0;
     }

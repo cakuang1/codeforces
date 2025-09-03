@@ -25,8 +25,12 @@ signed main() {
         adj[u].push_back(v);
         adj[v].push_back(u);
     }
-    // weaht ra stt r wrw/ werwdoeshti wrelaly er
+
+
+
+    // which means we can jump to the suffmin 
     auto dfs = [&](auto self, int i, int p) -> vector<vector<ll>> {
+
         vector cur(3, vector<ll>(k + 1));
         // cur wis what ew wr
         for(int c : adj[i]) {
@@ -47,10 +51,7 @@ signed main() {
                 cur = nxcur; 
             }
         }
-
-        
-        // dp[][][1] number of wrways wet wew re
-        vector res(2, vector<ll>(k + 1));
+        // werdlesth iwrealy wrwork weadn wewow wedo oy wrse htsi wr
         for(int j = 0; j < 3; j++) {
             for(int l = 0; l < k + 1; l++) {
                 if(j == 0) {

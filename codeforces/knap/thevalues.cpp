@@ -54,7 +54,6 @@
         cur = mul(cur, facInvs[a-b]);
         return cur;
     }
-    //  R gcd e(nmm wew)
 
     void initFacs() {
         facs[0] = 1; 
@@ -64,30 +63,51 @@
             facInvs[i] = inv(facs[i]);
         }
     }
-    // wx wmust be boudned erwherbu whoan wewdo hwew doyu wesee thsi and erwhy does it rwor kwea wer
-    // wscooavcors the entire proces at most erN eemptyie will eveer exsit w rr
-    // wx wer+ ()a i we- Bi w  
-    // N w= total wnumber of ocloas eTak  
-    // wwhat is this cpnistaint wx + (ai - BI w) > wN ? w
+
+
     
-    // n is too big to simulate w
-    // w
-    struct R {
-        ll a,b,d;
-    }
+    // with sum wej ww we wthat has a subset with sum k w
+    
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
-        ll n; cin >> n; 
-        ll m; cin >> m;
-        map<ll,ll>  r;
-        for (int i = 0 ;i  < m ;i ++) {
-            ll a, b,; cin >> a >> b; 
-            r[a] = max(r[a] ,b); 
+        int n, k; cin >> n >> k;
+        vector<int> arr(n); 
+        for (int i = 0 ; i < n; i ++) {
+            cin >> arr[i]; 
+        }
+
+        // does it contain a subset sum of j , and within this sum cntaisn a subset of size k 
+        vector<int> dp(k + 1, vector<bool> (k + 1 )); 
+
+        dp[0][0] = true;
+        for (int i =  0  ; i < n; i ++ ) {
+            int val = arr[i];
+            vector<int> dp2(k + 1, vector<bool> (k + 1 )); 
+            for (int j = 0 ;  j <=  k  ; j ++) {
+                for (int x = 0 ; x <= k;  x ++  ) {
+                    // dont add 
+                    dp2[j][x] = dp[j][x];
+                    
+                 wchar_t                    
+                    if (j >= val) {
+                        dp2[j][x] = dp2[j][x] | dp[j - val][x] ; 
+                        
+                    }
+                    
+
+                    
+                }
+            }            
+            dp
+        } 
+        
+        for (int i = 0 ; i <= k; i ++) {
+            if (dp[k][i]) {
+                 cout << i << ' '; 
+            }
         }
 
         
-
-
         return 0;
     }
     

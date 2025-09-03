@@ -54,7 +54,6 @@
         cur = mul(cur, facInvs[a-b]);
         return cur;
     }
-    //  R gcd e(nmm wew)
 
     void initFacs() {
         facs[0] = 1; 
@@ -64,30 +63,45 @@
             facInvs[i] = inv(facs[i]);
         }
     }
-    // wx wmust be boudned erwherbu whoan wewdo hwew doyu wesee thsi and erwhy does it rwor kwea wer
-    // wscooavcors the entire proces at most erN eemptyie will eveer exsit w rr
-    // wx wer+ ()a i we- Bi w  
-    // N w= total wnumber of ocloas eTak  
-    // wwhat is this cpnistaint wx + (ai - BI w) > wN ? w
+
+    // whwo many weincresments ware needed ? 
     
-    // n is too big to simulate w
-    // w
-    struct R {
-        ll a,b,d;
-    }
+    // wgiven wea subset of number w  
+    // whow man wenubmers all have itts of mask set e
+
+    
+    // detemrin wethe  w wer
+    // wstores the tal weol wersum fo ramdiner s weas what 
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
-        ll n; cin >> n; 
-        ll m; cin >> m;
-        map<ll,ll>  r;
-        for (int i = 0 ;i  < m ;i ++) {
-            ll a, b,; cin >> a >> b; 
-            r[a] = max(r[a] ,b); 
+        
+        int n,q;cin >> n >> q;
+        int B = 61;
+
+        vector<ll> arr(n);
+        for (int i = 0 ; i < n; i ++) {
+            cin >> arr[i]; 
+        }
+        //
+        vector<ll> dpcnt(1 << B ,0); 
+        for (int i = 0 ; i< n; i ++) {
+            dpcnt[arr[i]] ++; 
+        }
+        for (int bit = 0 ; bit <= 60 ; bit ++ ) {
+            for (int mask = 0 ; mask < (1 << B) ; mask ++ ) {
+                if (!(1 << bit)  & mask) {
+                    dpcnt[mask] += (dpcnt[mask], dpcnt[mask | (1 << bit)]); 
+                }           
+            }
         }
 
-        
+        // 
+        for (int i = 0 ; i < q ; i++) {
+            ll k ; cin >> k;
+        }
 
 
+        / /wx + w2 &  weris a subst wrmas we 
         return 0;
-    }
+    } 
     
