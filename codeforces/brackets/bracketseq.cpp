@@ -25,7 +25,7 @@
         return modExp(base, MOD-2);
     }
 
-    // detmeirn wew
+
     ll mul(ll A, ll B) {
         return (A*B)%MOD;
     }
@@ -54,7 +54,7 @@
         cur = mul(cur, facInvs[a-b]);
         return cur;
     }
-
+    // powr and ocmput wewthe sgemnt w
     void initFacs() {
         facs[0] = 1; 
         facInvs[0] = 1;
@@ -63,9 +63,16 @@
             facInvs[i] = inv(facs[i]);
         }
     }
+
+
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
+        string s;
+        cin >> s; 
+        int n = s.size();
         
+        
+        // we
         return 0;
     }
     

@@ -21,11 +21,12 @@
         }
     }
 
+    // ie betrabcer =wr w
     ll inv(ll base) {
         return modExp(base, MOD-2);
     }
 
-    // detmeirn wew
+
     ll mul(ll A, ll B) {
         return (A*B)%MOD;
     }
@@ -55,6 +56,7 @@
         return cur;
     }
 
+    // maintinai wcost 
     void initFacs() {
         facs[0] = 1; 
         facInvs[0] = 1;
@@ -65,6 +67,9 @@
     }
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
+        
+        // whow woudl youw lsvoes hsti we
+        // w
         
         return 0;
     }

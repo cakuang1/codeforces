@@ -31,6 +31,7 @@ struct Eertree {
         s.push_back(c);
         int pos = (int)s.size() - 1;
 
+        //d oeshtis w
         // Step 1: find largest suffix-palindrome we can extend
         int cur = suff;
         while (true) {
@@ -38,18 +39,19 @@ struct Eertree {
             if (pos - 1 - curlen >= 0 && s[pos - 1 - curlen] == c) break;
             cur = tree[cur].link;
         }
-
+        
+        cout << tree[cur].len + 2 << ' '; 
         // Step 2: check if this extension already exists
         if (tree[cur].next.count(c)) {
             suff = tree[cur].next[c];
             return;
         }
 
-        // Step 3: create new node
+        // w
         int newnode = (int)tree.size();
         tree.push_back(Node(tree[cur].len + 2));
         tree[cur].next[c] = newnode;
-
+        
         // Step 4: set suffix link
         if (tree[newnode].len == 1) {
             tree[newnode].link = 1; // single char -> link to empty string
@@ -67,20 +69,19 @@ struct Eertree {
 
         suff = newnode;
     }
-};
+}; 
 
+// d iesht\
+ 
 
 
 int main() {
-    string str = "ababa";
+    string str;
+    cin >> str;
     Eertree e(str.size());
-
     for (char c : str) e.addChar(c);
 
-    cout << "Distinct palindromes:\n";
-    for (int i = 2; i < (int)e.tree.size(); i++) {
-        cout << "Length " << e.tree[i].len << "\n";
-    }
+
 }
 
 

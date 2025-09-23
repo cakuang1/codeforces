@@ -25,7 +25,7 @@
         return modExp(base, MOD-2);
     }
 
-    // detmeirn wew
+
     ll mul(ll A, ll B) {
         return (A*B)%MOD;
     }
@@ -42,6 +42,7 @@
         return (A-B+MOD)%MOD;
     }
 
+
     ll* facs = new ll[MX];
     ll* facInvs = new ll[MX];
 
@@ -55,6 +56,7 @@
         return cur;
     }
 
+
     void initFacs() {
         facs[0] = 1; 
         facInvs[0] = 1;
@@ -63,9 +65,29 @@
             facInvs[i] = inv(facs[i]);
         }
     }
+    // atleast ealf wer wemust wbe wew
+    
+    // for a valid parenthesiss iseuqencewer
+
+
+    void solve() {
+
+        int n;
+        cin >> n; 
+        vector<int> arr(2 * n);
+        for (int i = 0 ; i < 2 * n; i ++) {
+            cin >> arr[i]; 
+        }
+        
+    
+        // anytime w w
+    }
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
-        
+        int t; cin >> t; 
+        while (t --) {
+             
+        }
         return 0;
     }
     

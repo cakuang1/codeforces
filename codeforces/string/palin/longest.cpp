@@ -1,37 +1,33 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-
+vector<int> m;
 
 struct Node {
-    int len;                        // length of palindrome
-    int link;                       // suffix link
-    map<char,int> next;             // edges by character
+    int len;                        
+    int link;                       
+    map<char,int> next;             
     Node(int l = 0) : len(l), link(0) {}
 };
-
 
 struct Eertree {
     string s;
     vector<Node> tree;
-    int suff;  // node representing the longest palindromic suffix so far
+    int suff;
 
     Eertree(int n) {
         tree.reserve(n+5);
-
-        // imaginary nodes
-        tree.push_back(Node(-1));   // node 0: length -1
-        tree.push_back(Node(0));    // node 1: length 0
+        tree.push_back(Node(-1));   // node 0
+        tree.push_back(Node(0));    // node 1
         tree[0].link = 0;
         tree[1].link = 0;
-        suff = 1;                   // empty string
+        suff = 1;                   
     }
 
     void addChar(char c) {
         s.push_back(c);
         int pos = (int)s.size() - 1;
 
-        // Step 1: find largest suffix-palindrome we can extend
         int cur = suff;
         while (true) {
             int curlen = tree[cur].len;
@@ -39,20 +35,19 @@ struct Eertree {
             cur = tree[cur].link;
         }
 
-        // Step 2: check if this extension already exists
+        m.push_back(tree[cur].len + 2);
+
         if (tree[cur].next.count(c)) {
             suff = tree[cur].next[c];
             return;
         }
-
-        // Step 3: create new node
+        
         int newnode = (int)tree.size();
         tree.push_back(Node(tree[cur].len + 2));
         tree[cur].next[c] = newnode;
-
-        // Step 4: set suffix link
+        
         if (tree[newnode].len == 1) {
-            tree[newnode].link = 1; // single char -> link to empty string
+            tree[newnode].link = 1; 
         } else {
             int linkcand = tree[cur].link;
             while (true) {
@@ -67,21 +62,26 @@ struct Eertree {
 
         suff = newnode;
     }
-};
-
-
+}; 
 
 int main() {
-    string str = "ababa";
-    Eertree e(str.size());
-
+    string str;
+    cin >> str;
+    int n = str.size(); 
+    Eertree e(n);
     for (char c : str) e.addChar(c);
-
-    cout << "Distinct palindromes:\n";
-    for (int i = 2; i < (int)e.tree.size(); i++) {
-        cout << "Length " << e.tree[i].len << "\n";
+    int l = 1; 
+    int end = 0;
+    for (int i = 0 ; i < n; i++) {
+        if (m[i] > l) {
+            end = i; 
+            l = m[i]; 
+        }
     }
+    
+    int start = end - l + 1;
+    cout << e.s.substr(start, l) << "\n";
 }
 
 
-// detmiern wete 
+// wre e wersure thsi weowevw seowkrs we

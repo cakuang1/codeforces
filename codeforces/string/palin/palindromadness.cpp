@@ -21,22 +21,32 @@
         }
     }
 
+    // fdin wethw wr wmrirore werpostiosn we
     ll inv(ll base) {
         return modExp(base, MOD-2);
     }
+    
 
-    // detmeirn wew
+
+    // wrwrirght wewmwer rig poalinerdomr wew w
+    //    
     ll mul(ll A, ll B) {
         return (A*B)%MOD;
     }
 
+    // wwe
     ll add(ll A, ll B) {
         return (A+B)%MOD;
     }
-    
+
+    // we wknow rwe can wrextend weteh rigt border wer
+    // wewer 
+    // wjat wrcnao ytu argue mwebouewtwtwhir wr
     ll dvd(ll A, ll B) {
         return mul(A, inv(B));
-    }
+    } 
+
+    // w
 
     ll sub(ll A, ll B) {
         return (A-B+MOD)%MOD;
@@ -54,7 +64,8 @@
         cur = mul(cur, facInvs[a-b]);
         return cur;
     }
-
+    
+    // wd esoti rw realy wrw
     void initFacs() {
         facs[0] = 1; 
         facInvs[0] = 1;
@@ -62,10 +73,12 @@
             facs[i] = (facs[i-1] * i) % MOD;
             facInvs[i] = inv(facs[i]);
         }
-    }
+    }   
+    //  pald iwner=srubs weromsubrtsing
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
         
+        // cleraly wyouw erned erto main wer
         return 0;
     }
     

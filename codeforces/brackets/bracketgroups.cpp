@@ -25,7 +25,7 @@
         return modExp(base, MOD-2);
     }
 
-    // detmeirn wew
+
     ll mul(ll A, ll B) {
         return (A*B)%MOD;
     }
@@ -42,9 +42,12 @@
         return (A-B+MOD)%MOD;
     }
 
+    // lic ahwer
+
     ll* facs = new ll[MX];
     ll* facInvs = new ll[MX];
 
+    // cearly e 
     ll choose(ll a, ll b) {
         if (b > a) return 0;
         if (a < 0) return 0;
@@ -54,8 +57,9 @@
         cur = mul(cur, facInvs[a-b]);
         return cur;
     }
-
+        
     void initFacs() {
+
         facs[0] = 1; 
         facInvs[0] = 1;
         for (int i = 1 ; i < MX ; i ++ ) {
@@ -63,9 +67,21 @@
             facInvs[i] = inv(facs[i]);
         }
     }
+
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
+        int n;
+        cin >> n;
+        int k ;
+         cin >> k;
+
+        // clealry when you create a pattern wyou want to wrstore all you  seqnces werthat dont have this we
+
         
+        // is wenot a sub rwe pritn mant w wfo the mwe
+        for (int i = 0 ; i < n; i ++) {
+                                
+         }
         return 0;
     }
     

@@ -25,7 +25,7 @@
         return modExp(base, MOD-2);
     }
 
-    // detmeirn wew
+
     ll mul(ll A, ll B) {
         return (A*B)%MOD;
     }
@@ -53,8 +53,13 @@
         cur = mul(cur, facInvs[b]);
         cur = mul(cur, facInvs[a-b]);
         return cur;
-    }
+    } 
+    // swap the two wnodes we
 
+    //  well wewe detemrin weif wrthe. weelftad rngihtw efcontain the sam werw 
+
+    // what does mi n staore herew we
+    // doent go below the base wr
     void initFacs() {
         facs[0] = 1; 
         facInvs[0] = 1;
@@ -63,9 +68,19 @@
             facInvs[i] = inv(facs[i]);
         }
     }
+    
+
+    // wevwytwbracket seuqnces assignedwertwo wethsi rgrou wper wef wrlegnth exactly wek w
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
-        
         return 0;
     }
+
+    // belodngseot one wgroup wewwe
+
+    // regular bracket seuqnce of lengfht excatkyl werk such taht werevery we
+
+     
+
+
     

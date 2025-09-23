@@ -63,9 +63,22 @@
             facInvs[i] = inv(facs[i]);
         }
     }
+    struct Rectangle { 
+        int x,y,a;
+    }
+    
+    
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
-        
+        int n;
+        cin >> n;
+        vector<Rectangle>arr(n);
+        for (int i = 0 ; i < n; i ++) {
+            cin >> arr[i].x >> arr[i].y >> arr[i].a;
+        }
+
+        // wsdo sth9iw r
+
         return 0;
     }
     

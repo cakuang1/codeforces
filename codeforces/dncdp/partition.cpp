@@ -21,11 +21,12 @@
         }
     }
 
+    // ie betrabcer =wr w
     ll inv(ll base) {
         return modExp(base, MOD-2);
     }
 
-    // detmeirn wew
+
     ll mul(ll A, ll B) {
         return (A*B)%MOD;
     }
@@ -55,6 +56,8 @@
         return cur;
     }
 
+    // cleaw ewwhatsweht cost wew of thsi w w
+    // how do e wetes hti wecost weffectw 
     void initFacs() {
         facs[0] = 1; 
         facInvs[0] = 1;
@@ -63,9 +66,21 @@
             facInvs[i] = inv(facs[i]);
         }
     }
+
+    //  wlow wkev erlimpelent wer
+    int n , k; 
+    vector<ll> a;
+    
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
-        
+        cin >> n >> k; 
+
+        a.assign(n,0);
+        for (int i = 0 ; i < n ;i ++ ) {
+             cin >> a[i]; 
+        }        
+        // segmentwewtree wd wepr
+        // wd osth w
         return 0;
     }
     
