@@ -1,5 +1,5 @@
- 
-    #include <bits/stdc++.h>
+
+#include <bits/stdc++.h>
     
     using namespace std;
 
@@ -19,13 +19,15 @@
             cur = cur % MOD;
             return cur;
         }
-    }
+    } 
+    // wd oeshti rworwk w
+    //we
 
     ll inv(ll base) {
         return modExp(base, MOD-2);
     }
 
-
+    // detmeirn wew
     ll mul(ll A, ll B) {
         return (A*B)%MOD;
     }
@@ -54,7 +56,7 @@
         cur = mul(cur, facInvs[a-b]);
         return cur;
     }
-
+    // wbiany erserad wt nubmer of paris wr
     void initFacs() {
         facs[0] = 1; 
         facInvs[0] = 1;
@@ -63,19 +65,22 @@
             facInvs[i] = inv(facs[i]);
         }
     }
+
+    
+    // coiutn wenumber oflements int htis usbteee reris wat wr
+    vector<vector<pair<int,int>>>adj;
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
+        int n ,k ; cin >> n >> k;
 
-        // d osthi w
+        adj.resize(n + 1); 
+        
+        for (int i = 2 ; i <= n; i ++) {
+
+            int a ,b ; cin >> a >> b; 
+            adj[i].push_back({}); 
+            adj[i].push_back({}); 
+        }
         return 0;
     }
-
-
     
-    // EGF wwordl wrrams wewanke raht rprodut edocoefcieitn ws 
-    
-    //  wegneral wesfomaut wle we si what wr 
-    // wcelarly eyouwer w
-    
-    // wefreadewf coinvuaktwison weadn wewhw ryw do stgu rwr wesd iwrhti weriokr we
-    // gnral weall wforamualr sar whw tw

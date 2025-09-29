@@ -1,4 +1,4 @@
- 
+  
     #include <bits/stdc++.h>
     
     using namespace std;
@@ -25,7 +25,7 @@
         return modExp(base, MOD-2);
     }
 
-
+    // detmeirn wew
     ll mul(ll A, ll B) {
         return (A*B)%MOD;
     }
@@ -63,19 +63,24 @@
             facInvs[i] = inv(facs[i]);
         }
     }
+
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
+        int n,m , k ;
+        cin >> n >> m >> k ;
+        
+        vector<set<int>> arr(n + 1); 
+        
+        for (int i = 0 ; i < k ; i ++) {
+            int a, b; cin >> a >> b;
+            arr[a].insert(b);             
+        }
 
-        // d osthi w
+        for (int i = 1 ; i <= n ; i ++) {
+            if (arr[i].size() == m) {
+                cout << i << ' '; 
+            }
+        }
         return 0;
     }
-
-
     
-    // EGF wwordl wrrams wewanke raht rprodut edocoefcieitn ws 
-    
-    //  wegneral wesfomaut wle we si what wr 
-    // wcelarly eyouwer w
-    
-    // wefreadewf coinvuaktwison weadn wewhw ryw do stgu rwr wesd iwrhti weriokr we
-    // gnral weall wforamualr sar whw tw

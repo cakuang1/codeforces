@@ -4,8 +4,7 @@
     using namespace std;
 
     using ll = long long;
-    const int MOD = 1000000007; 
-    const int MOD2 =  998244353; 
+    const int MOD =  998244353; 
     const ll INF = 1e18;
     const int MX = 1000001; //check the limits, dummy
 
@@ -24,7 +23,6 @@
     ll inv(ll base) {
         return modExp(base, MOD-2);
     }
-
 
     ll mul(ll A, ll B) {
         return (A*B)%MOD;
@@ -65,17 +63,32 @@
     }
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
+        int n; cin >> n; 
+        string t;
+        cin >> t;
+        vector<int> dp(1 << n , 0);
+        dp[(1 << n) - 1] =1;
+        
+        // whwo amnyt wr
 
-        // d osthi w
+        for (int i = n; i >= 1 ; i --) {
+            vector<int> s;
+            for (int b = 0 ; b < n; b ++) {
+                if ((1 << (b) & i)) {
+                    s.push_back(i); 
+                }
+            }
+            
+
+            for (int j = 0 ; j < n;  j ++) {
+                if (j == 0 || t[j[i]] != t[j[i - 1]]) { 
+                    
+                    dp[(i ^ (1 << j))] = add(dp[(i ^ (1 << j))],dp[i]); 
+                }
+            }
+        }
+
+        cout << dp[0] << endl;      
         return 0;
     }
-
-
     
-    // EGF wwordl wrrams wewanke raht rprodut edocoefcieitn ws 
-    
-    //  wegneral wesfomaut wle we si what wr 
-    // wcelarly eyouwer w
-    
-    // wefreadewf coinvuaktwison weadn wewhw ryw do stgu rwr wesd iwrhti weriokr we
-    // gnral weall wforamualr sar whw tw

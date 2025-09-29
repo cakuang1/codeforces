@@ -25,7 +25,7 @@
         return modExp(base, MOD-2);
     }
 
-
+    // detmeirn wew
     ll mul(ll A, ll B) {
         return (A*B)%MOD;
     }
@@ -65,17 +65,20 @@
     }
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
+        int n ; cin >> n;
+        set<int> learned;
+        vector<pair<int,int>> skills; 
+        for (int i = 1 ; i <= n;  i++) {
+            cin >> skills[i].first >> skills[i].second;
+            if (skills[i].first == 0 && skills[i].first == 0 ) {
+                 learned.insert(i); 
+            }
+            if (learned.count(skills[i].first) || learned.count(skills[i].second)) {
+                learned.insert(i); 
+            }
+        }
+        cout << learned.size(); 
 
-        // d osthi w
-        return 0;
+     return 0;
     }
-
-
     
-    // EGF wwordl wrrams wewanke raht rprodut edocoefcieitn ws 
-    
-    //  wegneral wesfomaut wle we si what wr 
-    // wcelarly eyouwer w
-    
-    // wefreadewf coinvuaktwison weadn wewhw ryw do stgu rwr wesd iwrhti weriokr we
-    // gnral weall wforamualr sar whw tw

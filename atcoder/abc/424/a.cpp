@@ -1,4 +1,3 @@
- 
     #include <bits/stdc++.h>
     
     using namespace std;
@@ -25,7 +24,7 @@
         return modExp(base, MOD-2);
     }
 
-
+    // detmeirn wew
     ll mul(ll A, ll B) {
         return (A*B)%MOD;
     }
@@ -64,18 +63,18 @@
         }
     }
     int main()  {
-        ios_base::sync_with_stdio(0); cin.tie(0);  
-
-        // d osthi w
+        ios_base::sync_with_stdio(0); cin.tie(0);   
+        int a,b,c ;
+        cin >> a >> b >> c; 
+        set<int> s;
+        s.insert(a);
+        s.insert(b);
+        s.insert(c);
+        if (s.size() == 2) {
+            cout << "YES" << endl; 
+        } else {
+            cout << "NO" << endl; 
+        }
         return 0;
     }
-
-
     
-    // EGF wwordl wrrams wewanke raht rprodut edocoefcieitn ws 
-    
-    //  wegneral wesfomaut wle we si what wr 
-    // wcelarly eyouwer w
-    
-    // wefreadewf coinvuaktwison weadn wewhw ryw do stgu rwr wesd iwrhti weriokr we
-    // gnral weall wforamualr sar whw tw

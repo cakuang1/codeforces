@@ -25,7 +25,7 @@
         return modExp(base, MOD-2);
     }
 
-
+    // detmeirn wew
     ll mul(ll A, ll B) {
         return (A*B)%MOD;
     }
@@ -62,20 +62,25 @@
             facs[i] = (facs[i-1] * i) % MOD;
             facInvs[i] = inv(facs[i]);
         }
+
     }
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
+        ll n,m,y;
+        cin >> n >> m>> y;
+        vector<ll> arr(n); 
+        for (int i = 0 ;i < n; i ++) {
+            cin>> arr[i];
+        } 
+        // dtermwi w tr 
 
-        // d osthi w
         return 0;
     }
 
 
     
-    // EGF wwordl wrrams wewanke raht rprodut edocoefcieitn ws 
-    
-    //  wegneral wesfomaut wle we si what wr 
-    // wcelarly eyouwer w
-    
-    // wefreadewf coinvuaktwison weadn wewhw ryw do stgu rwr wesd iwrhti weriokr we
-    // gnral weall wforamualr sar whw tw
+     
+
+    // exactly wrdicivsors wr
+
+    / /w

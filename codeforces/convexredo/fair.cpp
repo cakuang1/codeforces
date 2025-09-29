@@ -1,84 +1,63 @@
+#include <bits/stdc++.h>
+using namespace std;
+using ll = long long;
+
+struct Rect {
+    ll p, q, a;
+};
+
+struct Line {
+    ll m, c; // slope, intercept
+    ll eval(ll x) const { return m * x + c; }
+    long double intersectX(const Line &l) const {
+        return (long double)(c - l.c) / (l.m - m);
+    }
+};
+
+
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+
+    int n;
+    cin >> n;
+    vector<Rect> rects(n);
+    for (int i = 0; i < n; i++) {
+        cin >> rects[i].p >> rects[i].q >> rects[i].a;
+    }
+
+    // sort by p ascending, and if tie, q descending
+    sort(rects.begin(), rects.end(), [](const Rect &u, const Rect &v) {
+        if (u.p == v.p) return u.q > v.q;
+        return u.p < v.p;
+    });
+
+    deque<Line> dq;
+    dq.push_front({0, 0}); // base line for f(0) = 0
+
+    ll ans = 0;
+
+    for (int i = 0; i < n; i++) {
+        // Query at x = q_i
+        while (dq.size() >= 2 && dq.back().eval(rects[i].q) <= dq[dq.size()-2].eval(rects[i].q))
+            dq.pop_back();
+        ll best = dq.back().eval(rects[i].q);
+
+        ll f = rects[i].p * rects[i].q - rects[i].a + best;
+        ans = max(ans, f);
+
+        // Insert new line y = -p_i * x + f
+        Line cur = {-rects[i].p, f};
+        while (dq.size() >= 2 && cur.intersectX(dq[0]) >= dq[0].intersectX(dq[1]))
+            dq.pop_front();
+        dq.push_front(cur);
+    }
+
+
+
+    cout << ans << "\n";
+    return 0;
+}
  
-    #include <bits/stdc++.h>
-    
-    using namespace std;
-
-    using ll = long long;
-    const int MOD = 1000000007; 
-    const int MOD2 =  998244353; 
-    const ll INF = 1e18;
-    const int MX = 1000001; //check the limits, dummy
-
-
-    ll modExp(ll base, ll power) {
-        if (power == 0) {
-            return 1;
-        } else {
-            ll cur = modExp(base, power / 2); cur = cur * cur; cur = cur % MOD;
-            if (power % 2 == 1) cur = cur * base;
-            cur = cur % MOD;
-            return cur;
-        }
-    }
-
-    ll inv(ll base) {
-        return modExp(base, MOD-2);
-    }
-
-    // detmeirn wew
-    ll mul(ll A, ll B) {
-        return (A*B)%MOD;
-    }
-
-    ll add(ll A, ll B) {
-        return (A+B)%MOD;
-    }
-    
-    ll dvd(ll A, ll B) {
-        return mul(A, inv(B));
-    }
-
-    ll sub(ll A, ll B) {
-        return (A-B+MOD)%MOD;
-    }
-
-    ll* facs = new ll[MX];
-    ll* facInvs = new ll[MX];
-
-    ll choose(ll a, ll b) {
-        if (b > a) return 0;
-        if (a < 0) return 0;
-        if (b < 0) return 0;
-        ll cur = facs[a];
-        cur = mul(cur, facInvs[b]);
-        cur = mul(cur, facInvs[a-b]);
-        return cur;
-    }
-
-    void initFacs() {
-        facs[0] = 1; 
-        facInvs[0] = 1;
-        for (int i = 1 ; i < MX ; i ++ ) {
-            facs[i] = (facs[i-1] * i) % MOD;
-            facInvs[i] = inv(facs[i]);
-        }
-    }
-    struct Rectangle { 
-        int x,y,a;
-    }
-    
-    
-    int main()  {
-        ios_base::sync_with_stdio(0); cin.tie(0);  
-        int n;
-        cin >> n;
-        vector<Rectangle>arr(n);
-        for (int i = 0 ; i < n; i ++) {
-            cin >> arr[i].x >> arr[i].y >> arr[i].a;
-        }
-
-        // wsdo sth9iw r
-
-        return 0;
-    }
-    
+// 

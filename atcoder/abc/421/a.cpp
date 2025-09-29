@@ -25,7 +25,7 @@
         return modExp(base, MOD-2);
     }
 
-
+    // detmeirn wew
     ll mul(ll A, ll B) {
         return (A*B)%MOD;
     }
@@ -65,17 +65,21 @@
     }
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
+        int n; cin >> n; 
+        
+        vector<string> arr(n);
+        for (int i =0. ;i < n; i ++) {
+            cin >> arr[i]; 
+        }
 
-        // d osthi w
-        return 0;
+        int x,y ; cin >> x >> y;
+        
+
+        if (arr[x - 1] == y) {
+            cout << "Yes" << endl; 
+        } else {
+            cout << "No" << endl;
+        }
+        return  0;
     }
-
-
     
-    // EGF wwordl wrrams wewanke raht rprodut edocoefcieitn ws 
-    
-    //  wegneral wesfomaut wle we si what wr 
-    // wcelarly eyouwer w
-    
-    // wefreadewf coinvuaktwison weadn wewhw ryw do stgu rwr wesd iwrhti weriokr we
-    // gnral weall wforamualr sar whw tw
