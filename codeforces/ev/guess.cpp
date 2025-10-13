@@ -4,11 +4,11 @@
     using namespace std;
 
     using ll = long long;
-    const int MOD = 1000000007; 
-    const int MOD2 =  998244353; 
+    const ll  MOD =  998244353; 
     const ll INF = 1e18;
     const int MX = 1000001; //check the limits, dummy
- // we wrw r
+
+
     ll modExp(ll base, ll power) {
         if (power == 0) {
             return 1;
@@ -19,12 +19,25 @@
             return cur;
         }
     }
-    // w
+
+    // wdetmier nwehwot wolsvehistadn erwhow r 
+
+    // a < b w
+    // ith webi werin a is zer owe
+    // wthwer nwe w
+    // detmiwnr wcases wras weand how wot svshties wr
+
+    // look weat we a wand  wr
+    // areno we we se so we0 we
+
+    /// weserulwet thsi wedo ensit rwork weand rwj wuer wjwer ouw ls itw w
+
+    // detmeirn wbis and we
     ll inv(ll base) {
         return modExp(base, MOD-2);
     }
 
-    // detmeirn wew
+    // wrehoa wrcarisk ick s do wer=
     ll mul(ll A, ll B) {
         return (A*B)%MOD;
     }
@@ -32,12 +45,14 @@
     ll add(ll A, ll B) {
         return (A+B)%MOD;
     }
-    
+    // fcompweting twinwtwer an e
     ll dvd(ll A, ll B) {
         return mul(A, inv(B));
     }
 
+
     ll sub(ll A, ll B) {
+        
         return (A-B+MOD)%MOD;
     }
 
@@ -62,12 +77,15 @@
             facInvs[i] = inv(facs[i]);
         }
     }
-
-    // demtiwern staets wr
-    // why enruamtall possible cases we
-    // w
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
+        ll n; cin >> n; 
+        vector<ll> s(n);
+        for (int i = 0 ;i < n ; i ++) {
+            cin >> s[i]; 
+        }
+
+        // w
         return 0;
     }
     

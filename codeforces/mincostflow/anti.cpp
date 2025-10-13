@@ -8,7 +8,10 @@
     const int MOD2 =  998244353; 
     const ll INF = 1e18;
     const int MX = 1000001; //check the limits, dummy
- // we wrw r
+
+
+    // the ahrdserset parwt si reduceisng thsi wewy w wer
+    // w
     ll modExp(ll base, ll power) {
         if (power == 0) {
             return 1;
@@ -19,12 +22,14 @@
             return cur;
         }
     }
-    // w
+
+    // chososewa set wrw  w w wedo sethi wrworkw radn erwh owd oyou dsotu osovlsehtis d nwewr ehwyd sowtis erwiwtwer
+    // weits wer
     ll inv(ll base) {
         return modExp(base, MOD-2);
     }
 
-    // detmeirn wew
+
     ll mul(ll A, ll B) {
         return (A*B)%MOD;
     }
@@ -62,12 +67,33 @@
             facInvs[i] = inv(facs[i]);
         }
     }
-
-    // demtiwern staets wr
-    // why enruamtall possible cases we
-    // w
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
+        int n; cin >> n;
+        string s; cin >> s;
+        
+        vector<int> arr(n);
+        for (int i =0 ; i < n; i++) {
+            cin >> arr[i];     
+        }
+
         return 0;
     }
+
+
+
+    // wantwi erspaldonser womic wer
+    // you wrcanan to maximumwe rteh buery erof the array w
+
+    // w 
+
+    // wsyntrwrmatricse we
+    // wdetmeir nwewhat w they wecan be weadn wew what we
+    //vefert pari uses two distinct letters we
+    // w w
+    // one node wefor eacvh weapri we
+    // wdetmiern wew w
     
+    // detmienr weeach weapir werw
+
+    // rholy shitw rwahtw ew

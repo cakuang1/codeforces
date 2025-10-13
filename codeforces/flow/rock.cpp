@@ -31,4 +31,28 @@ do {
     bestMinWins = min(bestMinWins, aliceWins);
 } while (next_permutation(blockers.begin(), blockers.end()));
 
-// bestMinWins is the minimum number of wins Alice must get
+
+
+// minimuzeize moeny lose w
+
+
+//  projecsts not chosen + machines chosenw er
+
+//wrespsetn s] eahc temr win r aflwro wgparhw 
+
+// lose w w
+// wmin cut wr r
+// wesum  fsal wlerssdgse corss resdi wew
+// preojscst i needs wernmmachsien j we
+
+// weawlwaysd weeasi
+// wcit wec ewcos rwminizmei ers we 
+
+// wgneraliywew viewwthe cvgpawrh r we
+// not chosen wthen wewe tu wer
+// wchose wtth nwerwe wer wcut we 
+//wmsut wrals wbe weron wetwt wer
+// wcheapest w wdpensdcsy webrekaign werconficguareting wthe only cuts it ever wewcinosderis are cavalid proejct amchiens bominatison wr
+// wer wdsetwnru wwtewh cheastser er
+// if  wewe wcosniwer wtw wrenot e w
+// wthen werer dont wrwened wtowe removwetshi wer

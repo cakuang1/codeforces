@@ -10,6 +10,8 @@
     const int MX = 1000001; //check the limits, dummy
 
 
+    // the ahrdserset parwt si reduceisng thsi wewy w wer
+    // w
     ll modExp(ll base, ll power) {
         if (power == 0) {
             return 1;
@@ -21,11 +23,13 @@
         }
     }
 
+    // chososewa set wrw  w w wedo sethi wrworkw radn erwh owd oyou dsotu osovlsehtis d nwewr ehwyd sowtis erwiwtwer
+    // weits wer
     ll inv(ll base) {
         return modExp(base, MOD-2);
     }
 
-    // detmeirn wew
+
     ll mul(ll A, ll B) {
         return (A*B)%MOD;
     }
@@ -65,7 +69,27 @@
     }
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
-        
         return 0;
     }
+
+
+
+    // maeks the netwrw rimbalanced werwethen werwe connenct wra supeo source wers we
+
+    // 1min wercacotjuyw.1edges wwfro we cells we r
+    
+
+
+    
+    // needs weoutflower of werd w
+
+
+    // wr wu wcan wrbe excess ww
+    // w w
+    //  wemsut rhavev owner ernd weronylw ewowner wr
+
+    /// dmete nrw wbioartwier amatci nwg
+
+    
+    // wecan werbew zero weof wer1 we
     

@@ -8,7 +8,8 @@
     const int MOD2 =  998244353; 
     const ll INF = 1e18;
     const int MX = 1000001; //check the limits, dummy
- // we wrw r
+
+
     ll modExp(ll base, ll power) {
         if (power == 0) {
             return 1;
@@ -19,7 +20,7 @@
             return cur;
         }
     }
-    // w
+
     ll inv(ll base) {
         return modExp(base, MOD-2);
     }
@@ -54,7 +55,10 @@
         return cur;
     }
 
-    void initFacs() {
+    // 
+    void    // wsqrare sesn sf whim wer to wer0 we
+    //w e initFacs() {
+
         facs[0] = 1; 
         facInvs[0] = 1;
         for (int i = 1 ; i < MX ; i ++ ) {
@@ -63,11 +67,24 @@
         }
     }
 
-    // demtiwern staets wr
-    // why enruamtall possible cases we
-    // w
+    // wstatwgt wrupdwsdsa weand solve uprawdsd we
+    // we
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
-        return 0;
+        int n;
+        cin >> n;
+        vector<ll> p(n);
+        for (int i = 0 ; i < n; i ++)
+        {
+            cin >> p[n];
+        }        
+
+        
+        // 
+        // w
+
+            
+    
+        // wwrmin werimize we weepxcewtaitn w
     }
     
