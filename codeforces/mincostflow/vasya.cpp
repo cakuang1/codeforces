@@ -1,217 +1,235 @@
-#include <bits/stdc++.h>
+#include <algorithm>
+#include <cassert>
+#include <iostream>
+#include <queue>
+#include <vector>
 using namespace std;
 
-struct MCMF {
-    struct Edge { int v, cap, cost, rev; };
-    int N;
-    vector<vector<Edge>> G;
-    MCMF(int n=0): N(n), G(n) {}
-    void addEdge(int u, int v, int cap, int cost){
-        Edge a{v,cap,cost,(int)G[v].size()};
-        Edge b{u,0,-cost,(int)G[u].size()};
-        G[u].push_back(a); G[v].push_back(b);
+
+template<typename flow_t, typename cost_t>
+struct min_cost_flow {
+    static const flow_t FLOW_INF = numeric_limits<flow_t>::max() / 2;
+    static const cost_t COST_INF = numeric_limits<cost_t>::max() / 2;
+
+    struct edge {
+        int node, rev;
+        flow_t capacity;
+        cost_t cost;
+
+        edge(int _node = -1, int _rev = -1, flow_t _capacity = 0, cost_t _cost = 0)
+            : node(_node), rev(_rev), capacity(_capacity), cost(_cost) {}
+    };
+
+    int V = -1;
+    vector<vector<edge>> adj;
+    vector<cost_t> dist;
+    vector<int> prev;
+    vector<edge*> prev_edge;
+
+    min_cost_flow(int vertices = -1) {
+        if (vertices >= 0)
+            init(vertices);
     }
-    pair<int,long long> minCostMaxFlow(int s, int t, int maxf=INT_MAX){
-        const long long INF = (1LL<<60);
-        long long cost = 0;
-        int flow = 0;
-        vector<long long> dist(N), pot(N);
-        vector<int> pv(N), pe(N);
-        // SPFA init potentials
-        vector<int> inq(N,0); queue<int>q;
-        fill(dist.begin(), dist.end(), INF);
-        dist[s]=0; q.push(s); inq[s]=1;
-        while(!q.empty()){
-            int u=q.front(); q.pop(); inq[u]=0;
-            for(int i=0;i<(int)G[u].size();++i){
-                auto &e=G[u][i];
-                if(e.cap>0 && dist[e.v]>dist[u]+e.cost){
-                    dist[e.v]=dist[u]+e.cost;
-                    if(!inq[e.v]){inq[e.v]=1; q.push(e.v);}
-                }
-            }
+
+    void init(int vertices) {
+        V = vertices;
+        adj.assign(V, {});
+        dist.resize(V);
+        prev.resize(V);
+        prev_edge.resize(V);
+    }
+
+    void add_directional_edge(int u, int v, flow_t capacity, cost_t cost) {
+        edge uv_edge(v, adj[v].size() + (u == v ? 1 : 0), capacity, cost);
+        edge vu_edge(u, adj[u].size(), 0, -cost);
+        adj[u].push_back(uv_edge);
+        adj[v].push_back(vu_edge);
+    }
+
+    edge &reverse_edge(const edge &e) {
+        return adj[e.node][e.rev];
+    }
+
+    bool bellman_ford(int source, int sink) {
+        for (int i = 0; i < V; i++) {
+            dist[i] = COST_INF;
+            prev[i] = -1;
+            prev_edge[i] = nullptr;
         }
-        for(int i=0;i<N;++i) pot[i]=(dist[i]>=INF?0:dist[i]);
-        while(flow<maxf){
-            fill(dist.begin(), dist.end(), INF);
-            vector<char> vis(N,0);
-            dist[s]=0;
-            priority_queue<pair<long long,int>, vector<pair<long long,int>>, greater<pair<long long,int>>> pq;
-            pq.push({0,s});
-            while(!pq.empty()){
-                auto [d,u]=pq.top(); pq.pop();
-                if(vis[u]) continue; vis[u]=1;
-                for(int i=0;i<(int)G[u].size();++i){
-                    auto &e=G[u][i];
-                    if(e.cap<=0) continue;
-                    long long nd = d + e.cost + pot[u] - pot[e.v];
-                    if(nd < dist[e.v]){
-                        dist[e.v]=nd; pv[e.v]=u; pe[e.v]=i;
-                        pq.push({nd,e.v});
+
+        vector<int> last_seen(V, -1);
+        vector<int> nodes(1, source);
+        dist[source] = 0;
+
+        for (int iteration = 0; iteration < V; iteration++) {
+            vector<int> next_nodes;
+
+            for (int node : nodes)
+                for (edge &e : adj[node])
+                    if (e.capacity > 0 && dist[node] + e.cost < dist[e.node]) {
+                        dist[e.node] = dist[node] + e.cost;
+                        prev[e.node] = node;
+                        prev_edge[e.node] = &e;
+
+                        if (last_seen[e.node] != iteration) {
+                            last_seen[e.node] = iteration;
+                            next_nodes.push_back(e.node);
+                        }
                     }
-                }
-            }
-            if(dist[t]==INF) break;
-            for(int i=0;i<N;++i) if(dist[i]<INF) pot[i]+=dist[i];
-            int aug = maxf - flow;
-            for(int v=t; v!=s; v=pv[v])
-                aug = min(aug, G[pv[v]][pe[v]].cap);
-            for(int v=t; v!=s; v=pv[v]){
-                auto &e=G[pv[v]][pe[v]];
-                auto &er=G[v][e.rev];
-                e.cap-=aug; er.cap+=aug;
-            }
-            flow += aug;
-            cost += 1LL*aug * pot[t];
+
+            swap(nodes, next_nodes);
         }
-        return {flow, cost};
+
+        return prev[sink] != -1;
+    }
+
+    struct dijkstra_state {
+        cost_t dist;
+        int node;
+
+        bool operator<(const dijkstra_state &other) const {
+            return dist > other.dist;
+        }
+    };
+
+    void dijkstra_check(int node, cost_t potential_dist, int previous, edge *previous_edge, auto &pq) {
+        if (potential_dist < dist[node]) {
+            dist[node] = potential_dist;
+            prev[node] = previous;
+            prev_edge[node] = previous_edge;
+            pq.push({dist[node], node});
+        }
+    }
+
+    bool dijkstra(int source, int sink) {
+        dist.assign(V, COST_INF);
+        prev.assign(V, -1);
+        prev_edge.assign(V, nullptr);
+
+        priority_queue<dijkstra_state> pq;
+        dijkstra_check(source, 0, -1, nullptr, pq);
+
+        while (!pq.empty()) {
+            dijkstra_state top = pq.top();
+            pq.pop();
+
+            if (top.dist > dist[top.node])
+                continue;
+
+            for (edge &e : adj[top.node])
+                if (e.capacity > 0)
+                    dijkstra_check(e.node, top.dist + e.cost, top.node, &e, pq);
+        }
+
+        return prev[sink] != -1;
+    }
+
+    void reduce_cost() {
+        for (int i = 0; i < V; i++)
+            for (edge &e : adj[i])
+                e.cost += dist[i] - dist[e.node];
+    }
+
+    pair<flow_t, cost_t> solve_min_cost_flow(int source, int sink, flow_t flow_goal = FLOW_INF) {
+        assert(V >= 0);
+
+        if (!bellman_ford(source, sink))
+            return make_pair(0, 0);
+
+        flow_t total_flow = 0;
+        cost_t total_cost = 0;
+        cost_t reduce_sum = 0;
+
+        do {
+            reduce_cost();
+            reduce_sum += dist[sink];
+            flow_t path_cap = flow_goal - total_flow;
+
+            for (int node = sink; prev[node] != -1; node = prev[node])
+                path_cap = min(path_cap, prev_edge[node]->capacity);
+
+            for (int node = sink; prev[node] != -1; node = prev[node]) {
+                edge *e = prev_edge[node];
+                assert(e->cost == 0);
+                e->capacity -= path_cap;
+                reverse_edge(*e).capacity += path_cap;
+            }
+
+            total_flow += path_cap;
+            total_cost += reduce_sum * path_cap;
+        } while (total_flow < flow_goal && dijkstra(source, sink));
+
+        return make_pair(total_flow, total_cost);
     }
 };
 
-int main(){
+
+struct assignment_problem {
+    int n;
+    vector<vector<long long>> costs;
+
+    assignment_problem(int _n = -1) : n(_n) {
+        if (n > 0)
+            costs.assign(n, vector<long long>(n, 0));
+    }
+
+    template<typename T>
+    assignment_problem(const vector<vector<T>> &_costs) {
+        build(_costs);
+    }
+
+    template<typename T>
+    void build(const vector<vector<T>> &_costs) {
+        n = _costs.size();
+        costs.assign(n, vector<long long>(n, 0));
+
+        for (int i = 0; i < n; i++)
+            for (int j = 0; j < n; j++)
+                costs[i][j] = _costs[i][j];
+    }
+
+    long long solve() {
+        int v = 2 * n + 2, source = v - 2, sink = v - 1;
+        min_cost_flow<int, long long> graph(v);
+
+        for (int i = 0; i < n; i++) {
+            graph.add_directional_edge(source, i, 1, 0);
+            graph.add_directional_edge(n + i, sink, 1, 0);
+        }
+
+        for (int i = 0; i < n; i++)
+            for (int j = 0; j < n; j++)
+                graph.add_directional_edge(i, n + j, 1, costs[i][j]);
+
+        return graph.solve_min_cost_flow(source, sink).second;
+    }
+};
+
+
+
+// weajs wto be osm ewsort weof s wer
+int N;
+vector<long long> A, B, K;
+
+int main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
-    int n1,n2,m; long long r,b;
-    if(!(cin>>n1>>n2>>m>>r>>b)) return 0;
-    string sL,sR; cin>>sL>>sR;
-    vector<int> U(m), V(m);
-    for(int i=0;i<m;++i){ cin>>U[i]>>V[i]; --U[i]; --V[i]; }
 
-    int L0 = 0;
-    int R0 = n1;
-    int oldS = n1+n2;
-    int oldT = oldS+1;
-    int Spr = oldT+1;
-    int Tpr = Spr+1;
-    int N = Tpr+1;
-    MCMF mf(N);
+    cin >> N;
+    A.resize(N);
+    B.resize(N);
+    K.resize(N);
 
-    vector<long long> bal(N,0);
-    auto add_with_LB = [&](int u, int v, int L, int C, int cost){
-        if(C < L){ cout << -1 << "\n"; exit(0); }
-        if(C-L > 0) mf.addEdge(u, v, C-L, cost);
-        bal[u] -= L;
-        bal[v] += L;
-    };
+    for (int i = 0; i < N; i++)
+        cin >> A[i] >> B[i] >> K[i];
 
-    const int INF = 1e9;
-    // Left vertices
-    for(int u=0; u<n1; ++u){
-        if(sL[u]=='R'){
-            add_with_LB(oldS, u, 1, m, 0);
-        }else if(sL[u]=='B'){
-            add_with_LB(u, oldT, 1, m, 0);
-        }else{
-            mf.addEdge(oldS, u, m, 0);
-            mf.addEdge(u, oldT, m, 0);
-        }
-    }
+    assignment_problem solver(N);
 
-    // Right vertices (fixed directions)
-    for(int v=0; v<n2; ++v){
-        int node = R0+v;
-        if(sR[v]=='R'){
-            add_with_LB(oldS, node, 1, m, 0); // must receive ≥1
-        }else if(sR[v]=='B'){
-            add_with_LB(node, oldT, 1, m, 0); // must send ≥1
-        }else{
-            mf.addEdge(oldS, node, m, 0);
-            mf.addEdge(node, oldT, m, 0);
-        }
-    }
+    for (int i = 0; i < N; i++)
+        for (long long position = 0; position < N; position++)
+            solver.costs[i][position] = -(max(A[i] - min(K[i], position) * B[i], 0LL));
 
-    // Original bidirectional edges
-    for(int i=0;i<m;++i){
-        int u = U[i];
-        int v = R0 + V[i];
-        mf.addEdge(u, v, 1, (int)r); // Red
-        mf.addEdge(v, u, 1, (int)b); // Blue
-    }
-
-    mf.addEdge(oldT, oldS, INF, 0);
-
-    long long need = 0;
-    for(int v=0; v<N; ++v){
-        if(bal[v] > 0){
-            mf.addEdge(Spr, v, (int)bal[v], 0);
-            need += bal[v];
-        }else if(bal[v] < 0){
-            mf.addEdge(v, Tpr, (int)(-bal[v]), 0);
-        }
-    }
-
-    auto res = mf.minCostMaxFlow(Spr, Tpr);
-    if(res.first != need){
-        cout << -1 << "\n";
-        return 0;
-    }
-
-    // Decode colors
-    vector<vector<int>> cntLR(n1, vector<int>(n2, 0));
-    vector<vector<int>> cntRL(n1, vector<int>(n2, 0));
-
-    for(int u=0; u<n1; ++u){
-        for(auto &e : mf.G[u]){
-            int v = e.v;
-            if(v>=R0 && v<R0+n2){
-                auto &rev = mf.G[v][e.rev];
-                int flow = rev.cap;
-                if(flow>0) cntLR[u][v-R0] += flow;
-            }
-        }
-    }
-    for(int vR=0; vR<n2; ++vR){
-        int nodeR = R0+vR;
-        for(auto &e : mf.G[nodeR]){
-            int u = e.v;
-            if(u>=0 && u<n1){
-                auto &rev = mf.G[u][e.rev];
-                int flow = rev.cap;
-                if(flow>0) cntRL[u][vR] += flow;
-            }
-        }
-    }
-
-    //
-    //w rseuwlet tshi shudl wentwwor wkead nwer wrw w wea wwthw ofoer an wofdw whwer wa anwer r w
-    // w we 
-    // wcan taek ehte offessranyw edi wa weher a wantwaw
-    // vasta acna atkae erofferea an y wroder her wantw e
-
-    // determin wethew wernmaximuwer mwr  vwywwe difsudfsfxuk wetwthw yr? werw
-    // we w
-    // vasar and endlsesscredit wrbvasya eranwet ofbuthim self anewie new car
-    // w unfoarenta el wehe lacks sosme oney ercurrent wlytwerhe has excatly wer buerks wer// whoevwerthe eloa werbane werhas n credit fofers wr
-    //wwa rr wethese insideetsanswerwho do yosu oslvsehtis er
-    
-    // w
-    // wcearllyw you rwan wt ot kaewone mont herat  a time w
-    // wwan wdowerhe want w eahcwemtoh wrbvata ear
-    //we
-    // mdi werl wefo som eemornh wrhe takesal tw e wmoey were curenthas and buts the car of that excar pricewer
-    //w 
-    long long totalCost = 0;
-    string paint; paint.reserve(m);
-    for(int i=0;i<m;++i){
-        int u = U[i], v = V[i];
-        if(cntLR[u][v] > 0){
-            cntLR[u][v]--;
-            totalCost += r;
-            paint.push_back('R');
-        }else if(cntRL[u][v] > 0){
-            cntRL[u][v]--;
-            totalCost += b;
-            paint.push_back('B');
-        }else{
-            paint.push_back('U');
-        }
-    }
-    // capitair nweramreicna asay wes rhat wr
-    // westesdve reigsers sidfaciaewtwnat wion rd witw hwnew vaian shields erhsielw r
-    / w
-
-    cout << totalCost << "\n" << paint << "\n";
-    return 0;
+    cout << -solver.solve() << '\n';
 }
 
-//d istwwtw twork weand we
+// wvayaswewmeanswhat w

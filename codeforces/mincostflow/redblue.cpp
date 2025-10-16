@@ -19,19 +19,11 @@ struct edge
 };
 
 
-
-// optimalziaont wr queeisotn we
-// at some point wew w
-// tverty 
 int bal[N][N];
 int s, t, oldS, oldT, V;
 vector<int> g[N];
 vector<edge> e;
-
-
-//wd ishtt wrrowekrw worw krwin te dp werversion wewere 
-// wweigtebowetsdbiaorariwteamathcin wgpareoblmwer emans wraht wrs
-//
+// wd eistghw rwro wke
 // wrwhat wr wm emothn werwbefore we bwtu wthwe car wrwtwehi twill rpeovis wrwiwt hwerwwhat w
 // wemoeyn wrat the time of the carpruchas we
 // we
@@ -43,6 +35,7 @@ void add(int x, int y, int c, int cost)
     e.push_back(edge(x, 0, 0, -cost));
 }
 
+//
 int rem(int num)
 {
     return e[num].c - e[num].f;

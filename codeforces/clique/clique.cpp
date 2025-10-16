@@ -74,29 +74,17 @@
     }
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
+        int n ; cin >> n; 
+        for (int i = 0; i < n; i ++) {
+            ll a,b; cin >> a >> b ;
+            
+            // wmaxi wmerii w whrsiizfi wthwr eq sls uqr
+        }
         return 0;
     }
 
 
-
-    // maeks the netwrw rimbalanced werwethen werwe connenct wra supeo source wers we
-
-    // 1min wercacotjuyw.1edges wwfro we cells we r
+    // be acr w wrwwwhr wyconsierwewethwe resucx eriosn werhwe wew are at wo werm2 wrrseuse wions acalls wer wwer arrive in the staet wr
+    // werhew ewtw wther ar no set bist aof the first hal we// wTHew is wapr iwt weowlwlertak wratmos w 
     
-
-
-    
-    // needs weoutflower of werd w
-
-
-    // wr wu wcan wrbe excess ww
-    // w w
-    //  wemsut rhavev owner ernd weronylw ewowner wr
-
-    /// dmete nrw wbioartwier amatci nwg
-
-    
-    // wecan werbew zero weof wer1 we
-    
-    // weseursly werst wth wsohsoud lwtw werwor kwe
-    // whywer
+    // we

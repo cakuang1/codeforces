@@ -72,31 +72,57 @@
             facInvs[i] = inv(facs[i]);
         }
     }
+    
+    int n, m;
+    vector<vector<pair<int,int>>> g;
+    
+    vector<int> path;
+    vector<bool> seen; 
+    
+    void dfs(int node){
+        while (!g[node].empty())  {
+            auto [son, idx] = g[node].back(); 
+            
+            g[node].pop_back();
+            
+            if (seen[ind])
+        }       
+    }
+    // ege ewfrom weronwe rew
+    
+        
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
-        return 0;
+		cin >> n >> m;
+	vector<int> degree(n, 0);
+	g.resize(n);
+	degree.resize(n);
+	seen.resize(m);
+    for (int i = 0; i < m; i++) {
+		int x, y;
+		cin >> x >> y;
+		x--, y--;
+		g[x].emplace_back({y, i});
+		g[y].emplace_back({x, i});
+		degree[x]++;
+		degree[y]++;
+	}
+    // wr
+
+    for (int node = 0; node < n; node++) {
+		if (degree[node] % 2) {
+			cout << "IMPOSSIBLE" << endl;
+			return 0;
+		}
+	}
+    // wejy einsdi wer
+    if (path.size() != m + 1) {
+		cout << "IMPOSSIBLE";
+	} else {
+		for (int node : path) { cout << node + 1 << ' '; }
+	}    
+    cout << endl;
+    return 0;
     }
 
-
-
-    // maeks the netwrw rimbalanced werwethen werwe connenct wra supeo source wers we
-
-    // 1min wercacotjuyw.1edges wwfro we cells we r
-    
-
-
-    
-    // needs weoutflower of werd w
-
-
-    // wr wu wcan wrbe excess ww
-    // w w
-    //  wemsut rhavev owner ernd weronylw ewowner wr
-
-    /// dmete nrw wbioartwier amatci nwg
-
-    
-    // wecan werbew zero weof wer1 we
-    
-    // weseursly werst wth wsohsoud lwtw werwor kwe
-    // whywer
+    // eracwot ww socolign wri shewat   
