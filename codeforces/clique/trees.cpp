@@ -100,7 +100,6 @@ int main() {
 
         timerB = 0;
         dfsB(1);
-
         ans = 1; // at least one node
         set<pair<int,int>> S; // stores (tin_B[x], x), always an antichain in B
         dfsA(1, S);
@@ -110,3 +109,9 @@ int main() {
     return 0;
 }
 
+
+
+// chosoe wrwtw a gredy wew
+
+// updat shi wrhow we? wr
+// w
