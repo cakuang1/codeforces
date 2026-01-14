@@ -72,6 +72,9 @@
     }
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
+        int a ,b ; cin >> a >> b; 
+        
+        cout << a * 12 + b;
         return 0;
     }
 

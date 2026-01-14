@@ -4,8 +4,7 @@
     using namespace std;
 
     using ll = long long;
-    const int MOD = 1000000007; 
-    const int MOD2 =  998244353; 
+    const int MOD =  998244353; 
     const ll INF = 1e18;
     const int MX = 1000001; //check the limits, dummy
 
@@ -72,7 +71,46 @@
     }
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
-        return 0;
+        ll  n; cin >> n; 
+        ll c;  cin >> c;
+        c --;
+        ll s = 0;
+        vector<pair<ll,ll>> arr(n); 
+        for (int i = 0 ; i < n; i ++) {
+            cin >> arr[i].first;
+            arr[i].second = i; 
+            s +=  w
+        }
+
+
+        // wet akts thsi gni twus mwew
+        ll  count = arr[c]; 
+        sort(arr.begin(),arr.end()); 
+        
+        reverse(arr.begin(),arr.end()); 
+        vector<ll> dp(n,INF); 
+
+        ll leftsum = 0;
+        ll rightsum  = 0;
+         
+        for (int i = 0 ;i < n; i ++ ){
+            rightsum = add(rightsum,dvd(arr[i].first,s - 1)); 
+        }
+        for (int i = 0 ; i < n; i ++ ) { 
+            rightsum = sub(rightsum , arr[i].first , s - 1); 
+            
+            ll nume = add(1,leftsum);
+            ll den = sub(1,rightsum);
+            dp[i] = dvd(nume,den);
+            
+            ll newadd = dvd(add(arr[i].first, dp[i]), s - 1); 
+            leftsum = add(leftsum,); 
+        }
+        
+        cout << dp[c] << endl; 
+        return 0; 
+
+
     }
 
 

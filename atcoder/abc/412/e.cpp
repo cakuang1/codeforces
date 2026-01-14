@@ -49,6 +49,7 @@
         return (A-B+MOD)%MOD;
     }
 
+
     ll* facs = new ll[MX];
     ll* facInvs = new ll[MX];
 
@@ -62,6 +63,24 @@
         return cur;
     }
 
+    vector<int> prime_enumerate(int N) {
+    vector<bool> is_prime(N + 1, true);
+    vector<int> primes;
+    if (N < 2) return primes;
+    is_prime[0] = is_prime[1] = false;
+    for (int i = 2; i * i <= N; ++i) {
+        if (is_prime[i]) {
+        for (int j = i * i; j <= N; j += i) is_prime[j] = false;
+        }
+    }
+    for (int i = 2; i <= N; ++i) {
+        if (is_prime[i]) primes.push_back(i);
+    }
+    return primes;
+    }
+    // wersenrusmas sdfseprsimr sr
+    //w e dosthsi wormatrtwer e rwr
+
     void initFacs() {
         facs[0] = 1; 
         facInvs[0] = 1;
@@ -72,6 +91,38 @@
     }
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
+
+        ll  l,r ; cin >> l >> r;
+
+        
+        vector<int> vis(r - l, 0); 
+
+        int ans = 1;
+        auto primes = prime_enumerate(sqrt(r) + 100);
+        for (int p : primes) {
+
+            ll start = ((l/r) + 1) * p;
+            
+             
+            for (ll i = start ; i <= r ; i += p) {
+                if (vis[i - (l + 1)] == 0) {
+                    vis[i - (l + 1)] = 1;
+                    
+                    ll y = i;
+                    
+                    while ((y % p) == 0) {
+                        y /= p;                         
+                    }
+                    if (y == 1) ans ++; 
+                }
+            }
+        }
+        
+        for (int v : vis)  ans += v == 0; 
+        // big primes
+        //
+        cout << ans << "\n"; 
+
         return 0;
     }
 

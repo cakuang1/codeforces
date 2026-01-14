@@ -72,7 +72,18 @@
     }
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
+        int n ; cin >> n; 
+        vector<int> u(n),d(n),l(n),r(n);
+
+
+        for (int i = 0 ; i < n; i ++ ) {
+            cin >> u[i] >> d[i] >> l[i] >> r[i];
+        }
+
+
+
         return 0;
     }
 
 
+    // wds wti herow

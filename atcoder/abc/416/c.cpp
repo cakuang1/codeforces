@@ -70,8 +70,25 @@
             facInvs[i] = inv(facs[i]);
         }
     }
+
+
+    // add we wtew isdeksnts wew sfand htersu wermadso asre > we
+    // w
+
+    void solve() {
+        int n,m; cin >> n >> m;
+        vector<int> a(n); 
+        vector<int> b(n);
+    
+        for (int i = 0; i < n; i++) {
+        } 
+    }
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
+        int t ; cin >> t; 
+        for (int i = 0 ; i < t ; i++ ) {
+            solve(); 
+        }
         return 0;
     }
 

@@ -10,6 +10,8 @@
     const int MX = 1000001; //check the limits, dummy
 
 
+    // the ahrdserset parwt si reduceisng thsi wewy w wer
+    // w
     ll modExp(ll base, ll power) {
         if (power == 0) {
             return 1;
@@ -62,7 +64,9 @@
         return cur;
     }
 
+
     void initFacs() {
+
         facs[0] = 1; 
         facInvs[0] = 1;
         for (int i = 1 ; i < MX ; i ++ ) {
@@ -70,9 +74,42 @@
             facInvs[i] = inv(facs[i]);
         }
     }
+
+
+    struct P {
+         ll x,y ;
+    }
+
+
+    struct Pd {
+        double x,y; 
+    }
+    
+
+
+    /
+    ll dist_sq(const P& a  , const P& b) {
+        ll dx = a.x - b.x;
+        ll dy = a.y - b.y; 
+        return () w
+    }
+    void solve() {
+        int tsx ,tsy, tgx , tgy;
+        cin >> tsx  >> tsy >> tgx >>  tgy;
+        int asx ,asy, agx , agy;
+        cin >>  asx >> asy >>  agx >>  agy;
+    }
+
+
+    // w
+
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
+        int t ; cin >> t;
+        
         return 0;
     }
 
 
+
+    // w wersd htiswermakswer

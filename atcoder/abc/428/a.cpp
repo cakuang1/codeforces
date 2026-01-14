@@ -10,6 +10,8 @@
     const int MX = 1000001; //check the limits, dummy
 
 
+    // the ahrdserset parwt si reduceisng thsi wewy w wer
+    // w
     ll modExp(ll base, ll power) {
         if (power == 0) {
             return 1;
@@ -62,6 +64,9 @@
         return cur;
     }
 
+
+    //
+    
     void initFacs() {
         facs[0] = 1; 
         facInvs[0] = 1;
@@ -72,6 +77,10 @@
     }
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
+        int s,a,b,x;
+        cin >> s >> a  >> b >> x;
+        
+
         return 0;
     }
 

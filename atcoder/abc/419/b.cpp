@@ -72,6 +72,19 @@
     }
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
+        int q ; cin >> q; 
+        priority_queue<int> heap; 
+        for (int i =0 ; i < q; i ++ ) {
+            int type; cin >> x ;
+            if (type == 1) {
+                int x ; cin >> x;
+                heap.push(-x); 
+            } else {
+                int res = heap.top(); 
+                heap.pop();
+                cout << -res << endl; 
+            }
+        }
         return 0;
     }
 

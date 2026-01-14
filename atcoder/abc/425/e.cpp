@@ -10,6 +10,8 @@
     const int MX = 1000001; //check the limits, dummy
 
 
+    // the ahrdserset parwt si reduceisng thsi wewy w wer
+    // w
     ll modExp(ll base, ll power) {
         if (power == 0) {
             return 1;
@@ -76,3 +78,11 @@
     }
 
 
+
+
+
+    
+    // wwwtw osdsdsitons ftssets sre
+    // wewtweo sjksdtistn sonsd gistst s
+    // wM is what
+    // e

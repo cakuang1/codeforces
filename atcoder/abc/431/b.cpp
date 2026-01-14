@@ -10,6 +10,8 @@
     const int MX = 1000001; //check the limits, dummy
 
 
+    // the ahrdserset parwt si reduceisng thsi wewy w wer
+    // w
     ll modExp(ll base, ll power) {
         if (power == 0) {
             return 1;
@@ -72,7 +74,33 @@
     }
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
+        int x; cin >> x; 
+        int n ; cin >> n;
+
+        int c = 0;
+        
+        vector<int> on(n,0);
+        vector<int> w(n,0);
+
+        for (int i = 0 ; i < n; i ++) {
+            cin >> w[i];
+        }
+        int q ; cin >> q; 
+        while (q -- ) {
+            int p ; cin >> p;
+            p --;
+
+
+            if (on[p]) {
+                c -= w[p];
+                on[p] = 0;
+            } else {
+                c += w[p];
+                on[p] = 1;
+            }
+
+            cout << c << endl; 
+        }
         return 0;
     }
-
 

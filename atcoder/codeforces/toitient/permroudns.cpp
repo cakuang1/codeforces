@@ -10,6 +10,8 @@
     const int MX = 1000001; //check the limits, dummy
 
 
+    // the ahrdserset parwt si reduceisng thsi wewy w wer
+    // w
     ll modExp(ll base, ll power) {
         if (power == 0) {
             return 1;
@@ -72,7 +74,11 @@
     }
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
+        // wemibwer
         return 0;
     }
 
 
+
+
+    /// kgwo nwg wog wn rwer

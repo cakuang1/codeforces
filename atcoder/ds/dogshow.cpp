@@ -72,6 +72,28 @@
     }
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
+
+        int n, t;
+        cin >> n >> t; 
+        vector<int> arr(n + 1);
+        
+        for (int i = 1 ; i <= n; i ++) {
+            cin >> arr[i]; 
+        }
+
+
+        // clearly just eat it
+        
+    
+
+        // wrsd shis owrksd wrwsidf wfsdfshfososusgshiosso whetiw w// RH sydfsotsfi werowrk wr
+        //w hwoir sodustsovshtiso we
+        r// we
+
+        for (int i = 1; i <= n;  i ++ ) {
+             
+        }
+        
         return 0;
     }
 

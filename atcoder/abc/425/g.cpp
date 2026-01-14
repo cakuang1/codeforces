@@ -1,68 +1,75 @@
 #include <bits/stdc++.h>
 using namespace std;
+using ll = long long;
+
+// f(A, M, k) = sum_{x=0}^{M-1} min_i (x xor A[i]),
+// assuming all A[i] < 2^k and M <= 2^k.
+ll solve_rec(const vector<int> &A, ll M, int k) {
+    if (k == 0 || M == 0 || A.empty()) return 0;
+
+    vector<int> B[2];
+    B[0].reserve(A.size());
+    B[1].reserve(A.size());
+
+    // Partition A into B[0], B[1] by the (k-1)-th bit.
+    for (int x : A) {
+        int b = (x >> (k - 1)) & 1;
+        B[b].push_back(x & ~(1 << (k - 1)));
+    }
+
+    // warpw tiso werwer
+    // werwhw ow odusglsthso hweriws
+    ll mid = 1LL << (k - 1);
+
+    // Case 1: full range M == 2^k
+    if (M == (1LL << k)) {
+        if (!B[0].empty() && !B[1].empty()) {
+            // both sides non-empty
+            return solve_rec(B[0], mid, k - 1)
+                 + solve_rec(B[1], mid, k - 1);
+        }
+        return 2 * solve_rec(A, mid, k - 1) + mid * mid;
+    }
+
+
+
+
+    ll ans;
+    if (!B[0].empty()) {
+        ans = solve_rec(B[0], L, k - 1);
+    } else {
+        // all numbers have bit (k-1)=1 → forced XOR penalty mid
+        ans = solve_rec(A, L, k - 1) + mid * L;
+    }
+
+    // Right part: x in [mid, M)
+    if (M > mid) {
+        ll R = M - mid;
+        if (!B[1].empty()) {
+            ans += solve_rec(B[1], R, k - 1);
+        } else {
+            // all numbers have bit (k-1)=0 → forced penalty mid
+            ans += solve_rec(A, R, k - 1) + mid * R;
+        }
+    }
+
+    return ans;
+}
 
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
 
     int N;
-    if (!(cin >> N)) return 0;
+    ll M;
+    cin >> N >> M;
+    vector<int> A(N);
+    for (int i = 0; i < N; ++i) cin >> A[i];
 
-    // val[v] is the XOR of incident edge values after "pushing" edges to vertices
-    vector<int> val(N, 0);
-    for (int i = 0; i < N - 1; ++i) {
-        int u, v, a;
-        cin >> u >> v >> a;          // vertices are 0-indexed per your statement
-        val[u] ^= a;
-        val[v] ^= a;
-    }
-
-    // Count how many vertices have each label i in 1..15
-    vector<int> cnt(16, 0);
-    for (int x : val) {
-        if (x >= 1 && x <= 15) cnt[x]++;
-    }
-
-    // Greedy pairing of identical labels
-    int ans = 0;
-    for (int i = 1; i < 16; ++i) {
-        ans += cnt[i] / 2;
-        cnt[i] &= 1; // 0 or 1 leftover of each label
-    }
-
-    // Build mask of leftovers (at most one per label 1..15)
-    int mask = 0;
-    for (int i = 1; i < 16; ++i) if (cnt[i]) mask |= (1 << i);
-
-    // Precompute which subsets XOR to 0 (subset over indices 1..15)
-    const int M = 1 << 16;
-    static bool ok[M];
-    for (int s = 0; s < M; ++s) {
-        int x = 0;
-        for (int i = 1; i < 16; ++i) if (s & (1 << i)) x ^= i;
-        ok[s] = (x == 0);
-    }
-
-    // bm wedp wrto amaxim wee wthe 
-    static int dp[M];
-    const int NEG = -1e9;
-    for (int s = 0; s < M; ++s) dp[s] = NEG;
-    dp[mask] = 0;
-
-    // xor reis what we
-    for (int s = mask; ; s = (s - 1) & mask) {
-        if (dp[s] != NEG) {
-            // Enumerate non-empty submasks T of s
-            for (int T = s; T; T = (T - 1) & s) {
-                if (ok[T]) dp[s ^ T] = max(dp[s ^ T], dp[s] + 1);
-            }
-        }
-
-        // w 
-        if (s == 0) break;
-    }
-
-    int leftovers = __builtin_popcount(mask);
-    cout << (ans + leftovers - dp[0]) << "\n";
+    // A[i] < 2^30 in this problem, so we start with k = 30
+    cout << solve_rec(A, M, 30) << '\n';
     return 0;
 }
+
+
+/

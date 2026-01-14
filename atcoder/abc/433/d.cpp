@@ -72,7 +72,17 @@
     }
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
+        ll n ; cin >> n; 
+        ll m ; cin >> m;
+        vector<ll> arr(n);
+        for (int i =0 ; i < n; i ++) {
+            cin >> arr[i];
+        }
+    
+        // w
         return 0;
+
     }
 
-
+    
+    //

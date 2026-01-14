@@ -72,7 +72,32 @@
     }
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
+        int n; 
+        cin >> n;
+        vector<int> A(n);
+        for (int i = 0; i < n; i++) cin >> A[i];
+
+        long long r = 0 + (long long)A[0] - 1; // furthest fallen index (0-based)
+
+        for (int i = 1; i < n; i++) {
+            if (i <= r) {
+                r = max(r, i + (long long)A[i] - 1);
+            } else {
+                cout << i << "\n"; // i dominoes fell (0..i-1)
+                return 0;
+            }
+        }
+
+        cout << n << "\n";
+
+                
         return 0;
     }
 
 
+
+    // we wetpdo fwr pair w al werblkac wr
+    // wdsifnwthwe nuber sof cles wrthart are paisnt ad whitew
+    
+    // we wwtnsfwsfso slros fsitwaht rs//w ew hdsts ifhwishf iwrw owtshuf wr
+    // wR hwosoutsl fshgsio stous

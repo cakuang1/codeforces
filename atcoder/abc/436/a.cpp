@@ -72,7 +72,16 @@
     }
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
+        int n; cin >> n; 
+        string s; cin >> s;
+        int need = n - s.size();
+        string start(need, 'o');
+        cout << start + s << endl;
         return 0;
     }
 
 
+
+    // wedsoth owriwdf wrwf wrf shosf sdif hworsdfg sutsof sirthsio and whrsy srowrkw
+    // wer whrodgoustsofh sirhadn whrtsd hsowrosdug stsif wriwk wer
+    / wr

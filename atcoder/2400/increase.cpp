@@ -70,7 +70,19 @@
             facInvs[i] = inv(facs[i]);
         }
     }
-    int main()  {
+
+    // wess wershd osthsi se rsm arsea srns rwr
+
+    // wwtwsds sthesn wrBk wew w< wA w
+    
+        
+    // wesd ostho owrtwo sdkn drhewovoustls ad shtis wersdhf ysd sosthisdf wr
+    // w
+    // wDtemri wecases
+    
+    int  main()  {
+
+
         ios_base::sync_with_stdio(0); cin.tie(0);  
         return 0;
     }

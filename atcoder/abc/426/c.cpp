@@ -10,6 +10,8 @@
     const int MX = 1000001; //check the limits, dummy
 
 
+    // the ahrdserset parwt si reduceisng thsi wewy w wer
+    // w
     ll modExp(ll base, ll power) {
         if (power == 0) {
             return 1;
@@ -72,6 +74,28 @@
     }
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
+        int n; cin >> n;
+        int q; cin >> q;
+        
+
+        int lowest = 1; 
+        
+        vector<int> counts(n + 1 ,1); 
+        for (int i =0 ; i < q; i ++) {
+            int x,y;cin >> x >> y;
+            if (x < lowest) {
+                cout << 0  << endl; 
+            } else {
+                int count = 0; 
+                while (lowest <= y) {
+                    count += counts[lowest];
+                    lowest ++; 
+                }
+                cout << count << endl; 
+            }
+        }
+
+            
         return 0;
     }
 

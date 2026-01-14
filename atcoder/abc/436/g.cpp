@@ -21,13 +21,8 @@
         }
     }
 
+    // w
 
-    // wbook wereueist =werthe hriwline conatins wen intesgser er
-    // wwths wrsi wsafl werw quseiton wwww qcoorecwet er
-    // we
-    // wfwe wer 
-    // chososewa set wrw  w w wedo sethi wrworkw radn erwh owd oyou dsotu osovlsehtis d nwewr ehwyd sowtis erwiwtwer
-    // weits wer
     ll inv(ll base) {
         return modExp(base, MOD-2);
     }
@@ -72,7 +67,20 @@
     }
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
-        return 0;
-    }
+        // <= m
+
+        // what is know wn? w
+        
+        // wedf idnwe couwn ighhte nubmer fodseqnces osf non negative intergser X werso
+        
+        // s[i] is thedistibustisodnf of dot prvds erw
+
+
+
+        // wewt hsdfs aousont erkaeafnses wer
+        // Wr hsdysesdof wrowdf iwrwor wkr
+    } 
+
+
 
 

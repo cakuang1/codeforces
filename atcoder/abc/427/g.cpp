@@ -70,8 +70,19 @@
             facInvs[i] = inv(facs[i]);
         }
     }
-    int main()  {
-        ios_base::sync_with_stdio(0); cin.tie(0);  
+
+    // slospo w1 esvseiryno wrwhrwe rwNO we
+
+    for (int i = 0 ; i < n; i ++) {
+            cin >> arr[i];            
+        }
+
+        int q; cin >> q;
+        while (q --) {
+            ll t ,q; cin >> t >> q; 
+            
+        }
+
         return 0;
     }
 

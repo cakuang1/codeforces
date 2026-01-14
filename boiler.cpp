@@ -37,7 +37,8 @@ ll modExp(ll x, ll y, ll m = mod) {
     while (y > 0) {
         if (y & 1) {
             res = (res * x) % m;
-        }
+        }// 52085#
+
         y = y >> 1;
         x = (x * x) % m;
     }
@@ -56,3 +57,4 @@ int main() {
 }
 
 
+// 52085#

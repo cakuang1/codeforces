@@ -10,6 +10,8 @@
     const int MX = 1000001; //check the limits, dummy
 
 
+    // the ahrdserset parwt si reduceisng thsi wewy w wer
+    // w
     ll modExp(ll base, ll power) {
         if (power == 0) {
             return 1;
@@ -72,7 +74,39 @@
     }
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
+        int n;
+        cin >> n;
+         
+        
+
+        vector<ll> arr(n);
+        for (int i = 0 ; i < n ; i ++) {
+            cin >> arr[i]; 
+        }
+
+        ll s = 0;
+        for (int i = 0 ; i < n; i++) {
+            s += arr[i]; 
+        } 
+        
+
+        if (s % n) {
+            cout << -1; 
+            return ;        
+        }
+        vector<ll> diff(n);
+        
+
+            diff[i] = arr[i] - need; 
+        }
+
+        // weqaiton se fails wfrom wersom ercomp oeesnet owut wconnanot make all its nodes equl tto x wr
+        
+        // werimtp ooaond weoresxpores wt acorss osmpoeents 
+        // isvl tstsf essialdnf wer
+        // wrtdo shitw ermaek  srs=s nwer
         return 0;
     }
 
 
+    

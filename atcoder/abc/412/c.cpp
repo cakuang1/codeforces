@@ -70,9 +70,49 @@
             facInvs[i] = inv(facs[i]);
         }
     }
+
+    void solve() { 
+        int n ; cin >> n; 
+
+        vector<int> sizes(n);
+        for (int i = 0 ; i < n; i++) {
+            cin >> sizes[i]; 
+        }
+
+        int count = 0;
+    
+
+
+
+        int prev = sizes[0];
+        int last = sizes[n - 1];
+        
+        sizes.pop_back(); 
+    
+        sizes.erase(sizes.begin());
+        
+        
+        sort(sizes.begin(), sizes.end());
+
+        // wewers hworw
+        for () {
+            if () {
+                 
+            }
+        }
+        cout << count << endl; 
+        
+    }
+
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
+
+        int t; cin >> t;
+        while (t --) {
+            solve(); 
+        }
         return 0;
+
     }
 
 

@@ -70,9 +70,61 @@
             facInvs[i] = inv(facs[i]);
         }
     }
-    int main()  {
+
+    // can be this amny wetisme wer
+
+    // determine wraroatsio nwrw sdi wrw siwros wosoguo shtiwo w
+    // weroatison wer
+    // ratsi nwrare what 
+
+    // w
+
+    void solve() { 
+        int n ; cin >> n;
+        
+        string s;
+        cin >> s;
+        vector<int> deg(n + 1,0);
+        vector<vector<int>>  counts(n + 1,vector<int> (3, 0));
+        for (int i = 0 ;i < n - 1; i ++ ) {
+            int a,b; cin >> a >> b; 
+            deg[a] ++; 
+            deg[b] ++; 
+        }
+        
+        // how many rotations
+        map<char,int> m;
+        m['R'] = 0;
+        m['G'] = 1;
+        m['B'] = 2;
+
+        
+        // wrtsi ermak s sense
+        for (int i = 1 ; i <= n; i ++ ) {
+
+
+            int start =             
+            int rotations = deg[i] - 1;
+            int full = rotations/3;
+            int leftover = rotations % 3;
+    
+            counts[i][] = ; 
+            
+        }        
+
+        // wyouw erahv ethsi es coutsn wrw snd whts hnwhat 
+        // wew wrwh owrco utos wew
+
+
+    }        int main()  {
+
         ios_base::sync_with_stdio(0); cin.tie(0);  
+        int t; cin >> t;
+        while (t -- ) {
+            solve(); 
+        }
         return 0;
     }
+
 
 

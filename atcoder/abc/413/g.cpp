@@ -1,4 +1,3 @@
- 
     #include <bits/stdc++.h>
     
     using namespace std;
@@ -68,10 +67,26 @@
         for (int i = 1 ; i < MX ; i ++ ) {
             facs[i] = (facs[i-1] * i) % MOD;
             facInvs[i] = inv(facs[i]);
-        }
-    }
+      }
+    } 
+    const ll  MAXN = 151; 
+    ll n , m;  
+    vector<int> g[MAXN];
+    ll a[MAXN];     
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
+        cin >> n; cin >> m;
+
+        for (int i = 0 ; i < n; i ++) {
+            cin >> a[i];
+        }
+
+        for (int i = 0 ; i < m  ; i ++) {
+            ll a,b; cin >> a >> b; 
+            g[a].push_back(a); 
+            g[b].push_back(b); 
+        }
+
         return 0;
     }
 

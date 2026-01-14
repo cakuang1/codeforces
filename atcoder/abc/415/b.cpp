@@ -72,6 +72,20 @@
     }
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
+        string s; cin >> s;
+        int n  = s.size();
+
+        int prev = -1;
+        for (int i = 1; i <= n; i ++) {
+            if (s[i - 1] == '#') {
+              if  (prev == -1) {
+                prev = i; 
+            } else {
+                cout << prev << ',' <<  i << endl; 
+                prev = -1;
+              } 
+            } 
+        }
         return 0;
     }
 

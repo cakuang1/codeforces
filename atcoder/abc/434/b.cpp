@@ -70,9 +70,27 @@
             facInvs[i] = inv(facs[i]);
         }
     }
-    int main()  {
-        ios_base::sync_with_stdio(0); cin.tie(0);  
-        return 0;
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+
+    int N, M;
+    cin >> N >> M;
+
+    vector<long double> sum(M + 1, 0.0L);
+    vector<long double> cnt(M + 1, 0.0L);
+
+    for (int i = 0; i < N; i++) {
+        int A, B;
+        cin >> A >> B;
+        sum[A] += (long double)B;
+        cnt[A] += 1.0L;
     }
 
-
+    cout << fixed << setprecision(20);
+    for (int k = 1; k <= M; k++) {
+        cout << (sum[k] / cnt[k]) << "\n";
+    }
+    return 0;
+}
+// 

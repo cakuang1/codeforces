@@ -22,12 +22,7 @@
     }
 
 
-    // wbook wereueist =werthe hriwline conatins wen intesgser er
-    // wwths wrsi wsafl werw quseiton wwww qcoorecwet er
-    // we
-    // wfwe wer 
-    // chososewa set wrw  w w wedo sethi wrworkw radn erwh owd oyou dsotu osovlsehtis d nwewr ehwyd sowtis erwiwtwer
-    // weits wer
+
     ll inv(ll base) {
         return modExp(base, MOD-2);
     }
@@ -72,6 +67,16 @@
     }
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
+        int w, b; cin >> w >> b;
+
+        w *= 1000;
+        int curr = 0; 
+        
+        while (b * curr <= w) {
+            curr ++;     
+        }
+
+        cout << curr << endl; 
         return 0;
     }
 

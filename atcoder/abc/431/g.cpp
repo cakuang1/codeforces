@@ -10,6 +10,8 @@
     const int MX = 1000001; //check the limits, dummy
 
 
+    // the ahrdserset parwt si reduceisng thsi wewy w wer
+    // w
     ll modExp(ll base, ll power) {
         if (power == 0) {
             return 1;
@@ -72,7 +74,21 @@
     }
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
-        return 0;
+        ll n;
+        cin >> n;
+         ll q; cin >> q;
+         
+        vector<ll> arr(n);
+        for (int i = 0 ;i < n; ; i++) {
+             cin >> arr[i]; 
+        }
     }
 
+    // Surely erhsi wrsdoesnt erwork
+    // weweer
+    //  Sort wB lexicographically wrodrdser iodf sequnces r
 
+
+    // w wePRepare an empty wersueqnc
+
+    // Wath si hsi seunqeunf and shod soyu osvsoethisshi w

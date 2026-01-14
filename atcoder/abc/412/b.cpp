@@ -72,7 +72,25 @@
     }
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
-        return 0;
+        string s,t; cin >> s >> t;
+        int n = s.size(); 
+        set<char> in;
+        int res = 0;
+        for (char c : t) {
+            in.insert(c);
+        }
+        for (int i = 1 ; i < n; i ++ ) {
+            if (s[i] >= 'A' && s[i] <= 'Z') {
+                if (in.count(s[i - 1])) {
+                    res ++;
+                }
+            }
+        } 
+        
+
+
+        cout << res << endl;
+        return 0; 
     }
 
 

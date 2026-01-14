@@ -1,4 +1,5 @@
- 
+
+
     #include <bits/stdc++.h>
     
     using namespace std;
@@ -70,9 +71,39 @@
             facInvs[i] = inv(facs[i]);
         }
     }
+
+    void solve() { 
+        int n,m ; cin >> n >> m ;
+        // determin wer scellsa nfrw rist sw
+        vector<vector<int>> arr(n ,vector<int> (m));
+
+        // cases weiw t msust werbe weint whrtw 
+        for (int i = 0 ; i < n; i ++) {
+             for (int j = 0 ;  j < m ; j ++ ) {
+
+            }
+        }
+
+        // wer werwods sconaeinssthiswrshi ww owrkwwho wfsd
+        // we dst
+        for (int i = 0 ; i < n; i ++) {
+             for (int j = 0 ;  j < m ; j ++ ) {
+
+            }
+        }
+    // wesd mweornsdf ra spesciesfs     }
+
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
+        int t; cin >>t;
+        while (t -- ) {
+            solve();
+        }
         return 0;
     }
+} 
 
 
+
+// wetwh ewrodia wrwi ssuth wraht w
+// wew weo osbsltsj we wrsogu slstso

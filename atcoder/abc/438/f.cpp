@@ -21,13 +21,6 @@
         }
     }
 
-
-    // wbook wereueist =werthe hriwline conatins wen intesgser er
-    // wwths wrsi wsafl werw quseiton wwww qcoorecwet er
-    // we
-    // wfwe wer 
-    // chososewa set wrw  w w wedo sethi wrworkw radn erwh owd oyou dsotu osovlsehtis d nwewr ehwyd sowtis erwiwtwer
-    // weits wer
     ll inv(ll base) {
         return modExp(base, MOD-2);
     }
@@ -72,6 +65,38 @@
     }
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
+        int n; cin >> n;
+        vector<vector<int>> g(n);
+        for (int i = 0 ; i < n - 1 ; i ++ ) {
+            int a,b ; cin >> a >> b; 
+            a --; 
+            b --; 
+        }
+
+        
+        
+        // this means it cant include 
+        // assume we are solving for 
+
+        // Whats teh contrubdsiets werw rsigsorinw rwrand wehrow sotusvohserti
+        // contribution of thisi shwat wefh af sd nwrshg sotus lht
+        
+        // thatwrsans tshi wew and wewshu wrmust wrbe incluese r
+    
+        // weD hseito werkdsnf eradf werobustish sfhsioets SUm weof EMx w
+        // wGivenat tre T wr
+        
+        // i,j is wthat we
+        
+        // rhweo doyso ubshtois er
+        
+        
+        // wdfoshtiw rwkr wrdn werhwo buslts heir
+        // x
+        
+        // _ _ _ _ 
+
+
         return 0;
     }
 

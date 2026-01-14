@@ -72,7 +72,24 @@
     }
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
+        int n;
+        cin >> n; 
+        vector<int> arr(101, 0);
+        for (int i = 0; i < n; i ++) {
+            int c ; cin >> c;
+            arr[c] ++;
+        }
+        
+        int x; cin >> x;
+        
+        if (arr[x]) {
+            cout << "Yes";
+        } else {
+            cout << "No"; 
+        }
+    
         return 0;
+
     }
 
 

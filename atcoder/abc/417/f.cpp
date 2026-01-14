@@ -62,6 +62,7 @@
         return cur;
     }
 
+    //w ed siths werosdk as sgsso wa rhos srsdhf iossd hsos worhs sth
     void initFacs() {
         facs[0] = 1; 
         facInvs[0] = 1;
@@ -71,7 +72,16 @@
         }
     }
     int main()  {
-        ios_base::sync_with_stdio(0); cin.tie(0);  
+        ios_base::sync_with_stdio(0); cin.tie(0); 
+        int n,a,b; cin >> n >> a >> b; 
+        string s;  cin >> s;
+    
+        int length =  n - a - b;
+        
+        int start = a; 
+        
+        
+        cout << s.substr(a,length);
         return 0;
     }
 

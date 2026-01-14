@@ -21,6 +21,7 @@
         }
     }
 
+    // w    
     ll inv(ll base) {
         return modExp(base, MOD-2);
     }

@@ -72,6 +72,32 @@
     }
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
+        int n,m; cin >> n >> m;
+        vector<int> a(n);
+        
+        for (int i = 0 ;i < n; i ++) {
+            cin >> a[i];
+        }
+        map<int,int> count;
+        for (int i = 0 ; i < m ; i ++) {
+            int b; cin >> b;
+             count[b] ++;             
+        }
+    
+        vector<int> res;
+        
+        for (int i =0 ;i <  n; i ++) {
+            if (count[a[i]]) {
+                count[a[i]] --;
+            } else {
+                res.push_back(a[i]);
+            }
+        }
+        for (int v : res) {
+            cout << v << ' '; 
+        }
+        
+
         return 0;
     }
 

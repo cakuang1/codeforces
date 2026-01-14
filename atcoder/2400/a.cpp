@@ -70,8 +70,78 @@
             facInvs[i] = inv(facs[i]);
         }
     }
+
+    void solve() {
+        int n; cin >> n; 
+        vector<int> arr(n);
+        for (int i = 0 ; i < n; i ++ ) {
+            cin >> arr[i]; 
+        }
+        vector<int> b(n,0);
+
+        // look 
+        
+        
+        // You want all to be one?
+        
+        
+        // no deal with non detmerinatnsts
+        // clearlyl wrwhats opstimal ? w
+        
+        
+        // When is a position non determinant?
+
+        
+        // B[i] is non determinant if 
+
+        // a[i] = -1 (No pointer)
+        // or 
+    
+        // a[a[i]] = -1 (Pointer goes to  -1)
+
+        // wesd bti pwerwkrn sd hwier sid nwersintssts ss ewinic wew
+        // wer;lgkrng r n we
+
+
+        // wedsstsi worow kdsersd hsogbouso sih wiw thwier ww
+        // wGiwn w seom euncs er
+        // w sn uwrkssehas dsescidns tocraeet ea new dsuewnusing this seuqenew
+        // ww ds wrw ouvinfew omer sueqeinr ser of wlend n Each elsetmsi ner eiwtihw we
+
+        // wrcinres eost msdks sti sersinreaing we
+        // ds shtipw0rw osn w sihwo obuslts sfosithsi er
+        // wdhs ysetosf hiwsd owrsk rwerm
+        
+        // er a yad stsh isrwowkr wa nrhwostus o ith
+        // ww
+        for (int i = 0 ; i < n; i ++) {
+            if (a[i] != -1) {
+                if (a[a[i]] != -1) {
+                    b[i] = a[a[i]];
+                }
+            }
+        }
+
+
+
+        // wesd sd
+        
+        for (int i = 0 ;i < n; i ++ ){
+            if (b[i] == 0) {
+                                
+                if (a[i] == -1) { 
+                    
+                }
+            }        
+        }
+    }
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
+        int t; cin >> t;
+
+        while (t --) {
+        
+        }
         return 0;
     }
 

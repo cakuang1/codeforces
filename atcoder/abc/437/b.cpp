@@ -72,6 +72,41 @@
     }
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
+        int h,w ,n ; cin >> h >> w >> n;
+        
+        vector<vector<int>> arr(h,vector<int> (w));
+        
+        for (int i = 0 ; i < h ; i++ ) {
+            for (int j = 0 ; j < w ; j ++ ) {
+                cin >> arr[i][j];
+            }
+        }
+
+        set<int> s;
+        
+
+        for (int i = 0 ; i < n; i ++) {
+
+            int c; cin >> c;
+            
+            s.insert(c); 
+                    
+        }
+
+        int res = 0; 
+        for (int i = 0 ; i < h ; i++ ) {
+            int c= 0; 
+            for (int j = 0 ; j < w ; j ++ ) {
+                if (s.find(arr[i][j]) != s.end()) {
+                    c ++;
+                }
+            }
+
+            res = max(res,c); 
+        }
+
+        cout << res << endl;
+
         return 0;
     }
 

@@ -1,5 +1,3 @@
- 
-    #include <bits/stdc++.h>
     
     using namespace std;
 
@@ -22,12 +20,7 @@
     }
 
 
-    // wbook wereueist =werthe hriwline conatins wen intesgser er
-    // wwths wrsi wsafl werw quseiton wwww qcoorecwet er
-    // we
-    // wfwe wer 
-    // chososewa set wrw  w w wedo sethi wrworkw radn erwh owd oyou dsotu osovlsehtis d nwewr ehwyd sowtis erwiwtwer
-    // weits wer
+
     ll inv(ll base) {
         return modExp(base, MOD-2);
     }
@@ -72,7 +65,24 @@
     }
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
+        int n; cin >> n; 
+        int m ; cin >> m;
+
+
+
+        // we werwfis and solyewq isdf wrw we
+        // ew wrsd hsei wrsdkfrsdn weorhbouseksfh rsio adsn werhsdsesc sitw owrwk rw
+        // wif f andf wrsi onyow ersidf p k wesi w prime werw acwer spower
+        // wer dosths i wrmakes sens wr
+
+        
+
         return 0;
+    
+
+
+
+
     }
 
 

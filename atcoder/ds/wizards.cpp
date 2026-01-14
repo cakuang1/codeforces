@@ -72,7 +72,18 @@
     }
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
+        int n,k; cin >> n >> k;
+        
+
+        // ww e sdfshsi hfso odfotnwwhold w
         return 0;
+
     }
 
 
+
+    // Ecists dslisrrw hsdrwwr
+    /// Esf sushtiswerso wetin wermak essnser w
+    // wewwmai wemrwi msdfk  wero oweo weirwco iwetsi wenico werisd oants sdof tjhtwcity
+    // Wrh sdystosi wrowrk wr
+    // Rhw odsugsotshi

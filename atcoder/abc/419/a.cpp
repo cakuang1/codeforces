@@ -72,6 +72,23 @@
     }
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
+        string s;
+        cin >> s; 
+        int n = s.size(); 
+
+        if (s == "red") {
+            cout << "SSS" << endl; 
+        } else if (s == "blue") {
+            cout << "FFF" << endl; 
+            
+        } else if (s == "green") {
+            cout << "MMM" << endl; 
+            
+        } else {
+            cout << "Unknown" << endl; 
+            
+        }
+    
         return 0;
     }
 

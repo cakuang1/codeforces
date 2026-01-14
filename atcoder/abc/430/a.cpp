@@ -10,6 +10,8 @@
     const int MX = 1000001; //check the limits, dummy
 
 
+    // the ahrdserset parwt si reduceisng thsi wewy w wer
+    // w
     ll modExp(ll base, ll power) {
         if (power == 0) {
             return 1;
@@ -70,9 +72,24 @@
             facInvs[i] = inv(facs[i]);
         }
     }
+
+
     int main()  {
-        ios_base::sync_with_stdio(0); cin.tie(0);  
+        ios_base::sync_with_stdio(0); cin.tie(0);
+        int a, b,c,d; cin >> a >> b >>c >> d;
+
+        if (c > a) {
+            if (d > b) {
+                cout << "No" << endl;
+            } else {
+                cout << "Yes" << endl;
+            }
+        } else {
+            cout << "No" << endl; 
+        }
         return 0;
     }
 
 
+
+    /// d sothwirwrwo
