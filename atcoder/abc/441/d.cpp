@@ -72,10 +72,26 @@
     }
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
+        int n; cin >> n; 
+        vector<int> arr(n);
 
-    
+
+        //  snubsets nbusmer As an b s frsieset i charcetsf of Si wer
+        
+        
+        // D is some nubmer fixed we
         // 
+
+        
+        // wcinraeser fsfsiwt sfby we
+        // w
+        // wcoutwr sdifwhas 
+        wr/w/e
+
+        for (int i = 0 ; i < n ; i ++ ) {
+            cin >> arr[i]; 
+        }
+
         return 0;
     }
-
 

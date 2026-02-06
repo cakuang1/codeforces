@@ -60,9 +60,11 @@
         cur = mul(cur, facInvs[b]);
         cur = mul(cur, facInvs[a-b]);
         return cur;
-    }
 
-    void initFacs() {
+    } 
+
+
+    void  initFacs() {
         facs[0] = 1; 
         facInvs[0] = 1;
         for (int i = 1 ; i < MX ; i ++ ) {
@@ -70,12 +72,61 @@
             facInvs[i] = inv(facs[i]);
         }
     }
-    int main()  {
-        ios_base::sync_with_stdio(0); cin.tie(0);  
 
     
-        // 
+
+    const int N = 200001 , K = 20; 
+
+    vector<int> arr(N),tin(N, 0), tout(N,0) , up[N]; 
+    
+    vector<int> adj[N]; 
+
+    vector<vector<int>> p(N, vector<int>(K, 0));
+
+    int T = 0;
+
+    int reduce(array<int,K> &b, int x) {
+        for (int i =  K - 1 ; i >=0 ; i -- ) { 
+            if (x & (1 << i)) {
+                x ^= b[i]; 
+            }
+        }
+
+        return x; 
+    }
+
+
+	bool add(array<int, K> &b, int x) {
+	x = reduce(b, x);  // reduce x using current basis
+	if (x != 0) {
+		for (int i = K - 1; i >= 0; i--) {
+			if (x & (1 << i)) {
+				b[i] = x;  // add x to the basis if it is independent
+				return true;
+			}
+		}
+	}
+	return false;
+}
+
+	bool check(array<int, K> &b, int x) {
+	return (reduce(b, x) ==
+	        0);  // if x reduces to 0, it can be represented by the basis
+}
+    
+
+    // we
+int      main()  {
+
+
+
+        ios_base::sync_with_stdio(0); cin.tie(0);  
+        int n; cin >> n; 
+
+        int k;cin >> k;
+
         return 0;
     }
 
 
+    // ewd sthjso weor owe

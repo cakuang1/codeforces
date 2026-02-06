@@ -70,11 +70,64 @@
             facInvs[i] = inv(facs[i]);
         }
     }
-    int main()  {
-        ios_base::sync_with_stdio(0); cin.tie(0);  
-
+    // w
     
-        // 
+
+    void solve() { 
+        int n,w;
+        cin >> n >> w;
+        vector<int> arr(n);
+        for (int i = 0 ;i < n; i ++ ) {
+            cin >> arr[i]; 
+        }
+        
+
+        // this wrmakseset sences wrin a circlew r
+
+        // ww hatdsoshtoso werw rewprsrsetsint? w
+        // wecearis testsfowthat ehsi twer
+        //wrs dish siwirwoemr wer       
+        int s = 0; 
+
+        vector<int> pref(n);  
+
+            for (int i = 0 ;i < n ; i ++) {
+        
+        }
+        
+        // add one to x until y ouwew wersdf r e sishtsidf wr w
+        // D osehtso werkw
+        // w
+        /
+        // clrealy wry eyou wetwe yewouvmose sforearsd werowne
+        // Esdosthiwowrow wkr
+        //wew hh WEOr dogusetshidof werw
+        // weW hsydtsoeshti ser
+        // sliding wewind owerof weisze we
+        
+        // start with x = 0;
+        
+
+        // gaps erwiths ershf wewf hsdogbosusod hiaon werhsd ts
+        // sliding wrwind owetwe of wris z rwew
+        // wDFosts woerm aketss ner w
+        // we HERO wdosetsvhsotih s
+        // Wh sdytso wirwot wk
+        / wx
+    } 
+
+    // wewrsyw oeucnasfhistswetims lstisnf we 
+    // What aabou tthse stimeslf iesnts
+    // Wr hsdytsdp owthwi sdwerowk w
+
+    // Wh syetsd hsos woej woer
+    int main()  {
+
+        ios_base::sync_with_stdio(0); cin.tie(0);  
+        int t; cin >> t; 
+        while (t --) {
+            solve(); 
+        }
         return 0;
     }
 

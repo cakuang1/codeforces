@@ -62,6 +62,8 @@
         return cur;
     }
 
+
+    //  soem waut osfsthsd ign thsi woridhg seosor mssdtg setn
     void initFacs() {
         facs[0] = 1; 
         facInvs[0] = 1;
@@ -70,11 +72,38 @@
             facInvs[i] = inv(facs[i]);
         }
     }
+
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
+        int n; cin >> n;
+        int q; cin >> q; 
+        vector<int> arr(n) ;
+        for (int i = 0 ;i < n; i ++ ) {
+            cin >> arr[i] ;
+        } 
+        vector<int> pre(n + 1, 0);
+        for (int i = 0 ; i < n; i ++) {
+            pre[i + 1] = pre[i] + arr[i];
+        }       
+        while (q --) {
+            int type ; cin >> type ;
+            if (type == 1) {
+                int x ; cin >> x; 
+                
+                int ax = arr[x - 1];
+                int axp1 = arr[x]; 
+                pre[x] = pre[x] - ax + axp1; 
+                arr[x - 1] = axp1;
+                arr[x] = ax; 
 
-    
-        // 
+            } else {
+                int l,r ; cin >> l >> r;
+                cout << pre[r] - pre[l - 1] << end;; 
+            }
+        }
+        // D oeshit rwdf iwhtis wer
+
+        
         return 0;
     }
 

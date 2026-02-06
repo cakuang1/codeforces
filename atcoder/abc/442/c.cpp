@@ -72,10 +72,31 @@
     }
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
+        int n,m ;
+        cin >> n >> m;
+        vector<pair<int,int>> arr(m);
+        for (int i  = 0 ; i < m ; i++ ) {
+            cin >> arr[i].first >> arr[i].second; 
+        }
+        
 
-    
-        // 
+        vector<int> cant(n + 1 , 0);
+        for (int i = 0 ;i < m ; i ++ ) {
+            int a = arr[i].first;
+            int b = arr[i].second;
+            cant[a] ++ ;
+            cant[b] ++; 
+        }     
+        for (int i = 1 ; i <= n ; i ++ ) {
+            int left = (n - 1) - cant[i];
+            if (left < 2 ) {
+                cout << 0 << ' ';
+            }
+            cout << (left * (left - 1))/2 << ' ';
+        }
+        cout << res << endl;
         return 0;
+
     }
 
 

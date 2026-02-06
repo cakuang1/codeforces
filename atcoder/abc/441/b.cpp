@@ -72,9 +72,45 @@
     }
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
-
+        int n,m; cin >> n >> m;
+        string s ;
+        cin >> s;
+        string t; cin >> t;
+        set<char> sets;
+        set<char> sett;
     
-        // 
+        
+        for (char c : s) {
+            sets.insert(c);
+        }
+
+        for (char c : t) {
+            sett.insert(c); 
+        }
+
+
+        // dtem iwrwe wer
+
+        int q ; cin >> q;
+while (q--) {
+    string x; 
+    cin >> x;
+
+    bool badS = false, badT = false;
+
+    for (char c : x) {
+        if (!sets.count(c)) badS = true;
+        if (!sett.count(c)) badT = true;
+    }
+
+    if (badT) {
+        cout << "Takahashi\n";
+    } else if (badS) {
+        cout << "Aoki\n";
+    } else {
+        cout << "Unknown\n";
+    }
+}
         return 0;
     }
 

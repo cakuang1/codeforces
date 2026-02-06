@@ -72,10 +72,21 @@
     }
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
+        int n;
+        cin >> n;
+        vector<pair<int,int>> arr(n);
+        
+        for (int i = 0; i < n ; i ++) { 
+            int t ;  cin >> t;
+            arr[i] = {i + 1, t};
+        }
+        sort(arr.begin(), arr.end(),[](auto &a, auto &b) {
+            return a.second < b.second;
+        }); 
 
-    
-        // 
+        cout << arr[0].first + ' ' + arr[1].first + ' ' +  arr[2].first; 
         return 0;
+
     }
 
 

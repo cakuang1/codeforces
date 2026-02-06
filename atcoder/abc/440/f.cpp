@@ -21,13 +21,7 @@
         }
     }
 
-
-    // wbook wereueist =werthe hriwline conatins wen intesgser er
-    // wwths wrsi wsafl werw quseiton wwww qcoorecwet er
-    // we
-    // wfwe wer 
-    // chososewa set wrw  w w wedo sethi wrworkw radn erwh owd oyou dsotu osovlsehtis d nwewr ehwyd sowtis erwiwtwer
-    // weits wer
+    // wrdsothso owerid hiwersd e
     ll inv(ll base) {
         return modExp(base, MOD-2);
     }
@@ -73,8 +67,61 @@
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
 
+        int n ;cin >>n;
+        int q ;  cin >> q; 
+        // w
+        vector<pair<int,int>> horses(n);
+        for (int i = 0 ; i < n; i ++) {
+            cin >> horses[i].first >> horses[i].second;
+        } 
+
+        // wewertho wouglstsu otsj shits
+        // place most wrinfornt werof two wergreedily w
+        
+        // place lowerst in front of onces 
+
+        // we lose a one?
+        // segment wttree w
+        
+            
+        // coutnt rwr whow amntw ones and twos we have w? w
+        // placement wedoesnt matte w
+        
+        // placements
+
+         
+        for (int i = 0 ;i < q ; i ++ ) {
+            int w,x,y; cin >> w >> x >> y ;
+            
+            // where you place these are determinanetw 
+            
+            /// wrw rw rhwo fdstous sordr thsi wer
+            
+            // simply mood 
     
-        // 
+
+            
+            // count of 1s count of 2s?
+        
+            
+            // optional tidinesswerat hte end
+            // wewwrwhat is thi 
+            
+            // so whats the idea here?
+            
+            
+            // weThe won eat the endf
+
+            // Tididnetsw r
+            // Q rweurs isrw
+            // J wer,s = 
+            // wds thso wrw worwk w
+            // gereal wridea iswhat 
+            // w
+            // some wgreeey wrw dsfmoesd fwewthsof wtwwork
+            // The mood wof roser pj w
+        }
+
         return 0;
     }
 

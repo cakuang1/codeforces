@@ -70,11 +70,13 @@
             facInvs[i] = inv(facs[i]);
         }
     }
+    // we
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
-
-    
-        // 
+        int x,y;
+        cin >> x >> y;
+        int d = (1 << y); 
+        cout << x * d;
         return 0;
     }
 

@@ -49,8 +49,10 @@
         return (A-B+MOD)%MOD;
     }
 
+
+    
     ll* facs = new ll[MX];
-    ll* facInvs = new ll[MX];
+    ll* facInvs = new ll[MX];   
 
     ll choose(ll a, ll b) {
         if (b > a) return 0;
@@ -62,6 +64,8 @@
         return cur;
     }
 
+    // sts d sitnsffvbal wes shstsf sr
+
     void initFacs() {
         facs[0] = 1; 
         facInvs[0] = 1;
@@ -71,10 +75,10 @@
         }
     }
     int main()  {
+      
         ios_base::sync_with_stdio(0); cin.tie(0);  
-
-    
-        // 
+        // w werosdu tss comlalsp setsid htis ser
+        // we
         return 0;
     }
 

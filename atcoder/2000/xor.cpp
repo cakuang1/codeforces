@@ -70,12 +70,42 @@
             facInvs[i] = inv(facs[i]);
         }
     }
+
+
+    // wwethsei sidfsirs sifwrewri difgwr
+    // leads t owa iwning wersta srw
+    // wrhsdy setsohdof wetowt hsidf weorwer
+    // we
+    // wd owersoitshids n sorsd alpsly wrx otw
+    /     
+
+    void solve() {
+        int n ; cin >> n;
+        vector<int> arr(n); 
+        for (int i = 0 ;i < n ; i ++) {
+            
+        } 
+
+        // leavew w wew
+        // Wrshfshsfh sisf hiwf
+        / /w
+
+    }
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
-
-    
-        // 
+        int t ;cin >> t;
+        while (t --) {
+            solve(); 
+        }
         return 0;
     }
+    
+    // leave x or change x into
+    // apply
 
-
+    // wW nawra sof sdfse ssoudf wrsi fwitsdf w
+    // wesd shetos owerkw
+    
+    //  wewehsdn erosf hsrsh sd x win wr
+    
+    // 

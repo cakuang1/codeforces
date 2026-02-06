@@ -1,78 +1,52 @@
- 
-    #include <bits/stdc++.h>
-    
-    using namespace std;
+#include <bits/stdc++.h>
+using namespace std;
 
-    using ll = long long;
-    const int MOD = 1000000007; 
-    const int MOD2 =  998244353; 
-    const ll INF = 1e18;
-    const int MX = 1000001; //check the limits, dummy
-
-
-    ll modExp(ll base, ll power) {
-        if (power == 0) {
-            return 1;
-        } else {
-            ll cur = modExp(base, power / 2); cur = cur * cur; cur = cur % MOD;
-            if (power % 2 == 1) cur = cur * base;
-            cur = cur % MOD;
-            return cur;
-        }
-    }
+#define ll long long
+#define pll pair<ll,ll>
+#define rep(i, n) for(int i = 0; i < n; ++i)
+#define N (int)1000
+#define M (int)5e+4
+#define INF (ll)1e+18
 
 
-    // wbook wereueist =werthe hriwline conatins wen intesgser er
-    // wwths wrsi wsafl werw quseiton wwww qcoorecwet er
-    // we
-    // wfwe wer 
-    // chososewa set wrw  w w wedo sethi wrworkw radn erwh owd oyou dsotu osovlsehtis d nwewr ehwyd sowtis erwiwtwer
-    // weits wer
-    ll inv(ll base) {
-        return modExp(base, MOD-2);
-    }
+int main(void){
+	int n,m,l,r;
+	int p[N];
+	ll v[N];
+	ll dp[N+1][M+1]={};
+	ll dp2[N+1][M+1]={};
+	ll tgt;
+	string ans="";
 
+	cin >> n >> m;
+	for(int i=0;i<n;i++)cin >> p[i] >> v[i];
 
-    ll mul(ll A, ll B) {
-        return (A*B)%MOD;
-    }
+	for(int i=0;i<n;i++){
+		for(int j=0;j<=m;j++){
+			if(j<p[i])dp[i+1][j]=dp[i][j];
+			if(j>=p[i])dp[i+1][j]=max(dp[i][j],dp[i][j-p[i]]+v[i]);
+		}
+	}
 
-    ll add(ll A, ll B) {
-        return (A+B)%MOD;
-    }
-    
-    ll dvd(ll A, ll B) {
-        return mul(A, inv(B));
-    }
+	for(int i=n-1;i>=0;i--){
+		for(int j=0;j<=m;j++){
+			if(j<p[i])dp2[i][j]=dp2[i+1][j];
+			if(j>=p[i])dp2[i][j]=max(dp2[i+1][j],dp2[i+1][j-p[i]]+v[i]);
+		}
+	}
 
-    ll sub(ll A, ll B) {
-        return (A-B+MOD)%MOD;
-    }
+	tgt=dp[n][m];
+	for(int i=0;i<n;i++){
+		long long mx_woi=0;
+		for(int j=0;j<=m;j++)mx_woi=max(mx_woi,dp[i][j]+dp2[i+1][m-j]);
+		long long mx_wi=0;
+		for(int j=0;j<=m-p[i];j++)mx_wi=max(mx_wi,dp[i][j]+dp2[i+1][m-p[i]-j]);
+		if(mx_woi<tgt)ans+='A';
+		else if(mx_wi<tgt-v[i])ans+='C';
+		else ans+='B';
+	}
 
-    ll* facs = new ll[MX];
-    ll* facInvs = new ll[MX];
+	cout<<ans<<endl;
 
-    ll choose(ll a, ll b) {
-        if (b > a) return 0;
-        if (a < 0) return 0;
-        if (b < 0) return 0;
-        ll cur = facs[a];
-        cur = mul(cur, facInvs[b]);
-        cur = mul(cur, facInvs[a-b]);
-        return cur;
-    }
-
-    void initFacs() {
-        facs[0] = 1; 
-        facInvs[0] = 1;
-        for (int i = 1 ; i < MX ; i ++ ) {
-            facs[i] = (facs[i-1] * i) % MOD;
-            facInvs[i] = inv(facs[i]);
-        }
-    }
-    int main()  {
-        ios_base::sync_with_stdio(0); cin.tie(0);  
-        return 0;
-    }
-
-
+	return 0;
+}

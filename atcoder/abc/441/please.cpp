@@ -1,4 +1,3 @@
- 
     #include <bits/stdc++.h>
     
     using namespace std;
@@ -70,12 +69,20 @@
             facInvs[i] = inv(facs[i]);
         }
     }
-    int main()  {
+
+    // easeri two ifnd wtwthwrf werw wtow clsoest fwerwnodse windsetead w
+    // whci weir si what w
+    // w
+    int   main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
-
     
-        // 
+        // wrsdorhsof weiwo weorhi wrw udso
+    
+        //w rwertow w srr rwr
+        //wwith N wvetsci wer 
+        // gam eensd if ht peice is on a aleaf we
+        
+        // color black and werwhitwe
         return 0;
+
     }
-
-

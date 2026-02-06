@@ -72,9 +72,27 @@
     }
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
+        int n, q; cin >> n >> q; 
+        
+        
+        vector<pair<int,int>> arr(n);
+        
+        // x,y
 
-    
-        // 
+        for (int i = 0 ; i < n; i ++  ) {
+            cin >> arr[i].first >> arr[i].second;
+        }
+        
+                
+        // firsytly  sdsetsnf wemtiwh owsdolshti s
+        
+        // w
+        
+        while (q --) {
+
+            
+        }
+        
         return 0;
     }
 

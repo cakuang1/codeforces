@@ -62,6 +62,18 @@
         return cur;
     }
 
+
+    // wsdotsof hweorw
+    // dewtle isng stshos wre
+    //w det wierwhw ersdu wer=ta such smovse 
+    
+    // wewt ineths fwrsd fweithso gfougsohtis s
+    // weaARp. an a game iwt hsd fMjo jtaa
+    // wer mo j taba arap aare playing a game
+
+    // wwthat movse secxi sets
+
+    // y oweurat qr
     void initFacs() {
         facs[0] = 1; 
         facInvs[0] = 1;
@@ -70,12 +82,15 @@
             facInvs[i] = inv(facs[i]);
         }
     }
+
+
+    // wew lfgos sdf lgosn susrs weish r
+    int grundy[61]; 
+
+    int solve
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
-
-    
-        // 
         return 0;
     }
 
-
+    //

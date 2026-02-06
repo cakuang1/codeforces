@@ -70,12 +70,49 @@
             facInvs[i] = inv(facs[i]);
         }
     }
-    int main()  {
-        ios_base::sync_with_stdio(0); cin.tie(0);  
 
-    
-        // 
-        return 0;
+    void solve() {
+        int n; cin >> n;
+        vector<long long> a(n);
+        for (auto &x : a) cin >> x;
+        string s; cin >> s;
+
+        array<long long, 61> basis{};
+
+        auto reduce = [&](long long v) {
+            for (int i = 60; i >= 0; --i)
+                if (basis[i] && (v & (1LL<<i))) v ^= basis[i];
+            return v;
+        };
+
+        auto insert = [&](long long v) {
+            v = reduce(v);
+            if (v == 0) return false;
+            for (int i = 60; i >= 0; --i) {
+                if (v & (1LL<<i)) { basis[i] = v; return true; }
+            }
+            return false;
+        };
+
+        auto contains = [&](long long v) { return reduce(v) == 0; };
+
+        for (int i = n - 1; i >= 0; --i) {
+            if (s[i] == '1') {
+                if (!contains(a[i])) { cout << 1 << "\n"; return; }
+            } else {
+                insert(a[i]);
+            }
+        }
+        cout << 0 << "\n";
     }
 
+        // w
+    int main()  {
+        ios_base::sync_with_stdio(0); cin.tie(0);  
+        int t; cin >> t;
+        while (t --) {
+            solve(); 
+        }
+        return 0;
+    }
 

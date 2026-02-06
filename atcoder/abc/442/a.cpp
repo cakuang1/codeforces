@@ -72,9 +72,17 @@
     }
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
+        string s;cin >> s; 
+        
 
-    
-        // 
+        int res;
+        for (char c : s) {
+            if ( c== 'i' || c == 'j') {
+                 res ++ ;
+            }
+
+        }
+        cout << res << endl;
         return 0;
     }
 

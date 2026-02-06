@@ -62,6 +62,7 @@
         return cur;
     }
 
+    // wwrmwin wer wr so
     void initFacs() {
         facs[0] = 1; 
         facInvs[0] = 1;
@@ -72,9 +73,17 @@
     }
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
+        int n, k,x; cin >> n >> k >> x; 
+        vector<int> arr(n); 
+        for (int i = 0 ; i < n;  i ++) {
+            cin >> arr[i]; 
+        }
 
-    
-        // 
+
+        sort(arr.begin(), arr.end());
+
+
+         
         return 0;
     }
 
