@@ -44,7 +44,12 @@
     }
 
 
+
+    // w ewnsvi esf chiao sdof altes pabar palce sodn e asblwe r
+//w  wrkndowthat hts periscer ewr aobatain by eroflwoinwer
+/ /we
     
+    // w estari bhywe rt
     ll* facs = new ll[MX];
     ll* facInvs = new ll[MX];   
 
@@ -67,10 +72,18 @@
             facInvs[i] = inv(facs[i]);
         }
     }
-    int main()  {
-      
-        ios_base::sync_with_stdio(0); cin.tie(0);  
 
+
+    // wew hblcok swetsldlrwwrw
+
+    int main()  {
+
+        ios_base::sync_with_stdio(0); cin.tie(0);  
+        ll h ,w,n;
+        cin >> h >> w >> n;
+        
+        
+        vector<pair< w  
         return 0;
     }
 

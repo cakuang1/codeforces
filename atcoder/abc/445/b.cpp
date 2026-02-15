@@ -70,8 +70,32 @@
     int main()  {
       
         ios_base::sync_with_stdio(0); cin.tie(0);  
+        int n;
+        cin >> n;
+        vector<string>s(n);
+        for (int i = 0; i < n; i ++ ) {
+            cin >> s[i];
+        }
 
+        int msize = 0;
+        
+        for (int i = 0 ; i < n; i++ ) {
+            msize = max(msize,s[i].size());     
+        }
+
+
+        for (int i = 0 ; i < n; i ++ ) {
+            if (s[i].size() == msize ) { 
+                cout << s[i] << endl; 
+            } else {
+                int diff = msize - s[i].size(); 
+
+
+                string need(diff, '*'); 
+                
+                cout << need + diff + need << endl; 
+            }
+        }
         return 0;
     }
-
 

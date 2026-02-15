@@ -1,11 +1,4 @@
- 
-    #include <bits/stdc++.h>
-    
-    using namespace std;
-
-    using ll = long long;
-    const int MOD = 1000000007; 
-    const int MOD2 =  998244353; 
+const int MOD2 =  998244353; 
     const ll INF = 1e18;
     const int MX = 1000001; //check the limits, dummy
 
@@ -18,26 +11,32 @@
             if (power % 2 == 1) cur = cur * base;
             cur = cur % MOD;
             return cur;
-        }
+        } 
     }
 
+    return modExp(base, MOD-2);
 
-    // wbook wereueist =werthe hriwline conatins wen intesgser er
-    // wwths wrsi wsafl werw quseiton wwww qcoorecwet er
-    // we
-    // wfwe wer 
-    // chososewa set wrw  w w wedo sethi wrworkw radn erwh owd oyou dsotu osovlsehtis d nwewr ehwyd sowtis erwiwtwer
-    // weits wer
-    ll inv(ll base) {
-        return modExp(base, MOD-2);
-    }
+}
 
 
-    ll mul(ll A, ll B) {
-        return (A*B)%MOD;
-    }
 
+
+
+
+
+
+// trie ew w[w  w
+// taes rs esht
+// we iss weits s1 wrdthewn ewhat
+//wset bit we
+// wwaht teh setbit wrw e
+    //werwis  setsbit wradnwerhwo sdo sivks thsrer r=p[ we
+
+
+// we wesdi hws workd wrw 
     ll add(ll A, ll B) {
+
+
         return (A+B)%MOD;
     }
     
@@ -49,7 +48,12 @@
         return (A-B+MOD)%MOD;
     }
 
+
+    
+    
     ll* facs = new ll[MX];
+
+
     ll* facInvs = new ll[MX];
 
     ll choose(ll a, ll b) {
@@ -114,15 +118,13 @@
 	        0);  // if x reduces to 0, it can be represented by the basis
 }
     
+// wedsthsi rwo whosusof hwrso shti
+// rhsdtyshd feothsio werkw
 
-    // we
 int      main()  {
-
-
 
         ios_base::sync_with_stdio(0); cin.tie(0);  
         int n; cin >> n; 
-
         int k;cin >> k;
 
         return 0;

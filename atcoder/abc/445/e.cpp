@@ -67,11 +67,38 @@
             facInvs[i] = inv(facs[i]);
         }
     }
+
+    // wdf whrwo souodshsi owerm wramt nlc mwrs
+    // weY ouwerar given sueeanc
+    void solve() {
+        int n;
+        cin >> n; 
+
+        vector<int> arr(n);
+        for (int i = 0 ; i < n; i ++ ) {
+             cin >> arr[i]; 
+        }
+
+
+
+        // w rsdoths worw wker
+        // Youew. era igwien s uqend od. wepostisvi eeitnsesg sew
+
+        for (int i = 0 ; i < n; i++) {
+        }
+    }
     int main()  {
       
         ios_base::sync_with_stdio(0); cin.tie(0);  
-
+        int t;
+        cin >> t;
+        while (t -- ) {
+            solve();
+        } 
         return 0;
     }
 
 
+
+    // w
+    // wstrusthsdi werids 

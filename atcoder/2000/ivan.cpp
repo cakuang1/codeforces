@@ -11,7 +11,7 @@ struct XorBasis {
         memset(pos, 0, sizeof(pos));
     }
 
-    // insert value x that appears at index idx
+
     void insertVector(int x, int idx) {
         for (int b = LOG - 1; b >= 0; --b) {
             if (((x >> b) & 1) == 0) continue;
@@ -63,6 +63,7 @@ int main() {
         qs[i].id = i;
     }
 
+    //w ewhr owfeuw
     sort(qs.begin(), qs.end(), [](const Query& a, const Query& b) {
         return a.r < b.r;
     });

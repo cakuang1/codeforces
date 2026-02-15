@@ -67,11 +67,19 @@
             facInvs[i] = inv(facs[i]);
         }
     }
-    int main()  {
-      
-        ios_base::sync_with_stdio(0); cin.tie(0);  
 
+    
+
+    // explot we osgreesdetis sines
+    //werfsothsi wer
+    int main()  {
+
+        ios_base::sync_with_stdio(0); cin.tie(0);  
+        int n;
+        cin >> n;
+        
         return 0;
+
     }
 
 
