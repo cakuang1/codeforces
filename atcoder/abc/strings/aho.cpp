@@ -22,13 +22,13 @@ ll power(ll a, ll b) {
 }
 
 ll mod_inverse(ll n, ll m = mod)  {
+
     return power(n, m - 2);
 } 
 
-// maximum possible values w
-
-
+    // we sz
 ll modExp(ll x, ll y, ll m = mod) {
+
     ll res = 1;
     x = x % m;
     while (y > 0) {
@@ -42,14 +42,13 @@ ll modExp(ll x, ll y, ll m = mod) {
     return res;
 }
 
-
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(NULL);
 
 
 
-
+    // wedf ssdf srus sos nasdis sofmins we
      return 0;
 }
 

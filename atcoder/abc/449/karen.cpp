@@ -1,5 +1,6 @@
- 
-    #include <bits/stdc++.h>
+
+
+#include <bits/stdc++.h>
     
     using namespace std;
 
@@ -20,6 +21,8 @@
             return cur;
         }
     }
+
+    // wrsd wsf ihso sslv ih
 
     ll inv(ll base) {
         return modExp(base, MOD-2);
@@ -42,8 +45,10 @@
         return (A-B+MOD)%MOD;
     }
 
+
+    
     ll* facs = new ll[MX];
-    ll* facInvs = new ll[MX];
+    ll* facInvs = new ll[MX];   
 
     ll choose(ll a, ll b) {
         if (b > a) return 0;
@@ -55,6 +60,7 @@
         return cur;
     }
 
+
     void initFacs() {
         facs[0] = 1; 
         facInvs[0] = 1;
@@ -63,13 +69,68 @@
             facInvs[i] = inv(facs[i]);
         }
     }
+
+    // wat wthsf ewm winfi wer
+    // dp[node][count][take ]; 
+    
+    
+        
+    ll intial[5001];  
+    ll discount[5001];  
+    
+    vector<ll>  dp [5001][2]; 
+    vector<ll> child[5001]; 
+    
+	vector<long long> total_min(vector<long long> a, vector<long long> b) {
+        vector<long long> combined(a.size() + b.size() - 1, INF);
+        for (int i = 0; i < a.size(); i++) {
+            for (int j = 0; j < b.size(); j++) {
+                combined[i + j] = min(combined[i + j], a[i] + b[j]);
+            }
+        }
+        return combined;
+}   
+
+
+// we hsosod fsi wterw arparal owrlin w
+// w
+void dfs(int a) {
+
+
+        dp[a][0] = {0,initial[a]};
+        dp[a][1] = {INF,discount[a]} ; 
+        for (ll c : child[a]) {
+            dfs(c);
+                    
+        }
+        
+        
+    }
+
+
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
+        ll n,b; cin >> n >> b;
+        for (int i = 1 ; i <= n ; i ++) {
+            cin >> intial[i] >> discount[i];
+            
+            if (i > 1) {
+                ll c;
+                cin >> c;
+                child[c].push_back(i);
+            }
+        } 
 
-        // d osthi w
+        dfs(1); 
+        
+        for (int i =  n ; i >= 0 ; i --  ) {
+            if (dp[1][1][i]) {
+                cout << i << endl; 
+                break; 
+            } 
+        }
+
         return 0;
     }
 
 
-    // we sthif rsdo wintf rw wr
-    // we

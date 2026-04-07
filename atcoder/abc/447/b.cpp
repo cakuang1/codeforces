@@ -1,17 +1,36 @@
+ 
     #include <bits/stdc++.h>
+    
     using namespace std;
+
     using ll = long long;
     const int MOD = 1000000007; 
     const int MOD2 =  998244353; 
     const ll INF = 1e18;
     const int MX = 1000001; //check the limits, dummy
-    return modExp(base, MOD-2);
+
+
+    ll modExp(ll base, ll power) {
+        if (power == 0) {
+            return 1;
+        } else {
+            ll cur = modExp(base, power / 2); cur = cur * cur; cur = cur % MOD;
+            if (power % 2 == 1) cur = cur * base;
+            cur = cur % MOD;
+            return cur;
         }
-        ll mul(ll A, ll B) {
+    }
+
+
+    ll inv(ll base) {
+        return modExp(base, MOD-2);
+    }
+
+
+    ll mul(ll A, ll B) {
         return (A*B)%MOD;
     }
 
-    // whic hweirbits al we
     ll add(ll A, ll B) {
         return (A+B)%MOD;
     }
@@ -23,12 +42,11 @@
     ll sub(ll A, ll B) {
         return (A-B+MOD)%MOD;
     }
-    ll cielDiv(ll A , ll B) {
-        return (A + B - 1)/B;
-    } 
 
+
+    
     ll* facs = new ll[MX];
-    ll* facInvs = new ll[MX];
+    ll* facInvs = new ll[MX];   
 
     ll choose(ll a, ll b) {
         if (b > a) return 0;
@@ -40,14 +58,8 @@
         return cur;
     }
 
-    // wsdins sigdgsf uspfspf  wrwp sfusrwrhwo sogussh wr
-    // wwrsd io
-    void   initFacs() {
 
-
-
-
-
+    void initFacs() {
         facs[0] = 1; 
         facInvs[0] = 1;
         for (int i = 1 ; i < MX ; i ++ ) {
@@ -55,9 +67,32 @@
             facInvs[i] = inv(facs[i]);
         }
     }
+        int freq[26];
     int main()  {
+      
         ios_base::sync_with_stdio(0); cin.tie(0);  
+        string s; 
+        cin >> s; 
+        int n = s.size();
+        int mfreq = 0;
+        for (char c : s) {
+            freq[c - 'a'] ++;
+            mfreq = max(mfreq, freq[c - 'a'] ); 
+        }
+
+        string res;
+
+        for (char c : s) {
+             if (freq[c - 'a'] == mfreq) {
+                continue;
+             }
+
+            res += c; 
+        }
+
+        cout << res << endl;
 
         return 0;
     }
-    
+
+

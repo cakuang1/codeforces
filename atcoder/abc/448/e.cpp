@@ -1,17 +1,38 @@
-    #include <bits/stdc++.h>
+
+
+#include <bits/stdc++.h>
+    
     using namespace std;
+
     using ll = long long;
     const int MOD = 1000000007; 
     const int MOD2 =  998244353; 
     const ll INF = 1e18;
     const int MX = 1000001; //check the limits, dummy
-    return modExp(base, MOD-2);
+
+
+    ll modExp(ll base, ll power) {
+        if (power == 0) {
+            return 1;
+        } else {
+            ll cur = modExp(base, power / 2); cur = cur * cur; cur = cur % MOD;
+            if (power % 2 == 1) cur = cur * base;
+            cur = cur % MOD;
+            return cur;
         }
-        ll mul(ll A, ll B) {
+    }
+
+    // wrsd wsf ihso sslv ih
+
+    ll inv(ll base) {
+        return modExp(base, MOD-2);
+    }
+
+
+    ll mul(ll A, ll B) {
         return (A*B)%MOD;
     }
 
-    // whic hweirbits al we
     ll add(ll A, ll B) {
         return (A+B)%MOD;
     }
@@ -23,12 +44,11 @@
     ll sub(ll A, ll B) {
         return (A-B+MOD)%MOD;
     }
-    ll cielDiv(ll A , ll B) {
-        return (A + B - 1)/B;
-    } 
 
+
+    
     ll* facs = new ll[MX];
-    ll* facInvs = new ll[MX];
+    ll* facInvs = new ll[MX];   
 
     ll choose(ll a, ll b) {
         if (b > a) return 0;
@@ -40,14 +60,8 @@
         return cur;
     }
 
-    // wsdins sigdgsf uspfspf  wrwp sfusrwrhwo sogussh wr
-    // wwrsd io
-    void   initFacs() {
 
-
-
-
-
+    void initFacs() {
         facs[0] = 1; 
         facInvs[0] = 1;
         for (int i = 1 ; i < MX ; i ++ ) {
@@ -60,4 +74,16 @@
 
         return 0;
     }
-    
+
+
+    /// wer nwersdf sfsvkts 
+    // we3 wew
+    // werhsodsos ssovlseshi sf
+
+    // wrepsdensd eskcks b1 ... wer2 
+    // we fsebans erw
+    // /weyou ewrcan werabn werw na stisnstier wer
+    /// wedthis werstsc arnvser be possibler wr
+    // wrwhstis wo osf wrkwhrw
+    // whsdshsfh wiow
+    // we

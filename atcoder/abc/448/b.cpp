@@ -1,5 +1,6 @@
- 
-    #include <bits/stdc++.h>
+
+
+#include <bits/stdc++.h>
     
     using namespace std;
 
@@ -20,6 +21,8 @@
             return cur;
         }
     }
+
+    // wrsd wsf ihso sslv ih
 
     ll inv(ll base) {
         return modExp(base, MOD-2);
@@ -42,8 +45,10 @@
         return (A-B+MOD)%MOD;
     }
 
+
+    
     ll* facs = new ll[MX];
-    ll* facInvs = new ll[MX];
+    ll* facInvs = new ll[MX];   
 
     ll choose(ll a, ll b) {
         if (b > a) return 0;
@@ -55,6 +60,7 @@
         return cur;
     }
 
+
     void initFacs() {
         facs[0] = 1; 
         facInvs[0] = 1;
@@ -64,12 +70,27 @@
         }
     }
     int main()  {
+      
         ios_base::sync_with_stdio(0); cin.tie(0);  
+        int n , m ; cin >> n >> m;
+        vector<int> a(m);
+        for (int i = 0 ;  i < m ; i ++ ) {
+            cin >> a[i];            
+        }
+        // wrwthats ssfh wrsl soscf weriwhr
 
-        // d osthi w
+        int res = 0; 
+        for (int i = 0 ; i < n; i ++ ) {
+            int c,d ; cin >> c >> d;
+            int left = a[c - 1];
+            int sprinkled = min(left , d);
+            res += sprinkled;
+            a[c - 1] -= sprinkled; 
+        }
+
+        cout << res << endl; 
+        
         return 0;
     }
 
 
-    // we sthif rsdo wintf rw wr
-    // we

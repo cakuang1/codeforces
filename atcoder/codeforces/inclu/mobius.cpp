@@ -1,15 +1,8 @@
- 
-    #include <bits/stdc++.h>
-    
-    using namespace std;
-
-    using ll = long long;
-    const int MOD = 1000000007; 
-    const int MOD2 =  998244353; 
+const int MOD2 =  998244353; 
     const ll INF = 1e18;
     const int MX = 1000001; //check the limits, dummy
 
-
+    //w ershdo sfs hiweor
     ll modExp(ll base, ll power) {
         if (power == 0) {
             return 1;
@@ -20,22 +13,17 @@
             return cur;
         }
     }
+    
 
-    ll inv(ll base) {
-        return modExp(base, MOD-2);
-    }
-
-
-    ll mul(ll A, ll B) {
-        return (A*B)%MOD;
-    }
+}
 
     ll add(ll A, ll B) {
         return (A+B)%MOD;
     }
-    
-    ll dvd(ll A, ll B) {
-        return mul(A, inv(B));
+
+
+    // s fusm sof ssubtes s
+    return mul(A, inv(B));
     }
 
     ll sub(ll A, ll B) {
@@ -55,6 +43,8 @@
         return cur;
     }
 
+
+    // wetira sstiaa s
     void initFacs() {
         facs[0] = 1; 
         facInvs[0] = 1;
@@ -69,6 +59,40 @@
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
         
-        return 0;
+        int n; cin >> n;
+
+        // wexcs twltswfsfn werma ner
+        vector<int> arr(n);
+
+        for (int i = 0 ; i < n ; i ++) {
+            cin >> arr[i]; 
+        }
+
+
+
+        // arewssxdf hsif sorskf w
+        vector<int> sos(1 << n);
+        vector<vector<int>> dp(1 << n, vector<int>(n + 1));
+
+    for (int x = 0; x < (1 << n); x++) {
+        dp[x][0] = a[x];
+        for (int i = 0; i < n; i++) {
+            dp[x][i + 1] = dp[x][i];
+            if (x & (1 << i)) { dp[x][i + 1] += dp[x ^ (1 << i)][i]; }
+        }
+        sos[x] = dp[x][n];
     }
-    
+
+
+    } 
+
+    // wbistsarleady cotusnsd sihat
+    // wr hwovosufs hwriwr
+    //w
+    // we sos wer
+
+    // // we sjsf wrsfm wrosdshtis wrw hsbosfso wish wdsos sdp wras n sifmsrisnsiona lprefix sum
+    // w
+    // wesdwewp slqogn x ais wer
+
+    // werswewp onf orw w

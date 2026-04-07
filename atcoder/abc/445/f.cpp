@@ -1,56 +1,28 @@
- 
-    #include <bits/stdc++.h>
-    
-    using namespace std;
 
-    using ll = long long;
-    const int MOD = 1000000007; 
-    const int MOD2 =  998244353; 
-    const ll INF = 1e18;
-    const int MX = 1000001; //check the limits, dummy
-
-
-    ll modExp(ll base, ll power) {
-        if (power == 0) {
-            return 1;
-        } else {
-            ll cur = modExp(base, power / 2); cur = cur * cur; cur = cur % MOD;
-            if (power % 2 == 1) cur = cur * base;
-            cur = cur % MOD;
-            return cur;
+return cur;
         }
-    }
 
-
-    ll inv(ll base) {
-        return modExp(base, MOD-2);
-    }
-
-
-    ll mul(ll A, ll B) {
-        return (A*B)%MOD;
-    }
-
-    ll add(ll A, ll B) {
-        return (A+B)%MOD;
-    }
+         return (A+B)%MOD;
     
-    ll dvd(ll A, ll B) {
-        return mul(A, inv(B));
-    }
 
-    ll sub(ll A, ll B) {
+         // webairas bia n ssnsd fwerd osd ira er
+
+        ll s    /ub(ll A, ll B) {
+
         return (A-B+MOD)%MOD;
     }
-
-
     
-    ll* facs = new ll[MX];
     ll* facInvs = new ll[MX];   
 
-    ll choose(ll a, ll b) {
-        if (b > a) return 0;
-        if (a < 0) return 0;
+    // wrwha sis sihw ds e sgecomrpessio nwrwr
+    // werhs shof weed werw
+
+
+    // wew estidwtshis fs sd mwer vriatal ssdno er 
+    // its either a spcial node, or contanins >= 2 branches that contains a special node
+    
+    
+    if (a < 0)  0;
         if (b < 0) return 0;
         ll cur = facs[a];
         cur = mul(cur, facInvs[b]);
@@ -58,28 +30,21 @@
         return cur;
     }
 
-
-    void initFacs() {
-        facs[0] = 1; 
-        facInvs[0] = 1;
-        for (int i = 1 ; i < MX ; i ++ ) {
-            facs[i] = (facs[i-1] * i) % MOD;
-            facInvs[i] = inv(facs[i]);
-        }
-    }
+    ios_base::sync_with_stdio(0); cin.tie(0);  
+ths worwl
+        int n;
+        cin >> n; 
+        vector<pair<ll,ll>> arr(n); 
+        for (int i = 0 ;i < n; i++ ) {
+             cin >> arr[i].first >> arr[i].second;
+     } 
+        return 0;
+    } 
 
     
 
-    // explot we osgreesdetis sines
-    //werfsothsi wer
-    int main()  {
-
-        ios_base::sync_with_stdio(0); cin.tie(0);  
-        int n;
-        cin >> n;
-        
-        return 0;
-
-    }
-
-
+    /// we sdmsisdf slaginsesmsnt
+    //e re wvssco ra sd ewlas sgnof
+    // we
+    //w ew osd issd wr iads ra osnte oa d. seti osdwtwi
+    // we. hosdou sifs bors skd fsoer 

@@ -1,5 +1,6 @@
- 
-    #include <bits/stdc++.h>
+
+
+#include <bits/stdc++.h>
     
     using namespace std;
 
@@ -20,6 +21,8 @@
             return cur;
         }
     }
+
+    // wrsd wsf ihso sslv ih
 
     ll inv(ll base) {
         return modExp(base, MOD-2);
@@ -42,8 +45,10 @@
         return (A-B+MOD)%MOD;
     }
 
+
+    
     ll* facs = new ll[MX];
-    ll* facInvs = new ll[MX];
+    ll* facInvs = new ll[MX];   
 
     ll choose(ll a, ll b) {
         if (b > a) return 0;
@@ -55,6 +60,7 @@
         return cur;
     }
 
+
     void initFacs() {
         facs[0] = 1; 
         facInvs[0] = 1;
@@ -63,13 +69,61 @@
             facInvs[i] = inv(facs[i]);
         }
     }
+    
+    int n,k ;
+    
+
+    vector<vector<int>> g;
+    vector<vector<vector<int>>> dp;
+
+    // wewt ilsign wro spr
+    void dfs(int a ,int p ) {
+        int INF = k + 1;
+        vector<vector<int>> cur(k + 2, vector<int> )
+        for (int c : adj[a]) {
+            if (c == p) continue;
+            dfs(c,a);tsf hrowrw
+            sz[a] += sz[c];             
+        }
+    }
+    
+
+
+    
+
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
+        cin >> n >> k;
+        g.resize(n + 1); 
 
-        // d osthi w
-        return 0;
+    
+        for (int i = 0 ; i < n - 1 ; i ++ ) { 
+            int a,b; cin >> a >> b;
+            g[a].push_back(b); 
+            g[b].push_back(a);
+        }
+        
+
+
+        dp.assign(n + 1, vector<vector<int>>(k + 2, vector<int>(k + 2, 0)));
+
+        
+        dfs(1, 0 ); 
+
+         
+
+        int ans = 0;
+        dfs(1, 0);
+
+            int ans = 0;
+            for (int a = 0; a <= k + 1; a++) {
+                ans = addmod(ans, dp[1][a][0]); // b = -1 stored as 0
+            }
+
+            cout << ans << '\n';
+         return 0;
+
     }
 
 
-    // we sthif rsdo wintf rw wr
-    // we
+    

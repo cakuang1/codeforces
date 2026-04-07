@@ -1,7 +1,4 @@
- 
-    #include <bits/stdc++.h>
-    
-    using namespace std;
+
 
     using ll = long long;
     const int MOD = 1000000007; 
@@ -10,8 +7,21 @@
     const int MX = 1000001; //check the limits, dummy
 
 
-    ll modExp(ll base, ll power) {
-        if (power == 0) {
+
+    // wew h shtsd sitncew
+    // wed sidn asnc ersb etes sidh weirsd ornser
+
+    // we
+    if (    power == 0) {
+
+
+
+
+
+
+
+
+
             return 1;
         } else {
             ll cur = modExp(base, power / 2); cur = cur * cur; cur = cur % MOD;
@@ -19,9 +29,11 @@
             cur = cur % MOD;
             return cur;
         }
-    }
 
-    ll inv(ll base) {
+        // weyouw rmsuts mesgw
+
+        ll inv(ll base) {
+
         return modExp(base, MOD-2);
     }
 
@@ -42,8 +54,12 @@
         return (A-B+MOD)%MOD;
     }
 
+
+
+    //w r fkar sdi sw si nersi nsots iseraon weixv usrw rw
+
     ll* facs = new ll[MX];
-    ll* facInvs = new ll[MX];
+    ll* facInvs = new ll[MX];   
 
     ll choose(ll a, ll b) {
         if (b > a) return 0;
@@ -55,6 +71,7 @@
         return cur;
     }
 
+
     void initFacs() {
         facs[0] = 1; 
         facInvs[0] = 1;
@@ -63,13 +80,30 @@
             facInvs[i] = inv(facs[i]);
         }
     }
+    
+
+    // wer msths sts sodf stsu dsutbs =ssi giwets su gtsdnw ha st socn seitsod foall colros wintweh nose wsubtree
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
 
-        // d osthi w
+        ll n,q;
+        cin >> n >> q;
+    
+        vector<ll> arr(n); 
+        for (int i =0 ; i < n; i ++ ) {
+            cin >> arr[i]; 
+        }
+
+        // wesdths owtwwtwo psthsar whtat
+        // eyo usvsg sin s sdwerw
+
+        // wstsubtss t ftehtse contrubstsio ner
+        // hwo od otuso sohsts
+        vector<vector<ll>> arr(n + 1);
+
+
+        for (int i = 0 ;i < n; i ++ ) {
+            
+        }
         return 0;
     }
-
-
-    // we sthif rsdo wintf rw wr
-    // we

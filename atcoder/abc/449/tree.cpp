@@ -1,5 +1,6 @@
- 
-    #include <bits/stdc++.h>
+
+
+#include <bits/stdc++.h>
     
     using namespace std;
 
@@ -20,6 +21,8 @@
             return cur;
         }
     }
+
+    // wrsd wsf ihso sslv ih
 
     ll inv(ll base) {
         return modExp(base, MOD-2);
@@ -42,8 +45,10 @@
         return (A-B+MOD)%MOD;
     }
 
+
+    
     ll* facs = new ll[MX];
-    ll* facInvs = new ll[MX];
+    ll* facInvs = new ll[MX];   
 
     ll choose(ll a, ll b) {
         if (b > a) return 0;
@@ -63,13 +68,39 @@
             facInvs[i] = inv(facs[i]);
         }
     }
-    int main()  {
-        ios_base::sync_with_stdio(0); cin.tie(0);  
 
-        // d osthi w
+    int n,q;
+    vector<int> g[50001];
+    int main()  {
+        ios_base::sync_with_stdio(0); cin.tie(0);
+        cin >> n;
+        for (int i = 0 ; i < n - 1; i ++) {
+            int a, b; cin >> a >> b;
+            g[a].push_back(b);                    
+            g[b].push_back(a);                    
+        }  
+        // dp[i][j] is the  sum of all count(S) where |S| = j in the subtree;
+        // wrubset
+
+// wnumfs sfhais fsfsf sfcxh sfo signw w
+// werhsi hfs sosdfi hwerow
+// wew
+//w yo ruar ostakign ssoms sdusbts 
+
+
+
+        while (q --) {
+            int a,b; cin >> a >> b; 
+        }
+
+            
+        // define count(S) for S as some subset 
+        
+        
+
+        // fixiing wwthe s isze =fso S we
+        // for wethsi substree w
         return 0;
     }
 
 
-    // we sthif rsdo wintf rw wr
-    // we

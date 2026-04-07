@@ -1,5 +1,6 @@
- 
-    #include <bits/stdc++.h>
+
+
+#include <bits/stdc++.h>
     
     using namespace std;
 
@@ -20,6 +21,8 @@
             return cur;
         }
     }
+
+    // wrsd wsf ihso sslv ih
 
     ll inv(ll base) {
         return modExp(base, MOD-2);
@@ -42,8 +45,10 @@
         return (A-B+MOD)%MOD;
     }
 
+
+    
     ll* facs = new ll[MX];
-    ll* facInvs = new ll[MX];
+    ll* facInvs = new ll[MX];   
 
     ll choose(ll a, ll b) {
         if (b > a) return 0;
@@ -55,6 +60,7 @@
         return cur;
     }
 
+
     void initFacs() {
         facs[0] = 1; 
         facInvs[0] = 1;
@@ -63,13 +69,54 @@
             facInvs[i] = inv(facs[i]);
         }
     }
-    int main()  {
-        ios_base::sync_with_stdio(0); cin.tie(0);  
+    int n;
+            
+    vector<int> g[200005]; 
+    int a[200005];
+    string res[200005];
+    map<int,int> m;
+    int duplicates = 0; 
+    void dfs(int curr , int p ) {
 
-        // d osthi w
+        m[a[curr]] ++;
+        if (m[a[curr]] == 2) {
+            duplicates ++;
+        }
+
+        if (duplicates) {
+            res[a] = "Yes";
+        } else {
+            res[a] = "No"; 
+        }
+        for (int c  : adj[curr]) {
+            if (c == p) continue;
+            dfs(c);
+        }
+        m[a[curr]] --; 
+        if (m[a[curr]] == 1) {
+            duplicates --; 
+        }
+    } 
+    int main()  {
+      
+        ios_base::sync_with_stdio(0); cin.tie(0);  
+        cin >> n;
+        for (int i = 1 ; i <= n; i ++) {
+            cin >> a[i];
+        }        
+
+        for (int i = 0 ; i < (n - 1) ; i ++) { 
+            int a, b; cin >> a >> b; 
+            g[a].push_back(b);  
+            g[b].push_back(a);  
+        }
+
+        dfs(1,0); 
+
+        for (int i = 1 ; i <= n ; i ++) {
+            cout << res[i] << endl;              
+        }
         return 0;
     }
 
 
-    // we sthif rsdo wintf rw wr
-    // we
