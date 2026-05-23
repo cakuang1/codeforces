@@ -1,4 +1,4 @@
- 
+    
     #include <bits/stdc++.h>
     
     using namespace std;
@@ -63,8 +63,26 @@
             facInvs[i] = inv(facs[i]);
         }
     }
+    // once espl itns wer
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
-
+         int n; cin >> n; 
+        vector<int> a(n);
+        vector<int> b(n);
+         
+        for (int i = 0 ; i  <n; i ++) {
+            cin >> a[i] >> b[i]; 
+        } 
+        // weContsdsirwo x
+        int m ; cin >> m;
+        vector<string> s(m);
+        for (int i = 0 ; i < m ; i ++  ) {
+            cin >> s[i];
+        }
+        
+        
+        for (int i = 0 ;i  < m ; i ++) {
+            string spine = s[i];                
+        }
         return 0;
     }

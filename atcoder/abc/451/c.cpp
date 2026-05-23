@@ -63,8 +63,27 @@
             facInvs[i] = inv(facs[i]);
         }
     }
+
+    ///w ri sfh iow w 
+    // w
+
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
+        int q ; cin >> q; 
+        int c = 0;
+        priority_queue<int,vector<int> ,greater<int>> pq; 
+        for (int i = 0 ; i < q ; i ++) {
+            int t,h; cin >> t >> h;
+            if (t == 1) {
+                pq.push(h); 
+                
+            } else {
+                while (!pq.empty() && que.top() <= h) {
+                    que.pop();
+                }
+            }
 
+            cout << pq.size() << endl; 
+        }
         return 0;
     }

@@ -65,6 +65,23 @@
     }
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
+        int n ,m ; cin >> n >> m ;
+        vector<int> before(m,0);
+        vector<int> after(m + 1,0);
+        for (int i = 0 ;i < n; i ++ ) {
+            int a,b; cin >> a >> b; 
+            before[a] ++;
+            after[b] ++;
+        }
 
+        for (int i = 1 ; i <= m ; i ++ ) {
+            cout << after[i] - before[i] << endl;
+        }
+
+        
         return 0;
     }
+
+    // weconat spo we sof. wrw
+    // wrhd rshd iwo ish  sifhs iewrw
+    // w wer

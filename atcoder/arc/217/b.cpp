@@ -1,7 +1,16 @@
- 
-    #include <bits/stdc++.h>
-    
-    using namespace std;
+// wew werotsus rw sfwsdistha wer
+
+
+// /we wwhw smasih smsts
+
+// werwthaeri hwp rob wer
+
+// werin al l equqllst sdlstiw kwpermsunation
+// w
+
+// wrw nwwer 
+    //w fsits pobwirtlw wrw
+using namespace std;
 
     using ll = long long;
     const int MOD = 1000000007; 
@@ -21,6 +30,7 @@
         }
     }
 
+         
     ll inv(ll base) {
         return modExp(base, MOD-2);
     }
@@ -63,8 +73,37 @@
             facInvs[i] = inv(facs[i]);
         }
     }
+
+    void solve() {
+        int n ; cin >> n;
+        int k ; cin >> k; 
+        vector<int> arr(k); 
+        for (int i = 0 ;i < k ; i ++) {
+            cin >> arr[i];
+        }
+         
+
+        // wrw s ferobisltssjsowrs wew hsirwer
+
+            
+        }        
+        
+        
+        
+
+        // that emans wer
+        
+        
+        // that means a,l we
+
+        // whats whtes paoblstiy wrof atealst we
+    }
+
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
-
+        int t; cin >> t;
+        while (t --) {
+            solve();
+        }
         return 0;
     }

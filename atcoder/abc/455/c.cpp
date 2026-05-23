@@ -65,6 +65,26 @@
     }
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
+        int n,k; cin >> n >> k;
+        int s = 0;
+        map<int,int> m;
+        for (int i = 0 ; i < n ; i ++ ) {
+            ll a ; cin >> a ;
+            m[a] ++; 
+        } 
+        vector<ll> sums;
+        for (auto &p : m ) {
+            sums.push_back(p.first * p.second);
+        }
 
+        if (sums.size() <= k ) {
+            cout << 0 <<endl;
+            return 0;
+        }
+        sort(sums.begin(),sums.end()); 
+        for (int i = 0 ; i < k ; i ++) {
+            s -= sums[sums.size() - 1 - i]; 
+        }
+        cout << s; 
         return 0;
     }

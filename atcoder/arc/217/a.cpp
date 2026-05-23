@@ -55,6 +55,8 @@
         return cur;
     }
 
+    // w
+    // wtshfisn owrw rsf wr s wr
     void initFacs() {
         facs[0] = 1; 
         facInvs[0] = 1;
@@ -63,8 +65,22 @@
             facInvs[i] = inv(facs[i]);
         }
     }
+
+
+    // wtwh lsowr sdfbiwer
+    // w
+    void solve() {
+        int n; cin >> n;
+        vector<int> arr(n);
+        for (int i = 0; i < n; i ++ ) {
+            cin >> arr[i]; 
+        } 
+        // w
+    }
+
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
-
+        int t; cin >> t;
+                
         return 0;
     }

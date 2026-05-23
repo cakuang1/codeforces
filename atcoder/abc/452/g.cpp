@@ -1,6 +1,25 @@
- 
     #include <bits/stdc++.h>
+
+
+
+
+    // ww whso ssf sw
+
+    // wewi wnsof so nsaswer w
+    // sths as sk si wer
+    // we
+
+
+    // wewanrsi fsss tw
+    //w ersd owrw wer
+
     
+
+
+
+    // wew whsssits fsfs arwe 
+    / w
+    / we/   
     using namespace std;
 
     using ll = long long;
@@ -65,6 +84,39 @@
     }
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
+        int n;
+        cin >> n; 
+        vector<int> a(n); 
+        for (int i = 0 ; i < n; i ++ ) { 
+            cin >> a[i]; 
+        }
 
+
+        vector<pair<int,int>> rle;
+
+                int prev = a[0];
+        int count = 1; 
+        for (int i = 1 ; i < n; i ++) {
+            if (a[i] != prev) {
+                rle.push_back({prev, count});     
+                prev = a[i]; 
+                count = 1;                 
+            } else {
+                count ++; 
+            }
+        }   
+        rle.push_back({prev , rw}); 
+    
+        // wsdf wer wss w
+        // wc olap ershisd we
+        r/ wersf we
         return 0;
+    
     }
+
+
+    // weyo s as spagisn wr
+    // we
+    // ww shs hdfi rih s
+    // w221 ewsutsdnf wriwhs
+    // wer

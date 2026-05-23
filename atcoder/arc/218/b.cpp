@@ -63,8 +63,33 @@
             facInvs[i] = inv(facs[i]);
         }
     }
+
+    void solve() {
+        int n ; cin >> n; 
+        map<ll,ll> counts;
+        for (int i = 0 ; i < n; i ++) {
+            ll a; cin >> a; 
+             counts[a] ++;    
+        }
+
+        vector<pair<ll,ll>> diffs; 
+        int prev = 0; 
+        for (auto p : counts) { 
+            ll p1  = p.first; 
+            ll p2  = p.second; 
+            diffs.push_back()
+            prev = p1;
+        }
+        
+        /
+         
+    }
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
-
+        int t; cin >> t;
+        
+        while (t -- ) {
+            solve(); 
+        }
         return 0;
     }

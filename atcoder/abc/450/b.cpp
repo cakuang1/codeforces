@@ -63,8 +63,36 @@
             facInvs[i] = inv(facs[i]);
         }
     }
+
+    // wesf ws ssif sf wr
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
+        int n ;
+        cin >> n;
+        
+        vector<vector<int>> g(n + 1 ,vector<int> (n + 1 ,-1)); 
+        
 
+        
+        for (int i = 1 ;i <= n; i ++) {
+
+            for (int j = i + 1 ; j <= n ; j ++ ) {
+                cin >> g[i][j];                  
+            }
+        }
+
+
+        for (int i = 1 ; i <= n; i ++ ) {
+             for (int j = i + 1 ; j <= n ; j ++ ) {
+                for (int k  = j + 1 ; k <= n; k ++) {
+                    if (g[i][j] + g[j][k] < g[i][k]) {
+                        cout << "Yes" << endl;
+                        return 0;
+                    }
+                }
+             }
+        }
+
+        cout << "No" << endl;
         return 0;
     }

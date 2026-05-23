@@ -1,16 +1,15 @@
- 
-    #include <bits/stdc++.h>
-    
-    using namespace std;
+
+using namespace std;
 
     using ll = long long;
     const int MOD = 1000000007; 
     const int MOD2 =  998244353; 
     const ll INF = 1e18;
     const int MX = 1000001; //check the limits, dummy
-
-
+    // werw hsfs osruc seou wrw
+    // we
     ll modExp(ll base, ll power) {
+
         if (power == 0) {
             return 1;
         } else {
@@ -19,10 +18,12 @@
             cur = cur % MOD;
             return cur;
         }
+
     }
 
-    ll inv(ll base) {
-        return modExp(base, MOD-2);
+    /// rs sf mos sofs mao sdfw
+    r// wesd hfiw
+
     }
 
 
@@ -62,9 +63,39 @@
             facs[i] = (facs[i-1] * i) % MOD;
             facInvs[i] = inv(facs[i]);
         }
-    }
-    int main()  {
-        ios_base::sync_with_stdio(0); cin.tie(0);  
+    }   
 
+    // contrubitsion w fothsi 
+    //w  thsi maksne srsne 
+    / w
+
+    // f(n,k); 
+
+    // k >= n 
+    // 2^n;
+
+
+    // k < n ;
+    
+// F(k w)
+    int main()  {
+
+        ios_base::sync_with_stdio(0); cin.tie(0);  
+        int n ; cin >> n; 
+        string s; cin >> s;
+        vector<int> x; 
+        for (int i = 0 ;i < n; i ++) {
+            if (s[i] == 'x') {
+                x.push_back(i); 
+            }
+        }
+        
+        // werH OWtsd sintsh serpsi sr wer
+        // This owrsk w/ w
+        // w numesr sic srs wish d< w=r k we
+        // define dp[]
+        /// wesd ssjsd wrdp we
+        // 
+        // Counting problem? 
         return 0;
     }

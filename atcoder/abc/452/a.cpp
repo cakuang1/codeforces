@@ -65,6 +65,12 @@
     }
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
-
+        int m,d ;cin >> m >> d;
+        set<pair<int,int>> s = {{1,7},{3,3} , {5,5} , {7,7} , {9,9}};
+        if (s.count({m,d}) == 0) {
+            cout << "No" << endl; 
+        } else {
+            cout << "Yes" << endl;
+        }
         return 0;
     }

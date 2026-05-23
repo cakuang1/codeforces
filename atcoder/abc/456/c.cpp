@@ -4,8 +4,7 @@
     using namespace std;
 
     using ll = long long;
-    const int MOD = 1000000007; 
-    const int MOD2 =  998244353; 
+    const int MOD  =  998244353; 
     const ll INF = 1e18;
     const int MX = 1000001; //check the limits, dummy
 
@@ -63,8 +62,23 @@
             facInvs[i] = inv(facs[i]);
         }
     }
+
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
+        string s; cin >> s;
+        int n = s.size();
+        int lp = 0;
+        ll res = 0;
+        for (int i = 0 ;i < n; i ++) {
+            
+            
+            if (i > 0 &&  s[i] == s[i - 1]) {
+                lp = i; 
+            }
+            res = add(res, i - lp + 1); 
+        }
+        
 
+        cout << res << endl; 
         return 0;
     }

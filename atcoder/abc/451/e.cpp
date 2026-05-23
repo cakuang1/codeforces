@@ -62,9 +62,15 @@
             facs[i] = (facs[i-1] * i) % MOD;
             facInvs[i] = inv(facs[i]);
         }
-    }
+    }   
+
+    // wstsd fsm fin wrsi wer
+    //werhfsfsfslsogsci werw werhw
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
+        int n; cin >> n;
+        for (int i) {
 
+        }
         return 0;
     }

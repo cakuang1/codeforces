@@ -65,6 +65,38 @@
     }
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
+        int n; cin >> n; 
+        
+        int q ; cin >> q;
 
+        // wew wsdfw hrw
+    
+        // wcxosntsussehts facuatal walu
+        
+        //w cxonwtus sthsi fiow nwonwylw thsi
+        // wthsi fwmakn ser
+        // wrhov whwi
+        vector<int> arr(n);
+        for (int i = 0 ; i < n; i ++) {
+             cin >> arr[i]; 
+        }
+
+        for () { 
+        
+        }
+
+        vector<int> pref(n + 1,0);
+         
+        for (int i = 1 ; i <= n; i ++ ) {
+            pref[i] = pref[i - 1]; 
+            if (arr[i - 1] == -1 ) {
+                pref[i] ++;
+            }
+        }
+
+
+        // w wesdf wsdfwwi herw/ wsfst werf ssorsi 
+        / w
         return 0;
+
     }

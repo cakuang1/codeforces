@@ -1,5 +1,7 @@
- 
-    #include <bits/stdc++.h>
+
+// Thse s duf risonf s sfman wer
+/
+#include <bits/stdc++.h>
     
     using namespace std;
 
@@ -66,5 +68,9 @@
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
 
+
+
+        // wrs sd atka dxcycsler wer
+        
         return 0;
     }

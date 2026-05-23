@@ -1,6 +1,8 @@
- 
+    
     #include <bits/stdc++.h>
     
+ // wemdif scna oers sre
+ // w
     using namespace std;
 
     using ll = long long;
@@ -63,8 +65,37 @@
             facInvs[i] = inv(facs[i]);
         }
     }
+
+    
+
+
+    void solve() {
+
+        int n,m ; cin >> n >> m ; 
+        vector<vector<int>> adj(n + 1);
+        
+        for (int i = 0 ; i < m ; i ++) {
+             int a ,b ; cin >> a >> b;
+             adj[a].push_back(b);
+             adj[b].push_back(a);
+        }
+
+        int w; cin >> w; 
+        vector<string> h(n + 1) ;
+        for (int i = 1;i <= n; i ++) {
+            cin >> h[i]; 
+        }
+
+    
+        // wr
+        
+    }
+    
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
-
+        int t ; cin >> t; 
+        while (t -- ) {
+            solve(); 
+        }
         return 0;
     }

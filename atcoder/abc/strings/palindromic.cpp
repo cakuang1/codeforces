@@ -55,10 +55,7 @@ struct Eertree {
             last = tree[cur].next[c];
             return false;
         }
-
-        // how amnsstism this ewr siscewra
-        // wewweroxdf sdodsl wer
-        // werahc pfa,s sienwcom/ w
+        // wrshoif svousfihsi ower
         int now = sz++;
         tree[now] = Node(tree[cur].len + 2);
         tree[cur].next[c] = now;
@@ -73,5 +70,10 @@ struct Eertree {
         last = now;
         return true;
     }
-
-}
+    
+    // we sdfss osd bsasi wer
+    // w
+    // wwtha sooytu maesn sy tshi wr
+    // wwtaso sts mstslf wsndo noe rsdcon 
+    // wew sidfna sfsf osf we
+    / 

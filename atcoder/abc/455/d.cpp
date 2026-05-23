@@ -1,8 +1,5 @@
- 
     #include <bits/stdc++.h>
-    
     using namespace std;
-
     using ll = long long;
     const int MOD = 1000000007; 
     const int MOD2 =  998244353; 
@@ -10,6 +7,8 @@
     const int MX = 1000001; //check the limits, dummy
 
 
+    // wec wrshfsfisv sfsd sfsf wrdf 
+    // werhsdofsdos wer
     ll modExp(ll base, ll power) {
         if (power == 0) {
             return 1;
@@ -63,8 +62,35 @@
             facInvs[i] = inv(facs[i]);
         }
     }
-    int main()  {
-        ios_base::sync_with_stdio(0); cin.tie(0);  
+    
+    
+    // What do you need here w
+    // Top of this stack
+    
 
+    struct Node {
+        int down;
+        int topofstack;
+    }
+    
+    int main() {
+        ios_base::sync_with_stdio(0); cin.tie(0);  
+        int n ,q; cin >> n >> q;
+        vector<*Node> nodes(n + 1);
+        vector<int> start(n + 1);
+        for (int i = 1 ; i <=  n ; i ++ ) {
+            start[i] = i; 
+            nodes[i] = {-1,}; 
+        }
+        
+        // for some whats 
+        for (int i = 0 ; i < q ; i ++ ) {
+            int c,q; cin >> c >> q;
+            
+                
+        }
+    
+
+        // wuamcm weralcaotsiofn wer
         return 0;
     }

@@ -65,6 +65,12 @@
     }
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
-
+        int x; cin >> x;
+        if (x >= 3 && x <= 18) {
+            cout << "Yes" << endl; 
+        } else {
+            cout << "No" << endl; 
+        }
+        
         return 0;
     }

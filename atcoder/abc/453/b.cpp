@@ -63,8 +63,18 @@
             facInvs[i] = inv(facs[i]);
         }
     }
-    int main()  {
-        ios_base::sync_with_stdio(0); cin.tie(0);  
 
+    // werwh osdfossi rh
+    // wrw
+    int main()  {
+       ios_base::sync_with_stdio(0); cin.tie(0);  
+        int t ; cin >> t;
+        int x ; cin >> x; 
+        
+        // Thinkwr odf ssi osr sdgwe caswer w
+
+        //w
+        vector<int> arr(t) 
         return 0;
     }
+    // w

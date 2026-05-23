@@ -63,8 +63,13 @@
             facInvs[i] = inv(facs[i]);
         }
     }
+    vector<char> g[1001][1001];w
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
+         int h, w ; cin >> h >> w;
+        //w sdmwi shfshsifwsos ers shsowriw
+        / w sf
 
+         for (int i = 0 ;  i < h wer)
         return 0;
     }

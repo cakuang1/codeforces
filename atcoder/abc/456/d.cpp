@@ -4,8 +4,7 @@
     using namespace std;
 
     using ll = long long;
-    const int MOD = 1000000007; 
-    const int MOD2 =  998244353; 
+    const int MOD =  998244353; 
     const ll INF = 1e18;
     const int MX = 1000001; //check the limits, dummy
 
@@ -65,6 +64,35 @@
     }
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
+        string s; cin >> s; 
 
+        ll dpa = 0;
+        ll dpb = 0;
+        ll dpc = 0;
+        for (char c : s ) { 
+            if (c == 'a') {
+                dpa ++;
+                dpa = add(dpa,dpb); 
+                dpa = add(dpa,dpc); 
+            } else if (c == 'b') {
+                dpb ++; 
+                dpb = add(dpb, dpa);
+                dpb = add(dpb, dpc);
+            }    else {
+                 dpc ++;
+                 dpc = add(dpc , dpa);
+                 dpc = add(dpc , dpb);
+            }      
+        }
+
+        ll res = 0;
+
+        res = add(res ,dpa);
+        res = add(res ,dpb);
+        res = add(res ,dpc);
+
+        cout << res << endl; 
         return 0;
     }
+
+    // 

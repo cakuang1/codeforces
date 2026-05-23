@@ -63,8 +63,17 @@
             facInvs[i] = inv(facs[i]);
         }
     }
+
+
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
+        ll  n ; cin >> n;
+        ll limit = 1e9 + 10;
+        priority_queue<ll> pq;
+        
+        
+        // pqerw wha sihar
+        / w
 
         return 0;
     }

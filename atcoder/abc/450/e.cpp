@@ -63,8 +63,23 @@
             facInvs[i] = inv(facs[i]);
         }
     }
+
+    // qw sfsfaf s sofs wrpsis rmwopsut
+    // wsf wr sf wer
+    // wrls gs.  s. sif
+    struct  { 
+        
+    }
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
+    
+        string x,y ;
+        cin >> x >> y ;
+        
+        
+        
 
+        ll bound =  
         return 0;
+
     }

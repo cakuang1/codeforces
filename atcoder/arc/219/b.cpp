@@ -1,4 +1,18 @@
- 
+
+// werw hsofso hwir
+
+
+
+    // nim pile erof size we
+
+
+    // weq aui svl asfss nim wr
+    // werwwfshf solls 
+
+    //w gidf awrsm ans wr
+    // we
+    // reduf wi s sfs spagrafgsun wtw
+    // ww whfos fosfsi wei
     #include <bits/stdc++.h>
     
     using namespace std;
@@ -55,6 +69,13 @@
         return cur;
     }
 
+    
+    // NXN grid rw
+    //  all wervmoser
+    // wwingins ssta e
+    // wew lsogni wstaet
+    // wer
+    // was d msovs slf ss
     void initFacs() {
         facs[0] = 1; 
         facInvs[0] = 1;
@@ -63,8 +84,28 @@
             facInvs[i] = inv(facs[i]);
         }
     }
+
+
+    void solve() {
+        int n; cin >> n; 
+        vector<int> arr(n);
+        for (int i = 0 ; i < n ; i ++ ) {
+            cin >> arr[i];
+        } 
+        
+        // wr sposdbls imrai sw
+        // we
+
+        // weervoss sc er
+    }
+
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
-
+        int t; cin >> t;
+        while (t --) {
+            solve();
+        }
         return 0;
     }
+
+    // wfsidn sthes fists ss oss wr

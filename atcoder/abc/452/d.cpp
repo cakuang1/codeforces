@@ -65,6 +65,17 @@
     }
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
+        string s;
+        string t;
+        cin >> s >> t ;
+        
+        // subtrsings tahtar ewr wr
+        
 
+        // w ssf roww rrw'
+        / we
         return 0;
+
+
+
     }

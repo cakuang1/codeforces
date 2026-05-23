@@ -45,6 +45,11 @@
     ll* facs = new ll[MX];
     ll* facInvs = new ll[MX];
 
+
+
+
+    // bin ar ywe serahse
+    /w e
     ll choose(ll a, ll b) {
         if (b > a) return 0;
         if (a < 0) return 0;
@@ -68,3 +73,5 @@
 
         return 0;
     }
+
+    // wedshfo srw

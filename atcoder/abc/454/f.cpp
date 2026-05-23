@@ -1,4 +1,4 @@
- 
+
     #include <bits/stdc++.h>
     
     using namespace std;
@@ -42,7 +42,19 @@
         return (A-B+MOD)%MOD;
     }
 
+    // black and white
+    
+    // Twhw sresu. sdf sofmoves sposbilw erwand ifs owerotu psu son wer
+    
+
+    // x x x x x 
+    // x x x x x 
+    // x x x x x 
+
     ll* facs = new ll[MX];
+
+
+
     ll* facInvs = new ll[MX];
 
     ll choose(ll a, ll b) {
@@ -63,8 +75,36 @@
             facInvs[i] = inv(facs[i]);
         }
     }
-    int main()  {
-        ios_base::sync_with_stdio(0); cin.tie(0);  
 
+
+    //w  soents start wer
+    // 
+    int  main()  {
+
+
+
+        ios_base::sync_with_stdio(0); cin.tie(0);  
+        int t; cin >> t;
+        while (t --) {
+            int n,m ; cin >> n >> m ;
+            vector<ll > arr(n);
+            for (int i = 0 ; i < n; i ++ ) {
+                cin >> arr[i]; 
+            }
+            int lp = 0;
+            int rp = n - 1;
+            while (lp < rp && arr[lp] == arr[rp ] ){
+                l ++;
+                rp --;
+            }
+    
+            //wr dfssfs nir
+            / w
+            if () { 
+
+                
+            }
+            
+        }
         return 0;
     }

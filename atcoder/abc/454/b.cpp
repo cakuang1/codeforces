@@ -65,6 +65,24 @@
     }
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
+        int n , m ; cin >> n >> m;
+        set<int> s;
+        for (int i = 0 ; i < n; i ++) {
+            int c;
+            cin >> c; 
+            s.insert(c);
+        }
 
+        if (s.size() == n) {
+            cout << "Yes" << endl;
+        } else {
+            cout << "No" << endl;
+        }
+
+        if (s.size() == m) {
+            cout << "Yes" << endl; 
+        } else {
+            cout << "No" << endl;
+        }
         return 0;
     }

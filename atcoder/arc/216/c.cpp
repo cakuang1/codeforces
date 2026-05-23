@@ -1,6 +1,4 @@
- 
-    #include <bits/stdc++.h>
-    
+    #include <bits/stdc++.h>    
     using namespace std;
 
     using ll = long long;
@@ -63,8 +61,16 @@
             facInvs[i] = inv(facs[i]);
         }
     }
-    int main()  {
-        ios_base::sync_with_stdio(0); cin.tie(0);  
 
+    // wesu smdi potsin sinst
+    
+    // wethw alro isr
+    // /w
+    // wtsix aris
+    / w
+    ios_base::sync_with_stdio(0); cin.tie(0);  
+        int n; cin >> n;
+    
         return 0;
+
     }

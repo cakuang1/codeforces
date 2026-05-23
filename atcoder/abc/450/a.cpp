@@ -65,6 +65,13 @@
     }
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
+        int n ;  cin >> n; 
 
+        for (int i =  n ; i >= 1 ; i --) {
+            cout << i << (i == 1 ? "" : ","); 
+        }
         return 0;
     }
+
+    // wdsthsifwe
+    // werw usin sfswi fsf jso sht

@@ -1,17 +1,18 @@
- 
-    #include <bits/stdc++.h>
-    
-    using namespace std;
-
-    using ll = long long;
+z    using ll = long long;
     const int MOD = 1000000007; 
     const int MOD2 =  998244353; 
     const ll INF = 1e18;
     const int MX = 1000001; //check the limits, dummy
 
+    // we sffssfa fesg w
+    // weterre esgw
+    // wtssfsn 
 
-    ll modExp(ll base, ll power) {
-        if (power == 0) {
+    // werghisis sbi wr
+    // wthsi ssd sm
+    // weratak svaj esncs etxdf s
+
+    if (power == 0) {
             return 1;
         } else {
             ll cur = modExp(base, power / 2); cur = cur * cur; cur = cur % MOD;
@@ -21,8 +22,11 @@
         }
     }
 
-    ll inv(ll base) {
-        return modExp(base, MOD-2);
+    //  wswsifhssfs s w/w erps iwemr
+    // wes 
+
+    // w
+    return modExp(base, MOD-2);
     }
 
 
@@ -63,8 +67,30 @@
             facInvs[i] = inv(facs[i]);
         }
     }
-    int main()  {
-        ios_base::sync_with_stdio(0); cin.tie(0);  
 
-        return 0;
+
+
+
+    // wew sdfs sofsssnib wr
+    // dp[i][r] = rw 
+
+    int    main()  {
+
+
+
+
+
+
+        ios_base::sync_with_stdio(0); cin.tie(0);  
+        ll n,m; cin >> n >> m;
+                
+        int limit = 0;
+        
+
+        
+
+
+
+
+    
     }

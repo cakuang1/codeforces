@@ -1,4 +1,5 @@
- 
+    
+
     #include <bits/stdc++.h>
     
     using namespace std;
@@ -66,5 +67,26 @@
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
 
+
+        // descreas sf are w
+        
+        // wfree rests we
+        
+        // wewi snrsthsi s sf wthi wrw 
+
+        // ww sdfss s sfs hsif wrs er
+        / /
+        int n,q ;cin >> n >> q;
+        
+        
+        vector>
         return 0;
     }
+    
+    ///wetw sdts s sersd seirss
+    
+    // so wtshis s w sd sbert weeas svi sht so wer
+    
+    // block and wtak teh amsx wimal sfdresc sing// w
+    // rw sousfshi wr
+    / w

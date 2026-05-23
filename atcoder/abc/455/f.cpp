@@ -1,5 +1,5 @@
- 
-    #include <bits/stdc++.h>
+
+#include <bits/stdc++.h>
     
     using namespace std;
 
@@ -9,7 +9,54 @@
     const ll INF = 1e18;
     const int MX = 1000001; //check the limits, dummy
 
+    // wmaisngs su mwer
+    /// and squaresd sum w
+    //t shis fmas fwnr
+    // ww buwtsh s
+    // detemrine life of thsi w
+    // i. Why is it unordered pairs
 
+    // saap sirs
+    //w ralzy wersugesmsnt tree we
+    
+    // sum is maintained
+
+    // how do you get the squared sum 
+
+
+    //  sfusf msfosf surasf
+
+    
+    
+    // how sdsosmainsi tsdfih erw
+    // alz ysersgsetmstns grrswe r
+    
+
+    // sum of squares
+    // (a1 + x)^2 + (a2 + x)^2 + ... (am + x ) ^2;
+    
+
+    // a1^2 + 2(a1 * x) + x^2
+
+    / /
+    // sum fosuares wer
+    // thsi smraks snser
+    // count of these terms
+    
+    struct Node {
+        ll w er
+    }    
+    // value to add w
+    // count * (x ^ 2) +  prevsumof squares +  (2 * sum) + (count * 2x); 
+
+    
+    // wtakthes parid wise
+    // aminatis fssegmsents tre
+    // (a,b,c ) (d,e,f)
+
+    //w s futs sfswhsf w
+    //fiw ssprsof nx and wer
+    // we wofsdfsoslrsr
     ll modExp(ll base, ll power) {
         if (power == 0) {
             return 1;
@@ -54,7 +101,6 @@
         cur = mul(cur, facInvs[a-b]);
         return cur;
     }
-
     void initFacs() {
         facs[0] = 1; 
         facInvs[0] = 1;
@@ -63,8 +109,25 @@
             facInvs[i] = inv(facs[i]);
         }
     }
+
+    // we Hos sodfshi rm sfsl sims 
+    // WErh fsmth sl iems wa f wirhg web, 
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
+        int n; cin >> n; 
+        int q ; cin >> q;
+        vector<ll> arr(n );
+        for (int i = 0 ; i < n; i ++) {
+            cin >> arr[i]; 
+        }
+        
+        // dtsm issdfu werwm
 
-        return 0;
+        
+    
+        while (q --) {
+        
+        }
+        
+       return 0;
     }

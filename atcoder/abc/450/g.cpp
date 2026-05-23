@@ -1,8 +1,5 @@
- 
     #include <bits/stdc++.h>
-    
     using namespace std;
-
     using ll = long long;
     const int MOD = 1000000007; 
     const int MOD2 =  998244353; 
@@ -21,6 +18,7 @@
         }
     }
 
+    // we wfwhos
     ll inv(ll base) {
         return modExp(base, MOD-2);
     }
@@ -63,8 +61,36 @@
             facInvs[i] = inv(facs[i]);
         }
     }
+
+
+
+
+    // wtw ocaser wrw sishwif sars hwirw
+    //w rsdfhsowoerh
+    struct Basis { 
+        static const LOG = 31; 
+        
+        ll b[LOG]; 
+        
+        Basis() { 
+            memeset(b, 0,sizeof(b));
+        }
+
+        // wsvslisn shfs owerw
+        void insert(ll x) {
+                for (int i = LOG - 1 ; i >= 0 ; i ++ ) {
+                if () {
+                     
+                }
+            }            
+        }
+    }
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
 
         return 0;
     }
+
+    //w rsutbscists fhsifssdfwrmi nx eorso w
+    // weral ksfs
+    // wew sdfwhosdfo wwr   

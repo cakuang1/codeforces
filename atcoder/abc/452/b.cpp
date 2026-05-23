@@ -65,6 +65,14 @@
     }
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
+        int h,w; cin >> h >> w;
 
+        for (int h = 0 ; h <  n; h ++ ) {
+            if (h == 0 || h == (n - 1)) {
+                cout << string('#',w) << endl; 
+            } else {
+                cout << '#' + string('.' ,w - 2)  + '#' << endl;
+            }
+        }
         return 0;
     }

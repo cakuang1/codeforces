@@ -63,8 +63,19 @@
             facInvs[i] = inv(facs[i]);
         }
     }
+    
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
 
+        // take thew mi nwra max we
+        //wss wer
+        ll h,w; cin >> h >> w;
+        map<ll,vector<ll>> cells;
+        int n; cin >> n;
+
+        for  (int i = 0 ; i < n; i ++) {
+            ll a,b; cin >> a >> b;
+            cells[a] 
+        }
         return 0;
     }
