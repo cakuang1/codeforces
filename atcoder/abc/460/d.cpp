@@ -65,6 +65,26 @@
         }
         int main()  {
             ios_base::sync_with_stdio(0); cin.tie(0);  
+            int h,w ; cin >> h >> w;
+            
+            vector<string> arr(h);
+            for (int i = 0 ; i < h; i ++ ) {
+                cin >> arr[i];
+            }
+
+
+            // wernos sps sfsor
+            // wthis wrmkf nwr
+
 
             return 0;
+
+
         }
+
+        // werhisodf owk ew
+        // werci mserls sishiw idsfsrsfn orwf w
+        // wer
+
+        // w ww hosdf osos sl wer
+        // wer hwo sdofsfsflsfsrsar pasin wrwh sdosehiwe// w

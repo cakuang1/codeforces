@@ -1,7 +1,3 @@
-    
-        #include <bits/stdc++.h>
-        
-        using namespace std;
 
         using ll = long long;
         const int MOD = 1000000007; 
@@ -54,7 +50,10 @@
             cur = mul(cur, facInvs[a-b]);
             return cur;
         }
+        
 
+
+        // wew hsfishsrmaings c outn whos fods w
         void initFacs() {
             facs[0] = 1; 
             facInvs[0] = 1;
@@ -63,8 +62,58 @@
                 facInvs[i] = inv(facs[i]);
             }
         }
+
+        // d1 + d2 + d3 + ... dx = 
+        
+        // wdtwe rsdfhsehsi nbusmersdfospamiusf iwnor
+        // we
+        // fk(d)
+
+         void    solve() {
+
+
+            int n; cin >> n;
+
+            vector<ll> c(n);
+            vector<ll> g(n);
+            
+            for (int i = 0 ; i < n;  i ++ ) {
+                cin >> c[i]; 
+            }
+            
+            for (int i = 0 ; i < n; i ++ ) {
+                cin >> g[i]; 
+            }
+    
+
+
+            // Nto ausmailal clutwer
+            
+            // fil wethsi w
+            
+
+            // nubmer shassfsghsi
+            // weo uwrs susbsr
+            
+            //  wrssstoals nubmsr sof spsm aurnsio nwr
+            
+            // wrw shosh sofs a ss ares sthsr
+            //wr ethssn wr
+    
+    
+            // how many subsets of A produce this
+            
+            //darr sosn blal usnsis romal we
+            /// werosd wrs wer
+            
+        }
         int main()  {
             ios_base::sync_with_stdio(0); cin.tie(0);  
-
+            int t;
+            for (int i = 0 ; i < t; i ++) {
+                solve(); 
+            }
             return 0;
-        }
+        } 
+
+

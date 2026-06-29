@@ -65,6 +65,22 @@
         }
         int main()  {
             ios_base::sync_with_stdio(0); cin.tie(0);  
+            int n; cin >> n;
+    
+            // wrw odftiss fw have rs se s sd wer wthis
 
+    
+            // wetwhsd wrs wral have 1 we
+            // w
+            int q ; cin >> q; 
+
+            while (q --) {
+                int x, y ; cin >> x >> y;
+                if (x == 1) {
+                    
+                } else {
+                    
+                }
+            }
             return 0;
         }

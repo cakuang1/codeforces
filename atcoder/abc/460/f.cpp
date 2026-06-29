@@ -1,14 +1,19 @@
-    
-        #include <bits/stdc++.h>
-        
-        using namespace std;
 
-        using ll = long long;
+using namespace std;
+     
+//  we wdss ssof spossin ists N wes wnw 
+
+// twt s sw s osrign 
+
+
+
+
+// wrsdhfo
+using ll = long long;
         const int MOD = 1000000007; 
         const int MOD2 =  998244353; 
         const ll INF = 1e18;
         const int MX = 1000001; //check the limits, dummy
-
 
         ll modExp(ll base, ll power) {
             if (power == 0) {
@@ -38,7 +43,9 @@
             return mul(A, inv(B));
         }
 
+        //wrsofxfossfsdrwiw wr
         ll sub(ll A, ll B) {
+
             return (A-B+MOD)%MOD;
         }
 
@@ -63,8 +70,21 @@
                 facInvs[i] = inv(facs[i]);
             }
         }
-        int main()  {
-            ios_base::sync_with_stdio(0); cin.tie(0);  
 
+
+        // think locally w 
+        void solve(){
+
+            int n; cin >> n; 
+            int m ; cin >> m;
+
+            
+        }
+        int main()  {
+           ios_base::sync_with_stdio(0); cin.tie(0);  
+            int t; cin >> t;
+            while (t --) {
+                solve(); 
+            }
             return 0;
         }

@@ -1,4 +1,3 @@
-    
         #include <bits/stdc++.h>
         
         using namespace std;
@@ -65,6 +64,48 @@
         }
         int main()  {
             ios_base::sync_with_stdio(0); cin.tie(0);  
+            int h,w ; cin >> h >> w;
+            int q; cin >> q;
+            
+            vector<int> r(q);
+            vector<int> c(q);
+            vector<char> x(q);
+            for (int i = 0 ; i < q ; i ++) {
+                cin >> r[i] >> c[i];
+                cin >> x[i];
+            }
+
+            vector<vector<char>> res(h + 1 , vector<char> (w + 1, 'A')); 
+            vector<vector<bool>> seen(h + 1 , vector<char> (w + 1, false)); 
+            
+            for (int  i = q - 1 ; i >= 0 ; i --) { 
+                int x = r[i];
+                int y = r[i];
+                
+                
+                
+                
+                for (int row = x ; row >= 1 ; row -- ) {
+                    if (seen[row][y]) break; 
+                    for (int col = y ; col >= 1 ; col --) {
+                        if (seen[row][col]) break; 
+                        seen[row][col] = true; 
+                        res[row][col] = x[i];
+                    }                    
+                }
+            }        
+            
+// 
+
+            for (int i = 1 ; i <= h ; i ++ ) {
+                 for (int j = 1 ; j <= w ; j ++ ) {
+                    cout << res[i][j];                 
+                 }
+                 cout << endl; 
+            }
+
 
             return 0;
+
+
         }

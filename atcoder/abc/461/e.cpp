@@ -1,8 +1,9 @@
-    
-        #include <bits/stdc++.h>
-        
+
+                #include <bits/stdc++.h>
         using namespace std;
 
+        // rhwo sofs wer sshfiws wr
+        // 
         using ll = long long;
         const int MOD = 1000000007; 
         const int MOD2 =  998244353; 
@@ -65,6 +66,19 @@
         }
         int main()  {
             ios_base::sync_with_stdio(0); cin.tie(0);  
+            int n, q; cin >> n >> q; 
+            int ans = 0;
+            cout << ans << endl;
+
+
+            
+            // wer=wownt weo w rown w
+            //w rw jwo
+            // rowtime[r] > coltime[] 
+            
+
+            // ()             
+
 
             return 0;
         }

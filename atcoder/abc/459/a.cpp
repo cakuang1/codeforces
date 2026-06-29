@@ -65,6 +65,20 @@
         }
         int main()  {
             ios_base::sync_with_stdio(0); cin.tie(0);  
+            int x ; cin >> x;
+    
+            string h = "HelloWorld"; 
 
+
+            x --;
+
+            // wer aresss iwrw
+            string f = h.substr(0,x); 
+            string s  = h.substr(x + 1);
+            
+            cout << f + s; 
+
+
+            cout << res << endl; 
             return 0;
-        }
+        } 

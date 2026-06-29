@@ -65,6 +65,35 @@
         }
         int main()  {
             ios_base::sync_with_stdio(0); cin.tie(0);  
+            int n; cin >> n; 
+            int m ; cin >> m;
+             
+            vector<int> a(n);
+            vector<int> d (n);
+            vector<int> b(n);
+            
+            vector<vector<int>> changes(m + 1);  
+            vector<int> counts(n + 1, 0);            
+            for (int i = 0 ; i < n; i ++) {
+                cin >> a[i] >> d[i] >> b[i]; 
+                changes[d[i]].push_back(i);
+                counts[a[i]] ++;
+                
+            }
+            
+            int res = 0; 
+            for (int i = 1 ; i <= m ; i ++  ){
+                     
+                for (int c : changes[i - 1]) { 
+                    if (a[c] != b[c]) {
+                        
+                    }
+                }
+                cout << res << endl; 
+            }
 
+            // deemri wrsdif nsic aso uwrnwr
+            
             return 0;
-        }
+
+        } 

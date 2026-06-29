@@ -1,7 +1,15 @@
-    
-        #include <bits/stdc++.h>
-        
-        using namespace std;
+
+
+
+// wrw nows arss sf s sys scaryt
+// werho dsowh
+
+
+
+
+
+//  wernow sdfhif ehiow wer
+using namespace std;
 
         using ll = long long;
         const int MOD = 1000000007; 
@@ -55,6 +63,16 @@
             return cur;
         }
 
+
+
+
+        // wewerwhow
+        // w rmi nsgss sfsuf erups p sdgsi ad wro dsigsit
+
+
+        // ww fsdfsso srwih
+        // wersdfwehis ewr
+
         void initFacs() {
             facs[0] = 1; 
             facInvs[0] = 1;
@@ -63,8 +81,17 @@
                 facInvs[i] = inv(facs[i]);
             }
         }
+        // werltiaerlsdiww sknworwho d wer wer
+        void solve() {
+            ll n; cin >> n;
+            
+            string  s;
+            cin >> s;
+
+            // 
+        }
         int main()  {
             ios_base::sync_with_stdio(0); cin.tie(0);  
-
+             int t; cin >> t;
             return 0;
-        }
+        } 

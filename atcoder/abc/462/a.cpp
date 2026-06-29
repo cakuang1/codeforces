@@ -65,6 +65,16 @@
         }
         int main()  {
             ios_base::sync_with_stdio(0); cin.tie(0);  
+            string s; cin >> s;
 
+            string res;
+            
+            int n = s.size(); 
+            for (int i = 0 ; i < n; i ++ ) {
+                if (s[i] - 'a' >= 0 && s[i] - 'a' <= 25) {
+                    res += s[i];
+                }
+            }
+            cout << res << endl; 
             return 0;
         }

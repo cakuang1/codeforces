@@ -65,6 +65,41 @@
         }
         int main()  {
             ios_base::sync_with_stdio(0); cin.tie(0);  
+            int h,w; cin >> h >> w ;
+            
+            int x,y; 
+            vector<string> a(h);
 
-            return 0;
+            for (int i =0 ; i < h; i ++) {
+                cin >> a[i]; 
+            }
+    
+            
+            int l = MAX_INT ;
+            int t = MAX_INT ;
+            int r = MIN_INT ;
+            int b = MIN_INT ;
+            // find extremes 
+            for (int i = 0 ;  i < h ; i++ ) { 
+                for (int  j = 0 ; j < w ; j ++) {
+                    if (a[i][j] == '#' ) {
+                        l = min(l,j);
+                        b = min(); 
+                        t = max(); 
+                        r = max(); 
+                    }
+                }
+            }
+
+
+            int len = r - l + 1;
+            for (int i =  t ; t <= b ; t ++) {
+                string res = a[i].substr(l, len);
+                cout << res << endl; 
         }
+
+        
+        // Deshti wrwr wr
+            
+        return 0;
+        } 

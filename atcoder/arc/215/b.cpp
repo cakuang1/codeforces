@@ -1,4 +1,4 @@
-    
+ 
     #include <bits/stdc++.h>
     
     using namespace std;
@@ -7,7 +7,7 @@
     const int MOD = 1000000007; 
     const int MOD2 =  998244353; 
     const ll INF = 1e18;
-    const int MX = 100; //check the limits, dummy
+    const int MX = 1000001; //check the limits, dummy
 
 
     ll modExp(ll base, ll power) {
@@ -63,35 +63,38 @@
             facInvs[i] = inv(facs[i]);
         }
     }
-    int main()  {
-        ios_base::sync_with_stdio(0); cin.tie(0);  
 
+    void solve() {
+        int n;  cin >> n;
+        
 
-        int t;
-        cin >> t;
+        vector<int> neck(2 * n);
 
+        for (int i = 0 ; i< 2 * n ; i ++ ) {
+            cin >> neck[i]; 
+        }
+        
+        // wtwe hosdf ossuf seov werw
+         
+        vector<bool> seen(n + 1,false);
 
-        while (t --) {
-            int n ; cin >> n; 
-            ll c; cin >> c;
-
-            
-            vector<ll> a(n + 1);
-            for (int  i = 1 ; i <= n; i ++ ) {
-                 cin >> a[i];
-            }
-            
-            sort(a.begin() + 1 , a.end()); 
-            vector<ll> ge(n + 2 , 0);
-            ge[0] = 1;
-            for (int k = 1 ; k <= n ; k ++ ) {
-                vector<ll> bucket(k); 
-                ll prev = c;
-                
-            }
+        for (int i = 0 ; i < 2 * n ; i ++ ) {
             
         }
+        // ap[end wt=o sen wer]
 
+        // wetouw psuts dsvsidfsorwers// 
+        
+        // first time? 
+        // add 
+        
+        // demeir teh fiesrs aonsfwetw wieon
+        // wedsthsi maknsrw
+        //w csothsuvs svs eal gower
+        / ;werw voerw
+    }
+    int main()  {
+        ios_base::sync_with_stdio(0); cin.tie(0);  
+        int t; cin >> t;
         return 0;
-
     }

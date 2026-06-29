@@ -55,6 +55,7 @@
             return cur;
         }
 
+
         void initFacs() {
             facs[0] = 1; 
             facInvs[0] = 1;
@@ -63,8 +64,33 @@
                 facInvs[i] = inv(facs[i]);
             }
         }
+
+
+        // rwjsdof sdosi r
+        //w rw sdfhosssdfsfsf ewrhsidfweiorw
+        // erdhfosdovhfi hwer
+        void solve() {
+            string s;cin >> s; 
+            int n = s.size();
+            // cases dp[i][j] = min(dp)
+            
+        }
         int main()  {
             ios_base::sync_with_stdio(0); cin.tie(0);  
-
+            int t; cin >> t;
+            
+            while (t --){
+                solve();
+            }
             return 0;
         }
+
+        
+        // use dp here 
+
+        // mi nrw usnsusmrw
+        // lmtied nubmer of abs c we
+        
+        // wewif you werarlrad ahs wessert
+    
+        // detmeir st abc ww

@@ -1,7 +1,24 @@
-    
-        #include <bits/stdc++.h>
-        
-        using namespace std;
+// f[i][x] = min(f[i][x], g[i][x] +  |x - a[i]|); 
+
+// wesfhistw hsif w
+// wda srosm sco nsts wner
+// wsd ss wnr
+
+// erw ewthd fssmeisd ssd otu sidnaerst hsi 
+
+// werhosdrsi wr
+//r wssower
+using namespace std;
+
+
+
+
+
+
+
+
+ 
+
 
         using ll = long long;
         const int MOD = 1000000007; 
@@ -65,6 +82,36 @@
         }
         int main()  {
             ios_base::sync_with_stdio(0); cin.tie(0);  
+            int n; cin >> n;
+             vector<int> arr(n);
+           for (int i = 0 ; i < n; i ++ ) {
+                cin >> arr[i]; 
+            }
+            priority_queue<int> pq;
+            
+            // wesfisn ewthe min wer
+            //w wrhes how sdo sos hfiwer
+            
+            int ans = 0; 
+            for (int i = 0 ; i < n; i ++) {
+                int s = arr[i] - 1;
+                pq.insert(s);
+                pq.insert(s);
+                int top = pq.top();
+                pq.pop();
+                ans += top - s;
+            }  
 
+            // weconaa tsdo wn sdf wupss oerupw// 
+            // diffetewmisdifescsne wr
+
+            // how dsf owr mainsei nwrw wsdtshi sdfwrhsi wrhsdf we
+            // wif wew
+            
+            // determi the lsit o ditffencse we
+            // when whcl this help wer
+
+            // how dsoehsi ssgwet afcsc wwe
             return 0;
-        }
+
+        } 

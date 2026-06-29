@@ -1,6 +1,10 @@
-    
-        #include <bits/stdc++.h>
-        
+
+
+
+
+// wewrwf wrsf sfsfspormw w fnowr
+// wrhsdof worwhoie
+#include <bits/stdc++.h>
         using namespace std;
 
         using ll = long long;
@@ -63,8 +67,24 @@
                 facInvs[i] = inv(facs[i]);
             }
         }
-        int main()  {
-            ios_base::sync_with_stdio(0); cin.tie(0);  
 
+
+
+        // wers sh srsusbs 
+        //  wer
+        // erhwo amtn usbtes
+        // we
+        // wes sts fss sfissifnstsg inwer
+        // wrsserms sfdwtow usnes s dfs sriow srserall w stson wr
+        // drwhrm arksn wer
+        // w
+        // wermaks sfsu sr
+        //w rhsofsofis wr
+        ios_base::sync_with_stdio(0); cin.tie(0);  
+
+            int n;cin >> n;
+            for () { 
+            
+            }
             return 0;
-        }
+        } 

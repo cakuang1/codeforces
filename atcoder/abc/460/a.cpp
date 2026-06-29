@@ -65,6 +65,17 @@
         }
         int main()  {
             ios_base::sync_with_stdio(0); cin.tie(0);  
+            int n,m ; cin >> n >> m ;
+    
+            
+            int count = 0; 
+            while (m > 0) {
+                m = n % m;                 
+                count ++; 
+            }
 
+
+
+            cout << count << endl; 
             return 0;
         }

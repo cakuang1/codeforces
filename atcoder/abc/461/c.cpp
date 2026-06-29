@@ -63,8 +63,52 @@
                 facInvs[i] = inv(facs[i]);
             }
         }
-        int main()  {
-            ios_base::sync_with_stdio(0); cin.tie(0);  
 
-            return 0;
+        
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+
+    int n, k, m;
+    cin >> n >> k >> m;
+
+    vector<pair<ll,int>> arr(n); // {value, color}
+    for (int i = 0; i < n; i++) {
+        int c;
+        ll v;
+        cin >> c >> v;
+        arr[i] = {v, c};
+    }
+
+    sort(arr.rbegin(), arr.rend());
+
+    vector<int> seen(n + 1, 0);
+    vector<int> used(n, 0);
+
+    ll res = 0;
+    int colors = 0;
+    int picked = 0;
+
+    // First loop: force M distinct colors
+    for (int i = 0; i < n && colors < m; i++) {
+        auto [v, c] = arr[i];
+
+        if (!seen[c]) {
+            seen[c] = 1;
+            used[i] = 1;
+            res += v;
+            colors++;
+            picked++;
         }
+    }
+
+    // Second loop: fill remaining K picks by highest value
+    for (int i = 0; i < n && picked < k; i++) {
+        if (used[i]) continue;
+
+        res += arr[i].first;
+        picked++;
+    }
+
+    cout << res << '\n';
+}

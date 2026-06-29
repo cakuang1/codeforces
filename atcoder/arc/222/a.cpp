@@ -63,8 +63,22 @@
                 facInvs[i] = inv(facs[i]);
             }
         }
+
+        void solve() { 
+            int n; cin >> n;
+            int m ; cin >> m;
+            int res = 0; 
+            for (int i = 0 ;i < m ; i ++) { 
+                int a , b ; cin >> a >> b;
+                res = max(res, b - a + 1);
+            }
+            cout << res << endl; 
+        }
         int main()  {
             ios_base::sync_with_stdio(0); cin.tie(0);  
-
+            int t ;cin >> t;
+            while (t -- ) {
+                solve();
+            }
             return 0;
-        }
+        } 

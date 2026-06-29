@@ -1,4 +1,4 @@
-    
+ 
     #include <bits/stdc++.h>
     
     using namespace std;
@@ -7,7 +7,7 @@
     const int MOD = 1000000007; 
     const int MOD2 =  998244353; 
     const ll INF = 1e18;
-    const int MX = 100; //check the limits, dummy
+    const int MX = 1000001; //check the limits, dummy
 
 
     ll modExp(ll base, ll power) {
@@ -63,35 +63,28 @@
             facInvs[i] = inv(facs[i]);
         }
     }
-    int main()  {
-        ios_base::sync_with_stdio(0); cin.tie(0);  
+    void solve() {
+        int n  , k , l ; cin >> n >> k >> l;
+        vector<int> z(n);
+        for (int i = 0 ;i < n; i ++) {
+            cin >> z[i]; 
+    
+        }
+        
+        // take max wrinetavls erw w
 
-
-        int t;
-        cin >> t;
-
-
-        while (t --) {
-            int n ; cin >> n; 
-            ll c; cin >> c;
-
-            
-            vector<ll> a(n + 1);
-            for (int  i = 1 ; i <= n; i ++ ) {
-                 cin >> a[i];
-            }
-            
-            sort(a.begin() + 1 , a.end()); 
-            vector<ll> ge(n + 2 , 0);
-            ge[0] = 1;
-            for (int k = 1 ; k <= n ; k ++ ) {
-                vector<ll> bucket(k); 
-                ll prev = c;
-                
-            }
+        // take the mid potson wer
+        
+        for (int i = 0 ; i < n; i ++) {
             
         }
 
+    }
+    int main()  {
+        ios_base::sync_with_stdio(0); cin.tie(0);  
+        int t ; cin >> t;
+        while (t --) {
+            solve();
+        }
         return 0;
-
     }

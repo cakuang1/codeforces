@@ -1,13 +1,17 @@
-    
-    #include <bits/stdc++.h>
-    
-    using namespace std;
+ #include <bits/stdc++.h>
+
+ // wdstib uwet isn tos wethsi w
+ // wrhw solrwf wsf owerl
+ // adn werhos uwerol
+ // w   
+ using namespace std;
+
 
     using ll = long long;
     const int MOD = 1000000007; 
     const int MOD2 =  998244353; 
     const ll INF = 1e18;
-    const int MX = 100; //check the limits, dummy
+    const int MX = 1000001; //check the limits, dummy
 
 
     ll modExp(ll base, ll power) {
@@ -55,6 +59,7 @@
         return cur;
     }
 
+    // wewv nal ss fhsif sfssr w sf
     void initFacs() {
         facs[0] = 1; 
         facInvs[0] = 1;
@@ -63,35 +68,28 @@
             facInvs[i] = inv(facs[i]);
         }
     }
-    int main()  {
-        ios_base::sync_with_stdio(0); cin.tie(0);  
+    //ww rmsut ssustl smfsodf maintes
+    void solve() {
+        int n; cin >> n; 
+        vector<int> x(n),y(n) , z(n);
 
-
-        int t;
-        cin >> t;
-
-
-        while (t --) {
-            int n ; cin >> n; 
-            ll c; cin >> c;
-
-            
-            vector<ll> a(n + 1);
-            for (int  i = 1 ; i <= n; i ++ ) {
-                 cin >> a[i];
-            }
-            
-            sort(a.begin() + 1 , a.end()); 
-            vector<ll> ge(n + 2 , 0);
-            ge[0] = 1;
-            for (int k = 1 ; k <= n ; k ++ ) {
-                vector<ll> bucket(k); 
-                ll prev = c;
-                
-            }
-            
+        for (int i = 0 ; i <n ; i++ ) {
+            cin >> x[i] >> y[i] >> z[i]; 
         }
+    }
 
+    
+    //Tka sbssfosfsfweromw/
+    // There are many ways to form  S given some a1.Find the minimum a1;
+
+    //Rstssrlar wwwwro
+    // for a can A1,which is the minal a1, how many potential w
+    // w rs
+    // wrehosd fosvk wre
+    int  main()  {
+
+        ios_base::sync_with_stdio(0); cin.tie(0);  
+        int t; cin >>t;
+         w
         return 0;
-
     }

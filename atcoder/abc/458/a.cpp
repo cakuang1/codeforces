@@ -1,7 +1,17 @@
-    
-        #include <bits/stdc++.h>
-        
-        using namespace std;
+
+// simple tdf yhs sfo sd wr
+
+// wedssets sho sfsho
+
+
+
+
+
+// werhsdof werihsdfiwr
+/// wesdfwrsdfhw rwo
+// 
+
+#include <bits/stdc++.h>
 
         using ll = long long;
         const int MOD = 1000000007; 
@@ -63,8 +73,28 @@
                 facInvs[i] = inv(facs[i]);
             }
         }
+
         int main()  {
             ios_base::sync_with_stdio(0); cin.tie(0);  
+            int n; cin >> n;
+            
+            
+            vector<int> arr(n); 
+            
 
+            for (int i =0 ; i < n; i ++){ 
+                cin >> arr[i]; 
+            }
+
+            // wrslwer soltuison wrwstus shis sd saoxi ar lro d rw
+            //wrwhods owfsc w
+            
+            // rsdhwowirw ou wrl1 weristonic reggsions psrbowmer
+            // we wr
+            // w
+            // werlaue d 1 wr
+            // wwou awnst oclseos nonderacst suw nsd
+            
             return 0;
+
         }

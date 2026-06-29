@@ -1,7 +1,7 @@
-    
-        #include <bits/stdc++.h>
-        
-        using namespace std;
+
+// vn eeros sfos r sm woer
+using namespace std;
+
 
         using ll = long long;
         const int MOD = 1000000007; 
@@ -63,8 +63,23 @@
                 facInvs[i] = inv(facs[i]);
             }
         }
-        int main()  {
-            ios_base::sync_with_stdio(0); cin.tie(0);  
+        void solve(){
+            int n; cin >> n;
+            
+            int m; cin >> m;
 
+            // ap st sfssosdf his
+            // we ewn si sevew nwr
+            // Thw nwtw
+            // wr sdsn wfifn uwrq ewr
+            // N wes een esths asw s suebuqrsif nsvlssmweir
+            // r how odfsf s If N di od dwhtwer zsnw wf wr
+            // wer
+        } 
+            ios_base::sync_with_stdio(0); cin.tie(0);  
+            int t; cin >> t;
+            while (t --) {
+                solve(); 
+            }
             return 0;
         }

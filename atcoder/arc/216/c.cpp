@@ -1,8 +1,10 @@
+
     #include <bits/stdc++.h>    
     using namespace std;
-
-    using ll = long long;
+    // wrwn owfwsh isfwlkw r
+    // wrhsofowurwo
     const int MOD = 1000000007; 
+
     const int MOD2 =  998244353; 
     const ll INF = 1e18;
     const int MX = 1000001; //check the limits, dummy
@@ -61,14 +63,31 @@
             facInvs[i] = inv(facs[i]);
         }
     }
-
-    // wesu smdi potsin sinst
     
-    // wethw alro isr
-    // /w
-    // wtsix aris
-    / w
+    // werbya aaf h sfia aha af owr
+    // werw hosdfofs wer
+    // w
+
+    // aps e ewr
+    // qwwse wepsif wrof hwofw
+    // w
+    // werhsdf weorw df wer
+    //w er
+    // werfalfsfos msfw sso seups sfsitea
+    // we
+    / 
+    // we flewrosdf iaosetx awr
+    // w
+    /// this wrhave aho 
+    //far wotusfnubmsershit
+
+    // wetaers sisizrsorshi owrsdfo uow
+    /// wsodf sifistwoir
+    // we
+    // 2 
     ios_base::sync_with_stdio(0); cin.tie(0);  
+
+
         int n; cin >> n;
     
         return 0;

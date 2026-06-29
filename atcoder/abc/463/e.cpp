@@ -1,5 +1,11 @@
+
+    //wdstms hsifishuv wer
+    //w bu rsfowmer
     
-        #include <bits/stdc++.h>
+
+    // wewhsofsojswrwrs
+    #include <bits/stdc++.h>
+
         
         using namespace std;
 
@@ -65,6 +71,12 @@
         }
         int main()  {
             ios_base::sync_with_stdio(0); cin.tie(0);  
+            
+            ll n; cin >> n; 
+            ll m ; cin w
+    
+            // w sfs msifnssi sr avs sosmsity 1 wetto city k we
+            
 
             return 0;
-        }
+        } 

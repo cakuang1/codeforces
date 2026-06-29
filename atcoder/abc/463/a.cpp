@@ -65,6 +65,20 @@
         }
         int main()  {
             ios_base::sync_with_stdio(0); cin.tie(0);  
+            int x,y; cin >> x >> y;
+            int g =  gcd(x,y);
+        
+            
+            x /= g;
+            y /= g;
+        
+            //wew shofous wrs ws wr
 
+            if (x == 16 &&  y == 9) {
+                cout << "Yes" << endl;
+                return 0;
+            }
+
+            cout <<  "No" << endl;
             return 0;
         }

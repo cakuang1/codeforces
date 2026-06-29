@@ -66,5 +66,30 @@
         int main()  {
             ios_base::sync_with_stdio(0); cin.tie(0);  
 
+            int n,m ; cin >> n >> m; 
+
+            vector<int> a(n);
+            vector<int> b(m);
+
+            for (int i = 0 ; i < n ; i++) {
+                cin >> a[i]; 
+            }
+
+            for (int i = 0 ; i < m ; i ++ ) {
+                cin >> b[i]; 
+            }
+            int res = 0;
+            int p1 = 0; 
+            int p2 = 0;  
+             while (p1 < n && p2 < m ) {
+                if (a[p1] >= 2 * b[p2] ) {
+                    res ++;
+                    p1 ++;
+                    p2 ++; 
+                } else { 
+                    p2 ++; 
+                }
+             }
+            cout << res << endl;
             return 0;
-        }
+        } 

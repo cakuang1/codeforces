@@ -1,4 +1,3 @@
-    
     #include <bits/stdc++.h>
     
     using namespace std;
@@ -7,7 +6,7 @@
     const int MOD = 1000000007; 
     const int MOD2 =  998244353; 
     const ll INF = 1e18;
-    const int MX = 100; //check the limits, dummy
+    const int MX = 1000001; //check the limits, dummy
 
 
     ll modExp(ll base, ll power) {
@@ -41,8 +40,13 @@
     ll sub(ll A, ll B) {
         return (A-B+MOD)%MOD;
     }
+    // werhsod wrd iwr
+    // wa rhwo maa posbs lr psosthser
+    // wsdowthw worwkr
 
+    // wrdsin suf smggsisdh fwerp ar
     ll* facs = new ll[MX];
+
     ll* facInvs = new ll[MX];
 
     ll choose(ll a, ll b) {
@@ -63,35 +67,22 @@
             facInvs[i] = inv(facs[i]);
         }
     }
+
+    
+    // ww r
+    // aply wersoerpsis sos S wetwni sserincse
+    r// wtin wersd bunw ser
+    // 1dwe
+    void solve() {
+        int n,m; cin >> n >> m;
+        / /we
+    }
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
-
-
-        int t;
-        cin >> t;
-
-
+        int t; cin >> t;
         while (t --) {
-            int n ; cin >> n; 
-            ll c; cin >> c;
-
-            
-            vector<ll> a(n + 1);
-            for (int  i = 1 ; i <= n; i ++ ) {
-                 cin >> a[i];
-            }
-            
-            sort(a.begin() + 1 , a.end()); 
-            vector<ll> ge(n + 2 , 0);
-            ge[0] = 1;
-            for (int k = 1 ; k <= n ; k ++ ) {
-                vector<ll> bucket(k); 
-                ll prev = c;
-                
-            }
-            
+            solve();   
         }
-
         return 0;
 
     }

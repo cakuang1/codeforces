@@ -1,7 +1,5 @@
-    
-        #include <bits/stdc++.h>
-        
-        using namespace std;
+            #include <bits/stdc++.h>
+    using namespace std;
 
         using ll = long long;
         const int MOD = 1000000007; 
@@ -63,8 +61,19 @@
                 facInvs[i] = inv(facs[i]);
             }
         }
+
+        void solve() { 
+            ll a,b,x,y;
+            cin >> a >> b>> x >> y;
+            
+            // wstsin swew
+            // wrshdofwrhw iwo
+        }
         int main()  {
             ios_base::sync_with_stdio(0); cin.tie(0);  
-
+            int t; cin >> t;
+            while (t --) {
+                solve(); 
+            }
             return 0;
         }

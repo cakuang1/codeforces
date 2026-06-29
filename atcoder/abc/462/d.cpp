@@ -1,8 +1,7 @@
     
         #include <bits/stdc++.h>
-        
-        using namespace std;
 
+        using namespace std;
         using ll = long long;
         const int MOD = 1000000007; 
         const int MOD2 =  998244353; 
@@ -65,6 +64,28 @@
         }
         int main()  {
             ios_base::sync_with_stdio(0); cin.tie(0);  
+            int n ,d ; cin >> n >> d;
+            
+            vector<int> diff(1000002,0);            
+    
+            for (int i = 0 ; i < n;  i++) {
+                ll a,b; cin >> a >> b ;
+                
+                
+                b -= d;
+            
 
+                if (b >= a) { 
+                    diff[a] ++;
+                    diff[b + 1] --;
+                }
+            }
+            ll s = 0;
+            ll res = 0; 
+            for (int i = 1 ; i <= 1000000 ; i ++ ){
+                s += diff[i];
+                res += (s * (s - 1))/2;
+            }
+            cout << res << endl; 
             return 0;
         }

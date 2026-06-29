@@ -55,6 +55,8 @@
             return cur;
         }
 
+        
+
         void initFacs() {
             facs[0] = 1; 
             facInvs[0] = 1;
@@ -63,8 +65,10 @@
                 facInvs[i] = inv(facs[i]);
             }
         }
+
+
         int main()  {
             ios_base::sync_with_stdio(0); cin.tie(0);  
-
+            
             return 0;
         }
