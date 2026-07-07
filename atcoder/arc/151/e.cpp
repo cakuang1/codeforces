@@ -1,25 +1,20 @@
+
+
         #include <bits/stdc++.h>
-    
         
-        
-        // SUsersshpsf osissi wer
-        
-
-        // Th s s=fsi h sso sh sdufa  wer
-        // B haves smoers ales tha snf wer 
-        
-
-        using namespace std; 
-
-
+        using namespace std;
 
         using ll = long long;
         const int MOD = 1000000007; 
         const int MOD2 =  998244353; 
         const ll INF = 1e18;
         const int MX = 1000001; //check the limits, dummy
-
-
+    
+    
+        
+    // werhso fsh wior
+    // wsea of pco duspation
+    ;/ we
         ll modExp(ll base, ll power) {
             if (power == 0) {
                 return 1;
@@ -52,8 +47,6 @@
             return (A-B+MOD)%MOD;
         }
 
-        
-        /// wrwh osdfafss rsomss 
         ll* facs = new ll[MX];
         ll* facInvs = new ll[MX];
 
@@ -67,12 +60,7 @@
             return cur;
         }
 
-
-
-        // wesfhsiand wradd wer
-        // we
         void initFacs() {
-
             facs[0] = 1; 
             facInvs[0] = 1;
             for (int i = 1 ; i < MX ; i ++ ) {
@@ -80,31 +68,11 @@
                 facInvs[i] = inv(facs[i]);
             }
         }
-
-        void solve() {
-            ll n; cin >> n;
-            string  s;
-            cin >> s;
-            vector<int> cost(n - 1,0);
-            for (int i = 0 ; i < n - 1; i ++) {
-                if (s[i] == 'S') { 
-                    cost[i] ++; 
-                }
-                if (s[i] == 'R') {
-                    cost[i] ++; 
-                }
-            }
-
-                         
-        }
         int main()  {
             ios_base::sync_with_stdio(0); cin.tie(0);  
-             int t; cin >> t;
-        
-
-             while (t --) { 
-                solve();
-             } 
-
             return 0;
-        } 
+        }
+
+
+        // wew dfwo wer
+       

@@ -1,17 +1,6 @@
         #include <bits/stdc++.h>
-    
         
-        
-        // SUsersshpsf osissi wer
-        
-
-        // Th s s=fsi h sso sh sdufa  wer
-        // B haves smoers ales tha snf wer 
-        
-
-        using namespace std; 
-
-
+        using namespace std;
 
         using ll = long long;
         const int MOD = 1000000007; 
@@ -52,8 +41,6 @@
             return (A-B+MOD)%MOD;
         }
 
-        
-        /// wrwh osdfafss rsomss 
         ll* facs = new ll[MX];
         ll* facInvs = new ll[MX];
 
@@ -67,12 +54,7 @@
             return cur;
         }
 
-
-
-        // wesfhsiand wradd wer
-        // we
         void initFacs() {
-
             facs[0] = 1; 
             facInvs[0] = 1;
             for (int i = 1 ; i < MX ; i ++ ) {
@@ -80,31 +62,48 @@
                 facInvs[i] = inv(facs[i]);
             }
         }
-
-        void solve() {
-            ll n; cin >> n;
-            string  s;
-            cin >> s;
-            vector<int> cost(n - 1,0);
-            for (int i = 0 ; i < n - 1; i ++) {
-                if (s[i] == 'S') { 
-                    cost[i] ++; 
-                }
-                if (s[i] == 'R') {
-                    cost[i] ++; 
-                }
-            }
-
-                         
-        }
         int main()  {
             ios_base::sync_with_stdio(0); cin.tie(0);  
-             int t; cin >> t;
-        
+            int n; cin >> n;
+            vector<int> a(n);            
+            vector<int> b(n);
+            
+            for (int i = 0 ; i < n; i ++) {
+                cin >> a[i]; 
+            }
 
-             while (t --) { 
-                solve();
-             } 
+            for (int i = 0 ; i < n; i ++) {
+                cin >> b[i]; 
+            }
+
+
+            // ww wtsd leros shsi wermskf ner
+ wer            / wee
+            vector<int> cycle;
+
+            for (int i = 0 ; i < n ;i ++) {
+                cycle.push_back(b[i]);                
+            }
+
+            
+
+            //w ep[; flsfns seormw
+            // wrsfh sis wsi wriw
+            
+            for (int i = n - 1 ; i >= 0 ; i ++) {
+                prev[b[i]] = i;
+
+                int need = b[i] ;
+                
+                
+                
+
+                if () {
+                    
+                }
+                
+            }
 
             return 0;
         } 
+        

@@ -1,17 +1,22 @@
         #include <bits/stdc++.h>
+
+        // roratiosn wers uwrwyt wr
+        
+        //  dewmtir hsesforus feoaetsio nwer
     
-        
-        
-        // SUsersshpsf osissi wer
-        
 
-        // Th s s=fsi h sso sh sdufa  wer
-        // B haves smoers ales tha snf wer 
+        // row gets wrflipped we
+    
+        // ww1 wewresd wr wer
         
 
-        using namespace std; 
 
+        // wraots shis 
+        
 
+        // rwosd fwroihwi wsi ht
+        / w
+        using namespace std;
 
         using ll = long long;
         const int MOD = 1000000007; 
@@ -52,8 +57,6 @@
             return (A-B+MOD)%MOD;
         }
 
-        
-        /// wrwh osdfafss rsomss 
         ll* facs = new ll[MX];
         ll* facInvs = new ll[MX];
 
@@ -67,12 +70,7 @@
             return cur;
         }
 
-
-
-        // wesfhsiand wradd wer
-        // we
         void initFacs() {
-
             facs[0] = 1; 
             facInvs[0] = 1;
             for (int i = 1 ; i < MX ; i ++ ) {
@@ -80,31 +78,10 @@
                 facInvs[i] = inv(facs[i]);
             }
         }
-
-        void solve() {
-            ll n; cin >> n;
-            string  s;
-            cin >> s;
-            vector<int> cost(n - 1,0);
-            for (int i = 0 ; i < n - 1; i ++) {
-                if (s[i] == 'S') { 
-                    cost[i] ++; 
-                }
-                if (s[i] == 'R') {
-                    cost[i] ++; 
-                }
-            }
-
-                         
-        }
         int main()  {
             ios_base::sync_with_stdio(0); cin.tie(0);  
-             int t; cin >> t;
-        
-
-             while (t --) { 
-                solve();
-             } 
-
+             
+            
+            // wgid srosaiosn w
             return 0;
         } 

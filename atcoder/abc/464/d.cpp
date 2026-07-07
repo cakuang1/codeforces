@@ -1,143 +1,101 @@
-    
-        #include <bits/stdc++.h>
-        
-        using namespace std;
+#include <bits/stdc++.h>
+using namespace std;
 
-        using ll = long long;
-        const int MOD = 1000000007; 
-        const int MOD2 =  998244353; 
-        const ll INF = 1e18;
-        const int MX = 1000001; //check the limits, dummy
+using ll = long long;
+const ll INF = (1LL << 60);
+const ll M = 1000000000LL;
 
+int digit_sum(ll x) {
+    int res = 0;
+    while (x > 0) {
+        res += x % 10;
+        x /= 10;
+    }
+    return res;
+}
 
-        ll modExp(ll base, ll power) {
-            if (power == 0) {
-                return 1;
-            } else {
-                ll cur = modExp(base, power / 2); cur = cur * cur; cur = cur % MOD;
-                if (power % 2 == 1) cur = cur * base;
-                cur = cur % MOD;
-                return cur;
-            }
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+
+    int N;
+    cin >> N;
+
+    vector<ll> A(N + 1), B(N + 1);
+    for (int i = 1; i <= N; i++) cin >> A[i];
+    for (int i = 1; i <= N; i++) cin >> B[i];
+
+    const int S = 1 << 9;
+
+    vector<array<ll, 2>> dp(S), ndp(S);
+    vector<ll> R(S), nR(S);
+
+    for (int s = 0; s < S; s++) {
+        dp[s][0] = dp[s][1] = INF;
+        R[s] = -1;
+    }
+
+    // X_0 = 0, so L = 0, R = 0
+    dp[0][0] = 0; // digitSum(L)
+    dp[0][1] = 1; // digitSum(L + 1)
+    R[0] = 0;
+
+    vector<ll> ans(N + 1);
+
+    for (int i = 1; i <= N; i++) {
+        for (int s = 0; s < S; s++) {
+            ndp[s][0] = ndp[s][1] = INF;
+            nR[s] = -1;
         }
 
-        ll inv(ll base) {
-            return modExp(base, MOD-2);
-        }
+        for (int s = 0; s < S; s++) {
+            if (dp[s][0] == INF) continue;
 
+            for (int b = 0; b < 2; b++) {
+                ll c = (b == 0 ? A[i] : B[i]);
 
-        ll mul(ll A, ll B) {
-            return (A*B)%MOD;
-        }
+                int ns = ((s << 1) & (S - 1)) | b;
 
-        ll add(ll A, ll B) {
-            return (A+B)%MOD;
-        }
-        
-        ll dvd(ll A, ll B) {
-            return mul(A, inv(B));
-        }
+                ll val = 10 * R[s] + c;
+                ll q = val / M;      // amount entering upper digits
+                ll nr = val % M;     // new lower 9 digits
 
-        ll sub(ll A, ll B) {
-            return (A-B+MOD)%MOD;
-        }
+                nR[ns] = nr;
 
-        ll* facs = new ll[MX];
-        ll* facInvs = new ll[MX];
+                for (int x = 0; x <= 1; x++) {
+                    ll add = q + x;
 
-        ll choose(ll a, ll b) {
-            if (b > a) return 0;
-            if (a < 0) return 0;
-            if (b < 0) return 0;
-            ll cur = facs[a];
-            cur = mul(cur, facInvs[b]);
-            cur = mul(cur, facInvs[a-b]);
-            return cur;
-        }
-
-        void initFacs() {
-            facs[0] = 1; 
-            facInvs[0] = 1;
-            for (int i = 1 ; i < MX ; i ++ ) {
-                facs[i] = (facs[i-1] * i) % MOD;
-                facInvs[i] = inv(facs[i]);
-            }
-        }
-
-        int digit_sum(ll x) {
-            int res = 0;
-            while (x > 0) {
-                res += x % 10;
-                x /= 10; 
-            }
-
-            return res;
-        }
-
-
-
-         
-        int main()  {
-            ios_base::sync_with_stdio(0); cin.tie(0);  
-            int n ; cin >> n;
-            
-
-            vector<ll> a(n + 1);
-            vector<ll> b(n + 1);
-
-
-            for (int i = 1; i <= n ; i ++ ) cin >> a[i];
-            for (int i = 1; i <= n ; i ++ ) cin >> b[i];
-            const int S = 1 << 9;
-            vector<vector<ll>> dp(S,vector<ll> (2 ,INF));
-            vector<vector<ll>> ndp(S,vector<ll> (2 ,INF));
-            vector<ll> R(S,-1), nR(S,-1);
-    
-            dp[0][0] = 0; // digitSum(L)
-            dp[0][1] = 1; // digitSum(L + 1)
-            R[0] = 0;
-            
-            vector<ll> ans(n + 1); 
-             for   (int i = 1 ; i <= N ; i ++ ) {
-                ndp.assign(S, vector<ll> (2,INF));
-                nR.assign(S,-1);
-                                
-                for (int s = 0 ; s < S ; s ++) {
-                    if (dp[s][0] == INF) continue; 
-
-                    for (int b = 0 ; b < 2 ;b ++) {
-                        ll c = (b == 0 ? a[i] : b[i]);
-                        int ns = ((s << 1) & (S - 1)) | b;
-                        ll val = 10 * R[S] + c;
-
-                        ll q = val/M; // entering left 
-                        ll nr = val % M;
-                        nR[ns] = nr;                        
-                        ll cand;
-                            if (add wew) {
-                                 
-                            }
-    
-                        }
-                        
+                    ll cand;
+                    if (add < 10) {
+                        cand = dp[s][0] + add;
+                    } else {
+                        cand = dp[s][1] + (add - 10);
                     }
-                
 
+                    ndp[ns][x] = min(ndp[ns][x], cand);
                 }
-                
-            } 
-    
-            //w erssus p oblais sofars iwsdonetwhewrew/
+            }
+        }
 
-            // we avs fs aalad sonsidsersd werw
-            
-            // L + 1
+        dp.swap(ndp);
+        R.swap(nR);
 
-            // Its left + 1 
+        ll best = INF;
 
-            // fi youw eadd werown wtwo tsehts snsf we
-            // w sthisf smaknsfwr
-            / w wer
+        for (int s = 0; s < S; s++) {
+            if (dp[s][0] == INF) continue;
+            best = min(best, dp[s][0] + digit_sum(R[s]));
+        }
 
-            return 0;
-        } 
+        ans[i] = best;
+    }
+
+    for (int i = 1; i <= N; i++) {
+        if (i > 1) cout << ' ';
+        cout << ans[i];
+    }
+    cout << '\n';
+
+    return 0;
+}
+//

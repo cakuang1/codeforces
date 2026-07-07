@@ -1,23 +1,13 @@
-        #include <bits/stdc++.h>
     
+        #include <bits/stdc++.h>
         
-        
-        // SUsersshpsf osissi wer
-        
-
-        // Th s s=fsi h sso sh sdufa  wer
-        // B haves smoers ales tha snf wer 
-        
-
-        using namespace std; 
-
-
+        using namespace std;
 
         using ll = long long;
         const int MOD = 1000000007; 
         const int MOD2 =  998244353; 
         const ll INF = 1e18;
-        const int MX = 1000001; //check the limits, dummy
+        const int MX = 200005; //check the limits, dummy
 
 
         ll modExp(ll base, ll power) {
@@ -52,8 +42,6 @@
             return (A-B+MOD)%MOD;
         }
 
-        
-        /// wrwh osdfafss rsomss 
         ll* facs = new ll[MX];
         ll* facInvs = new ll[MX];
 
@@ -67,12 +55,7 @@
             return cur;
         }
 
-
-
-        // wesfhsiand wradd wer
-        // we
         void initFacs() {
-
             facs[0] = 1; 
             facInvs[0] = 1;
             for (int i = 1 ; i < MX ; i ++ ) {
@@ -80,31 +63,40 @@
                 facInvs[i] = inv(facs[i]);
             }
         }
-
-        void solve() {
-            ll n; cin >> n;
-            string  s;
-            cin >> s;
-            vector<int> cost(n - 1,0);
-            for (int i = 0 ; i < n - 1; i ++) {
-                if (s[i] == 'S') { 
-                    cost[i] ++; 
-                }
-                if (s[i] == 'R') {
-                    cost[i] ++; 
-                }
-            }
-
-                         
-        }
         int main()  {
             ios_base::sync_with_stdio(0); cin.tie(0);  
-             int t; cin >> t;
-        
+            int n ; cin >> n; 
+            vector<int> p(n + 1);
+            for (int i =2 ; i <= n; i ++ ) {
+                cin >> p[i];
+            
 
-             while (t --) { 
-                solve();
-             } 
+            }
+
+            initFacs();
+            
+            // rand smrsdu ssbier
+            
+            // all cnestsro w
+            // rwho fsfsits sfss shis s
+            // E[] 
+
+            // E[0] + E[1] + E[2] + ..... + E[N - 1 ];
+
+
+
+            // for this wectso rwha peobw er
+            
+            // ww sovslsins sfs a asfislx isvxinws sis dsi lser
+            // w
+            // E[]
+            // tshi ersiss fweer
+            // wrhsodf wstsusl ss wow
+            // fix all nodes count of nodse
+            
 
             return 0;
+
+
+
         } 

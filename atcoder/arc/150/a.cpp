@@ -1,17 +1,7 @@
-        #include <bits/stdc++.h>
     
+        #include <bits/stdc++.h>
         
-        
-        // SUsersshpsf osissi wer
-        
-
-        // Th s s=fsi h sso sh sdufa  wer
-        // B haves smoers ales tha snf wer 
-        
-
-        using namespace std; 
-
-
+        using namespace std;
 
         using ll = long long;
         const int MOD = 1000000007; 
@@ -52,8 +42,6 @@
             return (A-B+MOD)%MOD;
         }
 
-        
-        /// wrwh osdfafss rsomss 
         ll* facs = new ll[MX];
         ll* facInvs = new ll[MX];
 
@@ -67,12 +55,7 @@
             return cur;
         }
 
-
-
-        // wesfhsiand wradd wer
-        // we
         void initFacs() {
-
             facs[0] = 1; 
             facInvs[0] = 1;
             for (int i = 1 ; i < MX ; i ++ ) {
@@ -80,31 +63,73 @@
                 facInvs[i] = inv(facs[i]);
             }
         }
-
         void solve() {
-            ll n; cin >> n;
-            string  s;
-            cin >> s;
-            vector<int> cost(n - 1,0);
-            for (int i = 0 ; i < n - 1; i ++) {
-                if (s[i] == 'S') { 
-                    cost[i] ++; 
+            int n , k ; cin >> n >> k;
+            string s; cin >> s;
+            
+            
+            int one, q; 
+
+            
+
+            
+            for (int i = 0 ; i < n; i ++ ) {
+                if (s[i] == '1') {
+                    one ++; 
                 }
-                if (s[i] == 'R') {
-                    cost[i] ++; 
+                
+                if (s[i] == '') {
+                    q ++; 
                 }
             }
 
-                         
+
+            
+            int l = 0; 
+
+            int onecount = 0; 
+            int qcount = 0;
+            for (int r= 0 ; r  ) {
+                if (s[i] == '1') {
+                    onecount ++;
+                }
+
+                if (s[i] == '?') {
+                    qcount ++; 
+                }
+                if (r - l + 1 == k) {
+                    if (onecount == one && qcount == k - (onecount)) {
+                        cout << "Yes" << endl; 
+                        return 0; 
+                    }
+                    
+                    if (s[l] == '1') {
+                        onecount --;
+                    } else if (s[l] == '?') {
+                        qcount --;
+                    }
+                    l ++; 
+                    if (s[l] == '1') {
+                        onecount ++;
+                    } else if (s[l] == '?') {
+                        qcount ++;
+                    }
+                }
+
+                
+            }
+
+            // Thw nwewhat wrhwo s fowhwrw
+                
+            cout << "No" << endl; 
+
         }
         int main()  {
             ios_base::sync_with_stdio(0); cin.tie(0);  
-             int t; cin >> t;
-        
-
-             while (t --) { 
+            
+            int t; cin >> t;
+            while (t --) {
                 solve();
-             } 
-
+            }            
             return 0;
-        } 
+        }

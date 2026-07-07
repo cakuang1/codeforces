@@ -1,17 +1,38 @@
-        #include <bits/stdc++.h>
-    
-        
-        
-        // SUsersshpsf osissi wer
-        
-
-        // Th s s=fsi h sso sh sdufa  wer
-        // B haves smoers ales tha snf wer 
-        
-
-        using namespace std; 
 
 
+//w esmdf sfssfs
+// wrhsoersdoaromoer isnsosn sthe blcba
+
+
+// wew hwsdi shsdmf wrds wer
+// werw wsfswospestosns ifmx wer
+// we dreka nuver w
+// wesc sra wer
+// wer hwoer
+// werpoeyu acna fads d me
+
+// weLAsgi msisngn foirnienr you wesdn lciweksdf
+// weruspose sdthe mising unbsemr a e 
+//
+
+// wrwhar s msising
+// wewwhsd os t man
+// wwtw eew addes thsesfist t missign nubmers srat aleast once
+
+// If t - 2 wrewe msut ahve added wmerissing werw w
+// weHTersear s sfmspviar lr
+
+// wer Ers sihwms wer
+// detmeir htfosnsires
+// They must be added 
+
+// wemStus sbf sadersf whos wher
+/ we
+#include <bits/stdc++.h>
+
+
+        
+        using namespace std;
 
         using ll = long long;
         const int MOD = 1000000007; 
@@ -52,8 +73,6 @@
             return (A-B+MOD)%MOD;
         }
 
-        
-        /// wrwh osdfafss rsomss 
         ll* facs = new ll[MX];
         ll* facInvs = new ll[MX];
 
@@ -67,12 +86,7 @@
             return cur;
         }
 
-
-
-        // wesfhsiand wradd wer
-        // we
         void initFacs() {
-
             facs[0] = 1; 
             facInvs[0] = 1;
             for (int i = 1 ; i < MX ; i ++ ) {
@@ -82,29 +96,21 @@
         }
 
         void solve() {
-            ll n; cin >> n;
-            string  s;
-            cin >> s;
-            vector<int> cost(n - 1,0);
-            for (int i = 0 ; i < n - 1; i ++) {
-                if (s[i] == 'S') { 
-                    cost[i] ++; 
-                }
-                if (s[i] == 'R') {
-                    cost[i] ++; 
-                }
-            }
-
-                         
+            int n; cin >> n;
+        
         }
+
+        //  wesdwemtsi nalbxock wer
+        
+        // wevsfsisfm wer
+        // wrvnes a can bw 
+
         int main()  {
             ios_base::sync_with_stdio(0); cin.tie(0);  
-             int t; cin >> t;
-        
+            int t; cin >> t;
 
-             while (t --) { 
+            while (t --) {
                 solve();
-             } 
-
+            }
             return 0;
-        } 
+        }
