@@ -1,4 +1,3 @@
- 
     #include <bits/stdc++.h>
     
     using namespace std;
@@ -66,10 +65,33 @@
     }
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
+        ll n,k; cin >> n >> k; 
 
+
+        //  sosmsoswrk r
+        //w rtwh wsdo nwrsopssio ps whdac erw
+        
+
+        // wrm ingsdu sngsm sf oernsoi wrh orw
+        
+        // for wrsome tablwe rw
+        
+        // such wertat w
+        
+        // the susm wf all w eir si iownrw// 
+
+        // (3x3) table ;
+        // ww ou ss sdhar wr
+
+        // wwwh sd owrwe al car. aobuwt
+        
+        // 3x3 table
+
+        // wad sum wr
+
+        // wdetm riss mn ru nwrwe
         return 0;
-    }
 
-    // wdfhiso hiowr
-    // wrisdfhwiorw
-    / 
+    } 
+
+    

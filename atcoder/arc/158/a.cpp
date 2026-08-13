@@ -1,3 +1,4 @@
+    
         #include <bits/stdc++.h>
         
         using namespace std;
@@ -20,11 +21,7 @@
             }
         }
 
-        // wrdf hwriw imdk wnrw
-        // w
         ll inv(ll base) {
-
-
             return modExp(base, MOD-2);
         }
 
@@ -58,7 +55,28 @@
             return cur;
         }
 
+        
+        // werdsivsisrwebyw r3 wer
+        
+
+
+        /
+        // RHow sfhsiow
+        
+        // x1 ,x2 ,x3 
+
+        
+        // x1 + 3 , x2 + 5 ,
+
+        
+        // 3 + 5 + 7 = 15
+        
+        // every time this operation is done
+        
+        
+
         void initFacs() {
+
             facs[0] = 1; 
             facInvs[0] = 1;
             for (int i = 1 ; i < MX ; i ++ ) {
@@ -66,25 +84,38 @@
                 facInvs[i] = inv(facs[i]);
             }
         }
-        int main()  {
-            ios_base::sync_with_stdio(0); cin.tie(0);  
-            int n; cin >> n;
-            vector<vector<ll>> g(n + 1)      ;
-            for (int i = 0 ;i < n - 1; i ++) {
-                int a , b; cin >> a >> b; 
-                g[a].push_back(b);
-                g[b].push_back(a);
-            }
+        
+        void solve()  {
+            ll x,y,z;
+            cin >> x >> y >> z;
 
+            // wew sdf srsibisnsio wrw
+            ll s = x + y + z;
+
+            if (s % 3 != 0) {
+                cout << -1 << end;
+                return 0;
+            }
             
 
+            // al mstus ah eths same saprity // 
+            if () {
+                
+            }
 
-
-
-
-    /            return 0;
-
-
-    
-
+            if () { 
+                
+            }
+                 
+        }
+        int main()  {
+            ios_base::sync_with_stdio(0); cin.tie(0);  
+            int t; cin >> t;
+            
+            while (t --) {
+                solve();
+            }
+            return 0;
         } 
+        
+        

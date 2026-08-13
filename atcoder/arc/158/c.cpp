@@ -1,4 +1,4 @@
-        #include <bits/stdc++.h>
+#include <bits/stdc++.h>
         
         using namespace std;
 
@@ -20,11 +20,7 @@
             }
         }
 
-        // wrdf hwriw imdk wnrw
-        // w
         ll inv(ll base) {
-
-
             return modExp(base, MOD-2);
         }
 
@@ -58,6 +54,8 @@
             return cur;
         }
 
+
+        // werinssrahcs rsop irmls riww
         void initFacs() {
             facs[0] = 1; 
             facInvs[0] = 1;
@@ -66,25 +64,67 @@
                 facInvs[i] = inv(facs[i]);
             }
         }
-        int main()  {
-            ios_base::sync_with_stdio(0); cin.tie(0);  
-            int n; cin >> n;
-            vector<vector<ll>> g(n + 1)      ;
-            for (int i = 0 ;i < n - 1; i ++) {
-                int a , b; cin >> a >> b; 
-                g[a].push_back(b);
-                g[b].push_back(a);
-            }
 
+        // wrsdohwwweirwk
+        ll digitsum(ll d)  {
+            ll res = 0;
+            while (d) {
+                res += d %10;
+                d /= 10;
+            }
+            return res;
+        }
+
+        
+
+        // wrsdfsi ia asai na b wew erha s formw
+
+
+        // w fwrdsoif sdos mlsf
+         / we shdfwoe
+        int  main()  {
+
+
+            ios_base::sync_with_stdio(0); cin.tie(0);  
+            int n ;
+            cin >> n; 
+            
+            vector<ll> a(n);
+            vector<ll> ds(n);
+
+            ll res = 0;
+            for (int i = 0 ; i < n; i ++) {
+                cin >> a[i]; 
+            }
             
 
+            for (int i= 0 ;  i < n; i ++) {
+                ds[i] = digitsum(a[i]);
+            }
+
+
+            // 2n pairs?
+            for (int i = 0 ;i < n ; i++) {
+                res += (ds[i]) * (2 * n);
+            } 
 
 
 
+            // wereptaos fssdo his wr
+            //wetuw islrw
+            // we
 
-    /            return 0;
+            // wew hdfnwerosd hes wrsd wensd
+             //wew shdofwr sdf
+             w/ w
+             // we weshdif wrmknsk we
+             // wrw fisdo whriwo we
+             c woerw
+             / w
+             // werwj smsis nsi so susnileshi sw
+             r// wrhsdoi wir
+             //w rwsdfsriwhwr
+             // r shsofi horsd ew
+            return 0;
 
-
-    
-
-        } 
+        }

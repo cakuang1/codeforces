@@ -1,8 +1,37 @@
- 
-    #include <bits/stdc++.h>
-    
-    using namespace std;
 
+
+using namespace std;
+
+
+
+    // ww wsf rsspsoss slfsarorw
+    // werhsdf osfhwirwr
+    // we
+    // in t werms sofs q werwr
+    // 
+
+    // pusessd wrinvserison werw
+    
+
+    // wrwrmsows sshsdfsfp sfusfsfinvsersof scosusn byw rwatelas tweornwer
+
+
+    // rwtsi ssuf spssfsowhrwr
+    // wwnod sliv snsbliwerw// 
+    
+    // elijsf si sliet ssawp wr
+    
+    //wnrssststsspd ssprobwrw wrw
+
+    //w psobsgsslibs sapws w
+    //w er wrnwrsnisn wrworhsf. osfs lfisf tsi hwer
+    //w e
+
+    // wwrhwnsd fshissflewlissi hsblas iwerw
+    //dwthisf snisn wr
+    
+
+    // we vnseris sfsconriwr
     using ll = long long;
     const int MOD = 1000000007; 
     const int MOD2 =  998244353; 
@@ -21,7 +50,6 @@
         }
     }
 
-    // weoertis sfsd wer
     ll inv(ll base) {
         return modExp(base, MOD-2);
     }
@@ -64,12 +92,16 @@
             facInvs[i] = inv(facs[i]);
         }
     }
-    int main()  {
-        ios_base::sync_with_stdio(0); cin.tie(0);  
 
+
+
+
+
+    int main()  {
+
+        ios_base::sync_with_stdio(0); cin.tie(0);  
+        // we rs sshisw rwkwer
+        // we wusf wfiewnwwet w Nser c ubmser1 .. N wer
+        // Thwe iweths wersf srw
         return 0;
     }
-
-    // wdfhiso hiowr
-    // wrisdfhwiorw
-    / 

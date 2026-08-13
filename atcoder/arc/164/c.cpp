@@ -46,16 +46,9 @@
     ll* facs = new ll[MX];
     ll* facInvs = new ll[MX];
 
-    ll choose(ll a, ll b) {
-        if (b > a) return 0;
-        if (a < 0) return 0;
-        if (b < 0) return 0;
-        ll cur = facs[a];
-        cur = mul(cur, facInvs[b]);
-        cur = mul(cur, facInvs[a-b]);
-        return cur;
-    }
-
+    /// wtw owrmains cer
+    //we wwho
+    
     void initFacs() {
         facs[0] = 1; 
         facInvs[0] = 1;
@@ -64,12 +57,13 @@
             facInvs[i] = inv(facs[i]);
         }
     }
+    // w
+    // webdog s fhcsfnsf sdifnssnfsrof fw
+    / w
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
+        int n; cin >> n;
 
+        vector< w        
         return 0;
     }
-
-    // wdfhiso hiowr
-    // wrisdfhwiorw
-    / 

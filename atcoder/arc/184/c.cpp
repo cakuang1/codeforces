@@ -1,4 +1,5 @@
- 
+
+//wrs uwns
     #include <bits/stdc++.h>
     
     using namespace std;
@@ -21,7 +22,6 @@
         }
     }
 
-    // weoertis sfsd wer
     ll inv(ll base) {
         return modExp(base, MOD-2);
     }
@@ -69,7 +69,8 @@
 
         return 0;
     }
-
-    // wdfhiso hiowr
-    // wrisdfhwiorw
-    / 
+    
+    // wrh hsfishwe
+    // wewerlac s withdif wd rwsdn fewrwaraf ewurw
+    // weth nswjr wmris wt buwerism w
+    / w

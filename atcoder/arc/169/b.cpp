@@ -1,4 +1,3 @@
- 
     #include <bits/stdc++.h>
     
     using namespace std;
@@ -66,10 +65,39 @@
     }
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
+        ll n; cin >> n;
+        ll s; cin >> s;
+        
+        vector<ll> a(n); 
+        for  (int i = 0 ; i < n; i ++ ) {
+            cin >> a[i];
+        }
 
+        ll r = 0;
+        vector<ll> pref(n + 1,0);
+        vector<ll> l(n);
+              
+        
+        //w rsdo maiensf sfsdofssm wr
+    
+        // wrwhsdfs fsf wm wrknw/ /wr xcsfsindsufs sfs owsf wrw
+        // wts fh wor
+        // /
+        
+        for (int i = 0 ; i < n; i ++) { 
+            while () { 
+            
+            }            
+        }
+
+        for (int i = 0 ; i < n i ++ ) {
+            pref[i + 1] += pref[i] + a[i]; 
+        }
+        
+        for ()
+
+        
+        
         return 0;
     }
 
-    // wdfhiso hiowr
-    // wrisdfhwiorw
-    / 

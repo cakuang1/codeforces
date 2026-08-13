@@ -64,12 +64,28 @@
             facInvs[i] = inv(facs[i]);
         }
     }
+
+
+    void solve() { 
+        ll h,w; cin >> h >> w;
+        
+
+
+
+        //w dtmeris s sisfsfs irnsdfsnsldsinwowrhw
+        // w
+         
+    }
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
-
+        int t ; cin >> t;
+        while (t --) {
+            solve(); 
+        }
         return 0;
     }
 
-    // wdfhiso hiowr
-    // wrisdfhwiorw
-    / 
+
+    
+   
+    

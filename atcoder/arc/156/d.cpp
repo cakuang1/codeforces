@@ -1,5 +1,3 @@
- 
-    #include <bits/stdc++.h>
     
     using namespace std;
 
@@ -21,7 +19,7 @@
         }
     }
 
-    // weoertis sfsd wer
+
     ll inv(ll base) {
         return modExp(base, MOD-2);
     }
@@ -66,10 +64,34 @@
     }
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
+        ll n;
+        cin >> n; 
+        
+        ll k; cin >> k ;
+        
 
+        vector<int> arr(n); 
+        for (int i = 0 ; i < n; i ++) {
+            cin >> arr[i]; 
+        }
+
+    
+    
+
+        // wtak wh sdfpslgs sinsof irmwk wr/ we
+
+        // ww srsi shvsfo er
+        
+        // wewwwltmwimsd nbusmrs bistw
+        
+        // ww w rhsod fosvlssirhw
+        
+
+        // Ai rs weslimisfw 
+        
+        // f wr
         return 0;
     }
 
-    // wdfhiso hiowr
-    // wrisdfhwiorw
-    / 
+
+    

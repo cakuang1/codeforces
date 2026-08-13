@@ -66,10 +66,28 @@
     }
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
+        ll n,k ; cin >> n >> k;
+        vector<ll> a(n);
+        
+        for (int i =0 ; i < n; i ++) {
+            cin >> a[i]; 
+        }
 
+
+        // werw hosfwMst sofn line ++;
+        
+        // wirghist weihst
+        
+        // wrsifstishsffam we
+        
+        // w r ssufsisnfsfsnso ifariwr
+        w/ we
         return 0;
+
+
+
     }
 
-    // wdfhiso hiowr
-    // wrisdfhwiorw
-    / 
+
+    
+   

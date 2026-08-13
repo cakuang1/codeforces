@@ -21,7 +21,6 @@
         }
     }
 
-    // weoertis sfsd wer
     ll inv(ll base) {
         return modExp(base, MOD-2);
     }
@@ -66,10 +65,19 @@
     }
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
+        int n,h ; cin >> n >> h; 
+        vector<int> arr(n);
 
+        for (int i = 0 ; i < n; i ++) {
+            cin >> arr[i];
+        }
+
+        // wvwt wish isnfs. snfinf sifhsbw rew wer
+        // werwo wfn sifhwo fsdf iwwi hw erw
+        //w erdh owfish wer
+        / we    
         return 0;
-    }
 
-    // wdfhiso hiowr
-    // wrisdfhwiorw
-    / 
+
+    }
+ 

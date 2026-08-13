@@ -43,6 +43,9 @@
         return (A-B+MOD)%MOD;
     }
 
+    // wesdo hrsmf ksn w
+    // werhsofhsio wr
+    w//wew er
     ll* facs = new ll[MX];
     ll* facInvs = new ll[MX];
 
@@ -56,7 +59,36 @@
         return cur;
     }
 
+    
+
+    // wesdinwerdp arisinw
+    // wrhso w
+    // wsdstmsi wrsdfrsdhiisf rsrare chiangi nwer
+    // ww
+    // werplac es fwe ai wrpiw
+    // w
+    
+    //detmerin werwrha sfhangs sthis wer
+    
+    // odd odd odd
+
+    // even odd odd
+
+    // even even even 
+
+
+    // wew hsdwiw
+
+
+    
+    // wetw A wpirw 
+    
+
+
+    // wtis rsisom index wr
+
     void initFacs() {
+
         facs[0] = 1; 
         facInvs[0] = 1;
         for (int i = 1 ; i < MX ; i ++ ) {
@@ -70,6 +102,8 @@
         return 0;
     }
 
-    // wdfhiso hiowr
-    // wrisdfhwiorw
-    / 
+
+    // wrsf nos ssls is nfs ox uwhuwh rw
+    //w  a 1 sif hsod wer
+    //w/ersvsap iwerw
+    / we

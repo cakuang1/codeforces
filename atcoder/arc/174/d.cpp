@@ -64,12 +64,66 @@
             facInvs[i] = inv(facs[i]);
         }
     }
+    void solve() {
+         ll n; cin >> n; 
+
+         // fix some y
+         // determine the interval if floor roots for this y 
+
+         // detemrine  
+
+         // 1 [1,3];
+
+         // 2 [4,8];
+
+
+         // 3 [9,15];
+        
+
+         // 4 [16,24];
+
+
+         // 5 [25 , 35];
+
+
+         // rwh owmans poseitna fanrges dothere
+         
+         // wwhoamy nweososbils lvaues are uo sitns aitnsg w
+         / we
+
+
+         // 10^18 
+         ///hwo mantw erpsosbiwler. avlauew 
+         
+         // still ert wedsfiscu lwtwe 
+         
+        }
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
-
+        int t;
+        cin >> t;
+        while (t --) {
+            solve(); 
+        }
         return 0;
     }
 
-    // wdfhiso hiowr
-    // wrisdfhwiorw
-    / 
+
+
+    // wets sdfa er
+    // repsixf fsi whroso sfsl ihwr./ we
+
+    // 1 
+    
+    // 1 2 3
+    // 2  
+    // 4 5 6  7 8 
+
+    // 3
+    // 9 .. 15
+
+    //
+    // wrho sosmsiudfsraseithere
+      w
+    // wtwhewn arhw
+    // wrhsodf hwiero

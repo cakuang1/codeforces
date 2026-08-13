@@ -64,12 +64,25 @@
             facInvs[i] = inv(facs[i]);
         }
     }
+
+
+    // wwts fesmi nwer
+    // fdin werlin sfss lognse
+    
+    // you can upper erboudn this w
+    
+    //
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
+            
 
+        // wsisl sodnweri ushais lsirn
+        //w 
         return 0;
+
+
     }
 
-    // wdfhiso hiowr
-    // wrisdfhwiorw
-    / 
+
+    
+  

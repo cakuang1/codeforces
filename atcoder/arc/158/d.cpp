@@ -1,13 +1,17 @@
         #include <bits/stdc++.h>
-        
         using namespace std;
-
         using ll = long long;
         const int MOD = 1000000007; 
         const int MOD2 =  998244353; 
         const ll INF = 1e18;
         const int MX = 1000001; //check the limits, dummy
 
+        /// werhwiod isr sisnrs scouwer
+        // weivnie erpsiamienrwoier
+        // wea 
+        / wwr wshwo dso hwirw
+        // wershdofpsh irsl wer
+        /we
 
         ll modExp(ll base, ll power) {
             if (power == 0) {
@@ -20,11 +24,7 @@
             }
         }
 
-        // wrdf hwriw imdk wnrw
-        // w
         ll inv(ll base) {
-
-
             return modExp(base, MOD-2);
         }
 
@@ -66,25 +66,27 @@
                 facInvs[i] = inv(facs[i]);
             }
         }
+        // wdfine sldp werw
+        // wedsf einsd p wer ashwrw
+        // we
         int main()  {
             ios_base::sync_with_stdio(0); cin.tie(0);  
-            int n; cin >> n;
-            vector<vector<ll>> g(n + 1)      ;
-            for (int i = 0 ;i < n - 1; i ++) {
-                int a , b; cin >> a >> b; 
-                g[a].push_back(b);
-                g[b].push_back(a);
-            }
 
+            // wrosmssos osfisfsf osdfirwr
+            // wer oapsio hsi
+            // wr
+            
+            // wewtha are tehsdfnsifson owr
+            // [l,r]
+            // sdisebses do wer=
             
 
-
-
-
-
-    /            return 0;
-
-
-    
-
+            // werno sdi hs woerwks d
+            /
+            // dp[][] 
+            //Treu hwo sofsof hiw
+            // dp[][]
+            return 0;
         } 
+
+        

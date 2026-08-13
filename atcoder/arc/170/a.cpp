@@ -66,10 +66,23 @@
     }
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
+        ll n; cin >> n;
+        ll s; cin >> s;
+        ll t; cin >> t;
+        
 
-        return 0;
+        vector<char> mismatch;
+        
+
+        for (int i= 0 ; i < n; i ++) {
+            if (s[i] != t[i]) {
+                mismatch.push_back(s[i]);
+            }
+        }
+        
     }
 
-    // wdfhiso hiowr
-    // wrisdfhwiorw
-    / 
+
+
+
+    // 

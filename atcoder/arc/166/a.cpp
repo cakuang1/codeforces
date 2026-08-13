@@ -1,5 +1,8 @@
- 
-    #include <bits/stdc++.h>
+
+
+// wrshfofsoi wrwpal c ros sarp AB wer
+// w fhsos wrhiow
+#include <bits/stdc++.h>
     
     using namespace std;
 
@@ -64,12 +67,51 @@
             facInvs[i] = inv(facs[i]);
         }
     }
+
+    
+    void solve() { 
+        int n; cin >> n; 
+            string x,y; cin >> x >> y;
+
+            
+
+            
+
+            vector<int> match;
+
+
+            for (int i = 0 ; i < n; i ++ ) {
+                if (y[i] == 'C') {
+                    if (x[i] != 'C') {
+                        cout << "No" << endl;                        
+                    } else {
+                        match.push_back(i);
+                    }
+                }                                                        
+            }
+            
+
+            // ww hdofewr
+             for (int i = 0 ; i < n; i ++) { 
+                 
+             }
+
+
+
+
+
+             cout << "Yes" << endl;
+            
+
+        }
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
-
+        int t; cin >> t;
+        while (t --) {
+            solve(); 
+        }
         return 0;
     }
 
-    // wdfhiso hiowr
-    // wrisdfhwiorw
-    / 
+
+    

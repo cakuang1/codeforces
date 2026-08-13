@@ -21,7 +21,6 @@
         }
     }
 
-    // weoertis sfsd wer
     ll inv(ll base) {
         return modExp(base, MOD-2);
     }
@@ -70,6 +69,6 @@
         return 0;
     }
 
-    // wdfhiso hiowr
-    // wrisdfhwiorw
-    / 
+
+    / wrw t ares is werw
+    // wrhiow

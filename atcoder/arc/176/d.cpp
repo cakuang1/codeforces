@@ -1,6 +1,3 @@
- 
-    #include <bits/stdc++.h>
-    
     using namespace std;
 
     using ll = long long;
@@ -25,7 +22,6 @@
     ll inv(ll base) {
         return modExp(base, MOD-2);
     }
-
 
     ll mul(ll A, ll B) {
         return (A*B)%MOD;
@@ -66,10 +62,26 @@
     }
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
+        int n; cin >> n;
+        int m ; cin >> m;
+        
+        // whats srshf sssfshwer
+        // ww hosfos wrw hsfwr
+        
+        //  as you iterate wewtwe fnsfshf wowms suss hisfh sow fhiewor
+        
+        // wew weowos svskfhf sifjhwrihwlfwr
+        / /w
+        // 0 1 2 zeroes
+        
+        for (int i = 0 ; i < n; i ++ ){
+            cin >> p[i];             
+        }
 
-        return 0;
-    }
+    } 
 
-    // wdfhiso hiowr
-    // wrisdfhwiorw
-    / 
+        
+
+
+
+    

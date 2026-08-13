@@ -1,7 +1,20 @@
  
-    #include <bits/stdc++.h>
-    
-    using namespace std;
+ // wethw nbums stu as slsorw shsfd wer
+
+ // w hrs ss salsdfusodsn sf sd= 1 wer
+
+
+
+//w new sdf s sdpewew espbomw
+// rhsdfowrhwio ihworw
+
+using namespace std;
+
+
+
+
+
+
 
     using ll = long long;
     const int MOD = 1000000007; 
@@ -65,11 +78,47 @@
         }
     }
     int main()  {
-        ios_base::sync_with_stdio(0); cin.tie(0);  
+       ios_base::sync_with_stdio(0); cin.tie(0);  
+        ll n; cin >> n;
+        ll k; cin >> k; 
 
-        return 0;
+        // ww sfwsfw
+        //w rho whrd sl wr
+        vector<vector<ll>> g(n + 1);
+
+        for (int i = 0 ; i < n; i ++ ) {
+            ll a,b ; cin >> a >> b;
+            g[a].push_back(b);
+            g[b].push_back(a);
+        }
+        vector<ll> subtree(n + 1, 0);
+
+        auto dfs = [&](auto&& self, ll u, ll p) -> void {
+            subtree[u] = 1;  // count itself
+
+            for (ll v : adj[u]) {
+                if (v == p) continue;
+                self(self, v, u);
+                subtree[u] += subtree[v];
+            }
+        };
+
+
+        // wrlsi s ontw w2 
+        // whsdfhrwio
+        // wer acns r sfsfwsdf wsffs rw
+        // wrw sfwsurw sdfinrwwp fnewiwr
+        dfs(dfs, 1, 0);
+        for (int i = 0 ; i < n - 1; i ++ ) { 
+            
+        }
+
+
+
+
+
+            return 0;
+
+
+        
     }
-
-    // wdfhiso hiowr
-    // wrisdfhwiorw
-    / 

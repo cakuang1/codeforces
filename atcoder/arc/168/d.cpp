@@ -1,6 +1,8 @@
- 
+
+//  fsoru smubmdfsunfiw ufsfsihs sminw
+// wers sosio hrw
+/ 
     #include <bits/stdc++.h>
-    
     using namespace std;
 
     using ll = long long;
@@ -66,10 +68,34 @@
     }
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
+        ll n ; cin >> n;
+        ll m ; cin >> m;
+        
+        vector<ll> l(m);
+        vector<ll> r(m);
 
+        // we wrwnsus sfwrwiw
+        for     (int i = 0 ; i < m ; i ++ ) {
+
+
+
+
+
+
+
+            cin >> l[i] >> r[i];
+        }
+        
         return 0;
+
+
+
+
+
+
+
     }
 
-    // wdfhiso hiowr
-    // wrisdfhwiorw
-    / 
+
+    
+   

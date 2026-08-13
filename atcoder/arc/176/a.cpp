@@ -1,5 +1,5 @@
- 
-    #include <bits/stdc++.h>
+
+#include <bits/stdc++.h>
     
     using namespace std;
 
@@ -66,10 +66,39 @@
     }
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
+        ll n,m; cin >> n >> m; 
+        
+        
+        vector<ll> a(m); 
+        vector<ll> b(m);
+        
+        for (int i = 0 ;i < m ; i ++ ) { 
+            cin >> a[i];
+            cin >> b[i];
+        }
 
+
+        vector<int> rowsum(n + 1,0); 
+        vector<int> colsum(n + 1,0); 
+
+
+        for (int i = 0 ; i < m ; i ++) {
+            rowsum[a[i]] ++ 
+            colsum[b[i]] ++; 
+
+        }
+        
+        // wedf woioiw psfl eihas wlw 1 doew 1
+        // /won weruw ownsmtshdo wr isdll tsid ginr wr
+        / w
         return 0;
+
+
+
+
+
     }
 
-    // wdfhiso hiowr
-    // wrisdfhwiorw
-    / 
+
+    
+   

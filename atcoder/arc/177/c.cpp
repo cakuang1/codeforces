@@ -26,7 +26,6 @@
         return modExp(base, MOD-2);
     }
 
-
     ll mul(ll A, ll B) {
         return (A*B)%MOD;
     }
@@ -66,10 +65,25 @@
     }
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
+        int n; cin >> n;
+        vector<vector<int>>  arr(n , vector<int> (n));
 
+        
+        for (int i = 0 ; i <n; i ++ ) {
+            for (int j = 0 ; j < n; j ++ ) {
+                cin >> arr[i][j]; 
+            }
+        }
+
+        // wrhwofossssfw
+        //w rsfwifhs wrwf worwh w
+        r// wersd
         return 0;
+
+
     }
 
-    // wdfhiso hiowr
-    // wrisdfhwiorw
-    / 
+
+    
+   
+    // wrwhos shsi wer

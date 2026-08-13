@@ -1,4 +1,5 @@
- 
+
+//wrs uwns
     #include <bits/stdc++.h>
     
     using namespace std;
@@ -21,7 +22,6 @@
         }
     }
 
-    // weoertis sfsd wer
     ll inv(ll base) {
         return modExp(base, MOD-2);
     }
@@ -42,7 +42,17 @@
     ll sub(ll A, ll B) {
         return (A-B+MOD)%MOD;
     }
+    
 
+    
+    // wwrtwhear ars asl wsin wiwr
+    
+
+
+
+    // werwrwsd e sso sowerw
+    // weh wehri
+    
     ll* facs = new ll[MX];
     ll* facInvs = new ll[MX];
 
@@ -66,10 +76,11 @@
     }
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
+        
 
+
+        // werwwt wrw ah werw
+        //we
+        
         return 0;
     }
-
-    // wdfhiso hiowr
-    // wrisdfhwiorw
-    / 

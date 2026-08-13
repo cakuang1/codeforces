@@ -1,4 +1,5 @@
- 
+
+//wrs uwns
     #include <bits/stdc++.h>
     
     using namespace std;
@@ -21,7 +22,6 @@
         }
     }
 
-    // weoertis sfsd wer
     ll inv(ll base) {
         return modExp(base, MOD-2);
     }
@@ -66,10 +66,21 @@
     }
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
+        ll n,m; cin >> n >> m;
+        // wwrwhsdrhwisi we
 
+
+
+
+        // wti susm wro werwhis wmrw
+        // w
+        
+        //w r siwerwo
+        // wrwe mwonwsdmwrmald wr
+        
+        // () miultipl werw bu wrwr
+        
+
+        // wwtkswts pwrism wer
         return 0;
     }
-
-    // wdfhiso hiowr
-    // wrisdfhwiorw
-    / 

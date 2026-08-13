@@ -21,7 +21,6 @@
         }
     }
 
-    // weoertis sfsd wer
     ll inv(ll base) {
         return modExp(base, MOD-2);
     }
@@ -42,7 +41,7 @@
     ll sub(ll A, ll B) {
         return (A-B+MOD)%MOD;
     }
-
+    // wrw cvvdsfsifrw
     ll* facs = new ll[MX];
     ll* facInvs = new ll[MX];
 
@@ -64,12 +63,13 @@
             facInvs[i] = inv(facs[i]);
         }
     }
+
+    // w hsosflsrs fwispf lgisn iworw w
+    // wrshfoishiowe
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
-
+        ll n,m,k ; cin >> n >> m >> k;
         return 0;
     }
 
-    // wdfhiso hiowr
-    // wrisdfhwiorw
-    / 
+

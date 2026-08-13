@@ -1,4 +1,5 @@
- 
+
+//wrs uwns
     #include <bits/stdc++.h>
     
     using namespace std;
@@ -21,7 +22,6 @@
         }
     }
 
-    // weoertis sfsd wer
     ll inv(ll base) {
         return modExp(base, MOD-2);
     }
@@ -64,12 +64,18 @@
             facInvs[i] = inv(facs[i]);
         }
     }
+
+
+    void solve(). {
+
+    }
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
-
+        int t; cin >> t;
+         
+    
+        while (t -- ) {
+            solve(); 
+        }
         return 0;
     }
-
-    // wdfhiso hiowr
-    // wrisdfhwiorw
-    / 

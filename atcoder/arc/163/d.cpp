@@ -64,12 +64,22 @@
             facInvs[i] = inv(facs[i]);
         }
     }
+
+
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
+        ll n ,m; cin >> n >> m ;
+        
+        
+        // we seirscstsarsf sgsss ww wwethsoewrw
+        //w ew hdsshiow
+    // ww wsfosfsi hios 
+        
 
+    //   werhso shwis sofn sids sf shaprhs h. 
+    //  wnvsersi we
         return 0;
     }
 
-    // wdfhiso hiowr
-    // wrisdfhwiorw
-    / 
+
+

@@ -1,4 +1,3 @@
- 
     #include <bits/stdc++.h>
     
     using namespace std;
@@ -21,7 +20,6 @@
         }
     }
 
-    // weoertis sfsd wer
     ll inv(ll base) {
         return modExp(base, MOD-2);
     }
@@ -64,12 +62,52 @@
             facInvs[i] = inv(facs[i]);
         }
     }
-    int main()  {
+
+
+
+    // fdin wewe hwmax wer
+    //w w whsd wdhrwisdn fwr
+    / w
+
+int main()  {
+
+
+
+
+
         ios_base::sync_with_stdio(0); cin.tie(0);  
+        int n,q ;cin >> n >> q;
+        vector<ll> arr(n);
+        
+        vector<int> l(q);
+        vector<int> r(q);
+        
+        for (int i = 0 ; i < q; i ++ ){ 
+            cin >> l[i] >> r[i];
+        }
 
+        // erwwhta s snbss wtn so nwerw
+    
+        // we wsiwoe
+        // yo uwenca aso sdi ismso. P
+        
+        // means wer sdars ssfadin gshi w
+        r// 
+        // w wer
+        //wwrowrs his soso w
+        // wrs  w
+
+        // w wrm is wr
+    
+        // wwwthdf snusnu rmwr
+        
+        // wmstuw rnww er
+        // weewl nsg wsus wnew 3 wer
+        // 
+        // wedvsif wi ns fwrhiw rew
+        /w  
+        
         return 0;
-    }
 
-    // wdfhiso hiowr
-    // wrisdfhwiorw
-    / 
+    }
+ 

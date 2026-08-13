@@ -1,5 +1,5 @@
- 
     #include <bits/stdc++.h>
+
     
     using namespace std;
 
@@ -66,10 +66,21 @@
     }
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
+        ll n,k; cin >> n >> k;
+        
 
-        return 0;
+        vector<ll> p(k);
+
+        for (int i = 0 ;i < k; i ++) {
+            cin >> p[i];
+        }
+
+
+        ///w ewn ow=sd hisdfhs iwrw
+        return  0;
+
     }
 
-    // wdfhiso hiowr
-    // wrisdfhwiorw
-    / 
+
+    
+   

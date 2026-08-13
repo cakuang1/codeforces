@@ -1,4 +1,4 @@
- 
+    
     #include <bits/stdc++.h>
     
     using namespace std;
@@ -66,10 +66,13 @@
     }
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
-
-        return 0;
+        ll n , m ; cin >> n >> m;
+        
+        // wrsdismpls nessid mopsrs hsi r
+    
+        // w
     }
 
-    // wdfhiso hiowr
-    // wrisdfhwiorw
-    / 
+
+
+    // werhsdf hweoi

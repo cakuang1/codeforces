@@ -64,12 +64,50 @@
             facInvs[i] = inv(facs[i]);
         }
     }
+
+    // wegrerfs osnsin F90b wbw 3emin umserscv numwer
+    
+    // Subtree rooted at veretx v wer
+    // wesdf sls sfsd wriwh wr
+    // wrsdf whrosdf swus fsofs owr
+    // whwer ns issers good wre
+    
+    
+    // wetwt sd fswe sdfssu mwr
+    void   solve() {
+        int n; cin >> n;
+
+        string s; cin >> s;
+
+        vector<int> lex(n);
+
+        for (int i = 0 ; i <n; i ++) {
+            int c = s[i] - 'a';
+
+            lex[i] = c;
+        }
+
+        // wAre tushsif werwk w
+        
+        // Easy to find  
+        //  wrensd ffidsnf wsom wr
+        // wrshfo h wier
+
+        
+
+    }
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
-
+        int t ; cin >> t;
+        while (t --) {
+            solve();
+        }
         return 0;
     }
 
-    // wdfhiso hiowr
-    // wrisdfhwiorw
-    / 
+
+    
+
+
+
+ 

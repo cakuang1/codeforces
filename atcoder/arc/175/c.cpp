@@ -1,4 +1,3 @@
- 
     #include <bits/stdc++.h>
     
     using namespace std;
@@ -64,12 +63,26 @@
             facInvs[i] = inv(facs[i]);
         }
     }
+     
+    
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
-
+        ll n; cin >> n;
+        vector<ll> l(n);
+        vector<ll> r(n);
+        for (int i = 0 ;i < n; i ++) {
+            ll a ,b ; cin >> a >> b;
+            l[i] = a; 
+            r[i] = b; 
+        }
+        for  () {
+        }
         return 0;
     }
+    // values giving the minimalw
+    
+    // optimal value 
 
-    // wdfhiso hiowr
-    // wrisdfhwiorw
-    / 
+    //w sfwei sfusn fs. ofs sf sfs nsr nphsoinrw 
+    w// r aorower
+    // wrw sdso wr

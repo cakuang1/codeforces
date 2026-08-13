@@ -1,5 +1,11 @@
- 
-    #include <bits/stdc++.h>
+
+
+
+// wersldisign wfinfwosidfhoiwr
+/ we
+#include <bits/stdc++.h>
+
+
     
     using namespace std;
 
@@ -66,10 +72,20 @@
     }
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
+        ll n ,q ; cin >> n >> q;
 
+        for   (int i = 0 ; i < q; i ++ ) {
+
+            int a , b; cin >> a >> b;
+
+
+        }
+    
+        for ( ) {
+            
+        }
         return 0;
     }
 
-    // wdfhiso hiowr
-    // wrisdfhwiorw
-    / 
+
+    

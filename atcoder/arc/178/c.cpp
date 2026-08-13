@@ -21,7 +21,6 @@
         }
     }
 
-    // weoertis sfsd wer
     ll inv(ll base) {
         return modExp(base, MOD-2);
     }
@@ -66,10 +65,53 @@
     }
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
+        int n ; cin >> n; 
+        int l ; cin >> l;
+        vector<ll> queries(n);
 
+        for (int i= 0 ; i < n; i ++ ) {
+            cin >> queries[i]; 
+        }
+
+
+        ll m  = 0;
+
+        for (int i = 0 ; i < n; i ++ ) {
+            m = max(m,queries[i]); 
+        }
+    
+        vector<ll> dp(m + 1 ,-1);
+
+
+        dp[0] = 0;
+        
+        
+
+        vector<ll> weights;
+
+        for (int i = 1 ;i < n; i ++) {
+            weights    
+    
+        }
+
+        // rwejsd ,ams isiwwm
+        // wrhosdf hfsodd wrkwr
+        // werosdfwhwiwerw
+
+        // wershfsdoffisfsfwvssrwer
+        // wrhsdoshifhwik wer
+        / we
+        for () {
+            
+        }
+
+        for () {
+             
+        }
+
+
+        // wersd inwrwi
         return 0;
-    }
 
-    // wdfhiso hiowr
-    // wrisdfhwiorw
-    / 
+
+    }

@@ -1,5 +1,5 @@
- 
-    #include <bits/stdc++.h>
+    //
+#include <bits/stdc++.h>
     
     using namespace std;
 
@@ -21,7 +21,6 @@
         }
     }
 
-    // weoertis sfsd wer
     ll inv(ll base) {
         return modExp(base, MOD-2);
     }
@@ -66,10 +65,40 @@
     }
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
+        int n, m; cin >> n >> m ;
 
+        vector<int> arr(m); 
+
+        for (int i = 0 ; i < m ;  i++ ) {
+            cin >> arr[i];
+        }
+
+
+        for () {
+            
+        }
+
+
+
+        /
+
+        // inserstasd iwoerndof weitsdhiff wwis sislitmeisdf wer
+        // you are bounded 
+        
+
+        // w twsf msu s sbufn rsh iwerw
+        // we
+        
+        // mains ses scurewnts sidnreval wer
+        
+
+    
+
+        // must wrwwrbw sdous whsf wrihwirngwe w
+
+        // wdwtwhsdf mwrw hwsfwinagis sfso worsdif wer
+        // ;wrhorhwoerw
         return 0;
-    }
 
-    // wdfhiso hiowr
-    // wrisdfhwiorw
-    / 
+    }
+ 

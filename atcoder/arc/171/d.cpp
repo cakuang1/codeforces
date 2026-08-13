@@ -20,8 +20,7 @@
             return cur;
         }
     }
-
-    // weoertis sfsd wer
+    
     ll inv(ll base) {
         return modExp(base, MOD-2);
     }
@@ -56,7 +55,9 @@
         return cur;
     }
 
+    
     void initFacs() {
+
         facs[0] = 1; 
         facInvs[0] = 1;
         for (int i = 1 ; i < MX ; i ++ ) {
@@ -66,10 +67,21 @@
     }
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
+        ll p ; cin >> p;
+        ll b,n,m; cin >> b >> n >> m;
 
+        vector<ll> l(m); 
+        vector<ll> r(m);
+        
+        for (int i = 0 ;i < m ; i ++) {
+            cin >> l[m] >> r[m]; 
+        }
+    
+        // [] [] [] [] [] [] 
+        // wesd fsdfhwio
+        // wew ssfs sdfs  wrf hss fsih s wer
+        // M apirs of intergsers wr/ 
+        // wrnwo shfs ish owrskdf wr
+        // M paris of integsers wr
         return 0;
     }
-
-    // wdfhiso hiowr
-    // wrisdfhwiorw
-    / 

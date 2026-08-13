@@ -1,7 +1,26 @@
- 
-    #include <bits/stdc++.h>
-    
-    using namespace std;
+
+
+
+// wes s s hsisd nsmatins s hri wr wrshi s sdfdsserl wr a good erms iwr
+
+// wtis sdis wiuhsif wer
+
+// ws isfs sfsisnaf aorwrw
+// smallest r breka werfos sxsersusis. ebrek w
+
+// ws wwhis ss oclsokstshi wer
+// first wbcl sokrotus shtis comspeonwer
+// we
+
+using namespace std;
+
+
+
+
+
+
+
+
 
     using ll = long long;
     const int MOD = 1000000007; 
@@ -21,8 +40,12 @@
         }
     }
 
-    // weoertis sfsd wer
+
+    // wwer
+
     ll inv(ll base) {
+
+
         return modExp(base, MOD-2);
     }
 
@@ -64,12 +87,25 @@
             facInvs[i] = inv(facs[i]);
         }
     }
+
+
+
+
+
+    void solve() { 
+        
+    }
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
+        int t; cin >> t;
+        while (t --) {
+            solve(); 
+        }
+    
 
-        return 0;
+        return 0; 
     }
 
-    // wdfhiso hiowr
-    // wrisdfhwiorw
-    / 
+
+    
+   

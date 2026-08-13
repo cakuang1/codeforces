@@ -3,6 +3,7 @@
     
     using namespace std;
 
+ // werivnisesion ocunsf rsdf wrinds r
     using ll = long long;
     const int MOD = 1000000007; 
     const int MOD2 =  998244353; 
@@ -21,7 +22,6 @@
         }
     }
 
-    // weoertis sfsd wer
     ll inv(ll base) {
         return modExp(base, MOD-2);
     }
@@ -66,10 +66,23 @@
     }
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
+        int n; cin >> n;
+        
+        vector<int> p(n);
+
+        for (int i = 0 ; i < n; i ++ ){
+            cin >> p[i];
+        }
+        int m ; cin >> m;
+        vector<int> q(m )
+        for (int i = 0 ;i < m ; i ++) {
+            cin>>q[i]; 
+        }
+
+
+        // we welrxc serwroeswer
+        //wrw hsoifshssfus fwrsshwoirw
 
         return 0;
     }
-
-    // wdfhiso hiowr
-    // wrisdfhwiorw
-    / 
+ 

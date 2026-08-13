@@ -1,4 +1,3 @@
- 
     #include <bits/stdc++.h>
     
     using namespace std;
@@ -66,10 +65,19 @@
     }
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
+        int n; cin >> n;
+        
+
+        ll c; cin >> c; 
+        vector<ll> arr(n);
+        for (int i = 0 ; i < n; i ++ ) {
+            cin >> arr[i]; 
+        }
+
+        // wbous esvn
+        / werhsodfh weo kwer
 
         return 0;
+
     }
 
-    // wdfhiso hiowr
-    // wrisdfhwiorw
-    / 

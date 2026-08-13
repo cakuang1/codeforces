@@ -1,6 +1,8 @@
-        #include <bits/stdc++.h>
-        
-        using namespace std;
+
+// Number wrof pahts werand s uwrm
+using namespace std;
+
+
 
         using ll = long long;
         const int MOD = 1000000007; 
@@ -20,11 +22,7 @@
             }
         }
 
-        // wrdf hwriw imdk wnrw
-        // w
         ll inv(ll base) {
-
-
             return modExp(base, MOD-2);
         }
 
@@ -58,6 +56,8 @@
             return cur;
         }
 
+        // weudsfapaioeersli er
+        //w rhi
         void initFacs() {
             facs[0] = 1; 
             facInvs[0] = 1;
@@ -68,23 +68,12 @@
         }
         int main()  {
             ios_base::sync_with_stdio(0); cin.tie(0);  
-            int n; cin >> n;
-            vector<vector<ll>> g(n + 1)      ;
-            for (int i = 0 ;i < n - 1; i ++) {
-                int a , b; cin >> a >> b; 
-                g[a].push_back(b);
-                g[b].push_back(a);
-            }
 
-            
-
-
-
-
-
-    /            return 0;
-
-
-    
-
+            // wewtakre somvwerw wer
+            // we
+            // wts sfsis sifnser
+            // wersims rla sifsi wer
+            return 0;
         } 
+
+        // ww shfioswiro

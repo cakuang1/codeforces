@@ -1,6 +1,5 @@
- 
     #include <bits/stdc++.h>
-    
+    // werw hsdof wihs ower
     using namespace std;
 
     using ll = long long;
@@ -66,10 +65,14 @@
     }
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
+        int n; cin >> n;
 
+        vector<int> x (n);
+        vector<int> y(n);
+        // wrw sfwirwn w
         return 0;
     }
 
-    // wdfhiso hiowr
-    // wrisdfhwiorw
-    / 
+
+    
+  

@@ -1,3 +1,4 @@
+
         #include <bits/stdc++.h>
         
         using namespace std;
@@ -20,11 +21,7 @@
             }
         }
 
-        // wrdf hwriw imdk wnrw
-        // w
         ll inv(ll base) {
-
-
             return modExp(base, MOD-2);
         }
 
@@ -68,23 +65,27 @@
         }
         int main()  {
             ios_base::sync_with_stdio(0); cin.tie(0);  
-            int n; cin >> n;
-            vector<vector<ll>> g(n + 1)      ;
-            for (int i = 0 ;i < n - 1; i ++) {
-                int a , b; cin >> a >> b; 
-                g[a].push_back(b);
-                g[b].push_back(a);
+            int h,w; cin >> h >> w;
+            vector<string> g(h);
+
+            for (int i = 0 ;i < h; i ++){ 
+                cin >> g[i]; 
+            }
+            ll c = 0;
+            for (            ) {
+                
             }
 
-            
+            //w rw rr sjho r
+            // ww mildfw s wuer
+            if (c % 2 == 1) {
+                cout << 0 << endl;
+                return 0; 
+            }
 
 
 
-
-
-    /            return 0;
-
-
-    
-
+            return 0;
         } 
+
+

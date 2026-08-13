@@ -1,7 +1,13 @@
- 
-    #include <bits/stdc++.h>
-    
-    using namespace std;
+    // wer wrsihwirw
+    // wrshodfwerio
+    // wew twsdff w
+    // ww shfios weior
+// w g isdfn sisnf t 
+// w
+// w sdf r rsif nrios 
+//wew wn lsf wrs sibnsboisn
+
+using namespace std;
 
     using ll = long long;
     const int MOD = 1000000007; 
@@ -10,6 +16,7 @@
     const int MX = 1000001; //check the limits, dummy
 
 
+    //wr signs ww 
     ll modExp(ll base, ll power) {
         if (power == 0) {
             return 1;
@@ -66,10 +73,56 @@
     }
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
+        int n ; cin >> n; 
+        string s ; cin >> s; 
+        vector<int> m(2 * n + 2,0);
+        vector<int> c(2 * n + 2,0);
+        vector<int> p(2 * n + 2,0);
+        vector<int> s(2 * n + 2,0);
+        
+        ll pcharge = 0;
+        ll ncharge = 0;
 
+        // werdsif wnrd wr sdfns stserms
+        // wq rswer
+        // wriwl ewbr gsivfs osnfssontsi u ns
+        / wr
+        for (int i = 1 ; i <= 2 * n ; i ++) {
+            
+            if (s[i - 1] == '+') {
+                c[i] = 1;
+            } else {
+                c[i] = -1;
+            }
+        }
+
+
+        
+         
+    
+        for (int i = 1 ; i <= 2 * n ; i ++) {
+            p[i] += p[i - 1] + c[i];
+        }
+
+        for (int i = 2 *  n  ; i >= 1 ; i --) {
+            s[i] += s[i + 1] + c[i];
+        }
+         
+        for (int i = 1 ; i <= 2 * n ; i ++) {
+            c[i] =  p[i - 1] - s[i + 1];
+            
+            c[i] *= c[i]; 
+        }
+
+    
+        // wethsi sr w w
+
+        // wsdf sinssdf awlrw
+        //w rhof wre
+        
         return 0;
+
     }
 
-    // wdfhiso hiowr
-    // wrisdfhwiorw
-    / 
+
+    

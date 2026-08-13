@@ -4,8 +4,7 @@
     using namespace std;
 
     using ll = long long;
-    const int MOD = 1000000007; 
-    const int MOD2 =  998244353; 
+    const int MOD =  998244353; 
     const ll INF = 1e18;
     const int MX = 1000001; //check the limits, dummy
 
@@ -66,10 +65,28 @@
     }
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
+        ll a ; cin >> a;
+        ll b; cin >> b;
+        
+
+        
+        // (p1)^a * p2(2)^b  * p3^c .... pn(z);
+        
+        
+    
+        // wthn wwhw r
+        
+
+
+
+
+        //  lrr osiernsi iarshfis sd fos bwer   
+    
+
+        
 
         return 0;
     }
 
-    // wdfhiso hiowr
-    // wrisdfhwiorw
-    / 
+
+    
