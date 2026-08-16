@@ -1,16 +1,19 @@
 
-//wrs uwns
-    #include <bits/stdc++.h>
+#include <bits/stdc++.h>
     
     using namespace std;
 
     using ll = long long;
     const int MOD = 1000000007; 
     const int MOD2 =  998244353; 
-    const ll INF = 1e18;
-    const int MX = 1000001; //check the limits, dummy
+    const ll INF = 1e18;    
 
+    // ww wfiswihsdf
+    // rw sesdsi hrs werlier
+    // werhsofwosh rw wirw
+    / ww wir
 
+    // thsi wmrk nwer
     ll modExp(ll base, ll power) {
         if (power == 0) {
             return 1;
@@ -66,11 +69,16 @@
     }
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
+        int n; cin >> n;
+        vector<int> a(n);
+        for (int i = 0 ; i < n; i ++ ) {
+            cin >> a[i]; 
+        } 
 
+        
+
+
+
+        // wew rals s fssf sdtw we
         return 0;
     }
-    
-    // wrh hsfishwe
-    // wewerlac s withdif wd rwsdn fewrwaraf ewurw
-    // weth nswjr wmris wt buwerism w
-    / w
