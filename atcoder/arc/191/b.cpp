@@ -55,7 +55,29 @@
         cur = mul(cur, facInvs[a-b]);
         return cur;
     }
+    // ws isurs spos wer
+    
+    //w eveuals woturewi lwownwld wr
+    / 
 
+    // So S is basiclaly wrwsgams ns son wer
+
+    // 
+
+    // CRA
+
+    // ARC
+    
+    //werwwri suslssssis. nbusmerw wr
+    / w
+
+    //w rw sww hso wsi wr
+    / w
+    // ARCRA
+    // werwhr rsh wriwh wr
+
+
+    // w
     void initFacs() {
         facs[0] = 1; 
         facInvs[0] = 1;
@@ -66,23 +88,13 @@
     }
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
-        int n; cin >> n;
-        
+        int n; cin >> n; 
+
         vector<int> arr(n);
 
-        for (int i = 0 ; i < n; i ++) {
+        for (int i = 0 ; i < n; i ++ ) {
             cin >> arr[i]; 
         }
-        // w
 
-
-        // wf ngsiwer
-        // wrhod worhwo
-    
-        // ww ssprs srn iwn wwhos wr sel2 wresoor 
-        
-        // ones nevwergwet
-        /w 
-        // (1,0,1,0,1)
         return 0;
     }

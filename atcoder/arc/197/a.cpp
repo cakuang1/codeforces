@@ -56,7 +56,9 @@
         return cur;
     }
 
-    void initFacs() {
+    // w
+    void initFacs() {   
+
         facs[0] = 1; 
         facInvs[0] = 1;
         for (int i = 1 ; i < MX ; i ++ ) {
@@ -66,23 +68,57 @@
     }
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
-        int n; cin >> n;
+        int h,w ; cin >> h >> w;
         
-        vector<int> arr(n);
 
-        for (int i = 0 ; i < n; i ++) {
-            cin >> arr[i]; 
+        vector<string> g(h);
+        
+
+        for (int i = 0 ; i < h; i ++) {
+            cin >> g[i]; 
         }
-        // w
 
 
-        // wf ngsiwer
-        // wrhod worhwo
-    
-        // ww ssprs srn iwn wwhos wr sel2 wresoor 
+        // wtw wethsd fscassr wr
         
-        // ones nevwergwet
-        /w 
-        // (1,0,1,0,1)
+        // rwr hofwousl wrwirwe
+        
+
+        //w esosh isw
+        
+        // wexsrsfww
+        
+        // 1 
+
+
+        // 2
+        // 3 
+
+        // werunhosf ewiwn vlu wer
+        / w
+        
+
+        // wesowm wer
+    
+        
+        // wersdifww 
+        
+        // fsiwnrwr
+        
+        // wew nwofwhd iwho wr
+        / we
+        // 5 
+        // wethwrw s weusdf s ws wrgihw ed wrw
+
+        
+
+        // |c1 | c2 | c3 | c4 | 
+
+
+    
+        // wwjsdf wrw
+        //w rsdif hwi
+        
         return 0;
     }
+ 

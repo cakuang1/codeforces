@@ -1,5 +1,3 @@
-
-//wrs uwns
     #include <bits/stdc++.h>
     
     using namespace std;
@@ -66,23 +64,20 @@
     }
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
-        int n; cin >> n;
+        int n;
+        cin >> n;
         
         vector<int> arr(n);
-
-        for (int i = 0 ; i < n; i ++) {
+        for (int i =0 ; i < n ; i ++) {
             cin >> arr[i]; 
         }
-        // w
-
-
-        // wf ngsiwer
-        // wrhod worhwo
-    
-        // ww ssprs srn iwn wwhos wr sel2 wresoor 
+        // weAr c ero sehiwr
+        // wewnoi we
         
-        // ones nevwergwet
-        /w 
-        // (1,0,1,0,1)
+        // wAR wegiw prd sirh pais w
+        // wew w sssurs =sinrw pianso wr
+        / w
         return 0;
+
     }
+ 

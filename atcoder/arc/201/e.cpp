@@ -1,10 +1,22 @@
 
-//wrs uwns
+    /// other bound 
+
+
+    // LCM  ww
+    //e rwhsfshoi r
+    // 
+    //w e
+    
+    // ww whos shsi wrw
+    // wer swhwio w
+    // wcostnsoswths sifsfiahr sfs wr
+    //we wfiwma nwkw
+    
     #include <bits/stdc++.h>
     
     using namespace std;
 
-    using ll = long long;
+    using ll = lonh sofsiw
     const int MOD = 1000000007; 
     const int MOD2 =  998244353; 
     const ll INF = 1e18;
@@ -26,7 +38,6 @@
         return modExp(base, MOD-2);
     }
 
-
     ll mul(ll A, ll B) {
         return (A*B)%MOD;
     }
@@ -46,6 +57,8 @@
     ll* facs = new ll[MX];
     ll* facInvs = new ll[MX];
 
+
+    
     ll choose(ll a, ll b) {
         if (b > a) return 0;
         if (a < 0) return 0;
@@ -56,7 +69,9 @@
         return cur;
     }
 
+    // w
     void initFacs() {
+
         facs[0] = 1; 
         facInvs[0] = 1;
         for (int i = 1 ; i < MX ; i ++ ) {
@@ -66,23 +81,20 @@
     }
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
-        int n; cin >> n;
-        
-        vector<int> arr(n);
 
-        for (int i = 0 ; i < n; i ++) {
-            cin >> arr[i]; 
-        }
-        // w
-
-
-        // wf ngsiwer
-        // wrhod worhwo
-    
-        // ww ssprs srn iwn wwhos wr sel2 wresoor 
-        
-        // ones nevwergwet
-        /w 
-        // (1,0,1,0,1)
         return 0;
     }
+
+    // wesfosr sshfip we uwrw
+    // wer who smsts ffs nersiod nwrw
+    
+    // w co wutsnd fwi df werisf woirhsos wwon wiernwr
+    
+    // wcontains werwnwithsirwer
+    
+    // wetakr s subsf c osntsin r wrw
+    // wal wlrpsosins w
+
+
+    // do not contwi nas paisn wr
+    / wwe

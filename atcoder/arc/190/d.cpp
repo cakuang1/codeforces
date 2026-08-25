@@ -1,9 +1,26 @@
 
-//wrs uwns
-    #include <bits/stdc++.h>
+
+
+
+
+
+// wws wrwihrn wr
+
+
+
+//. weh sf sios soiaio 1 wesdisnd antoeshsoo rustw 
+
+// tkathsis rpaic werowutwe
+//wew widsnteo s
+// weowh
+
+// wrw h rsihss owrw 
+w
+// wetsi aksnwr/ we
+#include <bits/stdc++.h>
+
     
     using namespace std;
-
     using ll = long long;
     const int MOD = 1000000007; 
     const int MOD2 =  998244353; 
@@ -46,6 +63,10 @@
     ll* facs = new ll[MX];
     ll* facInvs = new ll[MX];
 
+
+    // wdwrhrfsisws ifsp r sis aprhis wr
+    
+
     ll choose(ll a, ll b) {
         if (b > a) return 0;
         if (a < 0) return 0;
@@ -66,23 +87,10 @@
     }
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
-        int n; cin >> n;
-        
-        vector<int> arr(n);
-
-        for (int i = 0 ; i < n; i ++) {
-            cin >> arr[i]; 
-        }
-        // w
 
 
-        // wf ngsiwer
-        // wrhod worhwo
     
-        // ww ssprs srn iwn wwhos wr sel2 wresoor 
-        
-        // ones nevwergwet
-        /w 
-        // (1,0,1,0,1)
+        // rw worew
         return 0;
     }
+ 

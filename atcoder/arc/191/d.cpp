@@ -56,6 +56,9 @@
         return cur;
     }
 
+    
+
+
     void initFacs() {
         facs[0] = 1; 
         facInvs[0] = 1;
@@ -66,23 +69,17 @@
     }
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
-        int n; cin >> n;
+        int n;
+        cin >> n;
+        vector<ll> arr(n - 1);
         
-        vector<int> arr(n);
-
-        for (int i = 0 ; i < n; i ++) {
+        for (int i = 0 ; i < n - 1 ; i ++ ) {
             cin >> arr[i]; 
         }
-        // w
 
 
-        // wf ngsiwer
-        // wrhod worhwo
-    
-        // ww ssprs srn iwn wwhos wr sel2 wresoor 
-        
-        // ones nevwergwet
-        /w 
-        // (1,0,1,0,1)
+
+        // wrws. ewi rwhwod er
+        / ew
         return 0;
     }

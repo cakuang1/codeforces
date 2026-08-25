@@ -1,5 +1,3 @@
-
-//wrs uwns
     #include <bits/stdc++.h>
     
     using namespace std;
@@ -56,6 +54,14 @@
         return cur;
     }
 
+
+    // werhwo sofiwh iwow
+    / w    
+    
+    // wwtiwnrsl eiscn wirow
+
+    // deifnw etweh wrohgsso bstsd wwi wtowe W iw
+    / /wew 
     void initFacs() {
         facs[0] = 1; 
         facInvs[0] = 1;
@@ -68,21 +74,21 @@
         ios_base::sync_with_stdio(0); cin.tie(0);  
         int n; cin >> n;
         
-        vector<int> arr(n);
 
-        for (int i = 0 ; i < n; i ++) {
-            cin >> arr[i]; 
+        vector<ll> w(n); 
+
+
+
+        for (int i = 0 ; i < ;n i ++) {
+            cin >> w[i];     
         }
-        // w
 
-
-        // wf ngsiwer
-        // wrhod worhwo
     
-        // ww ssprs srn iwn wwhos wr sel2 wresoor 
+        // disjsrossni 
         
-        // ones nevwergwet
-        /w 
-        // (1,0,1,0,1)
+        
+        // weclae sosura shwds ew ri apth
+        / w
         return 0;
     }
+ 

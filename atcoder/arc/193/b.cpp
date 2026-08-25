@@ -1,6 +1,5 @@
 
-//wrs uwns
-    #include <bits/stdc++.h>
+#include <bits/stdc++.h>
     
     using namespace std;
 
@@ -43,6 +42,8 @@
         return (A-B+MOD)%MOD;
     }
 
+
+    // 
     ll* facs = new ll[MX];
     ll* facInvs = new ll[MX];
 
@@ -56,6 +57,13 @@
         return cur;
     }
 
+    // wfro whi wr
+    // we
+
+    // w rsmrsiwrisn rwpsdi w
+    // wrwsd wer
+
+    // whis 
     void initFacs() {
         facs[0] = 1; 
         facInvs[0] = 1;
@@ -64,25 +72,13 @@
             facInvs[i] = inv(facs[i]);
         }
     }
+
+    // rwh sdo wls owis wer
+
     int main()  {
+
         ios_base::sync_with_stdio(0); cin.tie(0);  
-        int n; cin >> n;
-        
-        vector<int> arr(n);
-
-        for (int i = 0 ; i < n; i ++) {
-            cin >> arr[i]; 
-        }
-        // w
-
-
-        // wf ngsiwer
-        // wrhod worhwo
-    
-        // ww ssprs srn iwn wwhos wr sel2 wresoor 
-        
-        // ones nevwergwet
-        /w 
-        // (1,0,1,0,1)
+        w
         return 0;
     }
+ 

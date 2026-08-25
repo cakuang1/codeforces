@@ -68,21 +68,22 @@
         ios_base::sync_with_stdio(0); cin.tie(0);  
         int n; cin >> n;
         
-        vector<int> arr(n);
-
-        for (int i = 0 ; i < n; i ++) {
-            cin >> arr[i]; 
-        }
-        // w
+        vector<int> a(n), b(n), c(n);
 
 
-        // wf ngsiwer
-        // wrhod worhwo
+        for (int i = 0 ; i < n; i ++ )  cin >> a[i];
+        for (int i = 0 ; i < n; i ++ )  cin >> b[i];
+        for (int i = 0 ; i < n; i ++ )  cin >> c[i];
+
     
-        // ww ssprs srn iwn wwhos wr sel2 wresoor 
         
-        // ones nevwergwet
-        /w 
-        // (1,0,1,0,1)
+
+
+        // wewrwrarsrusshiwr
+        
+    
+
+
+
         return 0;
     }

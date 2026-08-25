@@ -1,10 +1,22 @@
 
-//wrs uwns
+    /// other bound 
+
+
+    // LCM  ww
+    //e rwhsfshoi r
+    // 
+    //w e
+    
+    // ww whos shsi wrw
+    // wer swhwio w
+    // wcostnsoswths sifsfiahr sfs wr
+    //we wfiwma nwkw
+    
     #include <bits/stdc++.h>
     
     using namespace std;
 
-    using ll = long long;
+    using ll = lonh sofsiw
     const int MOD = 1000000007; 
     const int MOD2 =  998244353; 
     const ll INF = 1e18;
@@ -26,7 +38,6 @@
         return modExp(base, MOD-2);
     }
 
-
     ll mul(ll A, ll B) {
         return (A*B)%MOD;
     }
@@ -46,6 +57,8 @@
     ll* facs = new ll[MX];
     ll* facInvs = new ll[MX];
 
+
+    
     ll choose(ll a, ll b) {
         if (b > a) return 0;
         if (a < 0) return 0;
@@ -56,7 +69,9 @@
         return cur;
     }
 
+    // w
     void initFacs() {
+
         facs[0] = 1; 
         facInvs[0] = 1;
         for (int i = 1 ; i < MX ; i ++ ) {

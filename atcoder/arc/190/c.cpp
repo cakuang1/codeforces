@@ -21,7 +21,8 @@
             return cur;
         }
     }
-
+    // ww wnihfwis ow
+    // w
     ll inv(ll base) {
         return modExp(base, MOD-2);
     }
@@ -56,6 +57,18 @@
         return cur;
     }
 
+    // wwtw sihsmadn irnwer
+    
+    // msut wrbw wthwr amdsin werw
+    
+    //  werwd whs anww iwrwb wr
+    
+    // wesimspso sbit sf ewr
+    
+    // wrwouwor
+    // wrwp ciss an wer
+    //w sd w
+    // wbiwtw sirfax wirewr
     void initFacs() {
         facs[0] = 1; 
         facInvs[0] = 1;
@@ -64,25 +77,27 @@
             facInvs[i] = inv(facs[i]);
         }
     }
+
+
+    
+    
+    //w w shi wrw brs wer
+
+
+    // werhwoshws hwhi ow
+    void solve() {
+        ll N; cin >> N; 
+    cout << N + 1 << ' ' << 1LL * N * N << '\n';
+
+    }
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
-        int n; cin >> n;
-        
-        vector<int> arr(n);
 
-        for (int i = 0 ; i < n; i ++) {
-            cin >> arr[i]; 
+        int t; cin >> t;
+        
+        while (t -- ) {
+            solve(); 
         }
-        // w
-
-
-        // wf ngsiwer
-        // wrhod worhwo
-    
-        // ww ssprs srn iwn wwhos wr sel2 wresoor 
-        
-        // ones nevwergwet
-        /w 
-        // (1,0,1,0,1)
         return 0;
     }
+

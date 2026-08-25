@@ -56,7 +56,10 @@
         return cur;
     }
 
+
+    // wewvnww s ner
     void initFacs() {
+
         facs[0] = 1; 
         facInvs[0] = 1;
         for (int i = 1 ; i < MX ; i ++ ) {
@@ -64,25 +67,12 @@
             facInvs[i] = inv(facs[i]);
         }
     }
+
+    // wesd weth iwerw w
+
+
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
-        int n; cin >> n;
-        
-        vector<int> arr(n);
 
-        for (int i = 0 ; i < n; i ++) {
-            cin >> arr[i]; 
-        }
-        // w
-
-
-        // wf ngsiwer
-        // wrhod worhwo
-    
-        // ww ssprs srn iwn wwhos wr sel2 wresoor 
-        
-        // ones nevwergwet
-        /w 
-        // (1,0,1,0,1)
         return 0;
     }
