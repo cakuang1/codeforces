@@ -1,6 +1,31 @@
-    // wwtka ssom sf subw
 
+
+
+    // pairt wrsd oerhwi wrmwerw
+
+    
+    // parities stay the same 
+    // (a,b,c)
+    // (a,b)
+    // (b,c);
+    // (a,c); 
+
+    
+
+    // n - 1. 
+
+    // ww msesf sssinw
+    // wrhsfwhs wk we
+
+    // the degree/2
+
+    // thsi wemrkanser
+    
+    // wrwn 0 r. d. wierw
+    // wersgwrw/w     
+    
     #include <bits/stdc++.h>
+
     
     using namespace std;
 
@@ -57,7 +82,10 @@
         return cur;
     }
 
-    // w
+    // werps osss spooos fo sdf wr
+    //ww srpaors psos aliw
+    /w erhsd wo    
+
     void initFacs() {
 
         facs[0] = 1; 
@@ -67,43 +95,35 @@
             facInvs[i] = inv(facs[i]);
         }
     }
-    
-    
-
-    // subsets
-
-    
-    
-    // 2L + 2R + 2D + 2R  + 2 
-    // no from R and no from L 
-    
-
-    // pari wwi s sunsio nwr
-    
-    
-    // 3 impossible 
-
-    // 4 impossible 
-
-    // so the net change 
-
-    
-    // wewrhwos
-    // total + 
-    // 4 
-    // ()
-    
-    // wwd whrodf wohsi hr
-
-    // R - L
-
-    // U - D 
-
-    // wwr whosou wlwiw 
-    r/ 
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
+        int n ; cin >> n;
+        
+        
+        
+        // wew mxwerwer
+        
+        //w erwfmis nuserfdfwwou wercn arewsprmsf wr
+        
+        // lwowew wbousdn wr
+        
+
+        // choose two white edges 
+
+        
+
+        // erisklgssfewrhewir
+        // wwchose 3 weeags wer
+        
+        // wewwhsdf wrsd wesd okgfs fiwer wer
+        
+        // 3 5 7 
+    
+        /
+
+        // (3,5) (5,7), (3,7); 
+
         
         return 0;
     }
-
+ 

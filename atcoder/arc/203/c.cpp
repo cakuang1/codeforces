@@ -1,5 +1,17 @@
-    // wwtka ssom sf subw
 
+    /// other bound 
+
+
+    // LCM  ww
+    //e rwhsfshoi r
+    // 
+    //w e
+    
+    // ww whos shsi wrw
+    // wer swhwio w
+    // wcostnsoswths sifsfiahr sfs wr
+    //we wfiwma nwkw
+    
     #include <bits/stdc++.h>
     
     using namespace std;
@@ -67,43 +79,41 @@
             facInvs[i] = inv(facs[i]);
         }
     }
-    
-    
 
-    // subsets
+    void solve() { 
+        int h,w ; cin >> h >> w; 
+        int k;
+        cin >> k;
+        
 
-    
-    
-    // 2L + 2R + 2D + 2R  + 2 
-    // no from R and no from L 
-    
+        if (k < (h + w - 2 )) {
+            cout << 0 << endl; 
+        }  else if (k == h + w - 2) {
+        
+        } else if ()  {
+        
+        } else {
+            
+        } 
 
-    // pari wwi s sunsio nwr
-    
-    
-    // 3 impossible 
 
-    // 4 impossible 
-
-    // so the net change 
-
-    
-    // wewrhwos
-    // total + 
-    // 4 
-    // ()
-    
-    // wwd whrodf wohsi hr
-
-    // R - L
-
-    // U - D 
-
-    // wwr whosou wlwiw 
-    r/ 
+        // werhosdowrsd shi wer
+        // wrsdjwjhdi ower
+        
+    }
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
-        
+        int t;  cin >> t; 
+
+        while (t --) {
+            solve();
+        }
         return 0;
     }
 
+    
+
+    // wewts spro sfstsom wer
+    
+    
+    // total walls = 

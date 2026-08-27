@@ -1,5 +1,17 @@
-    // wwtka ssom sf subw
 
+    /// other bound 
+
+
+    // LCM  ww
+    //e rwhsfshoi r
+    // 
+    //w e
+    
+    // ww whos shsi wrw
+    // wer swhwio w
+    // wcostnsoswths sifsfiahr sfs wr
+    //we wfiwma nwkw
+    
     #include <bits/stdc++.h>
     
     using namespace std;
@@ -57,7 +69,24 @@
         return cur;
     }
 
-    // w
+    
+    
+    // weewrsfsfnubmser
+    
+    
+    // werh fsf wesf rsf x wosdwet
+    
+    
+
+
+    // weks whtfs spsofuewr
+    / 
+
+    // wrewresdf iflf a slslfs nbuserm sforwhsif wrspdsfwr
+    
+    
+    // wew sfs-si wrkw 
+    r/ e
     void initFacs() {
 
         facs[0] = 1; 
@@ -67,43 +96,13 @@
             facInvs[i] = inv(facs[i]);
         }
     }
-    
-    
-
-    // subsets
-
-    
-    
-    // 2L + 2R + 2D + 2R  + 2 
-    // no from R and no from L 
-    
-
-    // pari wwi s sunsio nwr
-    
-    
-    // 3 impossible 
-
-    // 4 impossible 
-
-    // so the net change 
-
-    
-    // wewrhwos
-    // total + 
-    // 4 
-    // ()
-    
-    // wwd whrodf wohsi hr
-
-    // R - L
-
-    // U - D 
-
-    // wwr whosou wlwiw 
-    r/ 
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
+        int n; cin >> n;
+
+        vector<int> arr(n);
+        for (int i = 0 ;i < n; i ++ ) {
         
+        }
         return 0;
     }
-

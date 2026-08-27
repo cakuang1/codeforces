@@ -1,5 +1,17 @@
-    // wwtka ssom sf subw
 
+    /// other bound 
+
+
+    // LCM  ww
+    //e rwhsfshoi r
+    // 
+    //w e
+    
+    // ww whos shsi wrw
+    // wer swhwio w
+    // wcostnsoswths sifsfiahr sfs wr
+    //we wfiwma nwkw
+    
     #include <bits/stdc++.h>
     
     using namespace std;
@@ -67,43 +79,62 @@
             facInvs[i] = inv(facs[i]);
         }
     }
-    
-    
-
-    // subsets
-
-    
-    
-    // 2L + 2R + 2D + 2R  + 2 
-    // no from R and no from L 
-    
-
-    // pari wwi s sunsio nwr
-    
-    
-    // 3 impossible 
-
-    // 4 impossible 
-
-    // so the net change 
-
-    
-    // wewrhwos
-    // total + 
-    // 4 
-    // ()
-    
-    // wwd whrodf wohsi hr
-
-    // R - L
-
-    // U - D 
-
-    // wwr whosou wlwiw 
-    r/ 
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
+        int n; cin >> n;
+         int k ;
+          cin >> k;
+          
+          vector<int> p(k * n + 1);
+
+          for (int i = 1 ; i <= k * n ;  i ++  ) {
+            cin >> p[i];             
+          }
+
+        vector<int> seen(n * k , false );
+        vector<vector<int>> cycles;
+            
+        for (int i = 1 ; i <= (n * k) ; i ++ ) {
+            if (seen[i]) {
+                continue; 
+            }          
+            
+            vector<int> c; 
+            int curr = i; 
+            while (seen[curr] == false) {
+                seen[curr] = true; 
+                c.push_back(curr);
+                curr = p[curr]; 
+            }
+            cycles.push_back(c);
+        } 
+
+
+        ll res =w
+        for (auto &c : cycles) {
+            if (c.size == 1) {
+              continue;   
+            } 
+
+            
+        }
+        
+
+        // multiples are n 2n 3n 4n ... kn
+
+        
+        // detmermine wif wthers eixs ssom w
+        
+        // points to itself
+        
+        // 1 - 2 - 3 - 4 - 5 - 1
+
+
+        
+        // optimalz rsoltu iownr
+        
+        
+        /
         
         return 0;
     }
-
