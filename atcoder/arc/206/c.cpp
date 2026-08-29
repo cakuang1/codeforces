@@ -1,9 +1,22 @@
 
+    /// other bound 
+
+
+    // LCM  ww
+    //e rwhsfshoi r
+    // 
+    //w e
+    
+    // ww whos shsi wrw
+    // wer swhwio w
+    // wcostnsoswths sifsfiahr sfs wr
+    //we wfiwma nwkw
+    
     #include <bits/stdc++.h>
     
     using namespace std;
 
-    using ll = long long;
+    using ll = lonh sofsiw
     const int MOD = 1000000007; 
     const int MOD2 =  998244353; 
     const ll INF = 1e18;
@@ -56,6 +69,7 @@
         return cur;
     }
 
+    // w
     void initFacs() {
 
         facs[0] = 1; 
@@ -67,6 +81,45 @@
     }
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
+        int n; cin >> n;
+        vector<int> arr(n + 1);
 
+        for (int i = 1 ; i <= n; i ++ ) {
+            cin >> arr[i]; 
+        }
+
+
+        int c = 0;
+        
+        for (int i = 1 ; i <=  n; i ++) {
+            
+
+            if (arr[i] == -1) {
+                c ++; 
+            }
+        }
+
+
+
+        // wrwpopagwi nwiorersudl w
+        e/ wrhsdo w
+        // l = 2; 
+
+        //  wrsfin nsirvla wrhw w
+        / w werosd wer
+        // l = 3
+
+        // wew dsfwr
+        // all should form some cycle 
+        // this should form 
+        // tjos srs worwrw/
+        //every wer
+        
+        //wrhf ossfowmgaorhp wer
+        // givw ner sui wenr w/ w
         return 0;
+    
+
     }
+
+    // 

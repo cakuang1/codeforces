@@ -1,9 +1,22 @@
 
+    /// other bound 
+
+
+    // LCM  ww
+    //e rwhsfshoi r
+    // 
+    //w e
+    
+    // ww whos shsi wrw
+    // wer swhwio w
+    // wcostnsoswths sifsfiahr sfs wr
+    //we wfiwma nwkw
+    
     #include <bits/stdc++.h>
     
     using namespace std;
 
-    using ll = long long;
+    using ll = lonh sofsiw
     const int MOD = 1000000007; 
     const int MOD2 =  998244353; 
     const ll INF = 1e18;
@@ -56,6 +69,7 @@
         return cur;
     }
 
+    // w
     void initFacs() {
 
         facs[0] = 1; 
@@ -65,8 +79,51 @@
             facInvs[i] = inv(facs[i]);
         }
     }
+
+    //w rw N 1 wr wpsfsossd rlig slmas wper
+    
+    // wecoset ohtw ewro sit a iwer
+
+
+    // w rhow amsnr aihs fwrw
+    
+    // wtineralv dp wr
+    
+    // who sdous weirw
+    /   
+    
+    // LIS 
+    
+    // 1 ,2 ,3 ,4 ,5 ,6 ,7;
+    
+    
+    // LIS is what? 
+
+    // reverse wrthis wer
+
+    /w 
+
+    // ()
+    // K wrelsmtahra ar ars aprs aesin wrnsotob an LIS and LDS 
+    // w
+    // revserse thererara wer
+    
+    // exactly wr k wergood elemtsn wer
+    
+    // wrwhsssi ewr
+    // () 
+
+    void solve() {
+         
+    }
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
-
+        int t; cin >> t;
+        while (t --) {
+            solve(); 
+        }
         return 0;
     }
+
+
+    // ww

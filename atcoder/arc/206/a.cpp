@@ -1,101 +1,41 @@
+#include <bits/stdc++.h>
+using namespace std;
 
-    /// other bound 
+using ll = long long;
 
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
 
-    // LCM  ww
-    //e rwhsfshoi r
-    // 
-    //w e
-    
-    // ww whos shsi wrw
-    // wer swhwio w
-    // wcostnsoswths sifsfiahr sfs wr
-    //we wfiwma nwkw
-    
-    #include <bits/stdc++.h>
-    
-    using namespace std;
+    int N;
+    cin >> N;
 
-    using ll = lonh sofsiw
-    const int MOD = 1000000007; 
-    const int MOD2 =  998244353; 
-    const ll INF = 1e18;
-    const int MX = 1000001; //check the limits, dummy
+    vector<int> A(N);
+    for (int &x : A) cin >> x;
 
+    // cnt[x] = how many occurrences of x are currently to the right
+    vector<int> cnt(N + 1, 0);
 
-    ll modExp(ll base, ll power) {
-        if (power == 0) {
-            return 1;
-        } else {
-            ll cur = modExp(base, power / 2); cur = cur * cur; cur = cur % MOD;
-            if (power % 2 == 1) cur = cur * base;
-            cur = cur % MOD;
-            return cur;
+    for (int x : A) cnt[x]++;
+
+    ll ans = 1; // the unchanged sequence
+
+    for (int i = 0; i < N; i++) {
+        // Remove A[i], so cnt now represents positions > i.
+        cnt[A[i]]--;
+
+        // Only count if i is the start of a run.
+        if (i == 0 || A[i] != A[i - 1]) {
+            ll right = N - 1 - i;
+
+            // Positions j > i with A[j] != A[i].
+            ll different = right - cnt[A[i]];
+
+            ans += different;
         }
     }
 
-    ll inv(ll base) {
-        return modExp(base, MOD-2);
-    }
+    cout << ans << '\n';
 
-    ll mul(ll A, ll B) {
-        return (A*B)%MOD;
-    }
-
-    ll add(ll A, ll B) {
-        return (A+B)%MOD;
-    }
-    
-    ll dvd(ll A, ll B) {
-        return mul(A, inv(B));
-    }
-
-    ll sub(ll A, ll B) {
-        return (A-B+MOD)%MOD;
-    }
-
-    ll* facs = new ll[MX];
-    ll* facInvs = new ll[MX];
-    // wvir ls sb amr hdci nwer
-
-    ll choose(ll a, ll b) {
-        if (b > a) return 0;
-        if (a < 0) return 0;
-        if (b < 0) return 0;
-        ll cur = facs[a];
-        cur = mul(cur, facInvs[b]);
-        cur = mul(cur, facInvs[a-b]);
-        return cur;
-    }
-
-    // we wer rusn wlsisniscc osenrs wer
-    //
-
-    // () () () ();
-    
-    // wewwhs wer
-    //wertjssin rusnwer
-
-    // wtha sc sirnssfnsfeprin wer
-    
-    // determine dp
-
-    // the total nubsmerwrhod fofwrwr
-    w 
-    void initFacs() {
-
-
-        facs[0] = 1; 
-        facInvs[0] = 1;
-        for (int i = 1 ; i < MX ; i ++ ) {
-            facs[i] = (facs[i-1] * i) % MOD;
-            facInvs[i] = inv(facs[i]);
-        }
-    }
-    int main()  {
-        ios_base::sync_with_stdio(0); cin.tie(0);  
-
-        return 0;
-    }
- 
-    
+    return 0;
+}

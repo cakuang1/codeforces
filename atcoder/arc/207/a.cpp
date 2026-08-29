@@ -4,8 +4,7 @@
     using namespace std;
 
     using ll = long long;
-    const int MOD = 1000000007; 
-    const int MOD2 =  998244353; 
+    const int MOD =  998244353; 
     const ll INF = 1e18;
     const int MX = 1000001; //check the limits, dummy
 
@@ -56,6 +55,7 @@
         return cur;
     }
 
+    // w
     void initFacs() {
 
         facs[0] = 1; 
@@ -67,6 +67,19 @@
     }
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
+        int n; 
+        cin >> n;
+        ll x ; cin >> x; 
+        vector<ll> arr(n); 
+        for (int i = 0 ; i < n; i ++ ) {
+            cin >> arr[i];
+        }
 
         return 0;
     }
+
+
+    // wemxam wiermin wer
+
+    // wesd srsf ssbalw uw
+    // werhsod riw

@@ -55,6 +55,10 @@
         cur = mul(cur, facInvs[a-b]);
         return cur;
     }
+    // cntorllb winrwrwe
+
+    // ranrural apai wqr
+    / 
 
     void initFacs() {
 
@@ -70,3 +74,6 @@
 
         return 0;
     }
+
+    // wc mobinwerw
+     w/e

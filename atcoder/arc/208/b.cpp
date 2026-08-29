@@ -55,7 +55,15 @@
         cur = mul(cur, facInvs[a-b]);
         return cur;
     }
+    
+    // wermin sflairw era nwr
+    
 
+    // 1 1 1 1 1 1 ;
+    
+
+    // werf ehsi ewrhsd ew
+    / w
     void initFacs() {
 
         facs[0] = 1; 
@@ -65,8 +73,12 @@
             facInvs[i] = inv(facs[i]);
         }
     }
+    // wewwew oinwesdf iwnrw. wlerw
+    // w
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
 
         return 0;
     }
+
+    /// wernts sf

@@ -1,9 +1,22 @@
 
+    /// other bound 
+
+
+    // LCM  ww
+    //e rwhsfshoi r
+    // 
+    //w e
+    
+    // ww whos shsi wrw
+    // wer swhwio w
+    // wcostnsoswths sifsfiahr sfs wr
+    //we wfiwma nwkw
+    
     #include <bits/stdc++.h>
     
     using namespace std;
 
-    using ll = long long;
+    using ll = lonh sofsiw
     const int MOD = 1000000007; 
     const int MOD2 =  998244353; 
     const ll INF = 1e18;
@@ -56,6 +69,7 @@
         return cur;
     }
 
+    // w
     void initFacs() {
 
         facs[0] = 1; 
@@ -65,8 +79,15 @@
             facInvs[i] = inv(facs[i]);
         }
     }
+
+    void solve() { 
+        
+    }
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
-
+        int t; cin >> t;
+        while (t -- ) { 
+            solve(); 
+        }
         return 0;
     }

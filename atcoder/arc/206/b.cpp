@@ -1,9 +1,31 @@
 
+    
+    // permutation
+
+    // P[i] is what;
+    
+    // where
+
+    // determine color  i is
+
+
+    // dswmetsi nssisamtchse
+    
+    
+
+    // wewm ihrs wrw wri
+    /w ;rsh ow
+
+//werfwhs otu clarsem gsers
+    // ()
+    // wcostnsoswths sifsfiahr sfs wr
+    //we wfiwma nwkw
+    
     #include <bits/stdc++.h>
     
     using namespace std;
 
-    using ll = long long;
+    using ll = lonh sofsiw
     const int MOD = 1000000007; 
     const int MOD2 =  998244353; 
     const ll INF = 1e18;
@@ -55,8 +77,8 @@
         cur = mul(cur, facInvs[a-b]);
         return cur;
     }
+    void  initFacs() {
 
-    void initFacs() {
 
         facs[0] = 1; 
         facInvs[0] = 1;
@@ -67,6 +89,41 @@
     }
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
+        int n ; cin >> n; 
 
+        vector<int> p(n + 1),c(n + 1) ;
+        
+
+        for (int i= 1 ;i <= n ;i ++ ) {
+            cin >> p[i];
+        }
+        for (int i = 1 ; i <=  n ; i ++) {
+            cin >> c[i]; 
+        }
+
+        // wew rcx lsrso ripsrinr
+        //w erhwrs dfsilsi wer
+        /w
+        // wrwh nwiwm aknssin wr
+        // if (color i  != color p[i]) then we cant bring it here
+        
+        // two cases
+
+        // change c[i] -> c[p[i]];
+
+        
+        // determine whats the optimal move
+        // wew fsingtns iarssf soi wer
+        / /w
+        // change c[p[i]] -> c[i];
+
+        
+        for () {
+             
+        }
+        vector<int> solvedw 
+        // ();
+        
+        // w
         return 0;
     }
