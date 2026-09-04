@@ -1,90 +1,84 @@
-
-
-
-
-// wewrwf wrsf sfsfspormw w fnowr
-// wrhsdof worwhoie
 #include <bits/stdc++.h>
-        using namespace std;
+using namespace std;
 
-        using ll = long long;
-        const int MOD = 1000000007; 
-        const int MOD2 =  998244353; 
-        const ll INF = 1e18;
-        const int MX = 1000001; //check the limits, dummy
+using ll = long long;
 
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
 
-        ll modExp(ll base, ll power) {
-            if (power == 0) {
-                return 1;
+    int N;
+    cin >> N;
+
+    vector<vector<ll>> A(N + 1, vector<ll>(N + 1, 0));
+
+    /*
+        C[i][j] satisfies Pascal:
+
+            C[i][j] = C[i-1][j] + C[i][j-1]
+
+        with boundary = 1.
+
+        Therefore:
+            C[i][j] = binom(i+j, i)
+    */
+    vector<vector<ll>> C(N + 1, vector<ll>(N + 1));
+
+    for (int i = 0; i <= N; i++) {
+        for (int j = 0; j <= N; j++) {
+            if (i == 0 || j == 0) {
+                C[i][j] = 1;
             } else {
-                ll cur = modExp(base, power / 2); cur = cur * cur; cur = cur % MOD;
-                if (power % 2 == 1) cur = cur * base;
-                cur = cur % MOD;
-                return cur;
+                C[i][j] = C[i - 1][j] + C[i][j - 1];
             }
         }
+    }
 
-        ll inv(ll base) {
-            return modExp(base, MOD-2);
+    /*
+        First row is all 0.
+
+        Construction begins:
+            row 1: 0 0 0 ...
+            row 2: 1 1 1 ... 0
+            row 3: 2 3 4 ... 0
+            ...
+    */
+
+    A[2][1] = 1;
+
+    for (int i = 2; i <= N; i++) {
+
+        // First column: 1, 2, 4, 8, ...
+        if (i >= 3) {
+            A[i][1] = 2 * A[i - 1][1];
         }
 
+        for (int j = 2; j <= N; j++) {
 
-        ll mul(ll A, ll B) {
-            return (A*B)%MOD;
-        }
+            A[i][j] = A[i - 1][j] + A[i][j - 1];
 
-        ll add(ll A, ll B) {
-            return (A+B)%MOD;
-        }
-        
-        ll dvd(ll A, ll B) {
-            return mul(A, inv(B));
-        }
-
-        ll sub(ll A, ll B) {
-            return (A-B+MOD)%MOD;
-        }
-
-        ll* facs = new ll[MX];
-        ll* facInvs = new ll[MX];
-
-        ll choose(ll a, ll b) {
-            if (b > a) return 0;
-            if (a < 0) return 0;
-            if (b < 0) return 0;
-            ll cur = facs[a];
-            cur = mul(cur, facInvs[b]);
-            cur = mul(cur, facInvs[a-b]);
-            return cur;
-        }
-
-        void initFacs() {
-            facs[0] = 1; 
-            facInvs[0] = 1;
-            for (int i = 1 ; i < MX ; i ++ ) {
-                facs[i] = (facs[i-1] * i) % MOD;
-                facInvs[i] = inv(facs[i]);
+            /*
+                Past the anti-diagonal i+j=N+1,
+                subtract this correction term.
+            */
+            if (i + j > N + 1) {
+                int k = i + j - N - 2;
+                A[i][j] -= C[N - 2][k];
             }
         }
+    }
+
+    for (int i = 1; i <= N; i++) {
+        for (int j = 1; j <= N; j++) {
+            cout << A[i][j] << (j == N ? '\n' : ' ');
+        }
+    }
+
+    return 0;
+}
+
+// wpossiblse sd sjmers her
 
 
-
-        // wers sh srsusbs 
-        //  wer
-        // erhwo amtn usbtes
-        // we
-        // wes sts fss sfissifnstsg inwer
-        // wrsserms sfdwtow usnes s dfs sriow srserall w stson wr
-        // drwhrm arksn wer
-        // w
-        // wermaks sfsu sr
-        //w rhsofsofis wr
-        ios_base::sync_with_stdio(0); cin.tie(0);  
-
-            int n;cin >> n;
-            for () { 
-            
-            }
-            return 0;
-        } 
+// wer=dstmesris n fewr
+// wesojweeral sow rw

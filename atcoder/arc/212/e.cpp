@@ -56,7 +56,6 @@
         return cur;
     }
 
-
     void initFacs() {
 
         facs[0] = 1; 
@@ -66,30 +65,23 @@
             facInvs[i] = inv(facs[i]);
         }
     }
-    // wewwew oinwesdf iwnrw. wlerw
-    // w
+    
+    
+    
+    // do this in reverser we
+
+    // you can add weatrels weirw we
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
+         int n; cin >> n; 
+        vector<int> p(n); 
+        for (int i = 0 ; i < n; i ++) {
+            cin >> p[i]; 
+        } 
 
+        // werhosd wehrio
         return 0;
     }
-
-
-    // wrwsdfsh owr
-    
-    // werw s ofs wonrw bilsr w
-    / 
-    // []  [] [] [] [] [] 
-
-
-    
-    // wermsuw rw
-    // s omrs sfsj wr rmsp er
-    
-    // aewaysdfstsina sorwhsi wrw backserswe
-    
-    // wewwramfi s ss is whr wer
-    
-    // rwm dissitsh bers fr w
-    
-    // wersils  sfs sfisfsmsp nsio wer
+ 
+    // werpwerirs ersom wetw
+    // wer[]

@@ -1,82 +1,79 @@
-    
-        #include <bits/stdc++.h>
-        
-        using namespace std;
+#include <bits/stdc++.h>
+using namespace std;
 
-        using ll = long long;
-        const int MOD = 1000000007; 
-        const int MOD2 =  998244353; 
-        const ll INF = 1e18;
-        const int MX = 1000001; //check the limits, dummy
+using ll = long long;
+const ll MOD = 998244353;
 
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
 
-        ll modExp(ll base, ll power) {
-            if (power == 0) {
-                return 1;
-            } else {
-                ll cur = modExp(base, power / 2); cur = cur * cur; cur = cur % MOD;
-                if (power % 2 == 1) cur = cur * base;
-                cur = cur % MOD;
-                return cur;
-            }
+    int N;
+    cin >> N;
+
+    vector<int> P(N);
+    int S = 0;
+
+    for (int i = 0; i < N; i++) {
+        cin >> P[i];
+        S += P[i];
+    }
+
+    // If A=B and C=D, then
+    // S = 2*A + 2*C, so S must be even.
+    if (S % 2) {
+        cout << 0 << '\n';
+        return 0;
+    }
+
+    int H = S / 2;
+
+    // dp[s] = number of subsets whose total strength is s
+    vector<ll> dp(H + 1, 0);
+    dp[0] = 1;
+
+    for (int p : P) {
+        for (int s = H; s >= p; s--) {
+            dp[s] += dp[s - p];
+            if (dp[s] >= MOD) dp[s] -= MOD;
         }
+    }
 
-        ll inv(ll base) {
-            return modExp(base, MOD-2);
-        }
+    ll X = dp[H];
+
+    /*
+        X = number of subsets U with sum S/2.
+
+        Pick ordered pair (U, V), both half-sum subsets.
+
+        This gives:
+            A = U ∩ V
+            C = U \ V
+            D = V \ U
+            B = outside U ∪ V
+
+        So there are X^2 balanced assignments if empty teams are allowed.
 
 
-        ll mul(ll A, ll B) {
-            return (A*B)%MOD;
-        }
+    // thse serbusehf wrw wsf ienwi wer
+    /w e
 
-        ll add(ll A, ll B) {
-            return (A+B)%MOD;
-        }
-        
-        ll dvd(ll A, ll B) {
-            return mul(A, inv(B));
-        }
+        2. V = complement(U)
+           => A and B are empty.
+           There are X su   ch pairs.
 
-        ll sub(ll A, ll B) {
-            return (A-B+MOD)%MOD;
-        }
+        Therefore:
+            answer = X^2 - 2X
+    */
 
-        ll* facs = new ll[MX];
-        ll* facInvs = new ll[MX];
+    ll ans = X * X % MOD;
+    ans = (ans - 2 * X) % MOD;
 
-        ll choose(ll a, ll b) {
-            if (b > a) return 0;
-            if (a < 0) return 0;
-            if (b < 0) return 0;
-            ll cur = facs[a];
-            cur = mul(cur, facInvs[b]);
-            cur = mul(cur, facInvs[a-b]);
-            return cur;
-        }
+    if (ans < 0) ans += MOD;
 
-        void initFacs() {
-            facs[0] = 1; 
-            facInvs[0] = 1;
-            for (int i = 1 ; i < MX ; i ++ ) {
-                facs[i] = (facs[i-1] * i) % MOD;
-                facInvs[i] = inv(facs[i]);
-            }
-        }
-        int main()  {
-            ios_base::sync_with_stdio(0); cin.tie(0);  
+    cout << ans << '\n';
 
-            int n; cin >> n;
-            vector<int> a(n);
-            for (int i = 0; i < n; i ++) {
-                cin >> a[i]; 
-            }
-            int s = 0;
-            for (int i = 0 ;i < n; i++) {
-                s += a[i]; 
-            }
+    return 0;
+}
 
-            // w wtsars fusf mwersd
-            //  sdf. ssetsinf sdsosing werwpsut
-            return 0;
-        }
+// werhdo hwro

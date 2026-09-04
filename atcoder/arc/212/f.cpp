@@ -43,9 +43,7 @@
 
     ll* facs = new ll[MX];
     ll* facInvs = new ll[MX];
-
-
-    
+    //w
     ll choose(ll a, ll b) {
         if (b > a) return 0;
         if (a < 0) return 0;
@@ -55,10 +53,8 @@
         cur = mul(cur, facInvs[a-b]);
         return cur;
     }
-
-
+    // wehwor oiw wehri 
     void initFacs() {
-
         facs[0] = 1; 
         facInvs[0] = 1;
         for (int i = 1 ; i < MX ; i ++ ) {
@@ -66,30 +62,15 @@
             facInvs[i] = inv(facs[i]);
         }
     }
-    // wewwew oinwesdf iwnrw. wlerw
-    // w
+    // wer
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
 
         return 0;
     }
+    
 
 
-    // wrwsdfsh owr
-    
-    // werw s ofs wonrw bilsr w
-    / 
-    // []  [] [] [] [] [] 
-
-
-    
-    // wermsuw rw
-    // s omrs sfsj wr rmsp er
-    
-    // aewaysdfstsina sorwhsi wrw backserswe
-    
-    // wewwramfi s ss is whr wer
-    
-    // rwm dissitsh bers fr w
-    
-    // wersils  sfs sfisfsmsp nsio wer
+    // werwerwtivs rsod wef asesnies wer
+    / /wetwhsonw eaos w xor// wex
+    / weewero   

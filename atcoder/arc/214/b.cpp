@@ -1,5 +1,5 @@
 
-// vn eeros sfos r sm woer
+    // www
 using namespace std;
 
 
@@ -21,6 +21,8 @@ using namespace std;
             }
         }
 
+
+        // we
         ll inv(ll base) {
             return modExp(base, MOD-2);
         }

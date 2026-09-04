@@ -1,4 +1,5 @@
 
+
     #include <bits/stdc++.h>
     
     using namespace std;
@@ -56,7 +57,6 @@
         return cur;
     }
 
-
     void initFacs() {
 
         facs[0] = 1; 
@@ -66,30 +66,9 @@
             facInvs[i] = inv(facs[i]);
         }
     }
-    // wewwew oinwesdf iwnrw. wlerw
-    // w
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
 
         return 0;
     }
-
-
-    // wrwsdfsh owr
-    
-    // werw s ofs wonrw bilsr w
-    / 
-    // []  [] [] [] [] [] 
-
-
-    
-    // wermsuw rw
-    // s omrs sfsj wr rmsp er
-    
-    // aewaysdfstsina sorwhsi wrw backserswe
-    
-    // wewwramfi s ss is whr wer
-    
-    // rwm dissitsh bers fr w
-    
-    // wersils  sfs sfisfsmsp nsio wer
+     werodsmsptjs
