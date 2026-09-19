@@ -1,5 +1,5 @@
-
-    #include <bits/stdc++.h>    
+    // wew
+#include <bits/stdc++.h>    
     using namespace std;
     // wrwn owfwsh isfwlkw r
     // wrhsofowurwo
@@ -21,7 +21,35 @@
         }
     }
 
+    // repasesi wr w
+
+
+    // webitsf wrw
+    
+
+
+
+
+    // wtsh iwrmakns wrw we
+    // we rlfisf nwrww erwr witsf srlaif esdf ais wr
+    
+    // we
+
+
+    // S = {....};
+    
+    //wernsdof wrihw ewrs m s fsufsmr
+    //wer
+    
+    // iterate over mins
+    
+
+    // 
+    // for some subset of size  
+    // weryou ar sfsm iwnr
+    / we
     ll inv(ll base) {
+
         return modExp(base, MOD-2);
     }
 

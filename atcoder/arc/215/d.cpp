@@ -1,93 +1,136 @@
- 
-    #include <bits/stdc++.h>
-    
-    using namespace std;
+#include <bits/stdc++.h>
+using namespace std;
 
-    using ll = long long;
-    const int MOD = 1000000007; 
-    const int MOD2 =  998244353; 
-    const ll INF = 1e18;
-    const int MX = 1000001; //check the limits, dummy
+using int64 = long long;
 
+static const int MOD = 1'000'000'007;
 
-    ll modExp(ll base, ll power) {
-        if (power == 0) {
-            return 1;
-        } else {
-            ll cur = modExp(base, power / 2); cur = cur * cur; cur = cur % MOD;
-            if (power % 2 == 1) cur = cur * base;
-            cur = cur % MOD;
-            return cur;
-        }
+int64 mod_pow(int64 a, int64 e) {
+    int64 r = 1;
+    while (e > 0) {
+        if (e & 1) r = r * a % MOD;
+        a = a * a % MOD;
+        e >>= 1;
+    }
+    return r;
+}
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+
+    int N, M;
+    cin >> N >> M;
+
+    // A has length N+1.
+    //
+    // Number of odd-indexed positions:
+    // 1, 3, 5, ...
+    int oddCnt = N / 2 + 1;
+
+    // Number of even-indexed positions:
+    // 2, 4, 6, ...
+    int evenCnt = (N + 1) / 2;
+
+    // We need combinations up to M + max(oddCnt, evenCnt).
+    int LIM = M + max(oddCnt, evenCnt);
+
+    vector<int64> fact(LIM + 1), invFact(LIM + 1);
+
+    fact[0] = 1;
+    for (int i = 1; i <= LIM; ++i) {
+        fact[i] = fact[i - 1] * i % MOD;
     }
 
-    ll inv(ll base) {
-        return modExp(base, MOD-2);
+    invFact[LIM] = mod_pow(fact[LIM], MOD - 2);
+
+    for (int i = LIM; i >= 1; --i) {
+        invFact[i - 1] = invFact[i] * i % MOD;
     }
 
+    auto C = [&](int n, int r) -> int64 {
+        if (r < 0 || r > n) return 0;
 
-    ll mul(ll A, ll B) {
-        return (A*B)%MOD;
-    }
+        return fact[n]
+             * invFact[r] % MOD
+             * invFact[n - r] % MOD;
+    };
 
-    ll add(ll A, ll B) {
-        return (A+B)%MOD;
-    }
-    
-    ll dvd(ll A, ll B) {
-        return mul(A, inv(B));
-    }
+    /*
+        Valid nondecreasing S means:
 
-    ll sub(ll A, ll B) {
-        return (A-B+MOD)%MOD;
-    }
+        S_i <= S_{i+1}
 
-    ll* facs = new ll[MX];
-    ll* facInvs = new ll[MX];
+        A_i + A_{i+1} <= A_{i+1} + A_{i+2}
 
-    ll choose(ll a, ll b) {
-        if (b > a) return 0;
-        if (a < 0) return 0;
-        if (b < 0) return 0;
-        ll cur = facs[a];
-        cur = mul(cur, facInvs[b]);
-        cur = mul(cur, facInvs[a-b]);
-        return cur;
-    }
+        so:
 
-    void initFacs() {
-        facs[0] = 1; 
-        facInvs[0] = 1;
-        for (int i = 1 ; i < MX ; i ++ ) {
-            facs[i] = (facs[i-1] * i) % MOD;
-            facInvs[i] = inv(facs[i]);
-        }
-    }
+        A_i <= A_{i+2}
 
-    // w wrowf osh iwr
+        Therefore:
 
-     int   main()  {
-        ios_base::sync_with_stdio(0); cin.tie(0);  
-        ll n , m ; cin >> n >> m;
+        A1 <= A3 <= A5 <= ...
+        A2 <= A4 <= A6 <= ...
 
-        
+        So odd and even positions are independently
+        nondecreasing sequences in [0, M].
 
-        // increasing sequnces 
-        // two cases need to hold
+        But different A can produce the same S.
 
+        For each S, choose the canonical A with minimum A1.
 
-        // d ist suign bitanf al rsconisotn
-        
-        // bin condition 
-        
-        // first odd must be 0;
-        
-        // OR 
-        
-        // 
+        Such an A satisfies:
 
-        // How do youw vsfdotsf sihwr
-        // wewsdwhsdi work
-        / wr
-        return 0;
-    }
+            A1 = 0
+
+        OR
+
+            last even-positioned value = M.
+
+        So count this OR with inclusion-exclusion.
+    */
+
+    // Case 1: A1 = 0.
+    //
+    // Remaining oddCnt-1 odd elements:
+    // nondecreasing in [0, M]
+    //
+    // count = C(M + oddCnt - 1, oddCnt - 1)
+    //
+    // All evenCnt even elements:
+    //
+    // count = C(M + evenCnt, evenCnt)
+    int64 case1 =
+        C(M + oddCnt - 1, oddCnt - 1)
+        * C(M + evenCnt, evenCnt) % MOD;
+
+    // Case 2: last even element = M.
+    //
+    // All oddCnt odd elements arbitrary nondecreasing:
+    //
+    // count = C(M + oddCnt, oddCnt)
+    //
+    // First evenCnt-1 even elements arbitrary nondecreasing:
+    //
+    // count = C(M + evenCnt - 1, evenCnt - 1)
+    int64 case2 =
+        C(M + oddCnt, oddCnt)
+        * C(M + evenCnt - 1, evenCnt - 1) % MOD;
+
+    // Counted twice if both:
+    //
+    // A1 = 0
+    // and
+    // last even = M
+    int64 both =
+        C(M + oddCnt - 1, oddCnt - 1)
+        * C(M + evenCnt - 1, evenCnt - 1) % MOD;
+
+    int64 ans = (case1 + case2 - both) % MOD;
+
+    if (ans < 0) ans += MOD;
+
+    cout << ans << '\n';
+
+    return 0;
+}

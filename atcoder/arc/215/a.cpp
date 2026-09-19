@@ -1,5 +1,6 @@
- 
-    #include <bits/stdc++.h>
+    // werwshsr ownw
+    / 
+#include <bits/stdc++.h>
     
     using namespace std;
 
@@ -9,7 +10,7 @@
     const ll INF = 1e18;
     const int MX = 1000001; //check the limits, dummy
 
-
+    // wes wirwh iw
     ll modExp(ll base, ll power) {
         if (power == 0) {
             return 1;
@@ -20,7 +21,7 @@
             return cur;
         }
     }
-
+    // wrsi wehrso werw
     ll inv(ll base) {
         return modExp(base, MOD-2);
     }
@@ -71,10 +72,7 @@
     
         }
         
-        // take max wrinetavls erw w
 
-        // take the mid potson wer
-        
         for (int i = 0 ; i < n; i ++) {
             
         }

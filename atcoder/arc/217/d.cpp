@@ -1,125 +1,161 @@
-
-// erin dsrsithsi wr
-
-
-// w rsdfhsif wr sc sfwfw
-//w r sfisncs sgsersd fwtnw wvrs x sf 
-// we
-
-
-//// wrw hso sofso wrw
-// we w
-
-// wrisdntseh sujm wermod fsursl r
-//; weem
-// wr
-// wrwsithes nsf mewr
-// all wersdinsct wnubmsersdf sec spresr
-// we whosossfssoeri
-// wesdosetsf wrw
 #include <bits/stdc++.h>
-    
-    using namespace std;
+using namespace std;
 
-    using ll = long long;
-    const int MOD = 1000000007; 
-    const int MOD2 =  998244353; 
-    const ll INF = 1e18;
-    const int MX = 1000001; //check the limits, dummy
+using int64 = long long;
+using u64 = unsigned long long;
 
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
 
-    ll modExp(ll base, ll power) {
-        if (power == 0) {
-            return 1;
-        } else {
-            ll cur = modExp(base, power / 2); cur = cur * cur; cur = cur % MOD;
-            if (power % 2 == 1) cur = cur * base;
-            cur = cur % MOD;
-            return cur;
+    int T;
+    cin >> T;
+
+    while (T--) {
+        int N, M;
+        cin >> N >> M;
+
+        vector<int> A(N + 1);
+        for (int i = 1; i <= N; i++) {
+            cin >> A[i];
         }
-    }
 
-    ll inv(ll base) {
-        return modExp(base, MOD-2);
-    }
+        // C[i] = largest money state needed at layer i.
+        vector<int> C(N + 2);
+        C[1] = M;
 
-
-    ll mul(ll A, ll B) {
-        return (A*B)%MOD;
-    }
-
-    ll add(ll A, ll B) {
-        return (A+B)%MOD;
-    }
-    
-    ll dvd(ll A, ll B) {
-        return mul(A, inv(B));
-    }
-
-    ll sub(ll A, ll B) {
-        return (A-B+MOD)%MOD;
-    }
-
-    ll* facs = new ll[MX];
-    ll* facInvs = new ll[MX];
-
-    ll choose(ll a, ll b) {
-        if (b > a) return 0;
-        if (a < 0) return 0;
-        if (b < 0) return 0;
-        ll cur = facs[a];
-        cur = mul(cur, facInvs[b]);
-        cur = mul(cur, facInvs[a-b]);
-        return cur;
-    }
-
-    void initFacs() {
-        facs[0] = 1; 
-        facInvs[0] = 1;
-        for (int i = 1 ; i < MX ; i ++ ) {
-            facs[i] = (facs[i-1] * i) % MOD;
-            facInvs[i] = inv(facs[i]);
+        for (int i = 1; i <= N; i++) {
+            C[i + 1] = min(
+                C[i],
+                max(A[i] - 1, C[i] - A[i])
+            );
         }
-    }
 
+        /*
+            dq[j] + lazy = d[current_layer][j]
 
-    // wwt fww spwp scan fosethis
-    // wcoser swo nwer
-    // wercsor sfwrhwi
-    // weho iis rowfsfs dt dsitoht
-    // wew fs sfoprsi hrwr
-    // ww hsofsrw
-    //wers nsos sfsons svsf c angew
+            Start with D[N+1]:
+            d[N+1][c] = 0 for all needed c.
+        */
+        deque<int64> dq(C[N + 1] + 1, 0);
+        int64 lazy = 0;
 
-    // wrasf sofsprao sersih
-    
+        // Recover D[i] from D[i+1], backwards.
+        for (int i = N; i >= 1; i--) {
+            int a = A[i];
+            int ci = C[i];
 
-    // interrior apths wecna be wer
-    void solve() { 
-        int n;
-        cin >> n; 
-        int k ; cin >> k;
+            // If a > ci, then none of the relevant money states
+            // can afford this item.
+            //
+            // d[i][c] = d[i+1][c]
+            if (a > ci) {
+                continue;
+            }
 
-    }
-    int main()  {
-        ios_base::sync_with_stdio(0); cin.tie(0);  
-        int t; cin >> t;
-        while (t --) {
-            solve(); 
+            /*
+                D[i] =
+
+                [ d'[0], ..., d'[a-1] ]
+
+                followed by
+
+                [ a+d'[0], ..., a+d'[ci-a] ]
+
+                where d'[x] = d[i+1][x].
+
+                left length  = a
+                right length = ci-a+1
+            */
+
+            int leftLen = a;
+            int rightLen = ci - a + 1;
+
+            if (leftLen > rightLen) {
+                /*
+                    D[i+1] is the longer LEFT source prefix.
+
+                    Existing actual deque represents:
+
+                    [d'[0], ..., d'[a-1]]
+
+                    Need to append:
+
+                    [a+d'[0], ..., a+d'[rightLen-1]]
+
+                    Since stored value = actual - lazy,
+                    if dq[j] stores d'[j]-lazy,
+                    then a+d'[j]-lazy = dq[j]+a.
+                */
+
+                vector<int64> add;
+                add.reserve(rightLen);
+
+                for (int j = 0; j < rightLen; j++) {
+                    add.push_back(dq[j] + a);
+                }
+
+                for (int64 x : add) {
+                    dq.push_back(x);
+                }
+
+            } else {
+                /*
+                    D[i+1] is the longer RIGHT source prefix.
+
+                    We want:
+
+                    [d'[0], ..., d'[a-1],
+                     a+d'[0], ..., a+d'[rightLen-1]]
+
+                    Rewrite as:
+
+                    a + [
+                        d'[0]-a, ..., d'[a-1]-a,
+                        d'[0], ..., d'[rightLen-1]
+                    ]
+
+                    So:
+                    1. prepend the adjusted left block
+                    2. lazy += a
+                */
+
+                vector<int64> add;
+                add.reserve(leftLen);
+
+                for (int j = 0; j < leftLen; j++) {
+                    // dq[j] stores d'[j] - lazy.
+                    // We need stored version of d'[j] - a
+                    // before increasing lazy.
+                    add.push_back(dq[j] - a);
+                }
+
+                // Preserve original order when pushing to front.
+                for (int j = leftLen - 1; j >= 0; j--) {
+                    dq.push_front(add[j]);
+                }
+
+                lazy += a;
+            }
         }
-        return 0;
-    }
-    
-    // ww wnubmr wabd rsipsfw sby countw isths co msprsler
-    
-    // splits 
-    // wewwusj wr sf kwra hos swer
-    
-     
-    // ww sdtshosiwrwrw
-    / wrshfowr
-    // wsftmwi sfs wrosd fwerw//w  ws ses change
-    // ww ssgn f er
 
-    // wrwsvss oins fbacsd ser
-    /// ws rsd suer
+        /*
+            Now:
+            dq[k] + lazy = d[1][k] = f(k)
+
+            Need XOR of k * f(k), k = 1..M.
+        */
+        u64 ans = 0;
+
+        for (int k = 1; k <= M; k++) {
+            int64 f = dq[k] + lazy;
+
+            u64 value = (u64)k * (u64)f;
+            ans ^= value;
+        }
+
+        cout << ans << '\n';
+    }
+
+    return 0;
+}

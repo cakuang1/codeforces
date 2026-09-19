@@ -88,15 +88,9 @@ using namespace std;
             
         }        
         
-        
-        
+    
+    // wr osndfssin ssh wurw        
 
-        // that emans wer
-        
-        
-        // that means a,l we
-
-        // whats whtes paoblstiy wrof atealst we
     }
 
     int main()  {
@@ -107,3 +101,157 @@ using namespace std;
         }
         return 0;
     }
+    
+    // wtwh ares lsstis opsi nwr
+    / w
+
+    / w era#include <bits/stdc++.h>
+using namespace std;
+
+using ll = long long;
+
+const int MOD = 998244353;
+const int MAXN = 500000 + 5;
+
+ll fact[MAXN];
+ll invv[MAXN];
+ll pw2[MAXN];
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+
+    // factorials
+    fact[0] = 1;
+    for (int i = 1; i < MAXN; i++) {
+        fact[i] = fact[i - 1] * i % MOD;
+    }
+
+    // modular inverses 1/i
+    invv[1] = 1;
+    for (int i = 2; i < MAXN; i++) {
+        invv[i] =
+            MOD - (ll)(MOD / i) * invv[MOD % i] % MOD;
+    }
+
+    // powers of 2
+    pw2[0] = 1;
+    for (int i = 1; i < MAXN; i++) {
+        pw2[i] = pw2[i - 1] * 2 % MOD;
+    }
+
+    int T;
+    cin >> T;
+
+    while (T--) {
+        int N, K;
+        cin >> N >> K;
+
+        vector<int> A(K);
+
+        for (int &x : A) {
+            cin >> x;
+        }
+
+        int M = N - K;
+        ll ways = fact[M];
+
+        /*
+            Sum of S(P) over all completions, where
+
+              S(P) = sum_{x high} 2^(x-1)
+
+            We'll first compute it WITHOUT the common M! factor.
+        */
+
+        ll highSum = 0;
+
+        // --------------------------------------------------------
+        // 1. Fixed prefix values.
+        //
+        // A[i] is high iff it is a prefix maximum.
+        // If so, it is high in every completion.
+        // --------------------------------------------------------
+
+        int mx = 0;
+
+        for (int x : A) {
+            if (x > mx) {
+                highSum += pw2[x - 1];
+
+                if (highSum >= MOD)
+                    highSum -= MOD;
+
+                mx = x;
+            }
+        }
+
+        /*
+            mx = maximum fixed value.
+
+            Any unfixed x < mx can NEVER be high,
+            because mx occurs before it.
+
+            Every x > mx is necessarily unfixed
+            (since mx is the largest fixed value).
+        */
+
+        // --------------------------------------------------------
+        // 2. Unfixed values x > mx.
+        //
+        // x is high iff x appears before:
+        //
+        //       x+1, x+2, ..., N
+        //
+        // among the suffix.
+        //
+        // Probability = 1 / (N-x+1).
+        //
+        // So contribution after removing common M! is:
+        //
+        //       2^(x-1) / (N-x+1)
+        // --------------------------------------------------------
+
+        for (int x = mx + 1; x <= N; x++) {
+            ll contribution =
+                pw2[x - 1] * invv[N - x + 1] % MOD;
+
+            highSum += contribution;
+
+            if (highSum >= MOD)
+                highSum -= MOD;
+        }
+
+        /*
+            For each permutation:
+
+                f(P) = (2^N - 1) - S(P)
+
+            There are M! permutations.
+
+            Therefore:
+
+                answer
+                = M! * (2^N - 1)
+                  - sum_P S(P)
+
+            We factored M! out of highSum, so:
+
+                answer
+                = M! * ((2^N - 1) - highSum)
+        */
+
+        ll total = (pw2[N] - 1 + MOD) % MOD;
+
+        ll ans = (total - highSum + MOD) % MOD;
+        ans = ans * ways % MOD;
+
+        cout << ans << '\n';
+    }
+
+    return 0;
+}
+
+
+
+//w ewresdf wrsf ew

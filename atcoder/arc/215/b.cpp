@@ -1,100 +1,65 @@
- 
-    #include <bits/stdc++.h>
-    
-    using namespace std;
+#include <bits/stdc++.h>
+using namespace std;
 
-    using ll = long long;
-    const int MOD = 1000000007; 
-    const int MOD2 =  998244353; 
-    const ll INF = 1e18;
-    const int MX = 1000001; //check the limits, dummy
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
 
+    int T;
+    cin >> T;
 
-    ll modExp(ll base, ll power) {
-        if (power == 0) {
-            return 1;
-        } else {
-            ll cur = modExp(base, power / 2); cur = cur * cur; cur = cur % MOD;
-            if (power % 2 == 1) cur = cur * base;
-            cur = cur % MOD;
-            return cur;
+    while (T--) {
+        int N;
+        cin >> N;
+
+        vector<int> A(2 * N);
+        for (int &x : A) cin >> x;
+
+        // parity[x] = parity of the segment containing
+        // the first occurrence of x.
+        // -1 means x has not appeared yet.
+        vector<int> parity(N + 1, -1);
+
+        // 0 = odd-numbered segment
+        // 1 = even-numbered segment
+        int cur = 0;
+
+        vector<int> cuts;
+
+        for (int i = 0; i < 2 * N; ++i) {
+            int x = A[i];
+
+            if (parity[x] == -1) {
+                // First occurrence of x.
+                parity[x] = cur;
+            } else {
+                // Second occurrence.
+                // It must be in the opposite parity segment.
+                if (parity[x] == cur) {
+                    // Put divider immediately before A[i].
+                    //
+                    // A[i] is gem i+1 in 1-indexing,
+                    // so the divider position is i.
+                    cuts.push_back(i);
+
+                    cur ^= 1;
+                }
+            }
         }
-    }
 
-    ll inv(ll base) {
-        return modExp(base, MOD-2);
-    }
+        cout << cuts.size() << '\n';
 
-
-    ll mul(ll A, ll B) {
-        return (A*B)%MOD;
-    }
-
-    ll add(ll A, ll B) {
-        return (A+B)%MOD;
-    }
-    
-    ll dvd(ll A, ll B) {
-        return mul(A, inv(B));
-    }
-
-    ll sub(ll A, ll B) {
-        return (A-B+MOD)%MOD;
-    }
-
-    ll* facs = new ll[MX];
-    ll* facInvs = new ll[MX];
-
-    ll choose(ll a, ll b) {
-        if (b > a) return 0;
-        if (a < 0) return 0;
-        if (b < 0) return 0;
-        ll cur = facs[a];
-        cur = mul(cur, facInvs[b]);
-        cur = mul(cur, facInvs[a-b]);
-        return cur;
-    }
-
-    void initFacs() {
-        facs[0] = 1; 
-        facInvs[0] = 1;
-        for (int i = 1 ; i < MX ; i ++ ) {
-            facs[i] = (facs[i-1] * i) % MOD;
-            facInvs[i] = inv(facs[i]);
+        for (int i = 0; i < (int)cuts.size(); ++i) {
+            if (i) cout << ' ';
+            cout << cuts[i];
         }
+        cout << '\n';
     }
 
-    void solve() {
-        int n;  cin >> n;
-        
+    return 0;
+}
 
-        vector<int> neck(2 * n);
+// waltes ssd wre
 
-        for (int i = 0 ; i< 2 * n ; i ++ ) {
-            cin >> neck[i]; 
-        }
-        
-        // wtwe hosdf ossuf seov werw
-         
-        vector<bool> seen(n + 1,false);
 
-        for (int i = 0 ; i < 2 * n ; i ++ ) {
-            
-        }
-        // ap[end wt=o sen wer]
-
-        // wetouw psuts dsvsidfsorwers// 
-        
-        // first time? 
-        // add 
-        
-        // demeir teh fiesrs aonsfwetw wieon
-        // wedsthsi maknsrw
-        //w csothsuvs svs eal gower
-        / ;werw voerw
-    }
-    int main()  {
-        ios_base::sync_with_stdio(0); cin.tie(0);  
-        int t; cin >> t;
-        return 0;
-    }
+// w

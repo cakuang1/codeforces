@@ -7,9 +7,11 @@
     const int MOD2 =  998244353; 
     const ll INF = 1e18;
     const int MX = 1000001; //check the limits, dummy
-
-    // wrsdo wersomf ss fsd w wh wei
+    
+    //  thwe wrmsd wersd weirn lwrso newa rlsf wer
     ll modExp(ll base, ll power) {
+
+
         if (power == 0) {
             return 1;
         } else {
@@ -19,6 +21,10 @@
             return cur;
         }
     }
+
+
+
+    // werhs wer
 
     ll inv(ll base) {
         return modExp(base, MOD-2);
@@ -63,26 +69,7 @@
         }
     }
 
-    // wexs fnf
 
-
-
-    
-    // flwowor sdsvs its sfwer
-    / w
-    // tkathsi weradn pus heveryhign down w
-    
-    // weDosthams snse// 
-    // whatdo twfdo wr? ww
-    
-    // wdtemr withbist ww
-    
-    // wewhene oyu divsi thsi buwet w2 wer
-        
-    // floro wesdiv we
-    // wwtwh nwwhat 
-    // ak is odd? 
-    // even w 
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
         int wer 

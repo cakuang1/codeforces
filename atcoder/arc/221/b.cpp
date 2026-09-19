@@ -1,4 +1,4 @@
- 
+
     #include <bits/stdc++.h>
     
     using namespace std;
@@ -8,7 +8,6 @@
     const int MOD2 =  998244353; 
     const ll INF = 1e18;
     const int MX = 1000001; //check the limits, dummy
-
 
 
     ll modExp(ll base, ll power) {
@@ -25,7 +24,6 @@
     ll inv(ll base) {
         return modExp(base, MOD-2);
     }
-
 
     ll mul(ll A, ll B) {
         return (A*B)%MOD;
@@ -46,6 +44,7 @@
     ll* facs = new ll[MX];
     ll* facInvs = new ll[MX];
 
+    // wnsf0si whi
     ll choose(ll a, ll b) {
         if (b > a) return 0;
         if (a < 0) return 0;
@@ -56,32 +55,8 @@
         return cur;
     }
 
-    //w ew wsd fwmisnf ier
-    
-
-    
-    // wrhwo fower so sfs wr
-    / w
-    // ewtowu fssi afnwerw
-
-
-    // wewtivslif sssnisd ons wr
-    
-
-    // {0}
-
-    // nussi sns osndf rh sehs
-
-
-    
-    // wthin wiern s pairtiw er
-
-    // poteosai sfn sifsdf ear rll slosgin wer
-    
-
-
-    // we
     void initFacs() {
+
         facs[0] = 1; 
         facInvs[0] = 1;
         for (int i = 1 ; i < MX ; i ++ ) {
@@ -89,33 +64,13 @@
             facInvs[i] = inv(facs[i]);
         }
     }
-
-    void solve() {
-        int n ; cin >> n; 
-        map<ll,ll> counts;
-        for (int i = 0 ; i < n; i ++) {
-            ll a; cin >> a; 
-             counts[a] ++;    
-        }
-
-        vector<pair<ll,ll>> diffs; 
-        int prev = 0; 
-        for (auto p : counts) { 
-            ll p1  = p.first; 
-            ll p2  = p.second; 
-            diffs.push_back()
-            prev = p1;
-        }
-        
-        /
-         
-    }
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
-        int t; cin >> t;
+        int n; cin >> n;
+        ll p; cin >> p;
         
-        while (t -- ) {
-            solve(); 
-        }
+
+        // wewtusd slwhos fowwkrw
         return 0;
     }
+ 

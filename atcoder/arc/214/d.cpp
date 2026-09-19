@@ -1,3 +1,5 @@
+
+    // wew softsf wk jso wer
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -10,75 +12,95 @@ int main() {
     int N;
     cin >> N;
 
-    vector<vector<ll>> A(N + 1, vector<ll>(N + 1, 0));
+    vector<vector<ll>> A(N, vector<ll>(N, 0));
+    vector<vector<ll>> lo(N, vector<ll>(N, 0));
+    vector<vector<ll>> hi(N, vector<ll>(N, 0));
 
+
+    // wadd iwesdfo wenr
+
+    // weasd. snsislsosswet
+    / w
     /*
-        C[i][j] satisfies Pascal:
 
-            C[i][j] = C[i-1][j] + C[i][j-1]
-
-        with boundary = 1.
-
-        Therefore:
-            C[i][j] = binom(i+j, i)
-    */
-    vector<vector<ll>> C(N + 1, vector<ll>(N + 1));
-
-    for (int i = 0; i <= N; i++) {
-        for (int j = 0; j <= N; j++) {
-            if (i == 0 || j == 0) {
-                C[i][j] = 1;
-            } else {
-                C[i][j] = C[i - 1][j] + C[i][j - 1];
-            }
-        }
-    }
-
-    /*
         First row is all 0.
 
-        Construction begins:
-            row 1: 0 0 0 ...
-            row 2: 1 1 1 ... 0
-            row 3: 2 3 4 ... 0
-            ...
+        There is only one path to every cell in the first row,
+        and its score is 0.
     */
+    for (int j = 0; j < N; j++) {
+        lo[0][j] = hi[0][j] = 0;
+    }
 
-    A[2][1] = 1;
-
-    for (int i = 2; i <= N; i++) {
-
-        // First column: 1, 2, 4, 8, ...
-        if (i >= 3) {
-            A[i][1] = 2 * A[i - 1][1];
-        }
-
-        for (int j = 2; j <= N; j++) {
-
-            A[i][j] = A[i - 1][j] + A[i][j - 1];
+    for (int i = 1; i < N; i++) {
+        for (int j = 0; j < N; j++) {
 
             /*
-                Past the anti-diagonal i+j=N+1,
-                subtract this correction term.
+                Before adding A[i][j], paths come from:
+
+                    top  = (i-1, j)
+                    left = (i, j-1)
+
+                By our invariant, their score intervals are
+                adjacent, so their union is one consecutive interval.
             */
-            if (i + j > N + 1) {
-                int k = i + j - N - 2;
-                A[i][j] -= C[N - 2][k];
+
+            ll curLo = lo[i - 1][j];
+            ll curHi = hi[i - 1][j];
+
+            if (j > 0) {
+                curLo = min(curLo, lo[i][j - 1]);
+                curHi = max(curHi, hi[i][j - 1]);
             }
+
+            if (j == N - 1) {
+                /*
+                    Last column:
+                    no need to prepare for another merge to the right.
+
+                    Choosing 0 makes the final score interval start at 0.
+                */
+                A[i][j] = 0;
+            } else {
+                /*
+                    We want this cell's interval to sit immediately
+                    AFTER the interval of the cell above-right:
+
+                        (i-1, j+1)
+
+                    That way, at the NEXT cell (i, j+1),
+
+                        top interval = lo/hi[i-1][j+1]
+                        left interval = lo/hi[i][j]
+                        hi[i-1][j+1] + 1
+
+                        
+                        // werhwo oersdi wer
+                        / w
+
+                    Adding A[i][j] shifts the whole interval by A[i][j].
+                */
+                ll targetLo = hi[i - 1][j + 1] + 1;
+
+                A[i][j] = targetLo - curLo;
+            }
+
+            lo[i][j] = curLo + A[i][j];
+            hi[i][j] = curHi + A[i][j];
         }
     }
 
-    for (int i = 1; i <= N; i++) {
-        for (int j = 1; j <= N; j++) {
-            cout << A[i][j] << (j == N ? '\n' : ' ');
+    // wwesd wrw fosom wer
+    for (int i = 0; i < N; i++) {
+        for (int j = 0; j < N; j++) {
+            if (j) cout << ' ';
+            cout << A[i][j];
         }
+        cout << '\n';
     }
 
     return 0;
 }
 
-// wpossiblse sd sjmers her
-
-
-// wer=dstmesris n fewr
-// wesojweeral sow rw
+/
+// we

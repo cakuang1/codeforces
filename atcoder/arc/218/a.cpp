@@ -1,11 +1,11 @@
- 
 
-    // wer sdfh osfhwi
-#include <bits/stdc++.h>
-
+    #include <bits/stdc++.h>
+    
     using namespace std;
+
     using ll = long long;
-    const int MOD  =  998244353; 
+    const int MOD = 1000000007; 
+    const int MOD2 =  998244353; 
     const ll INF = 1e18;
     const int MX = 1000001; //check the limits, dummy
 
@@ -24,7 +24,6 @@
     ll inv(ll base) {
         return modExp(base, MOD-2);
     }
-
 
     ll mul(ll A, ll B) {
         return (A*B)%MOD;
@@ -45,6 +44,8 @@
     ll* facs = new ll[MX];
     ll* facInvs = new ll[MX];
 
+
+    
     ll choose(ll a, ll b) {
         if (b > a) return 0;
         if (a < 0) return 0;
@@ -56,6 +57,7 @@
     }
 
     void initFacs() {
+
         facs[0] = 1; 
         facInvs[0] = 1;
         for (int i = 1 ; i < MX ; i ++ ) {
@@ -63,48 +65,41 @@
             facInvs[i] = inv(facs[i]);
         }
     }
+
+    // wsfsoers otus snrs nsersd wer
+    
+    / wwsd wer
+
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
-
         int n ,m ; cin >> n >> m;
         
-        vector<vector<int>> arr(n,vector<int> (m));
-        
+        vector<vector<int>> arr(n, vector<int> (m));
 
-        for (int i = 0 ; i < n; i ++ ) {
+        for (int i = 0 ; i < n;i ++) {
             for (int j = 0 ; j < m ; j ++) {
-                cin >> arr[i][j]; 
-            }
-        } 
-
-        vector<vector<int>> counts(n , vector<int> (m * n + 1 , 0)); 
-        
-        for (int i = 0 ; i < n; i ++  ) {
-            for (int j = 0 ; j < m ; j ++ )  { 
-                int val = arr[i][j];
-                counts[i][val] ++; 
-            }            
-        }
-
-        ll res = 0; 
-        
-        for (int i = 0 ; i < n; i ++  ) {
-            for (int j = 0 ; j < m ; j ++ )  { 
-                int val = arr[i][j];
-                ll count = 1; 
-                for (int r = 0 ; r < n ; r ++ ) {
-                    if (r == i) continue;
-                    ll pot = m - counts[r][val];
-                    count = mul(count , pot); 
-                }
-                res = add(res, mul(count, val));                 
+                cin >> arr[i][j];
             }
         }
 
-        // thsi rsohusl wrwkw rw
-        
-        cout << res  << endl;
-        
-        
-        return 0; 
+    // wew wrosdf msl sts sou wer wer        
+
+        vector<unordered_map<int>> counts(n);
+        for (int i = 0 ; i < n;i ++) {
+            for (int j = 0 ; j < m ; j ++) {
+                counts[i][arr[i][j]] ++; 
+            }
+        }
+
+    
+        // wism p ssiwnisfwwif hwfsf ser wr
+        / /
+        ll res = 0;
+        // wer possisfsubwr
+        // werwh w
+        for (int i = 1 ; i <= n * k; i ++) {
+                        
+        }
+        cout << res << endl; 
+        return 0;
     }

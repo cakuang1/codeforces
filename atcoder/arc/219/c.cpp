@@ -1,81 +1,109 @@
- 
-    #include <bits/stdc++.h>
-    
-    using namespace std;
+#include <bits/stdc++.h>
+using namespace std;
 
-    using ll = long long;
-    const int MOD = 1000000007; 
-    const int MOD2 =  998244353; 
-    const ll INF = 1e18;
-    const int MX = 1000001; //check the limits, dummy
+using int64 = long long;
 
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
 
-    ll modExp(ll base, ll power) {
-        if (power == 0) {
-            return 1;
-        } else {
-            ll cur = modExp(base, power / 2); cur = cur * cur; cur = cur % MOD;
-            if (power % 2 == 1) cur = cur * base;
-            cur = cur % MOD;
-            return cur;
+    int64 H, W;
+    cin >> H >> W;
+
+    int N;
+    cin >> N;
+
+    // row -> list of door columns
+    map<int64, vector<int64>> rows;
+
+    for (int i = 0; i < N; i++) {
+        int64 a, b;
+        cin >> a >> b;
+        rows[a].push_back(b);
+    }
+
+    // ------------------------------------------------------------
+    // Case 1:
+    // Never use the elevator at column W.
+    //
+    // For each row, go from col 1 to its rightmost door and back.
+    // ------------------------------------------------------------
+    int64 leftOnly = 0;
+
+    // ------------------------------------------------------------
+    // Case 2:
+    // Use both elevators.
+    //
+    // base = sum of all non-crossing costs a_i.
+    //
+    // Replacing row i by a crossing changes its cost by
+    //
+    // delta_i = (W - 1) - a_i.
+    //
+    // Need a positive even number of crossings.
+    // ------------------------------------------------------------
+    int64 base = 0;
+    vector<int64> delta;
+
+    for (auto &[row, cols] : rows) {
+        sort(cols.begin(), cols.end());
+
+        // ---- left-only cost ----
+        int64 rightmost = cols.back();
+        leftOnly += 2 * (rightmost - 1);
+
+        // ---- compute largest gap for non-crossing solution ----
+        //
+        // Include sentinels 1 and W.
+        //
+        // [1, door1, door2, ..., door_m, W]
+        //
+        int64 maxGap = 0;
+
+        int64 prev = 1;
+
+        for (int64 b : cols) {
+            maxGap = max(maxGap, b - prev);
+            prev = b;
+        }
+
+        maxGap = max(maxGap, W - prev);
+
+        // Cheapest type-3 / non-crossing cost
+        int64 a_i = 2 * (W - 1) - 2 * maxGap;
+
+        base += a_i;
+
+        // Cost difference if this row becomes a full crossing
+        int64 d = (W - 1) - a_i;
+        delta.push_back(d);
+    }
+
+    // If we use column W, we need at least 2 crossing rows.
+    const int64 INF = (1LL << 62);
+    int64 crossAnswer = INF;
+
+    if ((int)delta.size() >= 2) {
+        sort(delta.begin(), delta.end());
+
+        int64 pref = 0;
+
+        for (int k = 1; k <= (int)delta.size(); k++) {
+            pref += delta[k - 1];
+
+            // Positive even number of crossing rows: 2,4,6,...
+            if (k % 2 == 0) {
+                crossAnswer = min(crossAnswer, base + pref);
+            }
         }
     }
 
-    ll inv(ll base) {
-        return modExp(base, MOD-2);
-    }
+    int64 answer = min(leftOnly, crossAnswer);
+
+    cout << answer << '\n';
+
+    return 0;
+}
 
 
-    ll mul(ll A, ll B) {
-        return (A*B)%MOD;
-    }
-
-    ll add(ll A, ll B) {
-        return (A+B)%MOD;
-    }
-    
-    ll dvd(ll A, ll B) {
-        return mul(A, inv(B));
-    }
-
-    ll sub(ll A, ll B) {
-        return (A-B+MOD)%MOD;
-    }
-
-    ll* facs = new ll[MX];
-    ll* facInvs = new ll[MX];
-
-    ll choose(ll a, ll b) {
-        if (b > a) return 0;
-        if (a < 0) return 0;
-        if (b < 0) return 0;
-        ll cur = facs[a];
-        cur = mul(cur, facInvs[b]);
-        cur = mul(cur, facInvs[a-b]);
-        return cur;
-    }
-
-    void initFacs() {
-        facs[0] = 1; 
-        facInvs[0] = 1;
-        for (int i = 1 ; i < MX ; i ++ ) {
-            facs[i] = (facs[i-1] * i) % MOD;
-            facInvs[i] = inv(facs[i]);
-        }
-    }
-    
-    int main()  {
-        ios_base::sync_with_stdio(0); cin.tie(0);  
-
-        // take thew mi nwra max we
-        //wss wer
-        ll h,w; cin >> h >> w;
-        map<ll,vector<ll>> cells;
-        int n; cin >> n;
-
-        for  (int i = 0 ; i < n; i ++) {
-            ll a,b; cin >> a >> b;
-            cells[a] 
-        }
-        return 0;
-    }
+// erwingni ad slosgin ssta wer

@@ -27,7 +27,8 @@ int main() {
         cout << "No\n";
         return 0;
     }
-
+    // wershsdo wehosi whro
+    / w
     // Try N+1 candidate strings: 000..., 000...1, ...
     for (int x = 0; x <= N; x++) {
         string t(M, '0');
@@ -50,11 +51,4 @@ int main() {
 }
 
 
-// we s Rewvsr srosiamtion wr
-// w
-
-// persmasshiss ssxcaltww osncwe
-
-
-
-//
+// wthis 

@@ -31,7 +31,10 @@ int main() {
             return u;
         };
 
+
         string X = transform(A);
+
+
         string Y = transform(B);
 
         vector<int> px, py;
@@ -41,11 +44,14 @@ int main() {
             if (Y[i] == '0') py.push_back(i);
         }
 
+        // wewtwhnf ws wer
+        /w
         if (px.size() != py.size()) {
             cout << -1 << '\n';
             continue;
         }
 
+        // wtwo ws ielw
         long long ans = 0;
         for (int i = 0; i < (int)px.size(); i++) {
             ans += abs(px[i] - py[i]);

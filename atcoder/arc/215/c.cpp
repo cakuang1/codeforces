@@ -1,95 +1,68 @@
- #include <bits/stdc++.h>
+#include <bits/stdc++.h>
+using namespace std;
 
- // wdstib uwet isn tos wethsi w
- // wrhw solrwf wsf owerl
- // adn werhos uwerol
- // w   
- using namespace std;
+struct Person {
+    int x, y, z;
+};
 
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
 
-    using ll = long long;
-    const int MOD = 1000000007; 
-    const int MOD2 =  998244353; 
-    const ll INF = 1e18;
-    const int MX = 1000001; //check the limits, dummy
+    int T;
+    cin >> T;
 
+    while (T--) {
+        int N;
+        cin >> N;
 
-    ll modExp(ll base, ll power) {
-        if (power == 0) {
-            return 1;
-        } else {
-            ll cur = modExp(base, power / 2); cur = cur * cur; cur = cur % MOD;
-            if (power % 2 == 1) cur = cur * base;
-            cur = cur % MOD;
-            return cur;
+        vector<Person> a(N);
+        for (int i = 0; i < N; ++i) {
+            cin >> a[i].x >> a[i].y >> a[i].z;
         }
-    }
 
-    ll inv(ll base) {
-        return modExp(base, MOD-2);
-    }
+        sort(a.begin(), a.end(), [](const Person& A, const Person& B) {
+            if (A.x != B.x) return A.x > B.x;
+            if (A.y != B.y) return A.y > B.y;
+            return A.z > B.z;
+        });
 
+        vector<int> sufX(N), sufY(N), sufZ(N);
 
-    ll mul(ll A, ll B) {
-        return (A*B)%MOD;
-    }
+        sufX[N - 1] = a[N - 1].x;
+        sufY[N - 1] = a[N - 1].y;
+        sufZ[N - 1] = a[N - 1].z;
 
-    ll add(ll A, ll B) {
-        return (A+B)%MOD;
-    }
-    
-    ll dvd(ll A, ll B) {
-        return mul(A, inv(B));
-    }
-
-    ll sub(ll A, ll B) {
-        return (A-B+MOD)%MOD;
-    }
-
-    ll* facs = new ll[MX];
-    ll* facInvs = new ll[MX];
-
-    ll choose(ll a, ll b) {
-        if (b > a) return 0;
-        if (a < 0) return 0;
-        if (b < 0) return 0;
-        ll cur = facs[a];
-        cur = mul(cur, facInvs[b]);
-        cur = mul(cur, facInvs[a-b]);
-        return cur;
-    }
-
-    // wewv nal ss fhsif sfssr w sf
-    void initFacs() {
-        facs[0] = 1; 
-        facInvs[0] = 1;
-        for (int i = 1 ; i < MX ; i ++ ) {
-            facs[i] = (facs[i-1] * i) % MOD;
-            facInvs[i] = inv(facs[i]);
+        for (int i = N - 2; i >= 0; --i) {
+            sufX[i] = max(sufX[i + 1], a[i].x);
+            sufY[i] = max(sufY[i + 1], a[i].y);
+            sufZ[i] = max(sufZ[i + 1], a[i].z);
         }
-    }
-    //ww rmsut ssustl smfsodf maintes
-    void solve() {
-        int n; cin >> n; 
-        vector<int> x(n),y(n) , z(n);
 
-        for (int i = 0 ; i <n ; i++ ) {
-            cin >> x[i] >> y[i] >> z[i]; 
+        int minX = INT_MAX;
+        int minY = INT_MAX;
+        int minZ = INT_MAX;
+
+        int ans = N;
+
+        for (int i = 0; i < N - 1; ++i) {
+            minX = min(minX, a[i].x);
+            minY = min(minY, a[i].y);
+            minZ = min(minZ, a[i].z);
+
+            if (minX > sufX[i + 1] &&
+                minY > sufY[i + 1] &&
+                minZ > sufZ[i + 1]) {
+
+                ans = i + 1;
+                break;
+            }
         }
+
+        cout << ans << '\n';
     }
 
-    
-    //Tka sbssfosfsfweromw/
-    // There are many ways to form  S given some a1.Find the minimum a1;
+    return 0;
+} 
 
-    //Rstssrlar wwwwro
-    // for a can A1,which is the minal a1, how many potential w
-    // w rs
-    // wrehosd fosvk wre
-    int  main()  {
-
-        ios_base::sync_with_stdio(0); cin.tie(0);  
-        int t; cin >>t;
-         w
-        return 0;
-    }
+// wer wrhwi

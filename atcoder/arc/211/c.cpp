@@ -95,6 +95,8 @@ int64 f(int i, int64 k) {
     return min(remain, k);
 }
 
+
+// w wrsh ow
 void solve() {
     cin >> N >> M;
 
@@ -105,8 +107,7 @@ void solve() {
     ans.assign(1, 0);
 
     f(0, 0);
-
-    // Remove unnecessary leading zeros.
+    // wd werosud wew sdhfewr
     while (ans.size() > 1 && ans.back() == 0)
         ans.pop_back();
 
@@ -115,6 +116,10 @@ void solve() {
 
     cout << '\n';
 }
+
+// brw s ewrw
+
+// wewwh osd ewhiro
 
 int main() {
     ios::sync_with_stdio(false);
