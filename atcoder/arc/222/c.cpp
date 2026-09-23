@@ -1,92 +1,176 @@
-    
-        #include <bits/stdc++.h>
-        
-        using namespace std;
+#include <bits/stdc++.h>
+using namespace std;
 
-        using ll = long long;
-        const int MOD = 1000000007; 
-        const int MOD2 =  998244353; 
-        const ll INF = 1e18;
-        const int MX = 1000001; //check the limits, dummy
+using ll = long long;
+const ll INF = (1LL << 62);
 
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
 
-        ll modExp(ll base, ll power) {
-            if (power == 0) {
-                return 1;
-            } else {
-                ll cur = modExp(base, power / 2); cur = cur * cur; cur = cur % MOD;
-                if (power % 2 == 1) cur = cur * base;
-                cur = cur % MOD;
-                return cur;
+    int T;
+    cin >> T;
+
+    while (T--) {
+        int N;
+        cin >> N;
+
+        vector<vector<ll>> A(N, vector<ll>(N));
+
+        for (int i = 0; i < N; i++) {
+            for (int j = 0; j < N; j++) {
+                cin >> A[i][j];
             }
         }
 
-        ll inv(ll base) {
-            return modExp(base, MOD-2);
-        }
+        /*
+            cost[i][j]:
 
+            Cost if (i,j) is chosen as the spine cell.
 
-        ll mul(ll A, ll B) {
-            return (A*B)%MOD;
-        }
+            We whiten the cells immediately to its
+            left and right.
 
-        ll add(ll A, ll B) {
-            return (A+B)%MOD;
-        }
-        
-        ll dvd(ll A, ll B) {
-            return mul(A, inv(B));
-        }
+                 WHITE  SPINE  WHITE
+        */
+        vector<vector<ll>> cost(N, vector<ll>(N, 0));
 
-        ll sub(ll A, ll B) {
-            return (A-B+MOD)%MOD;
-        }
+        for (int i = 0; i < N; i++) {
+            for (int j = 0; j < N; j++) {
+                if (j - 1 >= 0)
+                    cost[i][j] += A[i][j - 1];
 
-        ll* facs = new ll[MX];
-        ll* facInvs = new ll[MX];
-
-        ll choose(ll a, ll b) {
-            if (b > a) return 0;
-            if (a < 0) return 0;
-            if (b < 0) return 0;
-            ll cur = facs[a];
-            cur = mul(cur, facInvs[b]);
-            cur = mul(cur, facInvs[a-b]);
-            return cur;
-        }
-
-        void initFacs() {
-            facs[0] = 1; 
-            facInvs[0] = 1;
-            for (int i = 1 ; i < MX ; i ++ ) {
-                facs[i] = (facs[i-1] * i) % MOD;
-                facInvs[i] = inv(facs[i]);
+                if (j + 1 < N)
+                    cost[i][j] += A[i][j + 1];
             }
         }
-        int main()  {
-            ios_base::sync_with_stdio(0); cin.tie(0);  
-        
 
-           int n; cin >> n;
-            vector<vector<int>> g(n + 1,vector<int> (n + 2, 0));
-            vector<vector<int>> dp(n + 1 ,vector<int> (n + 1 , 0));
-            for (int i = 1 ; i <=  n; i ++ ) {
-                for (int j = 1 ; j <= n; j ++) { 
-                     cin >> g[i][j]; 
+        /*
+            up[i][j]:
+
+            Minimum cost of a spine from row 0 to row i,
+            where the spine is at column j on row i.
+
+            Consecutive spine cells must differ by 1 column:
+
+                    X
+                   /
+                  X
+
+            or
+
+                  X
+                   \
+                    X
+        */
+        vector<vector<ll>> up(N, vector<ll>(N, INF));
+
+        for (int j = 0; j < N; j++)
+            up[0][j] = cost[0][j];
+
+        for (int i = 1; i < N; i++) {
+            for (int j = 0; j < N; j++) {
+
+                if (j - 1 >= 0) {
+                    up[i][j] = min(
+                        up[i][j],
+                        up[i - 1][j - 1] + cost[i][j]
+                    );
+                }
+
+                if (j + 1 < N) {
+                    up[i][j] = min(
+                        up[i][j],
+                        up[i - 1][j + 1] + cost[i][j]
+                    );
                 }
             }
-            
+        }
 
+        /*
+            down[i][j]:
 
-            // wewyo uwescsf boudn ww w w
-            
-            for (int i =  ) {
+            Same thing, except going from row N-1 upward.
+        */
+        vector<vector<ll>> down(N, vector<ll>(N, INF));
 
-                 
+        for (int j = 0; j < N; j++)
+            down[N - 1][j] = cost[N - 1][j];
+
+        for (int i = N - 2; i >= 0; i--) {
+            for (int j = 0; j < N; j++) {
+
+                if (j - 1 >= 0) {
+                    down[i][j] = min(
+                        down[i][j],
+                        down[i + 1][j - 1] + cost[i][j]
+                    );
+                }
+
+                if (j + 1 < N) {
+                    down[i][j] = min(
+                        down[i][j],
+                        down[i + 1][j + 1] + cost[i][j]
+                    );
+                }
+            }
+        }
+
+        /*
+            whole[i][j]:
+
+            Minimum cost of an entire top-to-bottom spine
+            that passes through (i,j).
+
+            up and down both counted cost[i][j],
+            so subtract it once.
+        */
+        vector<vector<ll>> whole(N, vector<ll>(N));
+
+        for (int i = 0; i < N; i++) {
+            for (int j = 0; j < N; j++) {
+                whole[i][j] =
+                    up[i][j] + down[i][j] - cost[i][j];
+            }
+        }
+
+        /*
+            Starting position = (i,j).
+
+            It must be a WHITE cell next to the spine.
+
+            Therefore the spine in this row can be:
+
+                SPINE START
+
+            at j-1,
+
+            or
+
+                START SPINE
+
+            at j+1.
+
+            Choose the cheaper one.
+        */
+        for (int i = 0; i < N; i++) {
+            for (int j = 0; j < N; j++) {
+
+                ll ans = INF;
+
+                if (j - 1 >= 0)
+                    ans = min(ans, whole[i][j - 1]);
+
+                if (j + 1 < N)
+                    ans = min(ans, whole[i][j + 1]);
+
+                cout << ans;
+
+                if (j + 1 < N)
+                    cout << ' ';
             }
 
-            
-
-
-            return 0;
+            cout << '\n';
         }
+    }
+}

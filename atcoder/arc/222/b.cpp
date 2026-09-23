@@ -1,85 +1,139 @@
-    
-        #include <bits/stdc++.h>
-        
-        using namespace std;
+#include <bits/stdc++.h>
+using namespace std;
 
-        using ll = long long;
-        const int MOD = 1000000007; 
-        const int MOD2 =  998244353; 
-        const ll INF = 1e18;
-        const int MX = 1000001; //check the limits, dummy
+using ll = long long;
 
+ll solve(ll a, ll b, ll c) {
+    vector<ll> v = {a, b, c};
+    ll ans = 0;
 
-        ll modExp(ll base, ll power) {
-            if (power == 0) {
-                return 1;
-            } else {
-                ll cur = modExp(base, power / 2); cur = cur * cur; cur = cur % MOD;
-                if (power % 2 == 1) cur = cur * base;
-                cur = cur % MOD;
-                return cur;
-            }
+    // Rotate (A,B,C).
+    // Each rotation handles:
+    //   only Type 1
+    //   Type 1 + Type 2
+    for (int rot = 0; rot < 3; rot++) {
+        ll A = v[rot];
+        ll B = v[(rot + 1) % 3];
+        ll C = v[(rot + 2) % 3];
+
+        /*
+            Only Type 1:
+
+                n A + (n+1) B -> score n
+
+            Reserve one B.
+            Then every AB pair gives one winner.
+        */
+        if (B >= 1) {
+            ans = max(ans, min(A, B - 1));
         }
 
-        ll inv(ll base) {
-            return modExp(base, MOD-2);
+        /*
+            Type 1 + Type 2:
+
+                Type 1: n A + (n+1) B
+                Type 2: m B + (m+1) C
+
+            Reserve:
+                1 B for Type 1
+                1 C for Type 2
+
+            Remaining:
+                A     copies of A
+                B-1   copies of B
+                C-1   copies of C
+
+            Every score consumes either:
+                AB
+            or:
+                BC
+
+            Thus B is one side of every pair.
+
+            Maximum =
+                min(B-1, A + (C-1))
+        */
+        if (B >= 1 && C >= 1) {
+            ans = max(ans, min(B - 1, A + C - 1));
         }
+    }
 
+    /*
+        All three types.
 
-        ll mul(ll A, ll B) {
-            return (A*B)%MOD;
-        }
+        Reserve one A, one B, one C.
 
-        ll add(ll A, ll B) {
-            return (A+B)%MOD;
-        }
-        
-        ll dvd(ll A, ll B) {
-            return mul(A, inv(B));
-        }
+        Then each winner consumes one of:
 
-        ll sub(ll A, ll B) {
-            return (A-B+MOD)%MOD;
-        }
+            AB
+            BC
+            CA
 
-        ll* facs = new ll[MX];
-        ll* facInvs = new ll[MX];
+        So we just want the maximum number of pairs
+        of DIFFERENT types.
 
-        ll choose(ll a, ll b) {
-            if (b > a) return 0;
-            if (a < 0) return 0;
-            if (b < 0) return 0;
-            ll cur = facs[a];
-            cur = mul(cur, facInvs[b]);
-            cur = mul(cur, facInvs[a-b]);
-            return cur;
-        }
+        Let residual counts be x,y,z.
 
-        void initFacs() {
-            facs[0] = 1; 
-            facInvs[0] = 1;
-            for (int i = 1 ; i < MX ; i ++ ) {
-                facs[i] = (facs[i-1] * i) % MOD;
-                facInvs[i] = inv(facs[i]);
-            }
-        }
+        Maximum number of pairs is:
 
-        
+            min(
+                (x+y+z)/2,
+                (x+y+z) - max(x,y,z)
+            )
+    */
+    if (a >= 1 && b >= 1 && c >= 1) {
+        ll x = a - 1;
+        ll y = b - 1;
+        ll z = c - 1;
 
-        // weconsrusmshsi wr
-        void  solve() {
-            ll  a ,b , c ; cin >> a >> b >> c;
-            
-            
-        
-            
-        }
-        int main()  {
-            ios_base::sync_with_stdio(0); cin.tie(0);  
+        ll sum = x + y + z;
+        ll mx = max({x, y, z});
 
-            int t; cin >> t;
-            while (t -- ) {
-                solve(); 
-            }
-            return 0;
-        } 
+        ans = max(ans, min(sum / 2, sum - mx));
+    }
+
+    /*
+        Exceptional cases:
+
+        The entire circle can itself be one alternating group.
+
+        ABABAB...  with A = B, C = 0
+        BCBCBC...  with B = C, A = 0
+        CACACA...  with C = A, B = 0
+
+        Example:
+
+            A B A B
+            ^   ^
+
+        Both A's win.
+
+        The normal "substring" decomposition loses one winner
+        because there is nowhere to cut the circle.
+    */
+    if (c == 0 && a == b)
+        ans = max(ans, a);
+
+    if (a == 0 && b == c)
+        ans = max(ans, b);
+
+    if (b == 0 && c == a)
+        ans = max(ans, c);
+
+    return ans;
+}
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+
+    int T;
+    cin >> T;
+
+    while (T--) {
+        ll a, b, c;
+        cin >> a >> b >> c;
+
+        cout << solve(a, b, c) << '\n';
+    }
+}

@@ -55,11 +55,8 @@
         cur = mul(cur, facInvs[a-b]);
         return cur;
     }
-    
-
-
-        
-    // wesd we
+    // werhoswis fwehir
+    // wesdhwordl sr is woer
     
     void initFacs() {
 

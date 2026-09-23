@@ -45,7 +45,8 @@
     ll* facInvs = new ll[MX];
 
 
-    
+
+    // wes fsh s wriw
     ll choose(ll a, ll b) {
         if (b > a) return 0;
         if (a < 0) return 0;
@@ -55,7 +56,22 @@
         cur = mul(cur, facInvs[a-b]);
         return cur;
     }
+     
+    // wrwwhrsd ssf isrso sdgbe O rw e
 
+    // w wsd w sm o fs wlerw
+
+    // ww swo
+    // wwhat ssfns wrw w still ahves nsot ssfusn wthat fina lb it bv sos e 1 w
+    // wernwd  = 1 wm; w
+
+    // w
+    // wersdosfs wr 
+    // yo uweads sesdf rnwsd eing 
+    
+    // yo wurw s wes sonlys rf wersd wer
+    
+    // werw m Ifs swhsdf wer weros ssd ewrw wls Kwer w
     void initFacs() {
 
         facs[0] = 1; 
@@ -65,35 +81,21 @@
             facInvs[i] = inv(facs[i]);
         }
     }
+
+
+
+
+    // werwh osfwhds wersf i fweros a wrwer
+    // wer wfsd wp wrms mwsd. whtw ewr
     
-
-    void solve() {
-        int n, m ;
-        cin >> n >> m;
-        
-        
-        // 1 ,2 ,3 , 4, 5 ,6 ;
+    void solve() { 
     
-        
-
-        int d = 0;         
-        
-        for (int i = 0 ; i < m ; i ++ ) {
-            int l, r; cin >> l >> r;
-            d = max(r - l + 1,d); 
-        }
-        
-        
-        for (int i = 0; ; i < n; i ++){
-            cout << (i % d) + 1 << ' '; 
-        }
-
-
     }
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
-        int t; cin >> t;
-        while (t -- ) {
+        int t;
+        cin >> t;
+        while (t --) {
             solve(); 
         }
         return 0;

@@ -29,20 +29,6 @@
         }
 
 
-        // ststsshtsi sbsets possbi wlsfs welfaue 
-
-
-        // wepwotn si slf sco srs sts// wehso r
-        
-
-        // Wgat susts iams s fosthsif wr wetiwt his
-        // wsidgsit sum wriwhwt
-        // ww
-        
-
-
-        // determine when you shift this 
-        
 
         ll add(ll A, ll B) {
 
@@ -124,43 +110,10 @@
 
 
 
-    
 
-
-        // transitions 
-
-
-        // for all bm 
-
-        // ony lwwrallt wernesd ss soers
-        // wdgist issu mwer
-        // wa non sfn eativn eintser sn wer
-        // weras sum fodiwt
-
-        // two main cases 
+        // werw wh sms sfsifnsf iwer
         
-        // how does adding a[i] or b[i] change the digit sum 
-
-
-        /// wewhatsss min sudf sm digsit sum wer
-        // given the previous states 
-
-
-        // maintain
-        // maint inrsi lsowr and upper we
-        // werhsod ostrsysl sdo selrs
-        //  |upper| |lower|  
-
-
-        // wew osdtsign srps 
+        // wrwotu w we s fwehros weris fers srhsi wer
         
-        // (101101001) 
-        
-        // do steps in reverse
-        
-        // do things in reverse 
-        // whic hssfiwhwt
-        //wer
-        // werpwobais see sthis strci wer
-        // 
-        // maintain lower using 
+        // so you must ensure the previosu w
+        // w
