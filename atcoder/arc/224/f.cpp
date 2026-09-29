@@ -89,8 +89,49 @@
     // wer wfsd wp wrms mwsd. whtw ewr
     
     void solve() { 
+        ll n,k; cin >> n >> k;
+        
+
+        vector<ll> arr(n);
+
+        for (int i = 0 ; i < n; i ++ ) {
+            cin >> arr[i]; 
+        }
+
+
+
+        // if ets sis ibwris ss fsdweowt wer
+        // then wewhat 
+        /
+
+
+        // w wwerdi wrwe wr wer
+        
+        // u0 wrbit mask wer
+
+        // d wrsim sposbi wer
+        ll M = 0;
+        for (int i = 0 ; i < k ; i ++ ) {
+            int ind = n - 1 - i;
+            M |= arr[ind];
+        }
     
-    }
+        / w
+        // westill in ned w
+        // meaingis t em stus s w wer
+        
+        // werw wsd 1 w
+        // we0 wrisn f wer
+
+        // stillwe rinswend wer
+
+        // w er rw
+        
+        // wemw us e iers s  sowhs weornwr
+        
+        
+
+    } 
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
         int t;
