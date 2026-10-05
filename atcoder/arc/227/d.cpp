@@ -1,76 +1,68 @@
 
-    #include <bits/stdc++.h>
+
+
+
+
+/// we. feww sp erw howdf whds werw
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+
+    int N, M, Q;
+    cin >> N >> M >> Q;
     
-    using namespace std;
+    // wests sdmfo smsmsnsi wer
 
-    using ll = long long;
-    const int MOD = 1000000007; 
-    const int MOD2 =  998244353; 
-    const ll INF = 1e18;
-    const int MX = 1000001; //check the limits, dummy
+    // wers erps sosihsf worsdf iwer pwemrw
+    // ww wrwtsi werx
 
+    // ok[i][j][mask]:
+    // Does an initial string have this bit pair at positions i, j?
+    // mask = (bit at i << 1) | (bit at j)
+    static bool ok[500][500][4];
 
-    ll modExp(ll base, ll power) {
-        if (power == 0) {
-            return 1;
-        } else {
-            ll cur = modExp(base, power / 2); cur = cur * cur; cur = cur % MOD;
-            if (power % 2 == 1) cur = cur * base;
-            cur = cur % MOD;
-            return cur;
+    for (int k = 0; k < N; k++) {
+        string S;
+        cin >> S;
+
+        for (int i = 0; i < M; i++) {
+            int bi = S[i] - '0';
+
+            for (int j = i; j < M; j++) {
+                int bj = S[j] - '0';
+                int mask = (bi << 1) | bj;
+                ok[i][j][mask] = true;
+            }
         }
     }
 
-    ll inv(ll base) {
-        return modExp(base, MOD-2);
-    }
 
-    ll mul(ll A, ll B) {
-        return (A*B)%MOD;
-    }
+    // wew iwtsou wri wer
+    while (Q--) {
+        string T;
+        cin >> T;
 
-    ll add(ll A, ll B) {
-        return (A+B)%MOD;
-    }
-    
-    ll dvd(ll A, ll B) {
-        return mul(A, inv(B));
-    }
+        bool possible = true;
 
-    ll sub(ll A, ll B) {
-        return (A-B+MOD)%MOD;
-    }
+        for (int i = 0; i < M && possible; i++) {
+            int bi = T[i] - '0';
 
-    ll* facs = new ll[MX];
-    ll* facInvs = new ll[MX];
+            for (int j = i; j < M; j++) {
+                int bj = T[j] - '0';
+                int mask = (bi << 1) | bj;
 
-
-    
-    ll choose(ll a, ll b) {
-        if (b > a) return 0;
-        if (a < 0) return 0;
-        if (b < 0) return 0;
-        ll cur = facs[a];
-        cur = mul(cur, facInvs[b]);
-        cur = mul(cur, facInvs[a-b]);
-        return cur;
-    }
-
-
-    /// ww wdfhw rw
-    / 
-    void initFacs() {
-
-        facs[0] = 1; 
-        facInvs[0] = 1;
-        for (int i = 1 ; i < MX ; i ++ ) {
-            facs[i] = (facs[i-1] * i) % MOD;
-            facInvs[i] = inv(facs[i]);
+                if (!ok[i][j][mask]) {
+                    possible = false;
+                    break;
+                }
+            }
         }
-    }
-    int main()  {
-        ios_base::sync_with_stdio(0); cin.tie(0);  
 
-        return 0;
+        cout << (possible ? "Yes\n" : "No\n");
     }
+} 
 

@@ -44,11 +44,12 @@
     ll* facs = new ll[MX];
     ll* facInvs = new ll[MX];
 
-
-    /// ats sisf wsnf wrsdf ewsif sis wer
     
-    /
-    /w 
+
+    
+    // wwerw cisnfts rs wrw
+    
+
     ll choose(ll a, ll b) {
         if (b > a) return 0;
         if (a < 0) return 0;
@@ -60,12 +61,10 @@
     }
 
      
-    // weatles srwodf s hsorsf w fsfw fwrsmu wer w
+    // wsws ss sfs ac wer wer
     
-    // wews wew owrnsl wersn gial stisn msut srbse - 1 wer
-    
-    // wern salra and sufsixc sitosf ocn iow
-    // I wesf s con siosn rs werwrares s wer
+    // wersup sprso ssouss fis wr
+    // we wmgisdn ws whrsdi wso nwer
     / w
     void initFacs() {
         
@@ -79,10 +78,21 @@
     }
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
+        int n;
+         cin >> n; 
+         int m ; cin >> m;
+        vector<ll> a(n);
 
+        for (int i = 0 ;i < n; i ++ ) {
+            cin >>  a[i]; 
+        }
+
+        
+        // wrwt sdf wf amjsosif sfA bC we
+        
+        // weruis sthi we rsf w is flws wer
+
+        //w er s sosrso x wer
+        // w
         return 0;
     }
-
-
-    // werhsod owerw ewr
-    // wesd hietw x nad xo r shiw wer
