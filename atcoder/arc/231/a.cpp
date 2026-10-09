@@ -58,16 +58,8 @@
         cur = mul(cur, facInvs[a-b]);
         return cur;
     }
+    
 
-    // wewwtsd wrwr 
-    //w ewtwtus werihw oweirsd fowekw rw
-    
-    // wewhsd wetw wosi nweoirw 
-    
-    // werposis nsfnubmser stses ewr
-    // gowefrom werew worsnt so bkc wer
-    
-    // westic kwerw iws stsdnsdts ar werhwer
 
     
     void initFacs() {
@@ -80,10 +72,46 @@
         }
     }
 
+    
+    struct E {
+        int x,y,z;
+    };
 
-    //  werf rf wp 
-    //werw fwfsd wrufs ins wrw
-    / we
+    void solve() {
+        int n; cin >> n; 
+        vector<E> events(n);
+
+        for (int i = 0 ; i < n; i ++) {
+            cin >> events[i].x >> events[i].y >> events[i].z;  
+        }
+        
+        ll s = 0;
+        
+
+        for (int i = 0 ; i < n; i ++ ) {
+            s += events[i].z; 
+        }
+    
+
+        // ww hsof w whis we
+        // wetyp cl tosu sfhsissin weri herou whrw
+        
+    
+        / wew
+
+        vector<vector<ll>> dp(501,vector<ll> (501,__LONG_LONG_MAX__));
+
+        for (int i = 0 ; i <= n; i ++) {
+            dp[][] = 
+        }
+
+        for (int i = 0 ; i < n ; i ++) { 
+            auto e = events[i];             
+        }    
+
+
+
+    }
     int  main()  {
 
         ios_base::sync_with_stdio(0); cin.tie(0);  

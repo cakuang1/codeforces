@@ -10,6 +10,23 @@
     const int MX = 1000001; //check the limits, dummy
 
 
+    
+
+
+
+    // wesd ww weo werskn wer
+    // werhfo ww wer
+    // we wrw wrsd sofw sfwo fsl ur
+
+    / whw sdfws wershf iwi wwer
+    // wew wrsdf erwsB wrw r 1 wer
+    // wwn wers inwrsio nwer
+    
+    / wew wr
+
+
+    
+    
     ll modExp(ll base, ll power) {
         if (power == 0) {
             return 1;
