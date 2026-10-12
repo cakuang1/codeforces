@@ -10,17 +10,13 @@
     const int MX = 1000001; //check the limits, dummy
 
 
+    // wewsd r werwws ws werk wlons wr
 
-    // 
-    // wd hsi wwl weir
-    // aligend block w
 
-    // wra gsifns so r 5 20rw swl s arv. wirw
-    // w nw mer20 werai nwerw
-     /wer
-    // wrw s lain wman w
+// ww wm wrn orpa lds l owrwjsm wer/ w
+
     
-    //w erwwsd iwm obinlrmops wer
+// wtw
     ll modExp(ll base, ll power) {
         if (power == 0) {
             return 1;
