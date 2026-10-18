@@ -1,8 +1,7 @@
-
-    #include <bits/stdc++.h>
     
+    //  rpd rs sos ein wer
+    #include <bits/stdc++.h>
     using namespace std;
-
     using ll = long long;
     const int MOD = 1000000007; 
     const int MOD2 =  998244353; 
@@ -10,10 +9,7 @@
     const int MX = 1000001; //check the limits, dummy
 
 
-    
 
-
-    
     ll modExp(ll base, ll power) {
         if (power == 0) {
             return 1;
@@ -24,31 +20,16 @@
             return cur;
         }
     }
-    #include <bits/stdc++.h>
-    
-    using namespace std;
 
-    using ll = long long;
-    const int MOD = 1000000007; 
-    const int MOD2 =  998244353; 
-    const ll INF = 1e18;
-    const int MX = 1000001; //check the limits, dummy
+// rw wsdfwriw so rwid wr
+
+// wwsdf wlriwnw
 
 
-    
+// wfiw wesom lsisen 
 
 
-    
-    ll modExp(ll base, ll power) {
-        if (power == 0) {
-            return 1;
-        } else {
-            ll cur = modExp(base, power / 2); cur = cur * cur; cur = cur % MOD;
-            if (power % 2 == 1) cur = cur * base;
-            cur = cur % MOD;
-            return cur;
-        }
-    }
+// 
 
     ll inv(ll base) {
         return modExp(base, MOD-2);
@@ -145,7 +126,19 @@
             facInvs[i] = inv(facs[i]);
         } 
     }
+    
 
+    // wrss sse slf heow lsisn wr
+    
+    //w erthsi ssh ower ewlrsidn ewr
+    //w ershwts fslfsinw
+    
+    // woewtwe arewor sginalr spotiwn w
+
+    // (a1 .... an);
+    // (); 
+
+    // 
 
     int main()  {
         ios_base::sync_with_stdio(0); cin.tie(0);  
@@ -157,15 +150,37 @@
         for (int i = 0 ; i < n; i ++ ) {
             cin >> a[i]; 
         }
+
+        // fixes the arisos wer
     
-        // werussrs aiwonl wrsdf nwiwr
-    
-        // wew nsdf wersd iensffse isns w
+        // werwehtsi srsintis fnset fit in some lien 
+
         
-        // bwe 
+        // 
+        // weridsn wersdi lbnapd iwornw
+
+        // wadsdso rso i sisf welru w
+        
+        // werwhsd ewrsd iwern sdf wer welruw
         
 
+
+
     
+        // x = [a1 + c1 ..... an + cn];
+        // y = [b1 + d1 ..... w];
+
+        //  adj surs erpais wrw
+        // tis mrakwkew ew
+
+    
+        // wrw ssf werls owprw
+        
+        / this msrskns rew
+        
+        //w dsots wi wemr wer
+        // xiyj = xjyi;  
+        // c[]
         for () { 
         }
         return 0;
