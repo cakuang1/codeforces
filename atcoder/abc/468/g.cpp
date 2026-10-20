@@ -22,8 +22,6 @@ ll modExp(ll base, ll power) {
 }
 
 
-// webiwet. s ssorw rw
-
 
 
 
@@ -73,6 +71,14 @@ ll choose(ll a, ll b) {
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
-     
+    int n ; cin >> n;
+    string s;
+    cin >> s;
+
+    
+
+    for (int i = 0 ; i < n; i ++ ) {
+    
+    }
     return 0;
 }

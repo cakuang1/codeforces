@@ -107,19 +107,18 @@ int main() {
         } 
     }
 
-    vector<int> lis(); 
+    vector<int> lis; 
 
     for (int i = 0 ; i < leftover.size(); i ++ ) {
+        int val = leftover[i]        
+        auto it = lower_bound(lis.begin() ,lis.end(),val); 
         
+        if (it == leftover.end()) { 
+            lis.push_back(val); 
+        } else {
+            *it = val;
+        }
     }
-    
-
-
-    // x ,y, z = 0;
-    
-
-
-
     cout << counts + lis.size(); 
     return 0;
 }
