@@ -70,13 +70,12 @@ ll choose(ll a, ll b) {
     return mul(facs[a], mul(facInvs[b], facInvs[a - b]));
 }
 
+// wewrwersd whrish fiwer
+
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
     
-    // werhsod wrhsd wer
-    // w
-   // initFacs();
     int n; cin >> n; 
     for (int i= 0 ;  i < n; i ++) {
         int c; cin >> c;

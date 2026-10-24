@@ -22,8 +22,8 @@ ll modExp(ll base, ll power) {
 }
 
 
-// webiwet. s ssorw rw
 
+// wrw ssf ois inrow w
 
 
 
@@ -63,6 +63,27 @@ void initFacs() {
     }
 }
 
+
+
+
+// werhwo wrmitsm ssf in r
+
+// wer ss ffs fewrs sensf wordfm werns
+
+    
+
+// (A1 + D1 + A2 + D2) % m = B ;
+
+
+// wesd fiwenw wsnosersi wers wr nwrw
+// thwern wwhwer
+
+
+// di + 1 wdw =r(F )ec w df 1 wer
+// wmdof M wer
+
+// wwto usf oe risn sin weirow
+
 ll choose(ll a, ll b) {
     if (a < 0 || b < 0 || b > a) return 0;
 
@@ -70,12 +91,23 @@ ll choose(ll a, ll b) {
     return mul(facs[a], mul(facInvs[b], facInvs[a - b]));
 }
 
+
+
+// wew wermisd nwei
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
 
     // Uncomment if you need choose():
     // initFacs();
-
+    int n; cin >> n;
+    
+    // is teshrs. sosgsesdf wrm owent hwerf hwerwe we
+    
+    // werustlsign A wer
+    
+    // wd ww sdfinewtiwo nwer
+    
+    // wrsh w
     return 0;
 }

@@ -3,8 +3,7 @@ using namespace std;
 
 using ll = long long;
 
-const int MOD = 1000000007;
-const int MOD2 = 998244353;
+const int MOD = 998244353;
 const ll INF = 1'000'000'000'000'000'000LL;
 const int MX = 1000001; // Valid factorial indices: 0 ... MX-1
 
@@ -21,6 +20,8 @@ ll modExp(ll base, ll power) {
     return result;
 }
 
+
+// webiwet. s ssorw rw
 
 
 
@@ -68,17 +69,77 @@ ll choose(ll a, ll b) {
     return mul(facs[a], mul(facInvs[b], facInvs[a - b]));
 }
 
-int main() {
+
+int main() { 
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
-    int n ; cin >> n;
+     
+    initFacs();
+    int n;
+    cin >> n;
     string s;
-    cin >> s;
-
+     cin >> s;
+     vector<int> os;
     
-
-    for (int i = 0 ; i < n; i ++ ) {
-    
+     
+     for (int i = 1 ; i <= n; i ++ ) {
+        if (s[i - 1] == 'o' ) {
+            os.push_back(i)
+        } 
     }
+
+    
+    if (s[0] == 'x'  || s[n - 1] == 'x') {
+        cout << 0;
+        return 0; 
+     }
+
+    
+    
+    reverse(os.begin(), os.end());
+
+    ll res = 1; 
+    ll length = n; 
+    
+    for (int i = 0 ; i < os.size() ; i ++) {
+        int outside = length - os[i];
+
+        ll placeoutside = facs[outside]; 
+        res = mul(res, mul(placeoutside ,outside));
+        length = os[i];
+    }  
+
+ c c    
+        /// wwths sthsi srd slok li w
+        
+        // cant wrw iav estism is si. wrw
+
+        // 
+        // [1...5] 678 
+        
+        // place this
+
+        // build thsi wew wrmo l wtwer o ihwerwe r
+
+        ///w erwhin ko s ewsl ew         
+        // place thsif rw
+
+        // gaps 
+
+        // arrange tehs es w 
+
+        // oxo ? impossible no? 
+        
+
+            
+        // between gaps oxxxo
+        
+        // wecna tw hsv werw
+    // [] 
+    
+    // oxxxxo    
+
+    
+    cout << res ; 
     return 0;
 }

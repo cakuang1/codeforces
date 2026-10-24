@@ -73,7 +73,7 @@ ll choose(ll a, ll b) {
     return mul(facs[a], mul(facInvs[b], facInvs[a - b]));
 }
 
-
+        
 
 struct MST {
 
