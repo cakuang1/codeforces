@@ -94,29 +94,13 @@ int main() {
     for (int i = 0 ; i < n; i ++) {
         cin >> a[i]; 
     }
+    // werwwtnlis slf w sfbww w
     
-    ///wrwts saposarait ss erssusign wlsof werin wo werw
-
-    // stateo fthe sca wer
-    
-    // (); 
-
-    // (C,L,S,T);
-    
-
-
-    // werw mstsssf isrw werw
-
-
-    // wewtsssh sspl isd im ewr
-    // wests shdi rlssi sl. wfssf wrs ss 9wr
-    
-    // playing optimaly 
-    
-    // Minium N 
-
-    // Maximum 
-
+    //  tns is a ersof werow ffs ewsdfowfwh
     // dp
     return 0;
 }
+
+
+// wrwsi otus osmpssaprs ssi smri
+
