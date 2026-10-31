@@ -1,76 +1,87 @@
 
-    #include <bits/stdc++.h>
-    
-    using namespace std;
+#include <bits/stdc++.h>
+using namespace std;
 
-    using ll = long long;
-    const int MOD = 1000000007; 
-    const int MOD2 =  998244353; 
-    const ll INF = 1e18;
-    const int MX = 1000001; //check the limits, dummy
+using ll = long long;
 
+void solve() {
+    int n;
+    cin >> n;
 
-    ll modExp(ll base, ll power) {
-        if (power == 0) {
-            return 1;
-        } else {
-            ll cur = modExp(base, power / 2); cur = cur * cur; cur = cur % MOD;
-            if (power % 2 == 1) cur = cur * base;
-            cur = cur % MOD;
-            return cur;
+    vector<ll> a(n), b(n);
+
+    for (auto &x : a) cin >> x;
+    for (auto &x : b) cin >> x;
+
+    // Returns true if both endpoints of person i
+    // are forbidden by their immediate neighbors.
+    auto bad = [&](int i) -> bool {
+        if (i < 0 || i >= n) return false;
+
+        ll l = a[i] - b[i];
+        ll r = a[i] + b[i];
+
+        bool leftBlocked = false;
+        bool rightBlocked = false;
+
+        for (int j : {i - 1, i + 1}) {
+            if (j < 0 || j >= n) continue;
+
+            ll L = a[j] - b[j];
+            ll R = a[j] + b[j];
+
+            if (L < l && l < R)
+                leftBlocked = true;
+
+            if (L < r && r < R)
+                rightBlocked = true;
         }
+
+        return leftBlocked && rightBlocked;
+    };
+
+    int badCount = 0;
+
+    for (int i = 0; i < n; i++) {
+        badCount += bad(i);
     }
 
-    ll inv(ll base) {
-        return modExp(base, MOD-2);
-    }
+    int q;
+    cin >> q;
 
-    ll mul(ll A, ll B) {
-        return (A*B)%MOD;
-    }
+    while (q--) {
+        int p;
+        ll s;
+        cin >> p >> s;
+        --p;
 
-    ll add(ll A, ll B) {
-        return (A+B)%MOD;
-    }
-    
-    ll dvd(ll A, ll B) {
-        return mul(A, inv(B));
-    }
-
-    ll sub(ll A, ll B) {
-        return (A-B+MOD)%MOD;
-    }
-
-    ll* facs = new ll[MX];
-    ll* facInvs = new ll[MX];
-
-
-    
-    ll choose(ll a, ll b) {
-        if (b > a) return 0;
-        if (a < 0) return 0;
-        if (b < 0) return 0;
-        ll cur = facs[a];
-        cur = mul(cur, facInvs[b]);
-        cur = mul(cur, facInvs[a-b]);
-        return cur;
-    }
-
-    void initFacs() {
-
-        facs[0] = 1; 
-        facInvs[0] = 1;
-        for (int i = 1 ; i < MX ; i ++ ) {
-            facs[i] = (facs[i-1] * i) % MOD;
-            facInvs[i] = inv(facs[i]);
+        // Remove old contributions
+        for (int i = p - 1; i <= p + 1; i++) {
+            badCount -= bad(i);
         }
+
+        // Apply update
+        b[p] = s;
+
+        // Add new contributions
+        for (int i = p - 1; i <= p + 1; i++) {
+            badCount += bad(i);
+        }
+
+        cout << (badCount == 0 ? "Yes" : "No") << '\n';
     }
-    int main()  {
-        ios_base::sync_with_stdio(0); cin.tie(0);  
+}
 
-        return 0;
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+
+    int T;
+    cin >> T;
+
+    while (T--) {
+        solve();
     }
 
-
-
-    // w
+    return 0;
+}

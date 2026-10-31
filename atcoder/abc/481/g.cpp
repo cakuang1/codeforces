@@ -21,33 +21,63 @@ ll modExp(ll base, ll power) {
     return result;
 }
 
-    // wers sisos
-    / 
-// P(Xk >= x);
-
- // d  m ;
-
- // wertwheso weths sisi mpsosbk wer
-
- // atmost w
-
-//w constsuns ossf1 wer
+// weowe nwpoaths 3 4 a 5 erso adsn ao nstaerw
 
 
-//c wtonsi sswrhisf sshrsf. w
+// wew wrsa asd ersewiwhsn w
 
 
-///wero duwto av setosh setwew
+// contienr sosssoapth wer
 
 
-
-// wedsresi ewrpsd weraions wer
-
-// wcontsibnsiotnw rwer
-
-// wethfrs r usra nsinr
+// path of size 3 
 
 
+// epca lstrui nwrw
+
+// as wewr wbw weot wriwh isn aocn weosd osmspoen wer
+
+
+// wrapths wrw
+// wtststs ss js fsi hwlrw
+
+//addin sesswbetwr siweh os s snisfs usrssdf wnare egal w
+
+//w wtwe wsd thi on aprgh 3 4 6 wer
+// bwer
+
+// determine the ordering 
+
+// when we wextos conensd fwernosr wrw
+// d =  g belwo x 
+
+// m = 1/2 below x 
+
+
+// Define X as the number of elements below x;
+
+
+// whats the distribution? Shift the distribution by d
+
+
+// B = Binomial distribution (m ,1/2); 
+// P(X = b) = P(B = ); 
+
+// wew hs nsuslspf ewris iwerwew
+
+// we rp sif su nwrw
+
+// 
+
+
+//d wew =w sisibusosn w
+
+
+// d m 
+
+
+// wwth ism werwhrw
+// wrho wer
 // P(Xk  );
 
 
@@ -116,7 +146,11 @@ ll modExp(ll base, ll power) {
 /// wx -weer=2 we
 // P() ; 
 
- 
+
+
+
+
+
 ll inv(ll base) {
     // Requires base != 0 (mod MOD), and MOD prime.
     return modExp(base, MOD - 2);
@@ -182,28 +216,17 @@ int main() {
 
 
 
-    // sereathsi scstnsi rs. wrsdf worw
-    // E[]
-    // wea osndssfssi ze. wweo udsfgivv es ser2 eyear sownsf wer
+//w erl weors w maoci rw 
+// w wer
+// conenw esd fom soenso nsts
 
+// 3 impossibler wr
 
-    // weinsta dclausitsp esdo wers by wemsu werw alus rby erpobw
-// werimwpr lewssitsf nwrwrsdfweshiwrsf wehf alurs ewrwerewhtrw ral k wvluse we
-
-
-//  werdkthg seslarsslatslf sw
+// starts ompossible 
 
 
 
 
-// w wwisd psoblss oustso mwrew wer
+// 5 sure
 
-// we we7r dsiwerd s rw
-// wrwhowsdf[sfsmsn arsfh stshif salrsdf whi wr
-
-// wwrss tis harsd wer
-// why ebcause wer dont wekdn wos
-
-// we dont know wwrwwetrherwesf his aislf werpalc sap ler
-
-/   er// P(x) 
+// thee sum o fwwsdf sso wesd fsdoj wer wer

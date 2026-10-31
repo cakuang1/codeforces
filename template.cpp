@@ -74,8 +74,8 @@ int main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
 
-    // Uncomment if you need choose():
+  // Uncomment if you need choose():
     // initFacs();
 
     return 0;
-}
+} 
