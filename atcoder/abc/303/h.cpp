@@ -22,8 +22,19 @@ ll modExp(ll base, ll power) {
 }
 
 
-// webiwet. s ssorw rw
 
+
+
+//er    rew wsdew
+
+
+// ()
+
+
+
+// wew reds. we
+// wds 1 fw-e r 
+w
 
 
 
@@ -94,13 +105,11 @@ int main() {
 
      // [0,0,0  ...  0];
 
+     // arhs morsos hsi wer ams hwrw
+    
+     // wesfssd wrcosdewr
+    
+     // werhso hwiwr
+     return 0;
 
-     // total degree
-     // ((n - 1) * 2) = 2n - 2;
-     
-     // wen owtis hsisk wrwk wer w w
-     // wew hdso wts sirs wdh wers wr
-
-     // 
-    return 0;
 } 
