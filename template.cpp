@@ -63,6 +63,12 @@ void initFacs() {
     }
 }
 
+ 
+// w
+
+// 
+
+
 ll choose(ll a, ll b) {
     if (a < 0 || b < 0 || b > a) return 0;
 
@@ -75,7 +81,7 @@ int main() {
     cin.tie(nullptr);
 
   // Uncomment if you need choose():
-    // initFacs();
+    // initFacs();   we
 
     return 0;
 } 

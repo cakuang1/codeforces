@@ -14,7 +14,7 @@ int main() {
     auto eraseXor = [&](int x) {
         xr.erase(xr.find(x));
     };
-    
+
 
     while (q--) {
         int t;

@@ -73,9 +73,7 @@ ll choose(ll a, ll b) {
 
 int main() {
     ios::sync_with_stdio(false);
-    cin.tie(nullptr);
-
-  // Uncomment if you need choose():
+    cin.tie(nullptr);   
     // initFacs();
     
     int n ; cin >> n;
@@ -85,14 +83,23 @@ int main() {
 
     for (int i = 0 ; i < n; i ++ ) {
         cin >> a[i] >> b[i]; 
-
         ind[i] = i; 
     }
+
     
-
     // wew hwosduh w
-    sort(ind.begin(), ind.end() ,); 
+sort(ind.begin(), ind.end(), [&](int i, int j) {
+    long long t1 = 1LL * a[i] * b[j];
+    long long t2 = 1LL * a[j] * b[i];
 
+    if (t1 == t2) {
+        return i < j;
+    }
+
+    return t1 > t2;
+});
+
+    
     for (int i = 0 ;i  < n; i ++ ) {
         cout << ind[i] + 1 << ' ';
     }
