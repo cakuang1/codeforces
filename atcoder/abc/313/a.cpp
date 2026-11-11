@@ -87,6 +87,16 @@ int main() {
     int m = 0;
     
     int o ; cin >> o;
-     w     
+    
+    for (int i = 0 ; i < n - 1 ; i ++ ) {
+        int a; cin >> a;
+        m = max(a , m ); 
+    }
+
+    
+    int res = max(m - o ,0 ); 
+
+
+    cout << res;
     return 0;
 }  
